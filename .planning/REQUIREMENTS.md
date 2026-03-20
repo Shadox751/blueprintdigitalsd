@@ -88,19 +88,43 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| FOUND-01 through FOUND-04 | Phase 1 | Pending |
-| SALES-01 through SALES-07 | Phase 2 | Pending |
-| LOG-01 through LOG-04 | Phase 2 | Pending |
-| GHL-01 through GHL-05 | Phase 3 | Pending |
-| WEB-01 through WEB-05 | Phase 4 | Pending |
-| RECEP-01 through RECEP-03 | Phase 4 | Pending |
-| RETAIN-01 through RETAIN-03 | Phase 5 | Pending |
+| FOUND-01 | Phase 1: Ready Tonight | Pending |
+| FOUND-02 | Phase 1: Ready Tonight | Pending |
+| FOUND-03 | Phase 1: Ready Tonight | Pending |
+| FOUND-04 | Phase 1: Ready Tonight | Pending |
+| SALES-01 | Phase 1: Ready Tonight | Pending |
+| SALES-02 | Phase 1: Ready Tonight | Pending |
+| SALES-03 | Phase 2: Sales Operator System | Pending |
+| SALES-04 | Phase 1: Ready Tonight | Pending |
+| SALES-05 | Phase 2: Sales Operator System | Pending |
+| SALES-06 | Phase 2: Sales Operator System | Pending |
+| SALES-07 | Phase 1: Ready Tonight | Pending |
+| LOG-01 | Phase 2: Sales Operator System | Pending |
+| LOG-02 | Phase 2: Sales Operator System | Pending |
+| LOG-03 | Phase 2: Sales Operator System | Pending |
+| LOG-04 | Phase 2: Sales Operator System | Pending |
+| GHL-01 | Phase 3: GoHighLevel Platform | Pending |
+| GHL-02 | Phase 3: GoHighLevel Platform | Pending |
+| GHL-03 | Phase 3: GoHighLevel Platform | Pending |
+| GHL-04 | Phase 3: GoHighLevel Platform | Pending |
+| GHL-05 | Phase 3: GoHighLevel Platform | Pending |
+| WEB-01 | Phase 4: Client Delivery Pipeline | Pending |
+| WEB-02 | Phase 4: Client Delivery Pipeline | Pending |
+| WEB-03 | Phase 4: Client Delivery Pipeline | Pending |
+| WEB-04 | Phase 4: Client Delivery Pipeline | Pending |
+| WEB-05 | Phase 4: Client Delivery Pipeline | Pending |
+| RECEP-01 | Phase 4: Client Delivery Pipeline | Pending |
+| RECEP-02 | Phase 4: Client Delivery Pipeline | Pending |
+| RECEP-03 | Phase 4: Client Delivery Pipeline | Pending |
+| RETAIN-01 | Phase 5: Client Retention System | Pending |
+| RETAIN-02 | Phase 5: Client Retention System | Pending |
+| RETAIN-03 | Phase 5: Client Retention System | Pending |
 
 **Coverage:**
-- v1 requirements: 32 total
-- Mapped to phases: 32
-- Unmapped: 0 ✓
+- v1 requirements: 31 total
+- Mapped to phases: 31
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-19*
-*Last updated: 2026-03-19 after initial definition*
+*Last updated: 2026-03-19 after roadmap creation*
