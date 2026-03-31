@@ -1082,12 +1082,13 @@
     .sticky-call { background: var(--orange); color: white; }
 
     /* ── SCROLL ANIMATIONS ── */
-    .fade-in {
+    /* JS adds .fade-ready to <html> once loaded — without it, everything stays visible */
+    .fade-ready .fade-in {
       opacity: 0;
       transform: translateY(24px);
       transition: opacity 0.6s ease, transform 0.6s ease;
     }
-    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    .fade-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 1024px) {
@@ -2043,14 +2044,15 @@
   function openMenu() { document.getElementById('mobile-menu').classList.add('open'); }
   function closeMenu() { document.getElementById('mobile-menu').classList.remove('open'); }
 
-  // ── Scroll fade-in
+  // ── Scroll fade-in (safe: content visible by default, JS enables animation)
   const fadeEls = document.querySelectorAll('.fade-in');
+  document.documentElement.classList.add('fade-ready');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
   }, { threshold: 0.05, rootMargin: '0px 0px 50px 0px' });
   fadeEls.forEach(el => observer.observe(el));
-  // Fallback: force all visible after 2s in case observer doesn't fire
-  setTimeout(() => { fadeEls.forEach(el => el.classList.add('visible')); }, 2000);
+  // Fallback: force all visible after 3s
+  setTimeout(() => { fadeEls.forEach(el => el.classList.add('visible')); }, 3000);
 
   // ── Hero chat demo
   const heroReplies = [
