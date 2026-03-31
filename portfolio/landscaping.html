@@ -1,0 +1,2221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Green Leaf Landscapes | San Diego Landscaping & Yard Transformation</title>
+  <meta name="description" content="San Diego's premier landscaping company. Lawn care, hardscape, irrigation, landscape design & more. CSLB licensed. Free consultation. Call (619) 555-0560." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── RESET & BASE ──────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1e2a1f;
+      background: #F7F8F4;
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ─── VARIABLES ─────────────────────────────────── */
+    :root {
+      --green-dark:   #1B3A1F;
+      --green-mid:    #2a5230;
+      --green-accent: #7CB518;
+      --orange-cta:   #F99912;
+      --orange-hover: #e08800;
+      --brown:        #5C3D1E;
+      --brown-light:  #8B5E3C;
+      --cream:        #F7F8F4;
+      --cream-dark:   #eef0e8;
+      --white:        #ffffff;
+      --text-dark:    #1e2a1f;
+      --text-mid:     #3d4f3e;
+      --text-light:   #6b7c6c;
+      --radius:       8px;
+      --radius-lg:    16px;
+      --shadow-sm:    0 2px 8px rgba(27,58,31,0.08);
+      --shadow-md:    0 6px 24px rgba(27,58,31,0.13);
+      --shadow-lg:    0 16px 48px rgba(27,58,31,0.18);
+    }
+
+    /* ─── UTILITY ───────────────────────────────────── */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .section-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green-accent);
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-family: 'Merriweather', serif;
+      font-size: clamp(1.75rem, 3.5vw, 2.6rem);
+      font-weight: 700;
+      color: var(--green-dark);
+      line-height: 1.22;
+      margin-bottom: 16px;
+    }
+    .section-title.light { color: var(--white); }
+    .section-subtitle {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.05rem;
+      color: var(--text-mid);
+      max-width: 620px;
+      line-height: 1.7;
+    }
+    .section-subtitle.light { color: rgba(255,255,255,0.82); }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+      padding: 14px 28px;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: all 0.22s ease;
+      border: 2px solid transparent;
+      white-space: nowrap;
+    }
+    .btn-cta {
+      background: var(--orange-cta);
+      color: var(--green-dark);
+      box-shadow: 0 4px 16px rgba(249,153,18,0.38);
+    }
+    .btn-cta:hover {
+      background: var(--orange-hover);
+      box-shadow: 0 6px 24px rgba(249,153,18,0.5);
+      transform: translateY(-2px);
+    }
+    .btn-outline-white {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255,255,255,0.65);
+    }
+    .btn-outline-white:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: var(--white);
+      transform: translateY(-2px);
+    }
+    .btn-green {
+      background: var(--green-dark);
+      color: var(--white);
+    }
+    .btn-green:hover {
+      background: var(--green-mid);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    .btn-sm { padding: 10px 20px; font-size: 0.82rem; }
+
+    /* Stars */
+    .stars { color: #F99912; letter-spacing: 2px; }
+
+    /* ─── TOP BAR ────────────────────────────────────── */
+    #topbar {
+      background: var(--green-dark);
+      color: rgba(255,255,255,0.88);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      padding: 8px 0;
+    }
+    #topbar .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: wrap;
+    }
+    .topbar-items {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .topbar-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 0 18px;
+    }
+    .topbar-item + .topbar-item { border-left: 1px solid rgba(255,255,255,0.2); }
+    .topbar-item a { color: var(--orange-cta); font-weight: 700; }
+    .topbar-item a:hover { color: #fff; }
+    .topbar-dot {
+      width: 6px; height: 6px;
+      background: var(--green-accent);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ─── NAV ────────────────────────────────────────── */
+    #navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--green-dark);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.25);
+      padding: 0;
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+      gap: 24px;
+    }
+    /* Logo */
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Merriweather', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--white);
+      flex-shrink: 0;
+    }
+    .logo-icon {
+      width: 38px; height: 38px;
+      background: var(--green-accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      position: relative;
+      overflow: visible;
+    }
+    /* CSS Leaf */
+    .leaf-svg {
+      width: 22px; height: 22px;
+      position: relative;
+    }
+    .leaf-svg::before {
+      content: '';
+      display: block;
+      width: 20px; height: 20px;
+      background: var(--green-dark);
+      border-radius: 50% 4px 50% 4px;
+      transform: rotate(45deg);
+      position: absolute;
+      top: 1px; left: 1px;
+    }
+    .leaf-svg::after {
+      content: '';
+      display: block;
+      width: 1.5px; height: 13px;
+      background: var(--green-accent);
+      position: absolute;
+      bottom: 1px; left: 10px;
+      border-radius: 2px;
+      transform: rotate(15deg);
+    }
+    .logo-text-wrap { line-height: 1.15; }
+    .logo-name { display: block; font-size: 1.05rem; }
+    .logo-sub { display: block; font-family: 'Montserrat', sans-serif; font-size: 0.62rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-top: 1px; }
+
+    /* Nav Links */
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .nav-links a {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.83rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.8);
+      padding: 8px 12px;
+      border-radius: var(--radius);
+      transition: all 0.18s;
+      letter-spacing: 0.03em;
+    }
+    .nav-links a:hover { color: var(--white); background: rgba(255,255,255,0.08); }
+    .nav-back {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.5) !important;
+      padding: 6px 10px !important;
+      border-radius: var(--radius) !important;
+      transition: all 0.18s !important;
+    }
+    .nav-back:hover { color: rgba(255,255,255,0.85) !important; background: rgba(255,255,255,0.06) !important; }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    /* Hamburger */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: all 0.25s;
+    }
+
+    /* ─── HERO ───────────────────────────────────────── */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: var(--green-dark);
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 50% 40%, rgba(124,181,24,0.07) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 80% at 85% 60%, rgba(92,61,30,0.18) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 60% at 10% 70%, rgba(27,58,31,0.9) 0%, transparent 55%),
+        linear-gradient(145deg, #0d1f0f 0%, #1B3A1F 40%, #243d26 75%, #1a3019 100%);
+      z-index: 0;
+    }
+    /* Decorative plant shapes */
+    .hero-plant {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 540px; height: 640px;
+      opacity: 0.07;
+      z-index: 1;
+      overflow: hidden;
+    }
+    .hero-plant::before {
+      content: '';
+      position: absolute;
+      bottom: -40px; right: -40px;
+      width: 380px; height: 500px;
+      background: radial-gradient(ellipse at 50% 100%, var(--green-accent) 0%, transparent 65%);
+      border-radius: 50% 50% 0 0;
+    }
+    .hero-plant::after {
+      content: '';
+      position: absolute;
+      bottom: 80px; right: 80px;
+      width: 260px; height: 380px;
+      background: radial-gradient(ellipse at 50% 100%, #b8e044 0%, transparent 55%);
+      border-radius: 50% 50% 0 0;
+      transform: rotate(-18deg);
+    }
+    .hero-dots {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: radial-gradient(circle, rgba(124,181,24,0.12) 1px, transparent 1px);
+      background-size: 44px 44px;
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 760px;
+      padding: 80px 0;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(124,181,24,0.15);
+      border: 1px solid rgba(124,181,24,0.3);
+      border-radius: 40px;
+      padding: 6px 16px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green-accent);
+      margin-bottom: 28px;
+    }
+    .hero-eyebrow span { width: 6px; height: 6px; background: var(--green-accent); border-radius: 50%; }
+    .hero-headline {
+      font-family: 'Merriweather', serif;
+      font-size: clamp(2.2rem, 5.5vw, 4rem);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 22px;
+    }
+    .hero-headline em {
+      font-style: italic;
+      color: var(--green-accent);
+    }
+    .hero-sub {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.78);
+      line-height: 1.72;
+      max-width: 600px;
+      margin-bottom: 38px;
+    }
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 52px;
+    }
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius);
+      padding: 14px 20px;
+      max-width: fit-content;
+    }
+    .trust-item {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.75);
+      padding: 4px 16px;
+      letter-spacing: 0.03em;
+    }
+    .trust-item + .trust-item { border-left: 1px solid rgba(255,255,255,0.18); }
+    .trust-item .stars { font-size: 0.72rem; margin-right: 4px; }
+
+    /* ─── TRANSFORMATION BANNER ─────────────────────── */
+    #transformation {
+      padding: 80px 0;
+      background: var(--cream-dark);
+    }
+    .transform-header {
+      text-align: center;
+      margin-bottom: 52px;
+    }
+    .before-after-wrap {
+      display: grid;
+      grid-template-columns: 1fr 28px 1fr;
+      gap: 0;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      max-width: 1000px;
+      margin: 0 auto 48px;
+    }
+    /* BEFORE panel */
+    .panel-before {
+      position: relative;
+      min-height: 340px;
+      background:
+        radial-gradient(ellipse at 30% 60%, #b0b0aa 0%, transparent 55%),
+        linear-gradient(160deg, #8a8a82 0%, #6e7068 35%, #9a9890 65%, #7a7870 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-end;
+      padding: 28px 32px;
+    }
+    .panel-before::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(
+          90deg,
+          transparent 0px, transparent 18px,
+          rgba(120,118,110,0.22) 18px, rgba(120,118,110,0.22) 20px
+        ),
+        repeating-linear-gradient(
+          180deg,
+          transparent 0px, transparent 24px,
+          rgba(100,100,95,0.12) 24px, rgba(100,100,95,0.12) 26px
+        );
+    }
+    /* "Dead grass" patches */
+    .panel-before::after {
+      content: '';
+      position: absolute;
+      top: 30px; right: 50px;
+      width: 120px; height: 80px;
+      background: radial-gradient(ellipse, #a09e94 0%, transparent 70%);
+      border-radius: 50%;
+      opacity: 0.6;
+    }
+    .panel-dead-patch {
+      position: absolute;
+      top: 100px; left: 80px;
+      width: 90px; height: 60px;
+      background: radial-gradient(ellipse, #9c9a8e 0%, transparent 70%);
+      border-radius: 50%;
+      opacity: 0.7;
+    }
+    .panel-weeds {
+      position: absolute;
+      bottom: 80px; right: 30px;
+      width: 3px; height: 30px;
+      background: #888;
+      border-radius: 2px;
+    }
+    .panel-weeds::before {
+      content: '';
+      position: absolute;
+      top: 6px; left: -12px;
+      width: 2px; height: 20px;
+      background: #888;
+      transform: rotate(-30deg);
+      border-radius: 2px;
+    }
+    .panel-weeds::after {
+      content: '';
+      position: absolute;
+      top: 8px; right: -14px;
+      width: 2px; height: 22px;
+      background: #888;
+      transform: rotate(25deg);
+      border-radius: 2px;
+    }
+    .panel-label {
+      position: relative;
+      z-index: 2;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 4px;
+    }
+    .panel-label.before-label {
+      background: rgba(0,0,0,0.45);
+      color: rgba(255,255,255,0.7);
+    }
+    .panel-label.after-label {
+      background: var(--green-dark);
+      color: var(--green-accent);
+    }
+    .panel-desc {
+      position: relative;
+      z-index: 2;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem;
+      margin-top: 8px;
+      opacity: 0.7;
+      color: #eee;
+    }
+    /* DIVIDER */
+    .ba-divider {
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 3;
+    }
+    .ba-divider-circle {
+      width: 40px; height: 40px;
+      background: var(--white);
+      border-radius: 50%;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 800;
+      color: var(--green-dark);
+      letter-spacing: 0.04em;
+      text-align: center;
+      line-height: 1.2;
+      flex-shrink: 0;
+    }
+    /* AFTER panel */
+    .panel-after {
+      position: relative;
+      min-height: 340px;
+      background:
+        radial-gradient(ellipse at 70% 50%, rgba(124,181,24,0.35) 0%, transparent 55%),
+        radial-gradient(ellipse at 20% 80%, rgba(27,58,31,0.5) 0%, transparent 45%),
+        linear-gradient(150deg, #1a4a1e 0%, #2a6030 30%, #1d5024 55%, #153d18 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-end;
+      padding: 28px 32px;
+    }
+    /* Lush leaf shapes */
+    .panel-after::before {
+      content: '';
+      position: absolute;
+      top: -20px; right: -20px;
+      width: 200px; height: 260px;
+      background: radial-gradient(ellipse at 50% 60%, rgba(124,181,24,0.25) 0%, transparent 65%);
+      border-radius: 50% 30% 50% 30%;
+      transform: rotate(-20deg);
+    }
+    .panel-after::after {
+      content: '';
+      position: absolute;
+      bottom: 60px; left: 40px;
+      width: 160px; height: 120px;
+      background: radial-gradient(ellipse at 50% 70%, rgba(80,160,40,0.22) 0%, transparent 60%);
+      border-radius: 50%;
+    }
+    .lush-circle {
+      position: absolute;
+      top: 40px; left: 30%;
+      width: 80px; height: 80px;
+      background: radial-gradient(circle, rgba(124,181,24,0.3) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .lush-circle-2 {
+      position: absolute;
+      top: 60px; right: 25%;
+      width: 55px; height: 55px;
+      background: radial-gradient(circle, rgba(100,200,50,0.2) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .transform-cta-row {
+      text-align: center;
+    }
+    .transform-cta-row p {
+      font-family: 'Merriweather', serif;
+      font-size: 1.2rem;
+      color: var(--text-dark);
+      margin-bottom: 22px;
+      font-style: italic;
+    }
+
+    /* ─── SERVICES GRID ─────────────────────────────── */
+    #services {
+      padding: 96px 0;
+      background: var(--cream);
+    }
+    .services-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .services-header .section-subtitle { margin: 0 auto; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .service-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(27,58,31,0.07);
+      transition: all 0.28s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--green-accent), var(--green-dark));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    .service-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-icon {
+      width: 58px; height: 58px;
+      background: linear-gradient(135deg, rgba(27,58,31,0.08), rgba(124,181,24,0.12));
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 22px;
+      position: relative;
+    }
+    /* CSS icons for each service */
+    .icon-lawn::before {
+      content: '';
+      width: 28px; height: 18px;
+      background: var(--green-accent);
+      border-radius: 50% 50% 0 0;
+      display: block;
+    }
+    .icon-lawn::after {
+      content: '';
+      position: absolute;
+      bottom: 12px;
+      width: 20px; height: 2px;
+      background: var(--green-dark);
+      border-radius: 2px;
+    }
+    .icon-hardscape::before {
+      content: '';
+      width: 26px; height: 20px;
+      background: transparent;
+      border: 3px solid var(--brown);
+      border-radius: 3px;
+      display: block;
+    }
+    .icon-hardscape::after {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 10px; height: 10px;
+      background: var(--brown-light);
+      border-radius: 2px;
+    }
+    .icon-irrigation::before {
+      content: '';
+      width: 8px; height: 22px;
+      background: #3a90d4;
+      border-radius: 4px 4px 8px 8px;
+      display: block;
+    }
+    .icon-irrigation::after {
+      content: '';
+      position: absolute;
+      top: 14px;
+      width: 24px; height: 2px;
+      background: #3a90d4;
+      border-radius: 2px;
+    }
+    .icon-design::before {
+      content: '';
+      width: 22px; height: 22px;
+      background: transparent;
+      border: 2.5px solid var(--green-dark);
+      border-radius: 50%;
+      display: block;
+    }
+    .icon-design::after {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 10px; height: 10px;
+      background: var(--green-accent);
+      border-radius: 50%;
+    }
+    .icon-tree::before {
+      content: '';
+      width: 0; height: 0;
+      border-left: 14px solid transparent;
+      border-right: 14px solid transparent;
+      border-bottom: 24px solid var(--green-dark);
+      display: block;
+      position: absolute;
+      top: 8px;
+    }
+    .icon-tree::after {
+      content: '';
+      position: absolute;
+      bottom: 10px;
+      width: 5px; height: 12px;
+      background: var(--brown);
+      border-radius: 2px;
+    }
+    .icon-seasonal::before {
+      content: '';
+      width: 22px; height: 22px;
+      background: transparent;
+      border: 2.5px solid var(--orange-cta);
+      border-radius: 3px;
+      transform: rotate(45deg);
+      display: block;
+    }
+    .icon-seasonal::after {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 8px; height: 8px;
+      background: var(--orange-cta);
+      border-radius: 2px;
+    }
+    .service-title {
+      font-family: 'Merriweather', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin-bottom: 10px;
+    }
+    .service-desc {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      line-height: 1.65;
+      margin-bottom: 20px;
+    }
+    .service-link {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--green-accent);
+      letter-spacing: 0.04em;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.2s;
+    }
+    .service-link::after { content: '→'; }
+    .service-card:hover .service-link { gap: 10px; }
+
+    /* ─── MAINTENANCE PLANS ─────────────────────────── */
+    #plans {
+      padding: 96px 0;
+      background: var(--white);
+    }
+    .plans-header {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .plans-tagline {
+      text-align: center;
+      font-family: 'Merriweather', serif;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--text-light);
+      margin-bottom: 56px;
+    }
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      align-items: start;
+    }
+    .plan-card {
+      border-radius: var(--radius-lg);
+      padding: 38px 32px;
+      border: 2px solid rgba(27,58,31,0.1);
+      background: var(--white);
+      transition: all 0.28s ease;
+      position: relative;
+    }
+    .plan-card:hover { box-shadow: var(--shadow-md); }
+    .plan-card.featured {
+      background: var(--green-dark);
+      border-color: var(--green-dark);
+      color: var(--white);
+      box-shadow: var(--shadow-lg);
+      transform: scale(1.03);
+    }
+    .plan-badge {
+      position: absolute;
+      top: -13px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--orange-cta);
+      color: var(--green-dark);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 16px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+    .plan-tier {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green-accent);
+      margin-bottom: 8px;
+    }
+    .plan-card.featured .plan-tier { color: rgba(124,181,24,0.9); }
+    .plan-name {
+      font-family: 'Merriweather', serif;
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin-bottom: 6px;
+    }
+    .plan-card.featured .plan-name { color: var(--white); }
+    .plan-price {
+      margin: 18px 0 6px;
+    }
+    .plan-price .amount {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--green-dark);
+      line-height: 1;
+    }
+    .plan-card.featured .plan-price .amount { color: var(--orange-cta); }
+    .plan-price .period {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+    .plan-card.featured .plan-price .period { color: rgba(255,255,255,0.6); }
+    .plan-divider {
+      height: 1px;
+      background: rgba(27,58,31,0.1);
+      margin: 20px 0;
+    }
+    .plan-card.featured .plan-divider { background: rgba(255,255,255,0.15); }
+    .plan-features {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+    .plan-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: var(--text-mid);
+      line-height: 1.5;
+    }
+    .plan-card.featured .plan-feature { color: rgba(255,255,255,0.82); }
+    .plan-check {
+      width: 18px; height: 18px;
+      background: rgba(124,181,24,0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+      position: relative;
+    }
+    .plan-check::before {
+      content: '';
+      width: 6px; height: 10px;
+      border-right: 2px solid var(--green-accent);
+      border-bottom: 2px solid var(--green-accent);
+      transform: rotate(45deg) translate(-1px, -1px);
+    }
+    .plan-card.featured .plan-check { background: rgba(124,181,24,0.25); }
+    .plan-cta-btn {
+      width: 100%;
+      text-align: center;
+      justify-content: center;
+    }
+
+    /* ─── GALLERY ────────────────────────────────────── */
+    #gallery {
+      padding: 96px 0;
+      background: var(--cream);
+    }
+    .gallery-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .project-card {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      background: var(--white);
+      transition: all 0.3s ease;
+    }
+    .project-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-6px); }
+    .project-thumb {
+      height: 210px;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Project 1: Chula Vista Backyard Oasis */
+    .thumb-1 {
+      background:
+        radial-gradient(ellipse at 30% 70%, rgba(27,100,30,0.7) 0%, transparent 55%),
+        radial-gradient(ellipse at 75% 35%, rgba(80,180,60,0.5) 0%, transparent 45%),
+        linear-gradient(145deg, #0d3b12 0%, #1a5c20 40%, #2a7a32 70%, #1b5518 100%);
+    }
+    .thumb-1::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 60px;
+      background: linear-gradient(to top, rgba(27,58,31,0.5), transparent);
+    }
+    /* Water feature element */
+    .thumb-1::after {
+      content: '';
+      position: absolute;
+      top: 40px; right: 50px;
+      width: 80px; height: 50px;
+      background: radial-gradient(ellipse, rgba(50,140,200,0.5) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    /* Project 2: La Mesa Patio */
+    .thumb-2 {
+      background:
+        radial-gradient(ellipse at 60% 80%, rgba(92,61,30,0.6) 0%, transparent 55%),
+        radial-gradient(ellipse at 20% 30%, rgba(139,94,60,0.4) 0%, transparent 45%),
+        linear-gradient(150deg, #3d2a15 0%, #5c3d1e 35%, #7a5228 60%, #4a3018 100%);
+    }
+    .thumb-2::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(
+          0deg, transparent 0px, transparent 22px,
+          rgba(92,61,30,0.18) 22px, rgba(92,61,30,0.18) 24px
+        ),
+        repeating-linear-gradient(
+          90deg, transparent 0px, transparent 22px,
+          rgba(92,61,30,0.12) 22px, rgba(92,61,30,0.12) 24px
+        );
+    }
+    .thumb-2::after {
+      content: '';
+      position: absolute;
+      top: 20px; right: 30px;
+      width: 0; height: 0;
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      border-bottom: 35px solid rgba(50,30,15,0.4);
+    }
+    /* Project 3: Bonita Renovation */
+    .thumb-3 {
+      background:
+        radial-gradient(ellipse at 40% 60%, rgba(30,120,40,0.6) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(124,181,24,0.4) 0%, transparent 45%),
+        radial-gradient(ellipse at 10% 80%, rgba(92,61,30,0.4) 0%, transparent 40%),
+        linear-gradient(140deg, #1a3a1c 0%, #234d26 45%, #1e4420 80%, #162e18 100%);
+    }
+    .thumb-3::before {
+      content: '';
+      position: absolute;
+      top: 30px; left: 30px;
+      width: 100px; height: 70px;
+      background: radial-gradient(ellipse, rgba(124,181,24,0.3) 0%, transparent 65%);
+      border-radius: 50%;
+    }
+    /* Project 4: Scripps Ranch Lawn */
+    .thumb-4 {
+      background:
+        radial-gradient(ellipse at 50% 80%, rgba(40,140,50,0.6) 0%, transparent 60%),
+        linear-gradient(160deg, #1c5e20 0%, #24782a 40%, #1f6522 70%, #194d1c 100%);
+    }
+    .thumb-4::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(
+          175deg,
+          transparent 0px, transparent 14px,
+          rgba(20,80,25,0.3) 14px, rgba(20,80,25,0.3) 16px
+        );
+    }
+    .thumb-4::after {
+      content: '';
+      position: absolute;
+      top: 20px; right: 40px;
+      width: 70px; height: 90px;
+      background: radial-gradient(ellipse at 50% 60%, rgba(70,180,40,0.3) 0%, transparent 60%);
+      border-radius: 40% 40% 0 0;
+    }
+    /* Project 5: Del Cerro Water Feature */
+    .thumb-5 {
+      background:
+        radial-gradient(ellipse at 30% 50%, rgba(50,140,200,0.45) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 70%, rgba(27,100,40,0.5) 0%, transparent 45%),
+        linear-gradient(145deg, #123028 0%, #1b4a35 40%, #154038 70%, #0e2820 100%);
+    }
+    .thumb-5::before {
+      content: '';
+      position: absolute;
+      top: 30px; left: 20%;
+      width: 120px; height: 80px;
+      background: radial-gradient(ellipse, rgba(60,160,220,0.4) 0%, transparent 65%);
+      border-radius: 50%;
+    }
+    /* Project 6: El Cajon Drought Landscape */
+    .thumb-6 {
+      background:
+        radial-gradient(ellipse at 60% 40%, rgba(180,140,60,0.45) 0%, transparent 50%),
+        radial-gradient(ellipse at 20% 70%, rgba(100,150,40,0.4) 0%, transparent 45%),
+        linear-gradient(155deg, #3a2e14 0%, #4e3e1a 35%, #3d5018 60%, #2d3812 100%);
+    }
+    .thumb-6::before {
+      content: '';
+      position: absolute;
+      top: 20px; right: 30%;
+      width: 0; height: 0;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      border-bottom: 30px solid rgba(100,150,40,0.35);
+    }
+    .thumb-6::after {
+      content: '';
+      position: absolute;
+      bottom: 20px; left: 30px;
+      width: 0; height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 22px solid rgba(100,150,40,0.3);
+    }
+
+    /* Overlay shimmer on hover */
+    .project-thumb::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(160deg, rgba(255,255,255,0.04) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .project-info {
+      padding: 20px 22px 24px;
+    }
+    .project-name {
+      font-family: 'Merriweather', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin-bottom: 10px;
+    }
+    .project-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .badge {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 4px;
+      background: rgba(27,58,31,0.07);
+      color: var(--green-dark);
+    }
+    .badge.brown { background: rgba(92,61,30,0.1); color: var(--brown); }
+    .badge.blue { background: rgba(50,100,200,0.08); color: #2a5ca8; }
+    .badge.gold { background: rgba(249,153,18,0.1); color: #b87000; }
+
+    /* ─── WHY GREEN LEAF ────────────────────────────── */
+    #why {
+      padding: 96px 0;
+      background: var(--white);
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .why-bullets {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin: 32px 0 36px;
+    }
+    .why-bullet {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .why-bullet-icon {
+      width: 44px; height: 44px;
+      background: rgba(27,58,31,0.06);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      position: relative;
+    }
+    .bi-15::before { content: '15'; font-family: 'Montserrat', sans-serif; font-size: 0.68rem; font-weight: 800; color: var(--green-dark); }
+    .bi-shield::before {
+      content: '';
+      display: block;
+      width: 18px; height: 20px;
+      border: 2.5px solid var(--green-dark);
+      border-radius: 3px 3px 50% 50%;
+    }
+    .bi-star::before {
+      content: '★';
+      font-size: 18px;
+      color: var(--orange-cta);
+      font-style: normal;
+    }
+    .bi-chat::before {
+      content: '';
+      display: block;
+      width: 20px; height: 15px;
+      border: 2.5px solid var(--green-accent);
+      border-radius: 8px 8px 8px 2px;
+    }
+    .why-bullet-text strong {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin-bottom: 3px;
+    }
+    .why-bullet-text span {
+      font-size: 0.88rem;
+      color: var(--text-light);
+      line-height: 1.55;
+    }
+    /* Process Card */
+    .process-card {
+      background: linear-gradient(145deg, var(--green-dark) 0%, #243d26 100%);
+      border-radius: var(--radius-lg);
+      padding: 42px 38px;
+      color: var(--white);
+    }
+    .process-card-title {
+      font-family: 'Merriweather', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .process-card-sub {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 32px;
+    }
+    .process-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .process-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      position: relative;
+    }
+    .process-step:not(:last-child) { padding-bottom: 28px; }
+    .process-step:not(:last-child) .step-connector {
+      position: absolute;
+      left: 19px;
+      top: 40px;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, rgba(124,181,24,0.4), rgba(124,181,24,0.1));
+    }
+    .step-num {
+      width: 40px; height: 40px;
+      background: rgba(124,181,24,0.15);
+      border: 2px solid rgba(124,181,24,0.35);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: var(--green-accent);
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+    }
+    .step-body strong {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 3px;
+      padding-top: 8px;
+    }
+    .step-body span {
+      font-size: 0.84rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.5;
+    }
+
+    /* ─── TESTIMONIALS ──────────────────────────────── */
+    #testimonials {
+      padding: 96px 0;
+      background: var(--cream-dark);
+    }
+    .test-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .testimonial-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 34px 28px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(27,58,31,0.07);
+      position: relative;
+    }
+    .quote-mark {
+      position: absolute;
+      top: 18px; right: 24px;
+      font-family: 'Merriweather', serif;
+      font-size: 4rem;
+      line-height: 1;
+      color: rgba(124,181,24,0.15);
+      font-style: italic;
+    }
+    .test-stars { margin-bottom: 14px; font-size: 1rem; }
+    .test-quote {
+      font-family: 'Merriweather', serif;
+      font-size: 0.92rem;
+      font-style: italic;
+      color: var(--text-mid);
+      line-height: 1.72;
+      margin-bottom: 22px;
+    }
+    .test-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .author-avatar {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--white);
+      flex-shrink: 0;
+    }
+    .av-1 { background: linear-gradient(135deg, #2a6030, #1B3A1F); }
+    .av-2 { background: linear-gradient(135deg, #5C3D1E, #8B5E3C); }
+    .av-3 { background: linear-gradient(135deg, #7CB518, #4a8a0e); }
+    .author-name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--green-dark);
+    }
+    .author-loc {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      margin-top: 2px;
+    }
+
+    /* ─── SERVICE AREA ──────────────────────────────── */
+    #service-area {
+      padding: 80px 0;
+      background: var(--white);
+    }
+    .area-inner {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .area-text {}
+    .area-neighborhoods {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px 8px;
+    }
+    .area-hood {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.86rem;
+      color: var(--text-mid);
+    }
+    .area-hood::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--green-accent);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ─── CTA BANNER ─────────────────────────────────── */
+    #cta-banner {
+      padding: 88px 0;
+      background: linear-gradient(145deg, var(--green-dark) 0%, #243d26 50%, #1B3A1F 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    #cta-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(124,181,24,0.08) 1px, transparent 1px);
+      background-size: 36px 36px;
+    }
+    #cta-banner::after {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(124,181,24,0.1) 0%, transparent 65%);
+      border-radius: 50%;
+    }
+    .cta-banner-inner {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+    .cta-banner-inner .section-title {
+      color: var(--white);
+      margin-bottom: 14px;
+    }
+    .cta-banner-inner .section-subtitle {
+      color: rgba(255,255,255,0.72);
+      margin: 0 auto 36px;
+    }
+    .cta-banner-btns {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .cta-phone {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.7);
+      margin-top: 20px;
+    }
+    .cta-phone a { color: var(--orange-cta); }
+
+    /* ─── FOOTER ─────────────────────────────────────── */
+    #footer {
+      background: #0d1f0f;
+      color: rgba(255,255,255,0.65);
+      padding: 56px 0 28px;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .footer-brand {}
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .footer-logo-icon {
+      width: 34px; height: 34px;
+      background: var(--green-accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .footer-logo-icon .leaf-svg { width: 18px; height: 18px; }
+    .footer-logo-name {
+      font-family: 'Merriweather', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .footer-tagline {
+      font-size: 0.88rem;
+      line-height: 1.65;
+      margin-bottom: 16px;
+      color: rgba(255,255,255,0.5);
+    }
+    .footer-license {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--green-accent);
+      opacity: 0.75;
+    }
+    .footer-col-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 16px;
+    }
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+    .footer-links a {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.5);
+      transition: color 0.18s;
+    }
+    .footer-links a:hover { color: var(--green-accent); }
+    .footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+    .footer-contact-item strong { color: rgba(255,255,255,0.8); font-weight: 600; }
+    .footer-contact-item a { color: var(--orange-cta); }
+    .footer-contact-item a:hover { color: #fbb84a; }
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 24px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .footer-copy {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.35);
+    }
+    .footer-bottom-links {
+      display: flex;
+      gap: 20px;
+    }
+    .footer-bottom-links a {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.35);
+      transition: color 0.18s;
+    }
+    .footer-bottom-links a:hover { color: rgba(255,255,255,0.65); }
+
+    /* ─── MOBILE RESPONSIVE ─────────────────────────── */
+    @media (max-width: 1024px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+    }
+
+    @media (max-width: 768px) {
+      .topbar-item:nth-child(3),
+      .topbar-item:nth-child(4) { display: none; }
+      .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--green-dark); flex-direction: column; padding: 16px 24px 20px; gap: 2px; box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 10px 12px; border-radius: var(--radius); }
+      .nav-toggle { display: flex; }
+      .nav-back { display: none; }
+      #navbar { position: relative; }
+      .hero-content { padding: 64px 0; }
+      .hero-headline { font-size: 2rem; }
+      .before-after-wrap { grid-template-columns: 1fr; grid-template-rows: auto auto auto; }
+      .ba-divider { height: 32px; }
+      .ba-divider-circle { font-size: 0.55rem; }
+      .plans-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+      .plan-card.featured { transform: scale(1); }
+      .why-grid { grid-template-columns: 1fr; gap: 48px; }
+      .testimonials-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+      .area-inner { grid-template-columns: 1fr; gap: 32px; }
+      .area-neighborhoods { grid-template-columns: repeat(3, 1fr); }
+      .footer-top { grid-template-columns: 1fr; gap: 28px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .trust-row { flex-direction: column; gap: 6px; max-width: 100%; }
+      .trust-item + .trust-item { border-left: none; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 10px; }
+    }
+
+    @media (max-width: 480px) {
+      .container { padding: 0 16px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .hero-ctas { flex-direction: column; }
+      .hero-ctas .btn { width: 100%; justify-content: center; }
+      .cta-banner-btns { flex-direction: column; }
+      .cta-banner-btns .btn { width: 100%; justify-content: center; }
+      .area-neighborhoods { grid-template-columns: repeat(2, 1fr); }
+      .topbar-item { padding: 0 10px; font-size: 0.7rem; }
+      .topbar-item:nth-child(2) { display: none; }
+      #transformation { padding: 56px 0; }
+      #services, #plans, #gallery, #why, #testimonials { padding: 64px 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── TOP BAR ─────────────────────────────────────────── -->
+<div id="topbar">
+  <div class="container">
+    <div class="topbar-items">
+      <div class="topbar-item">
+        <span class="topbar-dot"></span>
+        Free Yard Consultation
+      </div>
+      <div class="topbar-item">
+        <span class="topbar-dot"></span>
+        CSLB Licensed &amp; Bonded
+      </div>
+      <div class="topbar-item">
+        <span class="topbar-dot"></span>
+        Serving San Diego Since 2009
+      </div>
+      <div class="topbar-item">
+        <span class="topbar-dot"></span>
+        <a href="tel:6195550560">(619) 555-0560</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── NAV ─────────────────────────────────────────────── -->
+<nav id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+
+      <a href="#hero" class="nav-logo">
+        <div class="logo-icon">
+          <div class="leaf-svg"></div>
+        </div>
+        <div class="logo-text-wrap">
+          <span class="logo-name">Green Leaf Landscapes</span>
+          <span class="logo-sub">San Diego, CA</span>
+        </div>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#plans">Maintenance Plans</a></li>
+        <li><a href="#why">About</a></li>
+        <li><a href="#service-area">Contact</a></li>
+        <li><a href="../index.html" class="nav-back">← Back to Blueprint Digital</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <a href="#cta-banner" class="btn btn-cta btn-sm">Free Estimate</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+<!-- ─── HERO ─────────────────────────────────────────────── -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-dots"></div>
+  <div class="hero-plant"></div>
+
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span></span>
+        San Diego's Premier Landscaping Experts
+      </div>
+
+      <h1 class="hero-headline">
+        <em>Picture-Perfect</em> Yard<br />
+        Transformations —<br />
+        San Diego
+      </h1>
+
+      <p class="hero-sub">
+        Your dream backyard is closer than you think. Our licensed design experts craft lush, breathtaking outdoor spaces — from sun-scorched lawns to stunning retreats — tailored to San Diego's climate and your lifestyle.
+      </p>
+
+      <div class="hero-ctas">
+        <a href="#cta-banner" class="btn btn-cta">
+          Schedule Free Design Consult
+        </a>
+        <a href="#gallery" class="btn btn-outline-white">
+          View Our Work
+        </a>
+      </div>
+
+      <div class="trust-row">
+        <div class="trust-item">CSLB #LA-384920</div>
+        <div class="trust-item">Licensed &amp; Bonded</div>
+        <div class="trust-item">
+          <span class="stars">★★★★★</span>
+          4.9 (267 reviews)
+        </div>
+        <div class="trust-item">15+ Years</div>
+        <div class="trust-item">NALP Member</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TRANSFORMATION BANNER ────────────────────────────── -->
+<section id="transformation">
+  <div class="container">
+    <div class="transform-header">
+      <div class="section-label">The Green Leaf Difference</div>
+      <h2 class="section-title">We Don't Just Maintain Yards — We Transform Them</h2>
+      <p class="section-subtitle" style="margin: 0 auto;">See the dramatic difference our team delivers. Every neglected, tired yard has the potential to become a stunning outdoor masterpiece.</p>
+    </div>
+
+    <div class="before-after-wrap">
+      <!-- BEFORE -->
+      <div class="panel-before">
+        <div class="panel-dead-patch"></div>
+        <div class="panel-weeds"></div>
+        <div class="panel-label before-label">BEFORE</div>
+        <p class="panel-desc">Patchy, overgrown &amp; neglected</p>
+      </div>
+
+      <!-- DIVIDER -->
+      <div class="ba-divider">
+        <div class="ba-divider-circle">VS</div>
+      </div>
+
+      <!-- AFTER -->
+      <div class="panel-after">
+        <div class="lush-circle"></div>
+        <div class="lush-circle-2"></div>
+        <div class="panel-label after-label">AFTER</div>
+        <p class="panel-desc" style="color: rgba(255,255,255,0.75);">Lush, vibrant &amp; professionally designed</p>
+      </div>
+    </div>
+
+    <div class="transform-cta-row">
+      <p>"We transform neglected yards into outdoor masterpieces — one consultation at a time."</p>
+      <a href="#cta-banner" class="btn btn-green">Get Your Free Consultation</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SERVICES ─────────────────────────────────────────── -->
+<section id="services">
+  <div class="container">
+    <div class="services-header">
+      <div class="section-label">What We Do</div>
+      <h2 class="section-title">Complete Landscaping Services</h2>
+      <p class="section-subtitle">From weekly lawn care to full yard renovations, Green Leaf Landscapes handles every aspect of your outdoor space with expert precision.</p>
+    </div>
+
+    <div class="services-grid">
+      <!-- Card 1 -->
+      <div class="service-card">
+        <div class="service-icon"><div class="icon-lawn"></div></div>
+        <h3 class="service-title">Lawn Care &amp; Maintenance</h3>
+        <p class="service-desc">Consistent mowing, edging, fertilization, and weed control to keep your lawn lush and healthy week after week.</p>
+        <a href="#plans" class="service-link">View maintenance plans</a>
+      </div>
+      <!-- Card 2 -->
+      <div class="service-card">
+        <div class="service-icon"><div class="icon-hardscape"></div></div>
+        <h3 class="service-title">Hardscape &amp; Patios</h3>
+        <p class="service-desc">Custom patios, walkways, retaining walls, and outdoor living spaces built to complement your home and lifestyle.</p>
+        <a href="#cta-banner" class="service-link">Get a quote</a>
+      </div>
+      <!-- Card 3 -->
+      <div class="service-card">
+        <div class="service-icon"><div class="icon-irrigation"></div></div>
+        <h3 class="service-title">Irrigation Systems</h3>
+        <p class="service-desc">Smart, water-efficient drip and sprinkler systems designed for San Diego's climate — install, repair, and seasonal tuning.</p>
+        <a href="#cta-banner" class="service-link">Schedule service</a>
+      </div>
+      <!-- Card 4 -->
+      <div class="service-card">
+        <div class="service-icon"><div class="icon-design"></div></div>
+        <h3 class="service-title">Landscape Design</h3>
+        <p class="service-desc">Full-service design consultations translating your vision into detailed plans — drought-tolerant, native, or lush tropical.</p>
+        <a href="#cta-banner" class="service-link">Free design consult</a>
+      </div>
+      <!-- Card 5 -->
+      <div class="service-card">
+        <div class="service-icon"><div class="icon-tree"></div></div>
+        <h3 class="service-title">Tree &amp; Shrub Care</h3>
+        <p class="service-desc">Professional trimming, shaping, deep-root fertilization, and removal to keep your trees and shrubs healthy and beautiful.</p>
+        <a href="#cta-banner" class="service-link">Book trimming</a>
+      </div>
+      <!-- Card 6 -->
+      <div class="service-card">
+        <div class="service-icon"><div class="icon-seasonal"></div></div>
+        <h3 class="service-title">Seasonal Cleanups</h3>
+        <p class="service-desc">Spring and fall cleanups — leaf removal, mulching, bed preparation, and debris hauling to reset your yard each season.</p>
+        <a href="#cta-banner" class="service-link">Schedule cleanup</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── MAINTENANCE PLANS ─────────────────────────────────── -->
+<section id="plans">
+  <div class="container">
+    <div class="plans-header">
+      <div class="section-label">Maintenance Plans</div>
+      <h2 class="section-title">Your Yard, Handled. Every Month.</h2>
+    </div>
+    <p class="plans-tagline">Freedom framing: We handle the yard while you enjoy it.</p>
+
+    <div class="plans-grid">
+
+      <!-- BASIC -->
+      <div class="plan-card">
+        <div class="plan-tier">Basic</div>
+        <div class="plan-name">Essentials</div>
+        <p style="font-size:0.88rem; color:var(--text-light); margin-top:6px;">Everything you need to keep it clean.</p>
+        <div class="plan-price">
+          <span class="amount">$149</span>
+          <span class="period"> /month</span>
+        </div>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li class="plan-feature"><span class="plan-check"></span>Weekly mowing &amp; edging</li>
+          <li class="plan-feature"><span class="plan-check"></span>Lawn blowing &amp; debris cleanup</li>
+          <li class="plan-feature"><span class="plan-check"></span>Monthly weed pull</li>
+          <li class="plan-feature"><span class="plan-check"></span>Curbside reporting after each visit</li>
+          <li class="plan-feature"><span class="plan-check"></span>Satisfaction guarantee</li>
+        </ul>
+        <a href="#cta-banner" class="btn btn-green plan-cta-btn">Choose Basic</a>
+      </div>
+
+      <!-- STANDARD (FEATURED) -->
+      <div class="plan-card featured">
+        <div class="plan-badge">Most Popular</div>
+        <div class="plan-tier">Standard</div>
+        <div class="plan-name">Full Lawn</div>
+        <p style="font-size:0.88rem; color:rgba(255,255,255,0.55); margin-top:6px;">The complete lawn care experience.</p>
+        <div class="plan-price">
+          <span class="amount">$229</span>
+          <span class="period"> /month</span>
+        </div>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li class="plan-feature"><span class="plan-check"></span>Everything in Basic</li>
+          <li class="plan-feature"><span class="plan-check"></span>Bi-monthly fertilization</li>
+          <li class="plan-feature"><span class="plan-check"></span>Seasonal shrub trimming</li>
+          <li class="plan-feature"><span class="plan-check"></span>Full lawn + bed cleanup</li>
+          <li class="plan-feature"><span class="plan-check"></span>Pest &amp; disease monitoring</li>
+          <li class="plan-feature"><span class="plan-check"></span>Priority scheduling</li>
+        </ul>
+        <a href="#cta-banner" class="btn btn-cta plan-cta-btn">Choose Standard</a>
+      </div>
+
+      <!-- PREMIUM -->
+      <div class="plan-card">
+        <div class="plan-tier">Premium</div>
+        <div class="plan-name">Total Care</div>
+        <p style="font-size:0.88rem; color:var(--text-light); margin-top:6px;">Design, irrigation &amp; full-service care.</p>
+        <div class="plan-price">
+          <span class="amount">$349</span>
+          <span class="period"> /month</span>
+        </div>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li class="plan-feature"><span class="plan-check"></span>Everything in Standard</li>
+          <li class="plan-feature"><span class="plan-check"></span>Irrigation system check-up</li>
+          <li class="plan-feature"><span class="plan-check"></span>Seasonal design updates</li>
+          <li class="plan-feature"><span class="plan-check"></span>Annual landscape refresh plan</li>
+          <li class="plan-feature"><span class="plan-check"></span>Dedicated account manager</li>
+          <li class="plan-feature"><span class="plan-check"></span>Free seasonal cleanup visits</li>
+        </ul>
+        <a href="#cta-banner" class="btn btn-green plan-cta-btn">Choose Premium</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── GALLERY ───────────────────────────────────────────── -->
+<section id="gallery">
+  <div class="container">
+    <div class="gallery-header">
+      <div class="section-label">Portfolio</div>
+      <h2 class="section-title">Our Work in San Diego</h2>
+      <p class="section-subtitle" style="margin: 0 auto;">Real yards, real transformations. Every project is a collaboration between our design team and the homeowner's vision.</p>
+    </div>
+
+    <div class="gallery-grid">
+
+      <div class="project-card">
+        <div class="project-thumb thumb-1"></div>
+        <div class="project-info">
+          <h3 class="project-name">Chula Vista Backyard Oasis</h3>
+          <div class="project-badges">
+            <span class="badge">Landscape Design</span>
+            <span class="badge blue">Water Feature</span>
+            <span class="badge">Lawn Install</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-thumb thumb-2"></div>
+        <div class="project-info">
+          <h3 class="project-name">La Mesa Patio &amp; Garden</h3>
+          <div class="project-badges">
+            <span class="badge brown">Hardscape</span>
+            <span class="badge">Patio Build</span>
+            <span class="badge">Garden Design</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-thumb thumb-3"></div>
+        <div class="project-info">
+          <h3 class="project-name">Bonita Complete Yard Renovation</h3>
+          <div class="project-badges">
+            <span class="badge">Full Renovation</span>
+            <span class="badge blue">Irrigation</span>
+            <span class="badge brown">Retaining Wall</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-thumb thumb-4"></div>
+        <div class="project-info">
+          <h3 class="project-name">Scripps Ranch Lawn Transformation</h3>
+          <div class="project-badges">
+            <span class="badge">Sod Install</span>
+            <span class="badge">Lawn Maintenance</span>
+            <span class="badge gold">Award Winner</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-thumb thumb-5"></div>
+        <div class="project-info">
+          <h3 class="project-name">Del Cerro Water Feature &amp; Garden</h3>
+          <div class="project-badges">
+            <span class="badge blue">Pond &amp; Stream</span>
+            <span class="badge">Native Plants</span>
+            <span class="badge">Lighting</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-thumb thumb-6"></div>
+        <div class="project-info">
+          <h3 class="project-name">El Cajon Drought-Wise Landscape</h3>
+          <div class="project-badges">
+            <span class="badge gold">Drought Tolerant</span>
+            <span class="badge">Native Plants</span>
+            <span class="badge blue">Smart Irrigation</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHY GREEN LEAF ────────────────────────────────────── -->
+<section id="why">
+  <div class="container">
+    <div class="why-grid">
+
+      <!-- Left -->
+      <div>
+        <div class="section-label">Why Choose Us</div>
+        <h2 class="section-title">San Diego's Outdoor Living Specialists</h2>
+        <p class="section-subtitle">We've been transforming San Diego backyards since 2009 — and we bring that experience to every single project, from the first consultation to the final reveal.</p>
+
+        <ul class="why-bullets">
+          <li class="why-bullet">
+            <div class="why-bullet-icon bi-15"></div>
+            <div class="why-bullet-text">
+              <strong>15 Years Serving San Diego</strong>
+              <span>Deep roots in the community. We know the soil, the climate, and the neighborhoods — that local expertise shows in every job.</span>
+            </div>
+          </li>
+          <li class="why-bullet">
+            <div class="why-bullet-icon bi-shield"></div>
+            <div class="why-bullet-text">
+              <strong>Fully Licensed &amp; Insured</strong>
+              <span>CSLB #C-27 / #LA-384920. Every crew member is trained, background-checked, and our work is fully insured for your peace of mind.</span>
+            </div>
+          </li>
+          <li class="why-bullet">
+            <div class="why-bullet-icon bi-star"></div>
+            <div class="why-bullet-text">
+              <strong>100% Satisfaction Guarantee</strong>
+              <span>If you're not completely satisfied with our work, we'll come back and make it right — no questions asked.</span>
+            </div>
+          </li>
+          <li class="why-bullet">
+            <div class="why-bullet-icon bi-chat"></div>
+            <div class="why-bullet-text">
+              <strong>Free Consultations, Always</strong>
+              <span>No pushy sales tactics. We start every relationship with a free on-site consultation and honest, transparent pricing.</span>
+            </div>
+          </li>
+        </ul>
+
+        <a href="#cta-banner" class="btn btn-cta">Schedule Your Free Consult</a>
+      </div>
+
+      <!-- Right: Process Card -->
+      <div>
+        <div class="process-card">
+          <div class="process-card-title">Our Process</div>
+          <div class="process-card-sub">Four simple steps to your dream yard</div>
+
+          <div class="process-steps">
+            <div class="process-step">
+              <div class="step-num">1</div>
+              <div class="step-connector"></div>
+              <div class="step-body">
+                <strong>Consult</strong>
+                <span>Free on-site visit. We listen to your vision, assess your yard, and discuss goals, budget, and timeline.</span>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-num">2</div>
+              <div class="step-connector"></div>
+              <div class="step-body">
+                <strong>Design</strong>
+                <span>Our designers create a detailed plan — plant selections, layouts, materials — tailored to your unique space and San Diego's climate.</span>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-num">3</div>
+              <div class="step-connector"></div>
+              <div class="step-body">
+                <strong>Build</strong>
+                <span>Our licensed crews transform the design into reality with expert craftsmanship, minimal disruption, and on-time delivery.</span>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-num">4</div>
+              <div class="step-body">
+                <strong>Maintain</strong>
+                <span>Keep your investment thriving with one of our maintenance plans — and enjoy your beautiful yard without lifting a finger.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── TESTIMONIALS ─────────────────────────────────────── -->
+<section id="testimonials">
+  <div class="container">
+    <div class="test-header">
+      <div class="section-label">What Clients Say</div>
+      <h2 class="section-title">San Diego Homeowners Love Their New Yards</h2>
+      <p class="section-subtitle" style="margin: 0 auto;">Real reviews from real homeowners across San Diego County.</p>
+    </div>
+
+    <div class="testimonials-grid">
+
+      <div class="testimonial-card">
+        <div class="quote-mark">"</div>
+        <div class="test-stars stars">★★★★★</div>
+        <p class="test-quote">"We had a completely dead, patchy lawn and a backyard we were embarrassed to show guests. Green Leaf completely transformed it in just two weeks. Now it's our favorite spot in the whole house. Worth every penny."</p>
+        <div class="test-author">
+          <div class="author-avatar av-1">MR</div>
+          <div>
+            <div class="author-name">Maria R.</div>
+            <div class="author-loc">Chula Vista, CA</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="quote-mark">"</div>
+        <div class="test-stars stars">★★★★★</div>
+        <p class="test-quote">"I've been on the Standard maintenance plan for 8 months and it's been flawless. The crew shows up every week without fail, leaves everything spotless, and I never have to think about the lawn. That's the dream."</p>
+        <div class="test-author">
+          <div class="author-avatar av-2">DK</div>
+          <div>
+            <div class="author-name">David K.</div>
+            <div class="author-loc">La Mesa, CA</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="quote-mark">"</div>
+        <div class="test-stars stars">★★★★★</div>
+        <p class="test-quote">"The design consultation was incredible — they listened to what we wanted and came back with a plan that was even better than what we imagined. Professional from start to finish. Highly recommend Green Leaf to anyone in San Diego."</p>
+        <div class="test-author">
+          <div class="author-avatar av-3">JP</div>
+          <div>
+            <div class="author-name">Jennifer P.</div>
+            <div class="author-loc">Scripps Ranch, CA</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── SERVICE AREA ──────────────────────────────────────── -->
+<section id="service-area">
+  <div class="container">
+    <div class="area-inner">
+      <div class="area-text">
+        <div class="section-label">Service Area</div>
+        <h2 class="section-title" style="max-width: 340px;">Serving San Diego County</h2>
+        <p class="section-subtitle" style="max-width: 360px; margin-bottom: 28px;">From South Bay to North County, our crews are local to your neighborhood. Fast response, same great service.</p>
+        <a href="tel:6195550560" class="btn btn-cta">(619) 555-0560</a>
+      </div>
+
+      <div>
+        <div class="area-neighborhoods">
+          <div class="area-hood">Chula Vista</div>
+          <div class="area-hood">La Mesa</div>
+          <div class="area-hood">El Cajon</div>
+          <div class="area-hood">Santee</div>
+          <div class="area-hood">Bonita</div>
+          <div class="area-hood">Spring Valley</div>
+          <div class="area-hood">Lemon Grove</div>
+          <div class="area-hood">National City</div>
+          <div class="area-hood">Scripps Ranch</div>
+          <div class="area-hood">Del Cerro</div>
+          <div class="area-hood">Mission Valley</div>
+          <div class="area-hood">Kensington</div>
+          <div class="area-hood">Point Loma</div>
+          <div class="area-hood">Clairemont</div>
+          <div class="area-hood">San Carlos</div>
+          <div class="area-hood">Allied Gardens</div>
+          <div class="area-hood">Otay Ranch</div>
+          <div class="area-hood">Eastlake</div>
+          <div class="area-hood">Hillcrest</div>
+          <div class="area-hood">North Park</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA BANNER ───────────────────────────────────────── -->
+<section id="cta-banner">
+  <div class="container">
+    <div class="cta-banner-inner">
+      <div class="section-label" style="text-align:center; color:rgba(124,181,24,0.85);">Ready To Start?</div>
+      <h2 class="section-title light">Ready to Love Your Yard Again?</h2>
+      <p class="section-subtitle light">Stop dreaming and start transforming. Schedule your free, no-obligation design consultation today — our team will come to you.</p>
+      <div class="cta-banner-btns">
+        <a href="tel:6195550560" class="btn btn-cta">Call (619) 555-0560</a>
+        <a href="mailto:hello@greenleaflandscapes.com" class="btn btn-outline-white">Send Us a Message</a>
+      </div>
+      <p class="cta-phone">Or call us directly: <a href="tel:6195550560">(619) 555-0560</a> — Mon–Sat, 7am–6pm</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ───────────────────────────────────────────── -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-top">
+
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-icon">
+            <div class="leaf-svg"></div>
+          </div>
+          <div class="footer-logo-name">Green Leaf Landscapes</div>
+        </div>
+        <p class="footer-tagline">San Diego's premier landscaping company — transforming yards into outdoor living spaces since 2009.</p>
+        <div class="footer-license">CSLB #C-27 &nbsp;|&nbsp; License #LA-384920</div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Services</div>
+        <ul class="footer-links">
+          <li><a href="#services">Lawn Care &amp; Maintenance</a></li>
+          <li><a href="#services">Hardscape &amp; Patios</a></li>
+          <li><a href="#services">Irrigation Systems</a></li>
+          <li><a href="#services">Landscape Design</a></li>
+          <li><a href="#services">Tree &amp; Shrub Care</a></li>
+          <li><a href="#services">Seasonal Cleanups</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Company</div>
+        <ul class="footer-links">
+          <li><a href="#why">About Us</a></li>
+          <li><a href="#plans">Maintenance Plans</a></li>
+          <li><a href="#gallery">Portfolio</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+          <li><a href="#service-area">Service Area</a></li>
+          <li><a href="../index.html">← Blueprint Digital</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-contact-item">
+          <strong>Phone:</strong>
+          <a href="tel:6195550560">(619) 555-0560</a>
+        </div>
+        <div class="footer-contact-item">
+          <strong>Email:</strong>
+          <a href="mailto:hello@greenleaflandscapes.com">hello@greenleaflandscapes.com</a>
+        </div>
+        <div class="footer-contact-item">
+          <strong>Location:</strong>
+          San Diego, CA
+        </div>
+        <div class="footer-contact-item">
+          <strong>Hours:</strong>
+          Mon–Sat, 7am–6pm
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2026 Green Leaf Landscapes. All rights reserved. CSLB Licensed &amp; Insured.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Nav toggle for mobile
+  const toggle = document.getElementById('navToggle');
+  const links  = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => {
+    links.classList.toggle('open');
+  });
+  // Close nav on link click (mobile)
+  links.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => links.classList.remove('open'));
+  });
+</script>
+
+</body>
+</html>

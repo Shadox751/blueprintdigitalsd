@@ -1,0 +1,2322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blueprint Digital — Websites + AI Call Receptionists for Contractors | San Diego</title>
+  <meta name="description" content="Blueprint Digital builds high-converting websites and AI phone receptionists for contractors in San Diego. Never miss a call, book more jobs. Free consultation." />
+  <meta property="og:title" content="Blueprint Digital — Websites + AI Call Receptionists for Contractors" />
+  <meta property="og:description" content="We build websites and AI phone receptionists for contractors. Never miss a call again." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:       #0C1A2E;
+      --navy-mid:   #132038;
+      --navy-card:  #1A2A42;
+      --navy-light: #203352;
+      --orange:     #F57C20;
+      --orange-dark:#D96510;
+      --white:      #FFFFFF;
+      --off-white:  #E4EAF4;
+      --gray:       #8A9BB5;
+      --border:     #233048;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--navy);
+      color: var(--off-white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1,h2,h3,h4 { font-family: 'Montserrat', sans-serif; line-height: 1.2; }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ── TOP BAR ── */
+    .topbar {
+      background: #080f1c;
+      padding: 8px 0;
+      font-size: 13px;
+      color: var(--gray);
+      border-bottom: 1px solid var(--border);
+    }
+    .topbar .inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .topbar a { color: var(--orange); font-weight: 600; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--navy);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(8px);
+      transition: box-shadow 0.3s;
+    }
+    nav.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.5); }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 20px;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-icon {
+      width: 32px; height: 32px;
+      background: var(--orange);
+      border-radius: 4px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2px;
+      padding: 5px;
+    }
+    .logo-icon span {
+      background: white;
+      border-radius: 1px;
+      display: block;
+    }
+    .logo-icon span:nth-child(1),
+    .logo-icon span:nth-child(2),
+    .logo-icon span:nth-child(3) { height: 3px; }
+    .logo-icon span:nth-child(4),
+    .logo-icon span:nth-child(5),
+    .logo-icon span:nth-child(6) { height: 3px; opacity: 0.6; }
+    .logo-icon span:nth-child(7),
+    .logo-icon span:nth-child(8),
+    .logo-icon span:nth-child(9) { height: 3px; opacity: 0.3; }
+    .logo span.blue { color: var(--white); }
+    .logo span.orange { color: var(--orange); }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .nav-links a { color: var(--gray); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--white); }
+    .btn-nav {
+      background: var(--orange);
+      color: white;
+      padding: 10px 22px;
+      border-radius: 4px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      transition: background 0.2s;
+    }
+    .btn-nav:hover { background: var(--orange-dark); }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .hamburger span { width: 24px; height: 2px; background: var(--white); display: block; transition: all 0.3s; }
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--navy);
+      z-index: 200;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 36px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 28px; color: var(--white); }
+    .mobile-menu a:hover { color: var(--orange); }
+    .mobile-close { position: absolute; top: 20px; right: 24px; font-size: 36px; color: var(--gray); cursor: pointer; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: calc(100vh - 68px - 37px);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 80px 24px;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(245,124,32,0.08) 0%, transparent 60%),
+                  radial-gradient(ellipse at 20% 80%, rgba(19,32,56,0.8) 0%, transparent 50%);
+    }
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 60px 60px;
+      opacity: 0.25;
+    }
+    .hero-inner {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .hero-label {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(36px, 5vw, 60px);
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 24px;
+    }
+    .hero h1 em { color: var(--orange); font-style: normal; }
+    .hero p {
+      font-size: 18px;
+      color: var(--gray);
+      margin-bottom: 36px;
+      max-width: 480px;
+    }
+    .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 48px; }
+    .btn-primary {
+      background: var(--orange);
+      color: white;
+      padding: 14px 28px;
+      border-radius: 4px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      transition: background 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: var(--orange-dark); transform: translateY(-1px); }
+    .btn-outline {
+      border: 2px solid var(--orange);
+      color: var(--orange);
+      padding: 12px 28px;
+      border-radius: 4px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      transition: all 0.2s;
+      display: inline-block;
+    }
+    .btn-outline:hover { background: var(--orange); color: white; }
+    .hero-trust {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--gray);
+    }
+    .trust-item svg { color: var(--orange); flex-shrink: 0; }
+
+    /* Hero right — AI demo preview */
+    .hero-demo-card {
+      background: var(--navy-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+    }
+    .demo-card-header {
+      background: #080f1c;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .demo-card-header .dots { display: flex; gap: 6px; }
+    .demo-card-header .dot { width: 10px; height: 10px; border-radius: 50%; }
+    .dot-red { background: #FF5F57; }
+    .dot-yellow { background: #FEBC2E; }
+    .dot-green { background: #28C840; }
+    .demo-card-header .label {
+      margin-left: auto;
+      font-size: 12px;
+      color: var(--gray);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+    }
+    .demo-chat {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-height: 280px;
+    }
+    .chat-msg {
+      max-width: 80%;
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-size: 14px;
+      line-height: 1.5;
+      animation: fadeUp 0.4s ease both;
+    }
+    .chat-msg.ai {
+      background: var(--navy-light);
+      border: 1px solid var(--border);
+      align-self: flex-start;
+      border-bottom-left-radius: 4px;
+      color: var(--off-white);
+    }
+    .chat-msg.user {
+      background: var(--orange);
+      align-self: flex-end;
+      border-bottom-right-radius: 4px;
+      color: white;
+    }
+    .chat-msg.ai .ai-label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--orange);
+      margin-bottom: 4px;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .typing-indicator {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+      padding: 12px 16px;
+      background: var(--navy-light);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      border-bottom-left-radius: 4px;
+      width: fit-content;
+      align-self: flex-start;
+    }
+    .typing-dot {
+      width: 6px; height: 6px;
+      background: var(--orange);
+      border-radius: 50%;
+      animation: typingBounce 1.2s infinite;
+    }
+    .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+    .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes typingBounce {
+      0%,60%,100% { transform: translateY(0); }
+      30% { transform: translateY(-6px); }
+    }
+    .demo-input-bar {
+      border-top: 1px solid var(--border);
+      padding: 12px 16px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .demo-input-bar input {
+      flex: 1;
+      background: var(--navy-light);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 8px 12px;
+      color: var(--off-white);
+      font-size: 13px;
+      font-family: 'Inter', sans-serif;
+      outline: none;
+    }
+    .demo-input-bar input::placeholder { color: var(--gray); }
+    .demo-send-btn {
+      background: var(--orange);
+      border: none;
+      border-radius: 6px;
+      width: 34px; height: 34px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+    .demo-send-btn:hover { background: var(--orange-dark); }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      background: #080f1c;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 36px 24px;
+    }
+    .stats-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 0;
+    }
+    .stat-item {
+      text-align: center;
+      padding: 0 24px;
+      border-right: 1px solid var(--border);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 42px;
+      color: var(--orange);
+      display: block;
+    }
+    .stat-label {
+      font-size: 13px;
+      color: var(--gray);
+      font-weight: 500;
+      margin-top: 4px;
+    }
+
+    /* ── SECTIONS ── */
+    section { padding: 72px 24px; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-label {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 16px;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .section-title {
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+    .section-title em { color: var(--orange); font-style: normal; }
+    .section-sub {
+      font-size: 17px;
+      color: var(--gray);
+      max-width: 580px;
+      margin-bottom: 56px;
+    }
+    .section-divider {
+      width: 48px;
+      height: 3px;
+      background: var(--orange);
+      margin-bottom: 24px;
+      border-radius: 2px;
+    }
+
+    /* ── SERVICES ── */
+    #services { background: var(--navy-mid); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+    .service-card {
+      background: var(--navy-card);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--orange);
+      border-radius: 8px;
+      padding: 36px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .service-card:hover { box-shadow: 0 8px 32px rgba(245,124,32,0.12); }
+    .service-icon {
+      width: 52px; height: 52px;
+      background: rgba(245,124,32,0.12);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      color: var(--orange);
+    }
+    .service-card h3 {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .service-card p { color: var(--gray); font-size: 15px; margin-bottom: 20px; }
+    .service-features { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .service-features li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 14px; color: var(--off-white);
+    }
+    .service-features li::before {
+      content: '✓';
+      color: var(--orange);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .service-price {
+      margin-top: 28px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+    .price-num { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 32px; color: var(--orange); }
+    .price-label { font-size: 13px; color: var(--gray); }
+
+    /* ── HOW IT WORKS ── */
+    #how-it-works { background: var(--navy); }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 24px;
+      position: relative;
+    }
+    .steps-grid::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: calc(12.5% + 28px);
+      right: calc(12.5% + 28px);
+      height: 2px;
+      background: linear-gradient(90deg, var(--orange), var(--orange-dark));
+      opacity: 0.4;
+    }
+    .step-card {
+      text-align: center;
+      padding: 28px 20px;
+    }
+    .step-num {
+      width: 56px; height: 56px;
+      background: var(--orange);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 20px;
+      color: white;
+      margin: 0 auto 20px;
+      position: relative;
+      z-index: 1;
+    }
+    .step-card h4 { font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+    .step-card p { font-size: 14px; color: var(--gray); }
+
+    /* ── AI RECEPTIONIST ── */
+    #ai-receptionist { background: var(--navy-mid); }
+    .ai-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .ai-features { display: flex; flex-direction: column; gap: 28px; margin-top: 16px; }
+    .ai-feature {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .ai-feature-icon {
+      width: 44px; height: 44px;
+      background: rgba(245,124,32,0.12);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--orange);
+      flex-shrink: 0;
+    }
+    .ai-feature h4 { font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+    .ai-feature p { font-size: 14px; color: var(--gray); }
+
+    /* Full AI demo widget */
+    .ai-demo-full {
+      background: var(--navy-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+    }
+    .ai-demo-header {
+      background: #080f1c;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .ai-avatar {
+      width: 36px; height: 36px;
+      background: var(--orange);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 14px;
+      color: white;
+    }
+    .ai-demo-header .ai-name { font-weight: 700; font-size: 14px; color: var(--white); }
+    .ai-demo-header .ai-status { font-size: 12px; color: #28C840; }
+    .ai-demo-header .ai-badge {
+      margin-left: auto;
+      background: rgba(245,124,32,0.15);
+      color: var(--orange);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 0.5px;
+    }
+    .ai-messages {
+      padding: 20px;
+      height: 320px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .ai-messages::-webkit-scrollbar { width: 4px; }
+    .ai-messages::-webkit-scrollbar-track { background: transparent; }
+    .ai-messages::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+    .ai-input-row {
+      border-top: 1px solid var(--border);
+      padding: 14px 16px;
+      display: flex;
+      gap: 10px;
+    }
+    .ai-input {
+      flex: 1;
+      background: var(--navy-light);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 10px 14px;
+      color: var(--off-white);
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .ai-input:focus { border-color: var(--orange); }
+    .ai-input::placeholder { color: var(--gray); }
+    .ai-send {
+      background: var(--orange);
+      border: none;
+      border-radius: 6px;
+      padding: 10px 16px;
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .ai-send:hover { background: var(--orange-dark); }
+
+    /* ── PORTFOLIO ── */
+    #portfolio { background: var(--navy); }
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .portfolio-card {
+      background: var(--navy-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+    }
+    .portfolio-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(245,124,32,0.15); }
+    .portfolio-preview {
+      height: 220px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: stretch;
+    }
+    .portfolio-preview .preview-label {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(8,15,28,0.85);
+      color: var(--orange);
+      font-size: 10px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .portfolio-preview .view-btn {
+      position: absolute;
+      inset: 0;
+      background: rgba(8,15,28,0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.2s;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      color: white;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .portfolio-card:hover .view-btn { opacity: 1; }
+    .portfolio-info { padding: 20px; }
+    .portfolio-info h4 { font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 6px; }
+    .portfolio-info p { font-size: 13px; color: var(--gray); }
+    .portfolio-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+    .tag {
+      background: rgba(245,124,32,0.1);
+      color: var(--orange);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* Mini site previews inside portfolio cards */
+    .mini-site {
+      width: 100%; height: 100%;
+      font-family: sans-serif;
+      transform-origin: top left;
+      pointer-events: none;
+      display: flex;
+      flex-direction: column;
+    }
+    .mini-nav {
+      height: 28px;
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+      gap: 8px;
+      font-size: 6px;
+      font-weight: 700;
+    }
+    .mini-nav span { margin-left: auto; }
+    .mini-hero {
+      padding: 16px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      flex: 1;
+    }
+    .mini-label { font-size: 5px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+    .mini-h1 { font-size: 11px; font-weight: 900; line-height: 1.2; }
+    .mini-p { font-size: 5.5px; line-height: 1.4; opacity: 0.75; }
+    .mini-btn { display: inline-block; padding: 4px 8px; border-radius: 2px; font-size: 5px; font-weight: 700; margin-top: 4px; }
+    .mini-cards { display: flex; gap: 5px; padding: 8px 12px; }
+    .mini-card { flex: 1; border-radius: 3px; padding: 6px; }
+    .mini-card-title { font-size: 5.5px; font-weight: 700; margin-bottom: 2px; }
+    .mini-card-p { font-size: 4.5px; opacity: 0.7; }
+
+    /* Welding site mini */
+    .mini-welding .mini-nav { background: #131519; color: #E8E4DC; }
+    .mini-welding .mini-hero { background: #1C1F26; color: #E8E4DC; }
+    .mini-welding .mini-label { color: #C0732A; }
+    .mini-welding .mini-h1 { color: #FFFFFF; }
+    .mini-welding .mini-btn { background: #C0732A; color: white; }
+    .mini-welding .mini-cards { background: #252830; }
+    .mini-welding .mini-card { background: #1C1F26; border-left: 2px solid #C0732A; }
+    .mini-welding .mini-card-title { color: #E8E4DC; }
+
+    /* Plumbing site mini */
+    .mini-plumbing .mini-nav { background: #003366; color: #FFFFFF; }
+    .mini-plumbing .mini-hero { background: linear-gradient(135deg, #003366 0%, #005cbf 100%); color: #FFFFFF; }
+    .mini-plumbing .mini-label { color: #4FC3F7; }
+    .mini-plumbing .mini-h1 { color: #FFFFFF; }
+    .mini-plumbing .mini-btn { background: #FF6D00; color: white; }
+    .mini-plumbing .mini-cards { background: #F5F5F5; }
+    .mini-plumbing .mini-card { background: #FFFFFF; border-top: 2px solid #003366; }
+    .mini-plumbing .mini-card-title { color: #003366; }
+
+    /* Roofing site mini */
+    .mini-roofing .mini-nav { background: #1A0A00; color: #F5E6D3; }
+    .mini-roofing .mini-hero { background: linear-gradient(135deg, #2D1200 0%, #5C2800 100%); color: #F5E6D3; }
+    .mini-roofing .mini-label { color: #FF8C42; }
+    .mini-roofing .mini-h1 { color: #FFFFFF; }
+    .mini-roofing .mini-btn { background: #FF8C42; color: white; }
+    .mini-roofing .mini-cards { background: #F8F4F0; }
+    .mini-roofing .mini-card { background: #FFFFFF; border-left: 2px solid #FF8C42; }
+    .mini-roofing .mini-card-title { color: #2D1200; }
+
+    /* HVAC site mini */
+    .mini-hvac .mini-nav { background: #0D2137; color: #E8F4FD; }
+    .mini-hvac .mini-hero { background: linear-gradient(135deg, #0D2137 0%, #1565C0 100%); color: #E8F4FD; }
+    .mini-hvac .mini-label { color: #80DEEA; }
+    .mini-hvac .mini-h1 { color: #FFFFFF; }
+    .mini-hvac .mini-btn { background: #00BCD4; color: white; }
+    .mini-hvac .mini-cards { background: #EBF5FB; }
+    .mini-hvac .mini-card { background: #FFFFFF; border-top: 2px solid #00BCD4; }
+    .mini-hvac .mini-card-title { color: #0D2137; }
+
+    /* Electrical site mini */
+    .mini-electrical .mini-nav { background: #1A1A00; color: #FFF9E6; }
+    .mini-electrical .mini-hero { background: linear-gradient(135deg, #1A1A00 0%, #333300 100%); color: #FFF9E6; }
+    .mini-electrical .mini-label { color: #FFD600; }
+    .mini-electrical .mini-h1 { color: #FFFFFF; }
+    .mini-electrical .mini-btn { background: #FFD600; color: #1A1A00; }
+    .mini-electrical .mini-cards { background: #F5F5E6; }
+    .mini-electrical .mini-card { background: #FFFFFF; border-left: 2px solid #FFD600; }
+    .mini-electrical .mini-card-title { color: #1A1A00; }
+
+    /* Landscaping site mini */
+    .mini-landscaping .mini-nav { background: #0D2010; color: #E8F5E9; }
+    .mini-landscaping .mini-hero { background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 100%); color: #E8F5E9; }
+    .mini-landscaping .mini-label { color: #A5D6A7; }
+    .mini-landscaping .mini-h1 { color: #FFFFFF; }
+    .mini-landscaping .mini-btn { background: #8BC34A; color: white; }
+    .mini-landscaping .mini-cards { background: #F1F8E9; }
+    .mini-landscaping .mini-card { background: #FFFFFF; border-top: 2px solid #4CAF50; }
+    .mini-landscaping .mini-card-title { color: #1B5E20; }
+
+    /* Carpentry/GC site mini */
+    .mini-carpentry .mini-nav { background: #2C1810; color: #FAF8F5; }
+    .mini-carpentry .mini-hero { background: linear-gradient(135deg, #2C1810 0%, #4A2810 100%); color: #FAF8F5; }
+    .mini-carpentry .mini-label { color: #C4955A; }
+    .mini-carpentry .mini-h1 { color: #FFFFFF; }
+    .mini-carpentry .mini-btn { background: #B85C38; color: white; }
+    .mini-carpentry .mini-cards { background: #FAF8F5; }
+    .mini-carpentry .mini-card { background: #FFFFFF; border-left: 2px solid #C4955A; }
+    .mini-carpentry .mini-card-title { color: #2C1810; }
+    /* Solar */
+    .mini-solar .mini-nav { background: #0A1628; color: #F4A500; }
+    .mini-solar .mini-hero { background: linear-gradient(135deg, #0D0D1A 0%, #0A1628 60%, #1a2a4a 100%); color: #E8F0FE; }
+    .mini-solar .mini-label { color: #00D4FF; }
+    .mini-solar .mini-h1 { color: #F4A500; }
+    .mini-solar .mini-p { color: #A0B4D0; }
+    .mini-solar .mini-btn { background: #F4A500; color: #0A1628; }
+    .mini-solar .mini-cards { background: #0D0D1A; }
+    .mini-solar .mini-card { background: #111827; border-left: 2px solid #F4A500; }
+    .mini-solar .mini-card-title { color: #F4A500; }
+    .mini-solar .mini-card-p { color: #A0B4D0; }
+    /* Painting */
+    .mini-painting .mini-nav { background: #1A237E; color: #FFFFFF; }
+    .mini-painting .mini-hero { background: linear-gradient(135deg, #1A237E 0%, #283593 100%); color: #FFFFFF; }
+    .mini-painting .mini-label { color: #FF8A80; }
+    .mini-painting .mini-h1 { color: #FFFFFF; }
+    .mini-painting .mini-p { color: #C5CAE9; }
+    .mini-painting .mini-btn { background: #E53935; color: white; }
+    .mini-painting .mini-cards { background: #F8F9FA; }
+    .mini-painting .mini-card { background: #FFFFFF; border-left: 2px solid #E53935; }
+    .mini-painting .mini-card-title { color: #1A237E; }
+    /* Concrete */
+    .mini-concrete .mini-nav { background: #1C1C1E; color: #FFFFFF; }
+    .mini-concrete .mini-hero { background: linear-gradient(135deg, #111111 0%, #1C1C1E 100%); color: #FFFFFF; }
+    .mini-concrete .mini-label { color: #FF6B00; }
+    .mini-concrete .mini-h1 { color: #FFFFFF; }
+    .mini-concrete .mini-p { color: #8E8E93; }
+    .mini-concrete .mini-btn { background: #FF6B00; color: white; }
+    .mini-concrete .mini-cards { background: #F5F5F0; }
+    .mini-concrete .mini-card { background: #FFFFFF; border-left: 2px solid #FF6B00; }
+    .mini-concrete .mini-card-title { color: #1C1C1E; }
+
+    /* ── PRICING ── */
+    #pricing { background: var(--navy-mid); }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      align-items: start;
+    }
+    .pricing-card {
+      background: var(--navy-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 36px;
+      transition: box-shadow 0.2s;
+    }
+    .pricing-card.featured {
+      border-color: var(--orange);
+      box-shadow: 0 0 0 1px var(--orange), 0 24px 48px rgba(245,124,32,0.15);
+      position: relative;
+    }
+    .featured-badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--orange);
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 11px;
+      padding: 4px 16px;
+      border-radius: 20px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .pricing-name { font-size: 13px; font-weight: 700; color: var(--orange); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; font-family: 'Montserrat', sans-serif; }
+    .pricing-price { display: flex; align-items: baseline; gap: 4px; margin-bottom: 8px; }
+    .price-amount { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 48px; color: var(--white); }
+    .price-period { font-size: 14px; color: var(--gray); }
+    .pricing-desc { font-size: 14px; color: var(--gray); margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid var(--border); }
+    .pricing-features { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+    .pricing-features li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--off-white); }
+    .pricing-features li .check { color: var(--orange); flex-shrink: 0; font-weight: 700; }
+    .pricing-features li .x { color: var(--gray); flex-shrink: 0; }
+    .btn-pricing {
+      display: block;
+      text-align: center;
+      padding: 13px;
+      border-radius: 4px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: all 0.2s;
+    }
+    .btn-pricing-outline {
+      border: 2px solid var(--border);
+      color: var(--gray);
+    }
+    .btn-pricing-outline:hover { border-color: var(--orange); color: var(--orange); }
+    .btn-pricing-solid { background: var(--orange); color: white; }
+    .btn-pricing-solid:hover { background: var(--orange-dark); }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--navy); }
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .contact-form { display: flex; flex-direction: column; gap: 20px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .form-group { display: flex; flex-direction: column; gap: 8px; }
+    .form-group label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--off-white);
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 0.3px;
+    }
+    .form-group label .req { color: var(--orange); margin-left: 3px; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: var(--navy-card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 12px 14px;
+      color: var(--off-white);
+      font-size: 15px;
+      font-family: 'Inter', sans-serif;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      width: 100%;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--orange);
+      box-shadow: 0 0 0 3px rgba(245,124,32,0.1);
+    }
+    .form-group input.error,
+    .form-group select.error,
+    .form-group textarea.error {
+      border-color: #FF4444;
+    }
+    .form-group .error-msg {
+      font-size: 12px;
+      color: #FF4444;
+      display: none;
+    }
+    .form-group .error-msg.visible { display: block; }
+    .form-group select { appearance: none; cursor: pointer; }
+    .form-group select option { background: var(--navy-card); }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: var(--gray); }
+    .btn-submit {
+      background: var(--orange);
+      color: white;
+      padding: 16px 32px;
+      border: none;
+      border-radius: 4px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      width: 100%;
+    }
+    .btn-submit:hover { background: var(--orange-dark); transform: translateY(-1px); }
+    .form-note { font-size: 13px; color: var(--gray); text-align: center; }
+    .success-msg {
+      display: none;
+      background: rgba(40,200,64,0.1);
+      border: 1px solid rgba(40,200,64,0.3);
+      border-radius: 8px;
+      padding: 24px;
+      text-align: center;
+      color: #28C840;
+      font-weight: 600;
+    }
+
+    /* Contact info card */
+    .contact-info {
+      background: var(--navy-card);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--orange);
+      border-radius: 8px;
+      padding: 32px;
+    }
+    .contact-info h3 { font-size: 20px; font-weight: 800; color: var(--white); margin-bottom: 24px; }
+    .contact-detail { display: flex; gap: 14px; margin-bottom: 20px; align-items: flex-start; }
+    .contact-detail svg { color: var(--orange); flex-shrink: 0; margin-top: 2px; }
+    .contact-detail .label { font-size: 12px; font-weight: 700; color: var(--gray); text-transform: uppercase; letter-spacing: 1px; font-family: 'Montserrat', sans-serif; margin-bottom: 4px; }
+    .contact-detail .value { font-size: 15px; color: var(--off-white); font-weight: 500; }
+    .contact-detail a { color: var(--orange); }
+    .contact-divider { height: 1px; background: var(--border); margin: 24px 0; }
+    .response-note { font-size: 13px; color: var(--gray); font-style: italic; line-height: 1.5; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #080f1c;
+      border-top: 1px solid var(--border);
+      padding: 56px 24px 24px;
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-brand p { font-size: 14px; color: var(--gray); margin-top: 16px; max-width: 300px; line-height: 1.7; }
+    .footer-col h5 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li a { font-size: 14px; color: var(--gray); transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--orange); }
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-bottom p { font-size: 13px; color: var(--gray); }
+    .footer-bottom a { color: var(--orange); }
+
+    /* ── MOBILE STICKY BAR ── */
+    .sticky-bar {
+      display: none;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      height: 58px;
+      z-index: 150;
+    }
+    .sticky-bar a {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .sticky-quote { background: var(--navy-card); color: var(--orange); border-right: 1px solid var(--border); }
+    .sticky-call { background: var(--orange); color: white; }
+
+    /* ── SCROLL ANIMATIONS ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .portfolio-grid { grid-template-columns: repeat(2,1fr); }
+      .steps-grid { grid-template-columns: repeat(2,1fr); }
+      .steps-grid::before { display: none; }
+    }
+    @media (max-width: 768px) {
+      .topbar { display: none; }
+      .nav-links, .btn-nav { display: none; }
+      .hamburger { display: flex; }
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-demo-card { display: none; }
+      .stats-inner { grid-template-columns: repeat(2,1fr); gap: 24px; }
+      .stat-item { border-right: none; border-bottom: 1px solid var(--border); padding-bottom: 24px; }
+      .stat-item:nth-child(2n) { border-right: none; }
+      .services-grid { grid-template-columns: 1fr; }
+      .ai-layout { grid-template-columns: 1fr; }
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .contact-layout { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .sticky-bar { display: flex; }
+      footer { padding-bottom: 72px; }
+      #contact { padding-bottom: 80px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="inner">
+    <span>📍 Based in San Diego, CA — Serving Contractors Nationwide</span>
+    <span>📞 <a href="tel:6197510943">(619) 751-0943</a></span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <div class="logo-icon">
+        <span></span><span></span><span></span>
+        <span></span><span></span><span></span>
+        <span></span><span></span><span></span>
+      </div>
+      <span><span class="blue">BLUEPRINT</span> <span class="orange">DIGITAL</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#ai-receptionist">AI Receptionist</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#why-us">Why Us</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="btn-nav">Get a Free Quote</a>
+    <div class="hamburger" onclick="openMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <span class="mobile-close" onclick="closeMenu()">✕</span>
+  <a href="#services" onclick="closeMenu()">Services</a>
+  <a href="#ai-receptionist" onclick="closeMenu()">AI Receptionist</a>
+  <a href="#portfolio" onclick="closeMenu()">Portfolio</a>
+  <a href="#why-us" onclick="closeMenu()">Why Us</a>
+  <a href="#faq" onclick="closeMenu()">FAQ</a>
+  <a href="#contact" onclick="closeMenu()">Get a Quote</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <span class="hero-label">Web Design + AI Call Receptionists for Contractors</span>
+      <h1>Your Business Deserves a Website That <em>Gets You Jobs</em></h1>
+      <p>We build high-converting websites and AI phone receptionists for contractors in San Diego and beyond. Stop losing jobs to competitors who answer faster.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn-primary">Get Your Free Quote</a>
+        <a href="#portfolio" class="btn-outline">See Our Work</a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-item">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          1-Week Delivery — Guaranteed or Refund
+        </div>
+        <div class="trust-item">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          Built for Contractors
+        </div>
+        <div class="trust-item">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          AI Answers Every Call
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero AI Preview Card -->
+    <div class="hero-demo-card">
+      <div class="demo-card-header">
+        <div class="dots">
+          <div class="dot dot-red"></div>
+          <div class="dot dot-yellow"></div>
+          <div class="dot dot-green"></div>
+        </div>
+        <span class="label">AI Call Receptionist — Call Simulation</span>
+      </div>
+      <div class="demo-chat" id="hero-chat">
+        <div class="chat-msg ai">
+          <div class="ai-label">📞 AI Call Receptionist</div>
+          Thank you for calling Mike's Plumbing! This is the answering service — I can help you get scheduled. What's going on today?
+        </div>
+        <div class="chat-msg user">Yeah hi, I've got a pipe leaking under my sink. How fast can someone come out?</div>
+        <div class="chat-msg ai">
+          <div class="ai-label">📞 AI Call Receptionist</div>
+          I'm sorry to hear that! We can get Mike out to you today — there's availability at 2PM and 4PM. Which works better for you?
+        </div>
+        <div class="chat-msg user">2PM works. Name's Sarah Johnson, I'm at 619-555-0192.</div>
+        <div id="hero-typing" class="typing-indicator" style="display:none;">
+          <div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>
+        </div>
+      </div>
+      <div class="demo-input-bar">
+        <input type="text" placeholder="Type a message..." id="hero-input" />
+        <button class="demo-send-btn" onclick="heroSend()">
+          <svg width="16" height="16" fill="none" stroke="white" stroke-width="2.5" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item fade-in">
+      <span class="stat-num">1wk</span>
+      <div class="stat-label">Max Delivery — Guaranteed or Full Refund</div>
+    </div>
+    <div class="stat-item fade-in">
+      <span class="stat-num">24/7</span>
+      <div class="stat-label">AI Receptionist Coverage</div>
+    </div>
+    <div class="stat-item fade-in">
+      <span class="stat-num">0</span>
+      <div class="stat-label">Calls Missed with AI</div>
+    </div>
+    <div class="stat-item fade-in">
+      <span class="stat-num">100%</span>
+      <div class="stat-label">Built for Contractors</div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-inner">
+    <div class="fade-in">
+      <span class="section-label">What We Offer</span>
+      <div class="section-divider"></div>
+      <h2 class="section-title">Two Things Contractors Need. <em>We Do Both.</em></h2>
+      <p class="section-sub">A great website gets you found. An AI receptionist makes sure you never miss the call. Together, they turn your phone into a lead machine.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card fade-in">
+        <div class="service-icon">
+          <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        </div>
+        <h3>Contractor Website Design</h3>
+        <p>A custom, mobile-first website that ranks on Google and converts visitors into booked jobs — not a template, not a DIY builder. Every site is priced based on your specific needs.</p>
+        <ul class="service-features">
+          <li>Custom design matched to your trade & brand</li>
+          <li>Mobile-optimized and Google-ready from day one</li>
+          <li>Service pages, photo gallery, and review sections</li>
+          <li>Contact forms with real lead capture</li>
+          <li>Google Maps integration & local SEO setup</li>
+          <li>Fast load times — built for Core Web Vitals</li>
+        </ul>
+        <div class="service-price">
+          <span class="price-label" style="font-size:14px; color: var(--off-white);">Pricing discussed on your free consultation call — every business is different.</span>
+        </div>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-icon">
+          <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l1.88-1.88a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <h3>AI Call Receptionist</h3>
+        <p>An AI receptionist that answers your calls and texts 24/7 — trained on your business, your services, and your FAQs. It sounds like your team, qualifies every lead, and never lets a customer go unanswered.</p>
+        <ul class="service-features">
+          <li>Answers every inbound call 24/7 — no voicemail</li>
+          <li>Handles texts & missed call follow-ups automatically</li>
+          <li>Trained on YOUR services, prices & FAQs</li>
+          <li>Captures name, number & job details on every call</li>
+          <li>Sends you a summary after every call or text</li>
+          <li>Books appointments & handles scheduling</li>
+          <li>Spanish-language support available</li>
+        </ul>
+        <div class="service-price">
+          <span class="price-label" style="font-size:14px; color: var(--off-white);">Monthly pricing quoted during your free call — based on call volume & setup.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how-it-works">
+  <div class="section-inner">
+    <div class="fade-in" style="text-align:center; margin-bottom: 56px;">
+      <span class="section-label">The Process</span>
+      <div class="section-divider" style="margin: 0 auto 24px;"></div>
+      <h2 class="section-title">From Quote to <em>Live in 1 Week</em></h2>
+      <p class="section-sub" style="margin: 0 auto;">No bloated agency timelines. No endless revision loops. Your site is live within a week — guaranteed. If we miss it, you get a full refund. No questions asked.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card fade-in">
+        <div class="step-num">1</div>
+        <h4>Free Consultation</h4>
+        <p>We learn your business, your services, and what you need. 20-minute call, no pressure.</p>
+      </div>
+      <div class="step-card fade-in">
+        <div class="step-num">2</div>
+        <h4>Custom Design</h4>
+        <p>We design and build your site — matched to your trade, your brand, and your market.</p>
+      </div>
+      <div class="step-card fade-in">
+        <div class="step-num">3</div>
+        <h4>Review & Launch</h4>
+        <p>You review, we refine. Once you're happy, we go live and set up your AI receptionist.</p>
+      </div>
+      <div class="step-card fade-in">
+        <div class="step-num">4</div>
+        <h4>Leads Start Coming In</h4>
+        <p>Your new site ranks. Your AI handles every inquiry. You focus on the job, not the phone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE BANNER -->
+<div style="background:#080f1c; border-top:1px solid #233048; border-bottom:1px solid #233048; padding:48px 24px;">
+  <div style="max-width:900px; margin:0 auto; display:flex; align-items:center; gap:40px; flex-wrap:wrap; justify-content:center; text-align:center;">
+    <div style="width:90px; height:90px; background:rgba(245,124,32,0.1); border:2px solid #F57C20; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+      <svg width="40" height="40" fill="none" stroke="#F57C20" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+    </div>
+    <div style="flex:1; min-width:260px;">
+      <div style="font-family:'Montserrat',sans-serif; font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:#F57C20; margin-bottom:10px;">Our Guarantee</div>
+      <h3 style="font-family:'Montserrat',sans-serif; font-size:clamp(22px,3vw,32px); font-weight:900; color:#FFFFFF; margin-bottom:12px;">Your Website Live in <span style="color:#F57C20;">1 Week or You Don't Pay.</span></h3>
+      <p style="color:#8A9BB5; font-size:15px; max-width:600px; margin:0 auto;">Most agencies take 6–12 weeks and still miss deadlines. We guarantee your site is live within 7 days of receiving your content — or we refund you in full. No fine print, no excuses.</p>
+    </div>
+    <a href="#contact" style="background:#F57C20; color:white; padding:14px 28px; border-radius:4px; font-family:'Montserrat',sans-serif; font-weight:700; font-size:13px; text-transform:uppercase; letter-spacing:0.5px; white-space:nowrap; flex-shrink:0;">Claim Your Spot</a>
+  </div>
+</div>
+
+<!-- AI RECEPTIONIST DEMO -->
+<section id="ai-receptionist">
+  <div class="section-inner">
+    <div class="ai-layout">
+      <div class="fade-in">
+        <span class="section-label">AI Receptionist</span>
+        <div class="section-divider"></div>
+        <h2 class="section-title">Never Miss a Call or Text — <em>Even at 2AM</em></h2>
+        <p class="section-sub">Most contractors lose jobs because nobody picked up. Your AI call receptionist answers every call and text 24/7 — sounds like your team, qualifies every lead, and makes sure nothing falls through the cracks.</p>
+        <div class="ai-features">
+          <div class="ai-feature">
+            <div class="ai-feature-icon">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l1.88-1.88a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <h4>Answers Every Call 24/7</h4>
+              <p>Nights, weekends, holidays — your AI picks up every ring. No voicemail, no missed jobs.</p>
+            </div>
+          </div>
+          <div class="ai-feature">
+            <div class="ai-feature-icon">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <div>
+              <h4>Handles Texts & Missed Call Follow-Ups</h4>
+              <p>If someone texts in or misses a call back, the AI follows up automatically — no lead left behind.</p>
+            </div>
+          </div>
+          <div class="ai-feature">
+            <div class="ai-feature-icon">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div>
+              <h4>Qualifies Leads & Books Appointments</h4>
+              <p>Gets the name, number, address, and job details — then sends you a full summary instantly.</p>
+            </div>
+          </div>
+          <div class="ai-feature">
+            <div class="ai-feature-icon">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+            </div>
+            <div>
+              <h4>Sounds Like Your Team</h4>
+              <p>Trained on your business name, services, prices & FAQs — customers won't know it's AI.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Full Interactive Demo -->
+      <div class="ai-demo-full fade-in">
+        <div class="ai-demo-header">
+          <div class="ai-avatar">AI</div>
+          <div>
+            <div class="ai-name">Blueprint AI Receptionist</div>
+            <div class="ai-status">● Online — Demo Mode</div>
+          </div>
+          <div class="ai-badge">Call Simulation</div>
+        </div>
+        <div class="ai-messages" id="ai-messages">
+          <div class="chat-msg ai">
+            <div class="ai-label">📞 AI Call Receptionist</div>
+            Thank you for calling! This is a live simulation of your AI phone receptionist. Pretend you're a customer calling your business — type what they'd say on the phone. Try: "How much does it cost?" or "I need someone out today, my AC is out."
+          </div>
+        </div>
+        <div class="ai-input-row">
+          <input type="text" class="ai-input" id="ai-input" placeholder="Simulate a customer calling your business..." onkeypress="if(event.key==='Enter') aiSend()" />
+          <button class="ai-send" onclick="aiSend()">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="section-inner">
+    <div class="fade-in">
+      <span class="section-label">Our Work</span>
+      <div class="section-divider"></div>
+      <h2 class="section-title">Websites We've Built for <em>Contractors Like You</em></h2>
+      <p class="section-sub">Every industry, every trade — we know how contractor websites need to look and perform to win local jobs.</p>
+    </div>
+    <div class="portfolio-grid">
+
+      <!-- Welding/Gates -->
+      <div class="portfolio-card fade-in">
+        <div class="portfolio-preview">
+          <div class="mini-site mini-welding" style="width:100%; height:100%;">
+            <div class="mini-nav">WELDING GATES <span>MENU</span></div>
+            <div class="mini-hero">
+              <div class="mini-label">Chula Vista's Gate Specialists</div>
+              <div class="mini-h1">Custom Gates & Fences<br/>Built to Last</div>
+              <div class="mini-p">Design, fabrication & install for homes and businesses across San Diego's South Bay.</div>
+              <div class="mini-btn">Free Quote</div>
+            </div>
+            <div class="mini-cards">
+              <div class="mini-card"><div class="mini-card-title">Custom Gates</div><div class="mini-card-p">Residential & commercial</div></div>
+              <div class="mini-card"><div class="mini-card-title">Iron Fencing</div><div class="mini-card-p">Ornamental & tubular</div></div>
+              <div class="mini-card"><div class="mini-card-title">Gate Repair</div><div class="mini-card-p">Same-day service</div></div>
+            </div>
+          </div>
+          <div class="preview-label">Gates & Welding</div>
+          <div class="view-btn">View Demo →</div>
+        </div>
+        <div class="portfolio-info">
+          <h4>Welding Gates — Chula Vista</h4>
+          <p>Custom gate & fence contractor. Dark industrial design with copper accents.</p>
+          <div class="portfolio-tags">
+            <span class="tag">Gates</span>
+            <span class="tag">Welding</span>
+            <span class="tag">Local SEO</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Plumbing -->
+      <div class="portfolio-card fade-in" onclick="window.open('portfolio/plumbing.html','_blank')" role="link" tabindex="0">
+        <div class="portfolio-preview">
+          <div class="mini-site mini-plumbing" style="width:100%; height:100%;">
+            <div class="mini-nav">RAPID PLUMBING <span>☰</span></div>
+            <div class="mini-hero">
+              <div class="mini-label">San Diego's #1 Plumber</div>
+              <div class="mini-h1">Fast. Reliable.<br/>Fixed Right.</div>
+              <div class="mini-p">Emergency plumbing, water heaters, drain cleaning & more. Available 24/7.</div>
+              <div class="mini-btn">Call Now — (619) 555-0100</div>
+            </div>
+            <div class="mini-cards">
+              <div class="mini-card"><div class="mini-card-title">Emergency Repair</div><div class="mini-card-p">24/7 response</div></div>
+              <div class="mini-card"><div class="mini-card-title">Water Heaters</div><div class="mini-card-p">Install & replace</div></div>
+              <div class="mini-card"><div class="mini-card-title">Drain Cleaning</div><div class="mini-card-p">Hydro-jetting</div></div>
+            </div>
+          </div>
+          <div class="preview-label">Plumbing</div>
+          <div class="view-btn">View Demo →</div>
+        </div>
+        <div class="portfolio-info">
+          <h4>Rapid Plumbing — San Diego</h4>
+          <p>Emergency plumbing service. Bold blue design with high-urgency CTAs.</p>
+          <div class="portfolio-tags">
+            <span class="tag">Plumbing</span>
+            <span class="tag">Emergency</span>
+            <span class="tag">AI Receptionist</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Roofing -->
+      <div class="portfolio-card fade-in" onclick="window.open('portfolio/roofing.html','_blank')" role="link" tabindex="0">
+        <div class="portfolio-preview">
+          <div class="mini-site mini-roofing" style="width:100%; height:100%;">
+            <div class="mini-nav">SUMMIT ROOFING <span>☰</span></div>
+            <div class="mini-hero">
+              <div class="mini-label">San Diego County Roofers</div>
+              <div class="mini-h1">Protect Your Home.<br/>Trust the Experts.</div>
+              <div class="mini-p">Roof replacement, repair, and inspection. Licensed, bonded & insured. Free estimates.</div>
+              <div class="mini-btn">Get a Free Estimate</div>
+            </div>
+            <div class="mini-cards">
+              <div class="mini-card"><div class="mini-card-title">Roof Replacement</div><div class="mini-card-p">All materials</div></div>
+              <div class="mini-card"><div class="mini-card-title">Roof Repair</div><div class="mini-card-p">Storm damage</div></div>
+              <div class="mini-card"><div class="mini-card-title">Inspections</div><div class="mini-card-p">Same-day</div></div>
+            </div>
+          </div>
+          <div class="preview-label">Roofing</div>
+          <div class="view-btn">View Demo →</div>
+        </div>
+        <div class="portfolio-info">
+          <h4>Summit Roofing — San Diego</h4>
+          <p>Residential roofing contractor. Warm earthy tones that convey trust and durability.</p>
+          <div class="portfolio-tags">
+            <span class="tag">Roofing</span>
+            <span class="tag">Lead Forms</span>
+            <span class="tag">SEO</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- HVAC -->
+      <div class="portfolio-card fade-in" onclick="window.open('portfolio/hvac.html','_blank')" role="link" tabindex="0">
+        <div class="portfolio-preview">
+          <div class="mini-site mini-hvac" style="width:100%; height:100%;">
+            <div class="mini-nav">COOL BREEZE HVAC <span>☰</span></div>
+            <div class="mini-hero">
+              <div class="mini-label">San Diego HVAC Specialists</div>
+              <div class="mini-h1">Stay Cool All<br/>Summer Long.</div>
+              <div class="mini-p">AC repair, installation, and maintenance. Same-day service available in San Diego County.</div>
+              <div class="mini-btn">Book AC Service</div>
+            </div>
+            <div class="mini-cards">
+              <div class="mini-card"><div class="mini-card-title">AC Repair</div><div class="mini-card-p">Same-day</div></div>
+              <div class="mini-card"><div class="mini-card-title">Installation</div><div class="mini-card-p">All brands</div></div>
+              <div class="mini-card"><div class="mini-card-title">Maintenance</div><div class="mini-card-p">Tune-up plans</div></div>
+            </div>
+          </div>
+          <div class="preview-label">HVAC</div>
+          <div class="view-btn">View Demo →</div>
+        </div>
+        <div class="portfolio-info">
+          <h4>Cool Breeze HVAC — San Diego</h4>
+          <p>AC and heating contractor. Cool blue palette with urgency-driven booking flow.</p>
+          <div class="portfolio-tags">
+            <span class="tag">HVAC</span>
+            <span class="tag">AI Receptionist</span>
+            <span class="tag">Booking</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Electrical -->
+      <div class="portfolio-card fade-in" onclick="window.open('portfolio/electrical.html','_blank')" role="link" tabindex="0">
+        <div class="portfolio-preview">
+          <div class="mini-site mini-electrical" style="width:100%; height:100%;">
+            <div class="mini-nav">VOLT ELECTRIC <span>☰</span></div>
+            <div class="mini-hero">
+              <div class="mini-label">Licensed Electrician — San Diego</div>
+              <div class="mini-h1">Powering San Diego<br/>Homes & Business.</div>
+              <div class="mini-p">Panel upgrades, EV chargers, rewiring & electrical repair. C-10 Licensed. Free estimates.</div>
+              <div class="mini-btn">Get a Free Estimate</div>
+            </div>
+            <div class="mini-cards">
+              <div class="mini-card"><div class="mini-card-title">Panel Upgrades</div><div class="mini-card-p">200A service</div></div>
+              <div class="mini-card"><div class="mini-card-title">EV Chargers</div><div class="mini-card-p">Level 2 install</div></div>
+              <div class="mini-card"><div class="mini-card-title">Rewiring</div><div class="mini-card-p">Whole-home</div></div>
+            </div>
+          </div>
+          <div class="preview-label">Electrical</div>
+          <div class="view-btn">View Demo →</div>
+        </div>
+        <div class="portfolio-info">
+          <h4>Volt Electric — San Diego</h4>
+          <p>C-10 electrical contractor. Dark yellow-black design for authority and trust.</p>
+          <div class="portfolio-tags">
+            <span class="tag">Electrical</span>
+            <span class="tag">C-10</span>
+            <span class="tag">Local SEO</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Landscaping -->
+      <div class="portfolio-card fade-in" onclick="window.open('portfolio/landscaping.html','_blank')" role="link" tabindex="0">
+        <div class="portfolio-preview">
+          <div class="mini-site mini-landscaping" style="width:100%; height:100%;">
+            <div class="mini-nav">GREEN LEAF LANDSCAPES <span>☰</span></div>
+            <div class="mini-hero">
+              <div class="mini-label">San Diego Landscaping</div>
+              <div class="mini-h1">Your Dream Yard<br/>Starts Here.</div>
+              <div class="mini-p">Lawn care, hardscaping, irrigation & landscape design for San Diego homes. Free estimates.</div>
+              <div class="mini-btn">Free Yard Estimate</div>
+            </div>
+            <div class="mini-cards">
+              <div class="mini-card"><div class="mini-card-title">Lawn Care</div><div class="mini-card-p">Weekly plans</div></div>
+              <div class="mini-card"><div class="mini-card-title">Hardscaping</div><div class="mini-card-p">Patios & walls</div></div>
+              <div class="mini-card"><div class="mini-card-title">Irrigation</div><div class="mini-card-p">Drip systems</div></div>
+            </div>
+          </div>
+          <div class="preview-label">Landscaping</div>
+          <div class="view-btn">View Demo →</div>
+        </div>
+        <div class="portfolio-info">
+          <h4>Green Leaf Landscapes — San Diego</h4>
+          <p>Full-service landscaping company. Fresh green palette with clean, modern layout.</p>
+          <div class="portfolio-tags">
+            <span class="tag">Landscaping</span>
+            <span class="tag">Gallery</span>
+            <span class="tag">Lead Forms</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carpentry/GC -->
+      <div class="portfolio-card fade-in" onclick="window.open('portfolio/carpentry.html','_blank')" role="link" tabindex="0">
+        <div class="portfolio-preview">
+          <div class="mini-site mini-carpentry" style="width:100%; height:100%;">
+            <div class="mini-nav">CRAFTLINE CONSTRUCTION <span>☰</span></div>
+            <div class="mini-hero">
+              <div class="mini-label">San Diego Home Remodeling</div>
+              <div class="mini-h1">Handcrafted Home<br/>Transformations.</div>
+              <div class="mini-p">Kitchens, bathrooms, additions & custom carpentry. CSLB Licensed. 22+ years.</div>
+              <div class="mini-btn">Free Consultation</div>
+            </div>
+            <div class="mini-cards">
+              <div class="mini-card"><div class="mini-card-title">Kitchen Remodels</div><div class="mini-card-p">Full gut & design</div></div>
+              <div class="mini-card"><div class="mini-card-title">Bathrooms</div><div class="mini-card-p">Luxury renovations</div></div>
+              <div class="mini-card"><div class="mini-card-title">Additions</div><div class="mini-card-p">Room & ADU</div></div>
+            </div>
+          </div>
+          <div class="preview-label">Carpentry & GC</div>
+          <div class="view-btn">View Demo →</div>
+        </div>
+        <div class="portfolio-info">
+          <h4>Craftline Construction — San Diego</h4>
+          <p>General contractor & remodeler. Warm wood palette with craftsmanship-forward positioning.</p>
+          <div class="portfolio-tags">
+            <span class="tag">Carpentry</span>
+            <span class="tag">Remodeling</span>
+            <span class="tag">Before/After</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Solar -->
+      <div class="portfolio-card fade-in" onclick="window.open('portfolio/solar.html','_blank')" role="link" tabindex="0">
+        <div class="portfolio-preview">
+          <div class="mini-site mini-solar" style="width:100%; height:100%;">
+            <div class="mini-nav">☀ SUNRAY SOLAR <span>☰</span></div>
+            <div class="mini-hero">
+              <div class="mini-label">San Diego Solar Installer</div>
+              <div class="mini-h1">ELIMINATE YOUR<br/>ELECTRIC BILL</div>
+              <div class="mini-p">Save $127/mo avg. NABCEP Certified. NEM 3.0 experts.</div>
+              <div class="mini-btn">Get Free Quote</div>
+            </div>
+            <div class="mini-cards">
+              <div class="mini-card"><div class="mini-card-title">Residential Solar</div><div class="mini-card-p">Custom panel design</div></div>
+              <div class="mini-card"><div class="mini-card-title">Battery Storage</div><div class="mini-card-p">Tesla Powerwall</div></div>
+              <div class="mini-card"><div class="mini-card-title">EV Chargers</div><div class="mini-card-p">Level 2 install</div></div>
+            </div>
+          </div>
+          <div class="preview-label">Solar</div>
+          <div class="view-btn">View Demo →</div>
+        </div>
+        <div class="portfolio-info">
+          <h4>SunRay Solar — San Diego</h4>
+          <p>Dark tech aesthetic with gold accents. NEM 3.0 explainer, savings calculator, NABCEP trust signals.</p>
+          <div class="portfolio-tags">
+            <span class="tag">Solar</span>
+            <span class="tag">Battery Storage</span>
+            <span class="tag">Tech Design</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Painting -->
+      <div class="portfolio-card fade-in" onclick="window.open('portfolio/painting.html','_blank')" role="link" tabindex="0">
+        <div class="portfolio-preview">
+          <div class="mini-site mini-painting" style="width:100%; height:100%;">
+            <div class="mini-nav">◆ TRUE COLOR PAINTING <span>☰</span></div>
+            <div class="mini-hero">
+              <div class="mini-label">San Diego Painting Contractor</div>
+              <div class="mini-h1">Your Home,<br/>Transformed.</div>
+              <div class="mini-p">Interior, exterior & cabinet refinishing. 5-year warranty.</div>
+              <div class="mini-btn">Free Estimate</div>
+            </div>
+            <div class="mini-cards">
+              <div class="mini-card"><div class="mini-card-title">Interior Painting</div><div class="mini-card-p">Rooms, ceilings, trim</div></div>
+              <div class="mini-card"><div class="mini-card-title">Exterior</div><div class="mini-card-p">Full home repaints</div></div>
+              <div class="mini-card"><div class="mini-card-title">Cabinets</div><div class="mini-card-p">Factory-finish look</div></div>
+            </div>
+          </div>
+          <div class="preview-label">Painting</div>
+          <div class="view-btn">View Demo →</div>
+        </div>
+        <div class="portfolio-info">
+          <h4>True Color Painting — San Diego</h4>
+          <p>Before/after hero split, color swatch consultation section, Playfair Display premium feel.</p>
+          <div class="portfolio-tags">
+            <span class="tag">Painting</span>
+            <span class="tag">Before/After</span>
+            <span class="tag">Color Consult</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Concrete -->
+      <div class="portfolio-card fade-in" onclick="window.open('portfolio/concrete.html','_blank')" role="link" tabindex="0">
+        <div class="portfolio-preview">
+          <div class="mini-site mini-concrete" style="width:100%; height:100%;">
+            <div class="mini-nav">▣ SOLID GROUND CONCRETE <span>☰</span></div>
+            <div class="mini-hero">
+              <div class="mini-label">San Diego Hardscape Experts</div>
+              <div class="mini-h1">BUILT TO LAST<br/>DECADES.</div>
+              <div class="mini-p">Driveways, patios, retaining walls. CSLB Licensed. Free estimates.</div>
+              <div class="mini-btn">Free Estimate</div>
+            </div>
+            <div class="mini-cards">
+              <div class="mini-card"><div class="mini-card-title">Driveways</div><div class="mini-card-p">30-50 year lifespan</div></div>
+              <div class="mini-card"><div class="mini-card-title">Stamped Concrete</div><div class="mini-card-p">5 finish types</div></div>
+              <div class="mini-card"><div class="mini-card-title">Retaining Walls</div><div class="mini-card-p">Engineered design</div></div>
+            </div>
+          </div>
+          <div class="preview-label">Concrete</div>
+          <div class="view-btn">View Demo →</div>
+        </div>
+        <div class="portfolio-info">
+          <h4>Solid Ground Concrete — San Diego</h4>
+          <p>Industrial Bebas Neue bold, CSS finish texture showcase, driveway & retaining wall focus.</p>
+          <div class="portfolio-tags">
+            <span class="tag">Concrete</span>
+            <span class="tag">Hardscape</span>
+            <span class="tag">Industrial Design</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div style="text-align:center; margin-top: 48px;" class="fade-in">
+      <p style="color:var(--gray); margin-bottom: 20px;">Don't see your trade? We build for any home service contractor in San Diego.</p>
+      <a href="#contact" class="btn-primary">Let's Build Yours</a>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section id="why-us" style="background:var(--navy-mid);">
+  <div class="section-inner">
+    <div class="fade-in" style="text-align:center; margin-bottom:56px;">
+      <span class="section-label">Why Blueprint Digital</span>
+      <div class="section-divider" style="margin:0 auto 24px;"></div>
+      <h2 class="section-title">Us vs. The <em>Other Options</em></h2>
+      <p class="section-sub" style="margin:0 auto;">See how we stack up against a traditional agency and doing it yourself.</p>
+    </div>
+    <div class="fade-in" style="overflow-x:auto;">
+      <table style="width:100%; border-collapse:collapse; font-size:15px; min-width:600px;">
+        <thead>
+          <tr>
+            <th style="padding:16px 20px; text-align:left; color:var(--gray); font-family:'Montserrat',sans-serif; font-size:12px; letter-spacing:2px; text-transform:uppercase; border-bottom:1px solid var(--border); width:30%;"></th>
+            <th style="padding:16px 20px; text-align:center; background:rgba(245,124,32,0.08); border:1px solid var(--orange); border-bottom:none; border-radius:8px 8px 0 0;">
+              <div style="font-family:'Montserrat',sans-serif; font-weight:900; font-size:15px; color:var(--orange);">Blueprint Digital</div>
+              <div style="font-size:11px; color:var(--gray); margin-top:4px;">That's us</div>
+            </th>
+            <th style="padding:16px 20px; text-align:center; border-bottom:1px solid var(--border);">
+              <div style="font-family:'Montserrat',sans-serif; font-weight:700; font-size:15px; color:var(--white);">Traditional Agency</div>
+              <div style="font-size:11px; color:var(--gray); margin-top:4px;">Big firm, slow delivery</div>
+            </th>
+            <th style="padding:16px 20px; text-align:center; border-bottom:1px solid var(--border);">
+              <div style="font-family:'Montserrat',sans-serif; font-weight:700; font-size:15px; color:var(--white);">DIY (Wix / GoDaddy)</div>
+              <div style="font-size:11px; color:var(--gray); margin-top:4px;">Do it yourself</div>
+            </th>
+          </tr>
+        </thead>
+        <tbody id="compare-body">
+        </tbody>
+      </table>
+    </div>
+    <div style="text-align:center; margin-top:40px;" class="fade-in">
+      <a href="#contact" class="btn-primary">Get Started with Blueprint Digital</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="background:var(--navy);">
+  <div class="section-inner">
+    <div class="fade-in" style="max-width:720px; margin:0 auto;">
+      <span class="section-label">FAQ</span>
+      <div class="section-divider"></div>
+      <h2 class="section-title">Questions We Get <em>All the Time</em></h2>
+      <p class="section-sub">Straight answers — no fluff.</p>
+      <div id="faq-list" style="display:flex; flex-direction:column; gap:0; margin-top:8px;"></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="section-inner">
+    <div class="fade-in" style="text-align:center; margin-bottom: 56px;">
+      <span class="section-label">Pricing</span>
+      <div class="section-divider" style="margin: 0 auto 24px;"></div>
+      <h2 class="section-title">Simple Packages. <em>Custom Quotes.</em></h2>
+      <p class="section-sub" style="margin: 0 auto;">Every contractor's needs are different — pricing is tailored on your free consultation call. No hidden fees, no long-term contracts you didn't agree to.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card fade-in">
+        <div class="pricing-name">Website Only</div>
+        <div class="pricing-price">
+          <span class="price-amount" style="font-size:28px; line-height:1.3;">Custom Quote</span>
+        </div>
+        <div class="pricing-desc">A custom website built around your trade and your market. Priced based on scope — discussed on your free call.</div>
+        <ul class="pricing-features">
+          <li><span class="check">✓</span> Fully custom design — no templates</li>
+          <li><span class="check">✓</span> Mobile-optimized & Google-ready</li>
+          <li><span class="check">✓</span> Service pages, gallery & reviews</li>
+          <li><span class="check">✓</span> Contact form with lead capture</li>
+          <li><span class="check">✓</span> Google Maps integration</li>
+          <li><span class="check">✓</span> On-page SEO setup</li>
+          <li><span class="check">✓</span> Live in 1 week — guaranteed or full refund</li>
+          <li><span class="x">✕</span> AI Call Receptionist</li>
+        </ul>
+        <a href="#contact" class="btn-pricing btn-pricing-outline">Get a Quote</a>
+      </div>
+      <div class="pricing-card featured fade-in">
+        <div class="featured-badge">Most Popular</div>
+        <div class="pricing-name">Website + AI Call Receptionist</div>
+        <div class="pricing-price">
+          <span class="price-amount" style="font-size:28px; line-height:1.3;">Custom Quote</span>
+        </div>
+        <div class="pricing-desc">The full package — a website that gets you found, and an AI that answers every call. Priced to fit your business on your free call.</div>
+        <ul class="pricing-features">
+          <li><span class="check">✓</span> Everything in Website Only</li>
+          <li><span class="check">✓</span> AI Call Receptionist — 24/7</li>
+          <li><span class="check">✓</span> Trained on your services & FAQs</li>
+          <li><span class="check">✓</span> Call summaries sent to your phone</li>
+          <li><span class="check">✓</span> Appointment scheduling over the phone</li>
+          <li><span class="check">✓</span> Monthly performance report</li>
+          <li><span class="check">✓</span> Ongoing website updates included</li>
+          <li><span class="check">✓</span> Priority support</li>
+        </ul>
+        <a href="#contact" class="btn-pricing btn-pricing-solid">Get a Quote</a>
+      </div>
+      <div class="pricing-card fade-in">
+        <div class="pricing-name">AI Call Receptionist Only</div>
+        <div class="pricing-price">
+          <span class="price-amount" style="font-size:28px; line-height:1.3;">Custom Quote</span>
+        </div>
+        <div class="pricing-desc">Already have a website? Add an AI phone receptionist and stop losing calls to voicemail. Priced by call volume on your free call.</div>
+        <ul class="pricing-features">
+          <li><span class="check">✓</span> AI Call Receptionist — 24/7</li>
+          <li><span class="check">✓</span> Trained on your services & FAQs</li>
+          <li><span class="check">✓</span> Captures every caller's details</li>
+          <li><span class="check">✓</span> Call summaries sent to your phone</li>
+          <li><span class="check">✓</span> Appointment scheduling over the phone</li>
+          <li><span class="check">✓</span> Spanish-language support available</li>
+          <li><span class="check">✓</span> Cancel anytime</li>
+          <li><span class="x">✕</span> Website design not included</li>
+        </ul>
+        <a href="#contact" class="btn-pricing btn-pricing-outline">Get a Quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="fade-in">
+      <span class="section-label">Get in Touch</span>
+      <div class="section-divider"></div>
+      <h2 class="section-title">Ready to Get More <em>Leads & Jobs?</em></h2>
+      <p class="section-sub">Fill out the form and we'll reach out within the same business day — no pressure, no hard sell. Just a real conversation about what you need.</p>
+    </div>
+    <div class="contact-layout">
+      <div>
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Full Name<span class="req">*</span></label>
+              <input type="text" id="f-name" placeholder="Allan Constantino" />
+              <span class="error-msg" id="e-name">Please enter your full name.</span>
+            </div>
+            <div class="form-group">
+              <label>Business Name<span class="req">*</span></label>
+              <input type="text" id="f-biz" placeholder="Mike's Plumbing" />
+              <span class="error-msg" id="e-biz">Please enter your business name.</span>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Phone Number<span class="req">*</span></label>
+              <input type="tel" id="f-phone" placeholder="(619) 555-0192" />
+              <span class="error-msg" id="e-phone">Please enter a valid phone number.</span>
+            </div>
+            <div class="form-group">
+              <label>Email Address<span class="req">*</span></label>
+              <input type="email" id="f-email" placeholder="you@yourbusiness.com" />
+              <span class="error-msg" id="e-email">Please enter a valid email address.</span>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Your Trade / Industry</label>
+              <select id="f-trade">
+                <option value="">Select your trade...</option>
+                <option>Plumbing</option>
+                <option>Electrical</option>
+                <option>HVAC / AC</option>
+                <option>Roofing</option>
+                <option>Gates & Fencing</option>
+                <option>Landscaping</option>
+                <option>General Contracting</option>
+                <option>Painting</option>
+                <option>Concrete / Masonry</option>
+                <option>Garage Doors</option>
+                <option>Pest Control</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>What Are You Interested In?</label>
+              <select id="f-service">
+                <option value="">Select a service...</option>
+                <option>Website Only</option>
+                <option>AI Receptionist Only</option>
+                <option>Website + AI Receptionist</option>
+                <option>Not Sure — Let's Talk</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Tell Us About Your Business</label>
+            <textarea id="f-message" placeholder="How many calls do you get per week? Do you have a website already? What's your biggest challenge right now?"></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Send My Request →</button>
+          <p class="form-note">We respond same business day · No spam · No sales pressure</p>
+          <div class="success-msg" id="success-msg">
+            ✓ Message received! We'll be in touch within a few hours. Talk soon.
+          </div>
+        </form>
+      </div>
+      <div class="contact-info fade-in">
+        <h3>Blueprint Digital</h3>
+        <div class="contact-detail">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l1.88-1.88a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <div>
+            <div class="label">Phone</div>
+            <div class="value"><a href="tel:6197510943">(619) 751-0943</a></div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <div>
+            <div class="label">Email</div>
+            <div class="value"><a href="mailto:allan@blueprintdigitalsd.com">allan@blueprintdigitalsd.com</a></div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div>
+            <div class="label">Location</div>
+            <div class="value">San Diego, CA</div>
+          </div>
+        </div>
+        <div class="contact-divider"></div>
+        <p class="response-note">We typically respond within a few hours during business days. For urgent inquiries, call or text directly.</p>
+        <div class="contact-divider"></div>
+        <a href="tel:6197510943" class="btn-primary" style="display:block; text-align:center;">📞 Call (619) 751-0943</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo" style="font-size:18px;">
+          <div class="logo-icon">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+          </div>
+          <span><span class="blue">BLUEPRINT</span> <span class="orange">DIGITAL</span></span>
+        </a>
+        <p>We build websites and AI phone receptionists for contractors in San Diego and beyond. Founded by Allan Constantino — Founder · San Diego, CA.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#services">Website Design</a></li>
+          <li><a href="#ai-receptionist">AI Call Receptionist</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="tel:6197510943">(619) 751-0943</a></li>
+          <li><a href="mailto:allan@blueprintdigitalsd.com">allan@blueprintdigitalsd.com</a></li>
+          <li><a href="#contact">Free Consultation</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Blueprint Digital · San Diego, CA · <a href="mailto:allan@blueprintdigitalsd.com">allan@blueprintdigitalsd.com</a></p>
+      <p style="font-size:12px;">Web Design + AI Call Receptionists for Contractors in San Diego County</p>
+    </div>
+  </div>
+</footer>
+
+<!-- MOBILE STICKY BAR -->
+<div class="sticky-bar">
+  <a href="#contact" class="sticky-quote">Get a Quote</a>
+  <a href="tel:6197510943" class="sticky-call">📞 Call Now</a>
+</div>
+
+<script>
+  // ── Nav scroll effect
+  window.addEventListener('scroll', () => {
+    document.getElementById('main-nav').classList.toggle('scrolled', window.scrollY > 10);
+  });
+
+  // ── Mobile menu
+  function openMenu() { document.getElementById('mobile-menu').classList.add('open'); }
+  function closeMenu() { document.getElementById('mobile-menu').classList.remove('open'); }
+
+  // ── Scroll fade-in
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // ── Hero chat demo
+  const heroReplies = [
+    "Got it, Sarah! I've got you down for 2PM. Mike will call you back to confirm. Is there anything else I can help you with?",
+    "Perfect — 2PM it is! Mike will give you a call before heading over. Thanks for calling Mike's Plumbing!",
+    "Absolutely — we cover all of San Diego County. Is there anything else I can help you with?",
+    "Great question! We do free estimates. Can I get your name and best callback number so Mike can reach you?"
+  ];
+  let heroReplyIdx = 0;
+
+  function heroSend() {
+    const input = document.getElementById('hero-input');
+    const chat = document.getElementById('hero-chat');
+    const val = input.value.trim();
+    if (!val) return;
+
+    // Add user message
+    const userMsg = document.createElement('div');
+    userMsg.className = 'chat-msg user';
+    userMsg.textContent = val;
+    chat.appendChild(userMsg);
+    input.value = '';
+    chat.scrollTop = chat.scrollHeight;
+
+    // Show typing
+    const typing = document.getElementById('hero-typing');
+    typing.style.display = 'flex';
+    chat.scrollTop = chat.scrollHeight;
+
+    setTimeout(() => {
+      typing.style.display = 'none';
+      const aiMsg = document.createElement('div');
+      aiMsg.className = 'chat-msg ai';
+      aiMsg.innerHTML = `<div class="ai-label">Blueprint AI</div>${heroReplies[heroReplyIdx % heroReplies.length]}`;
+      chat.appendChild(aiMsg);
+      heroReplyIdx++;
+      chat.scrollTop = chat.scrollHeight;
+    }, 1200);
+  }
+
+  document.getElementById('hero-input').addEventListener('keypress', e => {
+    if (e.key === 'Enter') heroSend();
+  });
+
+  // ── Full AI demo
+  const aiResponses = {
+    default: [
+      "Of course — we handle that all the time. Can I get your name and best callback number so the owner can follow up with you directly?",
+      "Absolutely! We have availability this week. Would morning or afternoon work better for you? And what's a good name and number to put down?",
+      "We'd love to help with that. Our team is licensed and insured and has been serving the San Diego area for years. Can I get your name and address to get you on the schedule?",
+      "Great — let me get your information. What's your name, and what's the best number to reach you at?",
+      "Sure thing! The owner will give you a call back shortly. Can I get your name and a good callback number?"
+    ],
+    greeting: "Thank you for calling [Your Business Name]! How can I help you today?",
+    price: "Pricing really depends on the scope of the job — the best way to get an exact number is a free on-site estimate. It's quick, no obligation at all. Can I get your name and address so we can get you scheduled?",
+    emergency: "I hear you — we'll get someone out as soon as possible. Can I get your name, address, and best callback number? I'll flag this as urgent for the owner right now.",
+    hours: "We're open Monday through Saturday, 7AM to 6PM. For after-hours emergencies, leave your number and we'll call you back first thing. Can I get your name and number?",
+    area: "We cover all of San Diego County — Chula Vista, National City, El Cajon, La Mesa, Spring Valley, and more. What city are you calling from?"
+  };
+  let aiIdx = 0;
+
+  function aiSend() {
+    const input = document.getElementById('ai-input');
+    const msgs = document.getElementById('ai-messages');
+    const val = input.value.trim();
+    if (!val) return;
+
+    // User message
+    const uMsg = document.createElement('div');
+    uMsg.className = 'chat-msg user';
+    uMsg.textContent = val;
+    msgs.appendChild(uMsg);
+    input.value = '';
+    msgs.scrollTop = msgs.scrollHeight;
+
+    // Typing indicator
+    const typing = document.createElement('div');
+    typing.className = 'typing-indicator';
+    typing.innerHTML = '<div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>';
+    msgs.appendChild(typing);
+    msgs.scrollTop = msgs.scrollHeight;
+
+    // Pick response
+    const lower = val.toLowerCase();
+    let reply;
+    if (lower.match(/hello|hi|hey|good/)) reply = aiResponses.greeting;
+    else if (lower.match(/price|cost|how much|quote|estimate/)) reply = aiResponses.price;
+    else if (lower.match(/emergency|urgent|asap|broken|leak|flood|no power|no ac|no heat/)) reply = aiResponses.emergency;
+    else if (lower.match(/hour|open|close|when|time|available/)) reply = aiResponses.hours;
+    else if (lower.match(/area|city|location|serve|where/)) reply = aiResponses.area;
+    else reply = aiResponses.default[aiIdx % aiResponses.default.length];
+    aiIdx++;
+
+    setTimeout(() => {
+      msgs.removeChild(typing);
+      const aiMsg = document.createElement('div');
+      aiMsg.className = 'chat-msg ai';
+      aiMsg.innerHTML = `<div class="ai-label">📞 AI Call Receptionist</div>${reply}`;
+      msgs.appendChild(aiMsg);
+      msgs.scrollTop = msgs.scrollHeight;
+    }, 1000 + Math.random() * 600);
+  }
+
+  // ── Comparison Table
+  const compareRows = [
+    ['Delivery Time',           '🟠 Under 1 week',     '🔴 6–12 weeks',        '🟡 Whenever you finish'],
+    ['1-Week Guarantee',        '✅ Full refund if late','❌ No guarantee',      '❌ No guarantee'],
+    ['Custom Design',           '✅ 100% custom',       '✅ Custom (expensive)', '❌ Template only'],
+    ['Built for Contractors',   '✅ Contractors only',  '❌ Generic clients',    '❌ Generic'],
+    ['AI Call Receptionist',    '✅ Included as add-on','❌ Not offered',        '❌ Not offered'],
+    ['Local SEO Setup',         '✅ Included',          '💰 Extra cost',        '❌ DIY'],
+    ['Mobile Optimized',        '✅ Always',            '✅ Usually',            '🟡 Hit or miss'],
+    ['Ongoing Support',         '✅ Included',          '💰 Expensive retainer','❌ You're on your own'],
+    ['Pricing',                 '✅ Transparent quote', '🔴 $5k–$25k+',         '🟡 $0 but costs your time'],
+  ];
+
+  const tbody = document.getElementById('compare-body');
+  compareRows.forEach((row, i) => {
+    const tr = document.createElement('tr');
+    tr.style.borderBottom = '1px solid var(--border)';
+    tr.innerHTML = `
+      <td style="padding:14px 20px; font-weight:600; color:var(--off-white); font-size:14px;">${row[0]}</td>
+      <td style="padding:14px 20px; text-align:center; background:rgba(245,124,32,0.05); border-left:1px solid var(--orange); border-right:1px solid var(--orange); font-size:14px; color:var(--off-white);">${row[1]}</td>
+      <td style="padding:14px 20px; text-align:center; font-size:14px; color:var(--gray);">${row[2]}</td>
+      <td style="padding:14px 20px; text-align:center; font-size:14px; color:var(--gray);">${row[3]}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+  // Close the orange column border on last row
+  const lastTds = tbody.lastChild.querySelectorAll('td');
+  lastTds[1].style.borderBottom = '1px solid var(--orange)';
+  lastTds[1].style.borderRadius = '0 0 8px 8px';
+
+  // ── FAQ Accordion
+  const faqs = [
+    {
+      q: 'Do I need to provide photos and content?',
+      a: 'We handle the copy — just tell us about your business on a quick call and we write everything. For photos, if you have job photos on your phone we use those. If not, we use high-quality placeholder images until you send us yours. Either way we don\'t hold up your launch waiting for content.'
+    },
+    {
+      q: 'How does the AI know about my business?',
+      a: 'We train it. After you sign up we do a short onboarding call where you walk us through your services, pricing, service area, and common questions. We program all of that into the AI so it answers exactly like your team would — your business name, your services, your voice.'
+    },
+    {
+      q: 'What if I don\'t like the design?',
+      a: 'We do a review call before anything goes live and make revisions until you\'re happy. The 1-week guarantee clock doesn\'t start until you approve the direction. We don\'t launch anything you\'re not proud of.'
+    },
+    {
+      q: 'Do I own the website?',
+      a: 'Yes — 100%. Once it\'s built and paid for, it\'s yours. The code, the domain connection, everything. You\'re never locked in to us to keep your site running.'
+    },
+    {
+      q: 'Is there a long-term contract?',
+      a: 'No contracts for the website — that\'s a one-time build. The AI Call Receptionist is month-to-month. Cancel anytime with 30 days notice, no penalty.'
+    },
+    {
+      q: 'What if I\'m not tech-savvy at all?',
+      a: 'That\'s most of our clients. You don\'t touch a single line of code — ever. We handle everything: building it, launching it, connecting your domain, and setting up the AI. You just answer your phone and take jobs.'
+    },
+    {
+      q: 'How is this different from Wix or Squarespace?',
+      a: 'Those are templates you build yourself. We build a custom site from scratch, optimized specifically for contractors and local Google searches. A Wix site won\'t have call-to-action placement tuned for someone searching "plumber near me" at 11PM — ours does.'
+    },
+    {
+      q: 'What happens after my site launches?',
+      a: 'On the Growth package we handle ongoing updates — new services, new photos, seasonal changes — just send us a message. On the Website Only package you own the files and can make changes yourself or hire anyone to update it.'
+    }
+  ];
+
+  const faqList = document.getElementById('faq-list');
+  faqs.forEach((item, i) => {
+    const wrap = document.createElement('div');
+    wrap.style.cssText = 'border-bottom:1px solid var(--border); overflow:hidden;';
+    wrap.innerHTML = `
+      <button onclick="toggleFaq(${i})" style="width:100%; text-align:left; background:none; border:none; padding:20px 0; display:flex; justify-content:space-between; align-items:center; cursor:pointer; gap:16px;">
+        <span style="font-family:'Montserrat',sans-serif; font-weight:700; font-size:16px; color:var(--white);">${item.q}</span>
+        <svg id="faq-icon-${i}" width="20" height="20" fill="none" stroke="#F57C20" stroke-width="2.5" viewBox="0 0 24 24" style="flex-shrink:0; transition:transform 0.3s;"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div id="faq-ans-${i}" style="max-height:0; overflow:hidden; transition:max-height 0.35s ease;">
+        <p style="padding:0 0 20px; color:var(--gray); font-size:15px; line-height:1.7;">${item.a}</p>
+      </div>
+    `;
+    faqList.appendChild(wrap);
+  });
+
+  let openFaq = null;
+  function toggleFaq(i) {
+    const ans = document.getElementById('faq-ans-' + i);
+    const icon = document.getElementById('faq-icon-' + i);
+    if (openFaq !== null && openFaq !== i) {
+      document.getElementById('faq-ans-' + openFaq).style.maxHeight = '0';
+      document.getElementById('faq-icon-' + openFaq).style.transform = '';
+    }
+    const isOpen = ans.style.maxHeight !== '0px' && ans.style.maxHeight !== '';
+    ans.style.maxHeight = isOpen ? '0' : ans.scrollHeight + 'px';
+    icon.style.transform = isOpen ? '' : 'rotate(180deg)';
+    openFaq = isOpen ? null : i;
+  }
+  // Open first FAQ by default
+  toggleFaq(0);
+
+  // ── Contact form + Mailchimp
+  // REPLACE the value below with your Mailchimp form action URL
+  // In Mailchimp: Audience → Signup forms → Embedded forms → copy the form action URL
+  // It looks like: https://yourname.us1.list-manage.com/subscribe/post?u=XXXX&id=XXXX
+  const MAILCHIMP_URL = 'YOUR_MAILCHIMP_FORM_ACTION_URL';
+
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    let valid = true;
+
+    const fields = [
+      { id: 'f-name', err: 'e-name', check: v => v.trim().length > 1 },
+      { id: 'f-biz',  err: 'e-biz',  check: v => v.trim().length > 1 },
+      { id: 'f-phone',err: 'e-phone', check: v => /[\d\s\-()+]{7,}/.test(v) },
+      { id: 'f-email',err: 'e-email', check: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) }
+    ];
+
+    fields.forEach(({ id, err, check }) => {
+      const input = document.getElementById(id);
+      const errEl = document.getElementById(err);
+      const ok = check(input.value);
+      input.classList.toggle('error', !ok);
+      errEl.classList.toggle('visible', !ok);
+      if (!ok) valid = false;
+    });
+
+    if (!valid) return;
+
+    const btn = document.querySelector('.btn-submit');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    // Submit to Mailchimp via hidden iframe trick (avoids CORS)
+    if (MAILCHIMP_URL !== 'YOUR_MAILCHIMP_FORM_ACTION_URL') {
+      const mcUrl = MAILCHIMP_URL.replace('/post?', '/post-json?') + '&c=mailchimpCallback';
+      const name = document.getElementById('f-name').value.trim().split(' ');
+      const params = new URLSearchParams({
+        EMAIL: document.getElementById('f-email').value,
+        FNAME: name[0] || '',
+        LNAME: name.slice(1).join(' ') || '',
+        MMERGE2: document.getElementById('f-biz').value,   // Business Name (merge field)
+        MMERGE3: document.getElementById('f-phone').value,  // Phone (merge field)
+        MMERGE4: document.getElementById('f-trade').value,  // Trade
+        MMERGE5: document.getElementById('f-service').value // Service Interest
+      });
+      const script = document.createElement('script');
+      window.mailchimpCallback = function(data) {
+        script.remove();
+        delete window.mailchimpCallback;
+      };
+      script.src = mcUrl + '&' + params.toString();
+      document.body.appendChild(script);
+    }
+
+    // Always show success to the user
+    setTimeout(() => {
+      document.getElementById('contact-form').style.display = 'none';
+      document.getElementById('success-msg').style.display = 'block';
+    }, 800);
+  });
+</script>
+</body>
+</html>

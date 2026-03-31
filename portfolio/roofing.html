@@ -1,0 +1,2277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Summit Roofing – San Diego County's Trusted Roofers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ===================== RESET & BASE ===================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      color: #1A1A1A;
+      background: #fff;
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    img { max-width: 100%; }
+
+    /* ===================== VARIABLES ===================== */
+    :root {
+      --black: #141414;
+      --charcoal: #1A1A1A;
+      --dark: #2D2D2D;
+      --orange: #FF8C42;
+      --orange-dark: #e07830;
+      --white: #ffffff;
+      --light-gray: #f5f5f5;
+      --mid-gray: #888;
+      --text-light: rgba(255,255,255,0.75);
+    }
+
+    /* ===================== UTILITY ===================== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      border-radius: 4px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-orange {
+      background: var(--orange);
+      color: var(--white);
+    }
+    .btn-orange:hover {
+      background: var(--orange-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(255,140,66,0.35);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid var(--white);
+    }
+    .btn-outline:hover {
+      background: var(--white);
+      color: var(--charcoal);
+    }
+    .btn-outline-orange {
+      background: transparent;
+      color: var(--orange);
+      border: 2px solid var(--orange);
+    }
+    .btn-outline-orange:hover {
+      background: var(--orange);
+      color: var(--white);
+    }
+    .section-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 12px;
+      display: block;
+    }
+    .section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      line-height: 1.1;
+    }
+
+    /* ===================== TOP BAR ===================== */
+    .top-bar {
+      background: var(--black);
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,140,66,0.2);
+    }
+    .top-bar .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .top-bar-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--orange);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .top-bar-item .dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: rgba(255,140,66,0.4);
+    }
+    .top-bar-item a {
+      color: var(--orange);
+    }
+    .top-bar-item a:hover {
+      color: var(--white);
+    }
+
+    /* ===================== NAV ===================== */
+    .nav {
+      background: var(--charcoal);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.4);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+      position: relative;
+      flex-shrink: 0;
+    }
+    /* CSS Mountain/Roof Logo */
+    .logo-icon::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 21px solid transparent;
+      border-right: 21px solid transparent;
+      border-bottom: 36px solid var(--dark);
+    }
+    .logo-icon::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      border-bottom: 26px solid var(--orange);
+    }
+    .logo-peak {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-bottom: 14px solid #fff;
+      z-index: 2;
+    }
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+    .logo-name {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 1.25rem;
+      color: var(--white);
+      line-height: 1;
+      letter-spacing: -0.01em;
+    }
+    .logo-sub {
+      font-size: 0.65rem;
+      color: var(--orange);
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.8);
+      font-size: 0.82rem;
+      font-weight: 500;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: all 0.2s;
+      letter-spacing: 0.02em;
+    }
+    .nav-links a:hover {
+      color: var(--orange);
+      background: rgba(255,140,66,0.08);
+    }
+    .nav-links .nav-back {
+      color: rgba(255,255,255,0.4);
+      font-size: 0.78rem;
+    }
+    .nav-links .nav-back:hover {
+      color: rgba(255,255,255,0.7);
+      background: rgba(255,255,255,0.05);
+    }
+    .nav-cta {
+      background: var(--orange);
+      color: var(--white) !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 0.78rem !important;
+      padding: 10px 18px !important;
+    }
+    .nav-cta:hover {
+      background: var(--orange-dark) !important;
+      color: var(--white) !important;
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* ===================== HERO ===================== */
+    .hero {
+      background: var(--black);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Subtle diagonal texture */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(
+          -45deg,
+          rgba(255,255,255,0.018) 0px,
+          rgba(255,255,255,0.018) 1px,
+          transparent 1px,
+          transparent 40px
+        );
+      pointer-events: none;
+    }
+    /* Orange glow bottom-right */
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -100px;
+      right: -100px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(255,140,66,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,140,66,0.12);
+      border: 1px solid rgba(255,140,66,0.3);
+      border-radius: 100px;
+      padding: 6px 16px;
+      margin-bottom: 32px;
+    }
+    .hero-eyebrow span {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--orange);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .hero-eyebrow-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--orange);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+    .hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      color: var(--white);
+      line-height: 1.08;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+    .hero h1 .accent {
+      color: var(--orange);
+    }
+    .hero-accent-bar {
+      width: 72px;
+      height: 5px;
+      background: var(--orange);
+      border-radius: 3px;
+      margin: 20px 0 28px 0;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.7);
+      max-width: 580px;
+      margin-bottom: 40px;
+      line-height: 1.7;
+    }
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 56px;
+    }
+    .hero-trust {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      padding: 18px 24px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      backdrop-filter: blur(10px);
+    }
+    .hero-trust-item {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.65);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .hero-trust-item strong {
+      color: var(--orange);
+    }
+    .hero-trust-sep {
+      width: 1px;
+      height: 16px;
+      background: rgba(255,255,255,0.15);
+    }
+
+    /* Stars inline */
+    .stars {
+      display: inline-flex;
+      gap: 2px;
+    }
+    .star {
+      color: var(--orange);
+      font-size: 0.85em;
+    }
+
+    /* ===================== STATS BAR ===================== */
+    .stats-bar {
+      background: var(--dark);
+      padding: 48px 0;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+    .stat-item {
+      text-align: center;
+      padding: 24px 16px;
+      position: relative;
+    }
+    .stat-item::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 20%;
+      height: 60%;
+      width: 1px;
+      background: rgba(255,255,255,0.08);
+    }
+    .stat-item:last-child::after { display: none; }
+    .stat-number {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 2.8rem;
+      color: var(--orange);
+      line-height: 1;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+    .stat-label {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.6);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* ===================== SERVICES ===================== */
+    .services {
+      background: var(--charcoal);
+      padding: 88px 0;
+    }
+    .services-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .services-header .section-title {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+    .services-header p {
+      color: rgba(255,255,255,0.55);
+      max-width: 520px;
+      margin: 0 auto;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .service-card {
+      background: var(--dark);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 8px;
+      padding: 36px 28px;
+      position: relative;
+      transition: all 0.3s ease;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--orange);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+      transform-origin: left;
+    }
+    .service-card:hover {
+      border-color: rgba(255,140,66,0.2);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.3);
+    }
+    .service-card:hover::before {
+      transform: scaleX(1);
+    }
+    .popular-badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: var(--orange);
+      color: var(--white);
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 100px;
+    }
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    /* Service icon SVGs inline */
+    .service-card h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .service-card p {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.65;
+    }
+    .service-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 18px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--orange);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .service-link:hover { gap: 10px; }
+
+    /* ===================== FREE ESTIMATE FEATURE ===================== */
+    .estimate-feature {
+      background: linear-gradient(135deg, var(--black) 0%, #1e1208 100%);
+      border-top: 4px solid var(--orange);
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .estimate-feature::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -10%;
+      width: 60%;
+      height: 200%;
+      background: radial-gradient(ellipse, rgba(255,140,66,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .estimate-inner {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 48px;
+    }
+    .estimate-text h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      color: var(--white);
+      margin-bottom: 24px;
+      line-height: 1.1;
+    }
+    .estimate-text h2 .accent { color: var(--orange); }
+    .estimate-bullets {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .estimate-bullet {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: rgba(255,255,255,0.75);
+      font-size: 0.95rem;
+    }
+    .estimate-bullet-icon {
+      width: 22px;
+      height: 22px;
+      background: var(--orange);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 0.7rem;
+      color: var(--white);
+      font-weight: 700;
+    }
+    .estimate-cta {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      text-align: center;
+    }
+    .estimate-cta .btn {
+      white-space: nowrap;
+      font-size: 1rem;
+      padding: 18px 36px;
+    }
+    .estimate-note {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* ===================== MATERIALS ===================== */
+    .materials {
+      background: var(--white);
+      padding: 88px 0;
+    }
+    .materials-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .materials-header .section-title {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      color: var(--charcoal);
+      margin-bottom: 16px;
+    }
+    .materials-header p {
+      color: var(--mid-gray);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .materials-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .material-card {
+      background: var(--light-gray);
+      border-radius: 10px;
+      padding: 32px 24px;
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+    }
+    .material-card:hover {
+      border-color: var(--orange);
+      background: var(--white);
+      box-shadow: 0 8px 30px rgba(255,140,66,0.12);
+      transform: translateY(-3px);
+    }
+    .material-icon {
+      width: 56px;
+      height: 56px;
+      margin-bottom: 20px;
+    }
+    .material-tag {
+      display: inline-block;
+      background: rgba(255,140,66,0.12);
+      color: var(--orange);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 100px;
+      margin-bottom: 10px;
+    }
+    .material-card h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: var(--charcoal);
+      margin-bottom: 14px;
+    }
+    .material-pros {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .material-pro {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.83rem;
+      color: #555;
+      line-height: 1.4;
+    }
+    .pro-check {
+      width: 16px;
+      height: 16px;
+      background: var(--orange);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .pro-check svg { display: block; }
+
+    /* ===================== STORM DAMAGE ===================== */
+    .storm {
+      background: var(--black);
+      padding: 88px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .storm::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(
+          90deg,
+          rgba(255,140,66,0.025) 0px,
+          rgba(255,140,66,0.025) 1px,
+          transparent 1px,
+          transparent 80px
+        ),
+        repeating-linear-gradient(
+          0deg,
+          rgba(255,140,66,0.025) 0px,
+          rgba(255,140,66,0.025) 1px,
+          transparent 1px,
+          transparent 80px
+        );
+      pointer-events: none;
+    }
+    .storm-inner {
+      position: relative;
+      z-index: 2;
+    }
+    .storm-top {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 56px;
+    }
+    .storm-top .section-title {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+    .storm-top p {
+      color: rgba(255,255,255,0.6);
+    }
+    .storm-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+    .storm-steps::before {
+      content: '';
+      position: absolute;
+      top: 36px;
+      left: 12.5%;
+      right: 12.5%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--orange), rgba(255,140,66,0.3));
+    }
+    .storm-step {
+      text-align: center;
+      padding: 0 20px;
+      position: relative;
+    }
+    .step-num {
+      width: 72px;
+      height: 72px;
+      background: var(--dark);
+      border: 2px solid var(--orange);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 1.4rem;
+      color: var(--orange);
+      position: relative;
+      z-index: 2;
+    }
+    .storm-step h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .storm-step p {
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.5;
+    }
+    .storm-cta {
+      text-align: center;
+      margin-top: 52px;
+    }
+
+    /* ===================== GAF CERTIFICATION ===================== */
+    .gaf {
+      background: var(--charcoal);
+      padding: 88px 0;
+    }
+    .gaf-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    /* CSS Badge */
+    .gaf-badge-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+    .gaf-badge {
+      width: 220px;
+      height: 240px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    /* Shield shape using clip-path */
+    .shield-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(160deg, #2a1a08 0%, #1a0f04 100%);
+      clip-path: polygon(50% 0%, 100% 15%, 100% 65%, 50% 100%, 0% 65%, 0% 15%);
+      border: none;
+    }
+    .shield-border {
+      position: absolute;
+      inset: -3px;
+      background: linear-gradient(160deg, var(--orange), #994f20);
+      clip-path: polygon(50% 0%, 100% 15%, 100% 65%, 50% 100%, 0% 65%, 0% 15%);
+    }
+    .shield-inner {
+      position: absolute;
+      inset: 3px;
+      background: linear-gradient(160deg, #2a1a08 0%, #1a0f04 100%);
+      clip-path: polygon(50% 0%, 100% 15%, 100% 65%, 50% 100%, 0% 65%, 0% 15%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      text-align: center;
+    }
+    .badge-logo-text {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 2.2rem;
+      color: var(--orange);
+      line-height: 1;
+      margin-bottom: 4px;
+      letter-spacing: -0.02em;
+    }
+    .badge-sub {
+      font-size: 0.55rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      line-height: 1.4;
+      margin-bottom: 8px;
+    }
+    .badge-star-row {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 6px;
+    }
+    .badge-star {
+      width: 10px;
+      height: 10px;
+      background: var(--orange);
+      clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    }
+    .badge-elite {
+      font-size: 0.6rem;
+      font-weight: 700;
+      color: var(--orange);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+    .gaf-badge-label {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--white);
+      text-align: center;
+    }
+    .gaf-badge-note {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.45);
+      text-align: center;
+      max-width: 200px;
+    }
+    .gaf-right .section-title {
+      font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+    .gaf-right p {
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 28px;
+      font-size: 0.95rem;
+    }
+    .gaf-points {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .gaf-point {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .gaf-point-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(255,140,66,0.12);
+      border: 1px solid rgba(255,140,66,0.3);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .gaf-point-text h5 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+    .gaf-point-text p {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.5);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* ===================== FINANCING ===================== */
+    .financing {
+      background: var(--white);
+      padding: 88px 0;
+    }
+    .financing-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .financing-header .section-title {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      color: var(--charcoal);
+      margin-bottom: 16px;
+    }
+    .financing-header p { color: var(--mid-gray); }
+    .financing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .financing-card {
+      border: 2px solid #e8e8e8;
+      border-radius: 12px;
+      padding: 40px 32px;
+      text-align: center;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .financing-card.featured {
+      border-color: var(--orange);
+      background: linear-gradient(160deg, #fff9f4 0%, #fff 100%);
+    }
+    .financing-card.featured::before {
+      content: 'Most Popular';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--orange);
+      color: var(--white);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 20px;
+      border-radius: 0 0 8px 8px;
+    }
+    .financing-card:hover {
+      border-color: var(--orange);
+      box-shadow: 0 8px 30px rgba(255,140,66,0.15);
+      transform: translateY(-4px);
+    }
+    .financing-icon {
+      width: 64px;
+      height: 64px;
+      background: rgba(255,140,66,0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+    .financing-card h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 1.4rem;
+      color: var(--orange);
+      margin-bottom: 8px;
+    }
+    .financing-card .fin-sub {
+      font-size: 0.85rem;
+      color: var(--mid-gray);
+      margin-bottom: 20px;
+    }
+    .financing-card p {
+      font-size: 0.88rem;
+      color: #555;
+      line-height: 1.65;
+    }
+
+    /* ===================== TESTIMONIALS ===================== */
+    .testimonials {
+      background: var(--light-gray);
+      padding: 88px 0;
+    }
+    .testimonials-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .testimonials-header .section-title {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      color: var(--charcoal);
+      margin-bottom: 16px;
+    }
+    .testimonials-header p { color: var(--mid-gray); }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .testimonial-card {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 36px 28px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+      position: relative;
+      transition: all 0.3s;
+    }
+    .testimonial-card:hover {
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      transform: translateY(-3px);
+    }
+    .testimonial-card::before {
+      content: '\201C';
+      position: absolute;
+      top: 16px;
+      left: 24px;
+      font-size: 5rem;
+      font-family: Georgia, serif;
+      color: rgba(255,140,66,0.15);
+      line-height: 1;
+    }
+    .testimonial-stars {
+      display: flex;
+      gap: 3px;
+      margin-bottom: 16px;
+    }
+    .testimonial-stars .star {
+      font-size: 1rem;
+    }
+    .testimonial-card blockquote {
+      font-size: 0.92rem;
+      color: #444;
+      line-height: 1.7;
+      margin-bottom: 24px;
+      font-style: italic;
+      position: relative;
+      z-index: 1;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .author-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--orange);
+      flex-shrink: 0;
+    }
+    .author-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--charcoal);
+    }
+    .author-location {
+      font-size: 0.78rem;
+      color: var(--mid-gray);
+      margin-top: 2px;
+    }
+    .testimonial-service {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(255,140,66,0.1);
+      color: var(--orange);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 100px;
+    }
+
+    /* ===================== SERVICE AREA ===================== */
+    .service-area {
+      background: var(--white);
+      padding: 88px 0;
+    }
+    .service-area-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .service-area-text .section-title {
+      font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+      color: var(--charcoal);
+      margin-bottom: 16px;
+    }
+    .service-area-text p {
+      color: var(--mid-gray);
+      margin-bottom: 28px;
+    }
+    .area-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .area-tag {
+      background: var(--light-gray);
+      color: var(--charcoal);
+      font-size: 0.82rem;
+      font-weight: 500;
+      padding: 7px 16px;
+      border-radius: 100px;
+      border: 1px solid #e0e0e0;
+      transition: all 0.2s;
+    }
+    .area-tag:hover {
+      background: var(--orange);
+      color: var(--white);
+      border-color: var(--orange);
+    }
+    /* CSS Map placeholder */
+    .map-visual {
+      background: var(--light-gray);
+      border-radius: 12px;
+      height: 340px;
+      position: relative;
+      overflow: hidden;
+      border: 2px solid #e0e0e0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .map-visual::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(0deg, rgba(0,0,0,0.04) 0px, transparent 1px, transparent 30px),
+        repeating-linear-gradient(90deg, rgba(0,0,0,0.04) 0px, transparent 1px, transparent 30px);
+    }
+    .map-pin-area {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+    .map-pin {
+      width: 48px;
+      height: 48px;
+      background: var(--orange);
+      border-radius: 50% 50% 50% 0;
+      transform: rotate(-45deg);
+      margin: 0 auto 8px;
+      box-shadow: 0 4px 16px rgba(255,140,66,0.4);
+    }
+    .map-pin-inner {
+      width: 22px;
+      height: 22px;
+      background: var(--white);
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .map-label {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--charcoal);
+      transform: none;
+    }
+    .map-sublabel {
+      font-size: 0.78rem;
+      color: var(--mid-gray);
+      margin-top: 4px;
+    }
+
+    /* ===================== CTA BANNER ===================== */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--dark) 0%, #1a1a1a 100%);
+      padding: 80px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-banner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, transparent, var(--orange), transparent);
+    }
+    .cta-banner::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, transparent, var(--orange), transparent);
+    }
+    .cta-banner h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      color: var(--white);
+      margin-bottom: 14px;
+      letter-spacing: -0.02em;
+    }
+    .cta-banner h2 .accent { color: var(--orange); }
+    .cta-banner p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 36px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-banner-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .cta-phone {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255,255,255,0.8);
+      font-size: 1.05rem;
+      font-weight: 600;
+      padding: 14px 28px;
+      border: 2px solid rgba(255,255,255,0.2);
+      border-radius: 4px;
+      transition: all 0.2s;
+    }
+    .cta-phone:hover {
+      border-color: rgba(255,255,255,0.5);
+      color: var(--white);
+      background: rgba(255,255,255,0.05);
+    }
+
+    /* ===================== FOOTER ===================== */
+    .footer {
+      background: var(--black);
+      padding: 64px 0 32px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-brand .logo-name {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 1.3rem;
+      color: var(--white);
+    }
+    .footer-brand p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.45);
+      margin-top: 12px;
+      line-height: 1.65;
+      max-width: 260px;
+    }
+    .footer-license {
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .footer-license span {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.04em;
+    }
+    .footer-section h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.8rem;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 18px;
+    }
+    .footer-section ul {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-section ul li a {
+      font-size: 0.84rem;
+      color: rgba(255,255,255,0.45);
+      transition: color 0.2s;
+    }
+    .footer-section ul li a:hover {
+      color: var(--orange);
+    }
+    .footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .footer-contact-icon {
+      color: var(--orange);
+      font-size: 0.85rem;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+    .footer-contact-text {
+      font-size: 0.84rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.5;
+    }
+    .footer-contact-text a {
+      color: rgba(255,255,255,0.5);
+      transition: color 0.2s;
+    }
+    .footer-contact-text a:hover { color: var(--orange); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-bottom-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .footer-bottom-left span {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.28);
+    }
+    .footer-gaf-note {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,140,66,0.08);
+      border: 1px solid rgba(255,140,66,0.15);
+      border-radius: 6px;
+      padding: 6px 14px;
+    }
+    .footer-gaf-note span {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--orange);
+      letter-spacing: 0.04em;
+    }
+
+    /* ===================== RESPONSIVE ===================== */
+    @media (max-width: 1024px) {
+      .materials-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .top-bar .container { gap: 12px; justify-content: center; }
+      .top-bar-item { font-size: 0.7rem; gap: 6px; }
+      .top-bar-item .dot { display: none; }
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--charcoal);
+        padding: 16px 24px;
+        gap: 4px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        z-index: 999;
+      }
+      .nav-inner { position: relative; }
+      .hamburger { display: flex; }
+      .hero h1 { font-size: 2.1rem; }
+      .hero-ctas { flex-direction: column; }
+      .hero-trust { flex-direction: column; align-items: flex-start; gap: 10px; }
+      .hero-trust-sep { display: none; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .stat-item:nth-child(2)::after { display: none; }
+      .services-grid { grid-template-columns: 1fr; }
+      .estimate-inner { grid-template-columns: 1fr; text-align: center; }
+      .estimate-cta { align-items: stretch; }
+      .materials-grid { grid-template-columns: 1fr; }
+      .storm-steps { grid-template-columns: repeat(2, 1fr); }
+      .storm-steps::before { display: none; }
+      .gaf-inner { grid-template-columns: 1fr; }
+      .gaf-badge-wrap { margin-bottom: 32px; }
+      .financing-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .service-area-inner { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (max-width: 480px) {
+      .stats-grid { grid-template-columns: 1fr; }
+      .stat-item::after { display: none; }
+      .storm-steps { grid-template-columns: 1fr; }
+      .top-bar .container { flex-direction: column; gap: 6px; }
+      .hero-trust { padding: 14px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===================== TOP BAR ===================== -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        FREE STORM DAMAGE INSPECTION
+      </div>
+      <div class="top-bar-item">
+        <div class="dot"></div>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
+        Licensed CSLB #RI-749201
+      </div>
+      <div class="top-bar-item">
+        <div class="dot"></div>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12 19.79 19.79 0 0 1 1.96 3.4a2 2 0 0 1 1.99-2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <a href="tel:6195550455">(619) 555-0455</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== NAV ===================== -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <div class="logo-icon">
+          <div class="logo-peak"></div>
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Summit Roofing</span>
+          <span class="logo-sub">San Diego County</span>
+        </div>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="../index.html" class="nav-back">← Back to Blueprint Digital</a>
+        <a href="#services">Residential</a>
+        <a href="#services">Commercial</a>
+        <a href="#storm">Storm Damage</a>
+        <a href="#testimonials">Gallery</a>
+        <a href="#financing">Financing</a>
+        <a href="#contact">Contact</a>
+        <a href="#estimate" class="nav-cta">Free Estimate</a>
+      </div>
+      <div class="hamburger" id="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-eyebrow">
+          <div class="hero-eyebrow-dot"></div>
+          <span>GAF Master Elite Certified · San Diego's #1 Roofer</span>
+        </div>
+        <h1>Protect Your Home<br>from the <span class="accent">Elements</span></h1>
+        <div class="hero-accent-bar"></div>
+        <p>San Diego County's Trusted Roofers Since 2006 — Free Estimates, Lifetime Warranty Available. We don't cut corners. We install roofs that last.</p>
+        <div class="hero-ctas">
+          <a href="#estimate" class="btn btn-orange">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="display:inline;vertical-align:middle;margin-right:8px;"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            Get Free Estimate
+          </a>
+          <a href="#services" class="btn btn-outline">Our Services</a>
+        </div>
+        <div class="hero-trust">
+          <div class="hero-trust-item">
+            <strong>GAF Master Elite Certified</strong>
+          </div>
+          <div class="hero-trust-sep"></div>
+          <div class="hero-trust-item">CSLB #RI-749201</div>
+          <div class="hero-trust-sep"></div>
+          <div class="hero-trust-item">BBB A+ Rated</div>
+          <div class="hero-trust-sep"></div>
+          <div class="hero-trust-item">
+            <span class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></span>
+            &nbsp;<strong>4.9</strong> (528 reviews)
+          </div>
+          <div class="hero-trust-sep"></div>
+          <div class="hero-trust-item">Serving SD Since 2006</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== STATS BAR ===================== -->
+  <section class="stats-bar">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">18+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">2,400+</div>
+          <div class="stat-label">Roofs Installed</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">A+</div>
+          <div class="stat-label">BBB Rated</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">∞</div>
+          <div class="stat-label">Warranty Available</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SERVICES ===================== -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="services-header">
+        <span class="section-label">What We Do</span>
+        <h2 class="section-title">Expert Roofing Services<br>for Every Need</h2>
+        <p>From full replacements to emergency repairs — Summit Roofing handles every project with precision, speed, and craftsmanship.</p>
+      </div>
+      <div class="services-grid">
+
+        <!-- Roof Replacement -->
+        <div class="service-card">
+          <span class="popular-badge">Most Popular</span>
+          <div class="service-icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+              <path d="M6 22L24 6L42 22V42H30V30H18V42H6V22Z" fill="#2D2D2D" stroke="#FF8C42" stroke-width="2.5" stroke-linejoin="round"/>
+              <path d="M24 6L42 22" stroke="#FF8C42" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M6 22L24 6" stroke="#FF8C42" stroke-width="2.5" stroke-linecap="round"/>
+              <rect x="18" y="30" width="12" height="12" fill="#FF8C42" opacity="0.3"/>
+            </svg>
+          </div>
+          <h3>Roof Replacement</h3>
+          <p>Complete tear-off and full replacement with premium materials. We handle everything from old roofing removal to final inspection — on time, on budget.</p>
+          <a href="#estimate" class="service-link">
+            Get Free Quote
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Roof Repair -->
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+              <path d="M24 6L42 20H6L24 6Z" fill="#2D2D2D" stroke="#FF8C42" stroke-width="2.5" stroke-linejoin="round"/>
+              <rect x="8" y="20" width="32" height="22" rx="1" fill="#2D2D2D" stroke="#FF8C42" stroke-width="2.5"/>
+              <path d="M18 32h12M24 26v12" stroke="#FF8C42" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Roof Repair</h3>
+          <p>Leaks, missing shingles, damaged flashing? Our repair team responds fast — most repairs completed same day. Stop small problems before they become big ones.</p>
+          <a href="#estimate" class="service-link">
+            Get Free Quote
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Free Roof Inspection -->
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+              <circle cx="22" cy="22" r="14" fill="#2D2D2D" stroke="#FF8C42" stroke-width="2.5"/>
+              <path d="M32 32L42 42" stroke="#FF8C42" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="22" cy="22" r="7" fill="#FF8C42" opacity="0.2"/>
+              <path d="M18 22h8M22 18v8" stroke="#FF8C42" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Free Roof Inspection</h3>
+          <p>Know your roof's true condition. Our certified inspectors provide a comprehensive 40-point inspection with detailed photo report — completely free, no obligation.</p>
+          <a href="#estimate" class="service-link">
+            Schedule Now
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Storm Damage -->
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+              <path d="M36 18c0-6.627-5.373-12-12-12C18.686 6 14 10.686 14 16c0 .34.017.676.05 1.008C10.596 18.154 8 21.276 8 25c0 4.418 3.582 8 8 8h20c4.418 0 8-3.582 8-8 0-3.844-2.72-7.054-6.35-7.8A12.1 12.1 0 0 0 36 18z" fill="#2D2D2D" stroke="#FF8C42" stroke-width="2.5"/>
+              <path d="M22 26l-4 8h8l-4 8" stroke="#FF8C42" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Storm Damage Repair</h3>
+          <p>Hail, wind, and water don't stand a chance. Emergency tarping available 24/7. We work directly with your insurance company to ensure you get maximum coverage.</p>
+          <a href="#estimate" class="service-link">
+            Emergency Line
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- New Construction -->
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+              <rect x="6" y="34" width="36" height="8" rx="1" fill="#2D2D2D" stroke="#FF8C42" stroke-width="2.5"/>
+              <path d="M12 34V16M36 34V16" stroke="#FF8C42" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M8 16L24 6L40 16H8Z" fill="#FF8C42" opacity="0.2" stroke="#FF8C42" stroke-width="2.5" stroke-linejoin="round"/>
+              <rect x="20" y="22" width="8" height="12" rx="1" fill="#FF8C42" opacity="0.4"/>
+            </svg>
+          </div>
+          <h3>New Construction</h3>
+          <p>Building a new home? We partner with San Diego's top builders to install first-rate roofing systems on schedule. GAF-certified installations with full documentation.</p>
+          <a href="#estimate" class="service-link">
+            Partner With Us
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Commercial -->
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+              <rect x="4" y="14" width="40" height="28" rx="2" fill="#2D2D2D" stroke="#FF8C42" stroke-width="2.5"/>
+              <path d="M4 22h40" stroke="#FF8C42" stroke-width="2" stroke-dasharray="4 3"/>
+              <rect x="14" y="26" width="20" height="16" rx="1" fill="#FF8C42" opacity="0.15" stroke="#FF8C42" stroke-width="1.5"/>
+              <path d="M10 14V10M38 14V10M4 10h40" stroke="#FF8C42" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Commercial Roofing</h3>
+          <p>TPO, EPDM, modified bitumen and metal systems for flat or low-slope commercial roofs. Minimal disruption to your business — on-time, every time.</p>
+          <a href="#estimate" class="service-link">
+            Get Commercial Quote
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FREE ESTIMATE FEATURE ===================== -->
+  <section class="estimate-feature" id="estimate">
+    <div class="container">
+      <div class="estimate-inner">
+        <div class="estimate-text">
+          <span class="section-label">Zero Cost. Zero Obligation.</span>
+          <h2>Get a Free Roof Inspection<br>in <span class="accent">24 Hours</span></h2>
+          <div class="estimate-bullets">
+            <div class="estimate-bullet">
+              <div class="estimate-bullet-icon">✓</div>
+              <span>Certified inspector visits your property — no charge, no pressure</span>
+            </div>
+            <div class="estimate-bullet">
+              <div class="estimate-bullet-icon">✓</div>
+              <span>Detailed photo report delivered same day via email</span>
+            </div>
+            <div class="estimate-bullet">
+              <div class="estimate-bullet-icon">✓</div>
+              <span>Written estimate with transparent pricing — no hidden fees</span>
+            </div>
+          </div>
+        </div>
+        <div class="estimate-cta">
+          <a href="tel:6195550455" class="btn btn-orange" style="font-size:1.05rem; padding:20px 40px;">
+            Schedule Free Inspection
+          </a>
+          <p class="estimate-note">
+            Call <a href="tel:6195550455" style="color:rgba(255,140,66,0.7)">(619) 555-0455</a> anytime
+          </p>
+          <p class="estimate-note">Available 7 days a week · Same-day response</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== MATERIALS ===================== -->
+  <section class="materials" id="materials">
+    <div class="container">
+      <div class="materials-header">
+        <span class="section-label">Premium Products</span>
+        <h2 class="section-title">Materials We Work With</h2>
+        <p>We source only top-tier materials from GAF, Owens Corning, and Tamko — roofing products that survive the San Diego climate for decades.</p>
+      </div>
+      <div class="materials-grid">
+
+        <div class="material-card">
+          <div class="material-icon">
+            <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
+              <rect x="6" y="24" width="44" height="8" rx="2" fill="#FF8C42" opacity="0.15" stroke="#FF8C42" stroke-width="2"/>
+              <rect x="6" y="16" width="44" height="8" rx="2" fill="#FF8C42" opacity="0.25" stroke="#FF8C42" stroke-width="2"/>
+              <rect x="6" y="32" width="44" height="8" rx="2" fill="#FF8C42" opacity="0.1" stroke="#FF8C42" stroke-width="2"/>
+              <path d="M28 8L46 20H10L28 8Z" fill="#FF8C42" opacity="0.3" stroke="#FF8C42" stroke-width="2" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span class="material-tag">Most Affordable</span>
+          <h3>Asphalt Shingles</h3>
+          <div class="material-pros">
+            <div class="material-pro">
+              <div class="pro-check">
+                <svg width="8" height="8" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              Affordable upfront cost
+            </div>
+            <div class="material-pro">
+              <div class="pro-check">
+                <svg width="8" height="8" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              30–50 year lifespan
+            </div>
+            <div class="material-pro">
+              <div class="pro-check">
+                <svg width="8" height="8" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              Wide style & color range
+            </div>
+            <div class="material-pro">
+              <div class="pro-check">
+                <svg width="8" height="8" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              Impact-resistant options
+            </div>
+          </div>
+        </div>
+
+        <div class="material-card">
+          <div class="material-icon">
+            <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
+              <rect x="6" y="14" width="44" height="28" rx="3" fill="#FF8C42" opacity="0.1" stroke="#FF8C42" stroke-width="2"/>
+              <path d="M6 22h44M6 30h44M20 14v28M36 14v28" stroke="#FF8C42" stroke-width="1.5" stroke-dasharray="3 2"/>
+              <path d="M28 8L46 16H10L28 8Z" fill="#FF8C42" opacity="0.3" stroke="#FF8C42" stroke-width="2" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span class="material-tag">Longest Lasting</span>
+          <h3>Metal Roofing</h3>
+          <div class="material-pros">
+            <div class="material-pro">
+              <div class="pro-check">
+                <svg width="8" height="8" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              50–70+ year lifespan
+            </div>
+            <div class="material-pro">
+              <div class="pro-check">
+                <svg width="8" height="8" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              Energy efficient, reflects heat
+            </div>
+            <div class="material-pro">
+              <div class="pro-check">
+                <svg width="8" height="8" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              Fire and wind resistant
+            </div>
+            <div class="material-pro">
+              <div class="pro-check">
+                <svg width="8" height="8" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              Low long-term maintenance
+            </div>
+          </div>
+        </div>
+
+        <div class="material-card">
+          <div class="material-icon">
+            <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
+              <ellipse cx="28" cy="34" rx="20" ry="8" fill="#FF8C42" opacity="0.1" stroke="#FF8C42" stroke-width="2"/>
+              <ellipse cx="28" cy="26" rx="16" ry="6" fill="#FF8C42" opacity="0.15" stroke="#FF8C42" stroke-width="2"/>
+              <ellipse cx="28" cy="18" rx="12" ry="5" fill="#FF8C42" opacity="0.25" stroke="#FF8C42" stroke-width="2"/>
+              <path d="M14 34L28 10L42 34" stroke="#FF8C42" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+            </svg>
+          </div>
+          <span class="material-tag">Best for CA Climate</span>
+          <h3>Tile Roofing</h3>
+          <div class="material-pros">
+            <div class="material-pro">
+              <div class="pro-check">
+                <svg width="8" height="8" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              50+ year lifespan, timeless look
+            </div>
+            <div class="material-pro">
+              <div class="pro-check">
+                <svg width="8" height="8" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              Ideal for CA Mediterranean style
+            </div>
+            <div class="material-pro">
+              <div class="pro-check">
+                <svg width="8" height="8" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              Excellent thermal regulation
+            </div>
+            <div class="material-pro">
+              <div class="pro-check">
+                <svg width="8" height="8" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              Boosts property resale value
+            </div>
+          </div>
+        </div>
+
+        <div class="material-card">
+          <div class="material-icon">
+            <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
+              <rect x="8" y="18" width="40" height="24" rx="3" fill="#FF8C42" opacity="0.12" stroke="#FF8C42" stroke-width="2"/>
+              <path d="M8 26h40M8 34h40M20 18v24M36 18v24" stroke="#FF8C42" stroke-width="1.5"/>
+              <rect x="20" y="26" width="16" height="8" fill="#FF8C42" opacity="0.2"/>
+              <circle cx="28" cy="14" r="4" fill="#FF8C42" opacity="0.4" stroke="#FF8C42" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <span class="material-tag">Commercial Ready</span>
+          <h3>Flat / Low-Slope</h3>
+          <div class="material-pros">
+            <div class="material-pro">
+              <div class="pro-check">
+                <svg width="8" height="8" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              TPO, EPDM & modified bitumen
+            </div>
+            <div class="material-pro">
+              <div class="pro-check">
+                <svg width="8" height="8" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              Watertight seam welding
+            </div>
+            <div class="material-pro">
+              <div class="pro-check">
+                <svg width="8" height="8" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              Ideal for commercial & additions
+            </div>
+            <div class="material-pro">
+              <div class="pro-check">
+                <svg width="8" height="8" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              Easy drain & access hatches
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== STORM DAMAGE ===================== -->
+  <section class="storm" id="storm">
+    <div class="container">
+      <div class="storm-inner">
+        <div class="storm-top">
+          <span class="section-label">Storm Damage & Insurance</span>
+          <h2 class="section-title">Storm Damage?<br>We Handle the Insurance<br>Process For You</h2>
+          <p>Most homeowners don't realize their roof damage is fully covered. We've helped hundreds of San Diego homeowners get their roof replaced at little or no out-of-pocket cost.</p>
+        </div>
+        <div class="storm-steps">
+          <div class="storm-step">
+            <div class="step-num">1</div>
+            <h4>We Assess</h4>
+            <p>Free inspection identifies all storm damage, including hidden issues adjusters miss.</p>
+          </div>
+          <div class="storm-step">
+            <div class="step-num">2</div>
+            <h4>We Document</h4>
+            <p>Detailed photo report prepared — formatted exactly how insurance companies require it.</p>
+          </div>
+          <div class="storm-step">
+            <div class="step-num">3</div>
+            <h4>We Negotiate</h4>
+            <p>Our team works directly with your adjuster to ensure maximum claim approval.</p>
+          </div>
+          <div class="storm-step">
+            <div class="step-num">4</div>
+            <h4>We Install</h4>
+            <p>New roof installed with GAF-certified materials. Final walkthrough before we leave.</p>
+          </div>
+        </div>
+        <div class="storm-cta">
+          <a href="tel:6195550455" class="btn btn-orange" style="margin-right:16px">
+            Call for Emergency Inspection
+          </a>
+          <a href="#estimate" class="btn btn-outline-orange">
+            Learn More
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== GAF CERTIFICATION ===================== -->
+  <section class="gaf" id="gaf">
+    <div class="container">
+      <div class="gaf-inner">
+        <div class="gaf-badge-wrap">
+          <div class="gaf-badge">
+            <div class="shield-border"></div>
+            <div class="shield-inner">
+              <div class="badge-logo-text">GAF</div>
+              <div class="badge-sub">Master Elite<br>Certified</div>
+              <div class="badge-star-row">
+                <div class="badge-star"></div>
+                <div class="badge-star"></div>
+                <div class="badge-star"></div>
+                <div class="badge-star"></div>
+                <div class="badge-star"></div>
+              </div>
+              <div class="badge-elite">Summit Roofing</div>
+            </div>
+          </div>
+          <div class="gaf-badge-label">GAF Master Elite Certified</div>
+          <div class="gaf-badge-note">Only 3% of roofing contractors qualify for this designation</div>
+        </div>
+        <div class="gaf-right">
+          <span class="section-label">Why It Matters</span>
+          <h2 class="section-title">The Gold Standard<br>in Roofing</h2>
+          <p>GAF Master Elite certification isn't handed out — it's earned through proven quality, licensing, insurance, and ongoing training requirements. We're in the top 3% of contractors nationwide.</p>
+          <div class="gaf-points">
+            <div class="gaf-point">
+              <div class="gaf-point-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF8C42" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div class="gaf-point-text">
+                <h5>System Plus & Golden Pledge Warranty</h5>
+                <p>Only Master Elite contractors can offer GAF's strongest warranties — backed by the manufacturer, not just the installer. Coverage up to 50 years.</p>
+              </div>
+            </div>
+            <div class="gaf-point">
+              <div class="gaf-point-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF8C42" stroke-width="2.5"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+              </div>
+              <div class="gaf-point-text">
+                <h5>Verified Insurance & Licensing</h5>
+                <p>Every Master Elite contractor is verified for full insurance coverage, active contractor license, and professional commitment to training.</p>
+              </div>
+            </div>
+            <div class="gaf-point">
+              <div class="gaf-point-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF8C42" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              </div>
+              <div class="gaf-point-text">
+                <h5>Priority for Warranty Claims</h5>
+                <p>If there's ever an issue, your warranty claim goes to the front of the line. GAF stands behind the work — not just our word, but their commitment.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FINANCING ===================== -->
+  <section class="financing" id="financing">
+    <div class="container">
+      <div class="financing-header">
+        <span class="section-label">Flexible Payments</span>
+        <h2 class="section-title">Big Job? No Problem.</h2>
+        <p>A new roof is an investment. We make it easy to protect your home today without straining your budget — with same-day financing decisions.</p>
+      </div>
+      <div class="financing-grid">
+
+        <div class="financing-card featured">
+          <div class="financing-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#FF8C42" stroke-width="2">
+              <rect x="4" y="8" width="24" height="16" rx="3"/>
+              <path d="M4 13h24"/>
+              <circle cx="11" cy="19" r="2"/>
+              <circle cx="16" cy="19" r="2"/>
+            </svg>
+          </div>
+          <h3>0% APR</h3>
+          <p class="fin-sub">for 18 months</p>
+          <p>Start your roof project today and pay nothing in interest for 18 full months. Subject to credit approval. Minimum purchase may apply.</p>
+        </div>
+
+        <div class="financing-card">
+          <div class="financing-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#FF8C42" stroke-width="2">
+              <path d="M16 4v4M16 24v4M4 16h4M24 16h4"/>
+              <circle cx="16" cy="16" r="8"/>
+              <path d="M13 13h6l-3 6h3"/>
+            </svg>
+          </div>
+          <h3>Low Monthly</h3>
+          <p class="fin-sub">Flexible payment plans</p>
+          <p>Spread payments over 36, 60, or 120 months. Plans starting as low as $89/month for most residential projects. No prepayment penalties.</p>
+        </div>
+
+        <div class="financing-card">
+          <div class="financing-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#FF8C42" stroke-width="2">
+              <circle cx="16" cy="16" r="12"/>
+              <path d="M10 16l4 4 8-8"/>
+            </svg>
+          </div>
+          <h3>Same Day</h3>
+          <p class="fin-sub">Approval decision</p>
+          <p>Get approved on-site during your free estimate. Our financing partner processes decisions in minutes — no waiting, no delays, no runaround.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TESTIMONIALS ===================== -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="testimonials-header">
+        <span class="section-label">Real San Diego Homeowners</span>
+        <h2 class="section-title">What Our Customers Say</h2>
+        <p>528 five-star reviews and counting. Here's what your neighbors are saying about Summit Roofing.</p>
+      </div>
+      <div class="testimonials-grid">
+
+        <div class="testimonial-card">
+          <span class="testimonial-service">Roof Replacement</span>
+          <div class="testimonial-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <blockquote>"Summit replaced our 22-year-old roof in two days flat. The crew was professional, cleaned up every night, and the workmanship is flawless. Our house looks completely transformed. Worth every penny — and they were $2,000 under the other bids."</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">MR</div>
+            <div>
+              <div class="author-name">Marcus &amp; Rachel T.</div>
+              <div class="author-location">Chula Vista, CA</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <span class="testimonial-service">Storm Damage / Insurance</span>
+          <div class="testimonial-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <blockquote>"After the January storms, Summit came out within hours and put emergency tarps up. Their team worked with my insurance directly — I ended up paying just my $1,000 deductible for a full roof replacement. I couldn't believe how smooth it was."</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">DL</div>
+            <div>
+              <div class="author-name">Diane L.</div>
+              <div class="author-location">Santee, CA</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <span class="testimonial-service">Free Inspection + Repair</span>
+          <div class="testimonial-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <blockquote>"I called three roofers — only Summit actually came out and showed me, on their ladder, exactly where the issue was. Honest diagnosis, fair price, done in one afternoon. These guys have earned a customer for life. My whole block has their number now."</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">JM</div>
+            <div>
+              <div class="author-name">James M.</div>
+              <div class="author-location">El Cajon, CA</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SERVICE AREA ===================== -->
+  <section class="service-area" id="contact">
+    <div class="container">
+      <div class="service-area-inner">
+        <div class="service-area-text">
+          <span class="section-label">Where We Serve</span>
+          <h2 class="section-title">Proudly Serving<br>All of San Diego County</h2>
+          <p>From the coast to the inland valleys — if you're in San Diego County, Summit Roofing is your local team. Typically on-site within 24 hours of your call.</p>
+          <div class="area-tags">
+            <span class="area-tag">Chula Vista</span>
+            <span class="area-tag">El Cajon</span>
+            <span class="area-tag">La Mesa</span>
+            <span class="area-tag">Santee</span>
+            <span class="area-tag">Escondido</span>
+            <span class="area-tag">San Marcos</span>
+            <span class="area-tag">Oceanside</span>
+            <span class="area-tag">Vista</span>
+            <span class="area-tag">Spring Valley</span>
+            <span class="area-tag">Lemon Grove</span>
+            <span class="area-tag">National City</span>
+            <span class="area-tag">Lakeside</span>
+            <span class="area-tag">Poway</span>
+            <span class="area-tag">Rancho Bernardo</span>
+            <span class="area-tag">Del Mar</span>
+            <span class="area-tag">Encinitas</span>
+            <span class="area-tag">Solana Beach</span>
+            <span class="area-tag">Carlsbad</span>
+          </div>
+        </div>
+        <div>
+          <div class="map-visual">
+            <div class="map-pin-area">
+              <div style="position:relative;display:inline-block;">
+                <div class="map-pin">
+                  <div class="map-pin-inner"></div>
+                </div>
+              </div>
+              <div class="map-label" style="margin-top:16px;">San Diego County, CA</div>
+              <div class="map-sublabel">Summit Roofing Coverage Area</div>
+              <div style="margin-top:16px;display:flex;flex-direction:column;gap:6px;align-items:center;">
+                <div style="font-size:0.78rem;color:#888;"><strong style="color:#FF8C42;">18+ years</strong> serving the community</div>
+                <div style="font-size:0.78rem;color:#888;"><strong style="color:#FF8C42;">2,400+</strong> roofs in SD County</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA BANNER ===================== -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Your Roof <span class="accent">Won't Wait</span></h2>
+      <p>Every day you delay is another day of potential damage. Get a free inspection scheduled today — zero commitment, zero cost.</p>
+      <div class="cta-banner-actions">
+        <a href="#estimate" class="btn btn-orange" style="font-size:1.05rem; padding:18px 40px;">
+          Schedule Free Inspection
+        </a>
+        <a href="tel:6195550455" class="cta-phone">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12 19.79 19.79 0 0 1 1.96 3.4a2 2 0 0 1 1.99-2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          (619) 555-0455
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo-name">Summit Roofing</div>
+          <p>San Diego County's trusted roofing contractor since 2006. GAF Master Elite Certified, BBB A+ Rated, and committed to protecting your most important investment.</p>
+          <div class="footer-license">
+            <span>CSLB License: #C-39 / #RI-749201</span>
+            <span>GAF Master Elite Certified Contractor</span>
+            <span>BBB Accredited · A+ Rating</span>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Roof Replacement</a></li>
+            <li><a href="#services">Roof Repair</a></li>
+            <li><a href="#services">Free Inspection</a></li>
+            <li><a href="#storm">Storm Damage</a></li>
+            <li><a href="#services">New Construction</a></li>
+            <li><a href="#services">Commercial Roofing</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#gaf">GAF Certification</a></li>
+            <li><a href="#financing">Financing</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#materials">Materials</a></li>
+            <li><a href="#contact">Service Area</a></li>
+            <li><a href="../index.html">Blueprint Digital</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12 19.79 19.79 0 0 1 1.96 3.4a2 2 0 0 1 1.99-2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </span>
+            <div class="footer-contact-text">
+              <a href="tel:6195550455">(619) 555-0455</a>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            <div class="footer-contact-text">San Diego County, CA</div>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </span>
+            <div class="footer-contact-text">Mon–Sat: 7am–7pm<br>Sun: Emergency Only</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-bottom-left">
+          <span>© 2025 Summit Roofing. All rights reserved.</span>
+          <span>·</span>
+          <span>CSLB #RI-749201</span>
+          <span>·</span>
+          <span>Tagline: Protect Your Home. Trust the Experts.</span>
+        </div>
+        <div class="footer-gaf-note">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FF8C42" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>GAF Master Elite Certified Contractor</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

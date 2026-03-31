@@ -1,0 +1,1816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>True Color Painting | San Diego's Most Trusted Painters</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ==================== RESET & BASE ==================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1A1A1A;
+      background: #fff;
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
+
+    /* ==================== VARIABLES ==================== */
+    :root {
+      --navy: #1A237E;
+      --navy-dark: #0D1457;
+      --navy-light: #283593;
+      --coral: #E53935;
+      --coral-dark: #C62828;
+      --coral-light: #EF5350;
+      --white: #FFFFFF;
+      --bg-alt: #F8F9FA;
+      --text: #1A1A1A;
+      --text-muted: #555;
+      --border: #E0E0E0;
+    }
+
+    /* ==================== PROMO BAR ==================== */
+    .promo-bar {
+      background: var(--coral);
+      color: #fff;
+      text-align: center;
+      padding: 10px 20px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      position: relative;
+      z-index: 100;
+    }
+    .promo-bar a { color: #fff; font-weight: 700; text-decoration: underline; }
+
+    /* ==================== BACK LINK ==================== */
+    .back-link-bar {
+      background: var(--bg-alt);
+      border-bottom: 1px solid var(--border);
+      padding: 8px 32px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    .back-link-bar a {
+      color: var(--navy);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .back-link-bar a:hover { color: var(--coral); }
+
+    /* ==================== STICKY NAV ==================== */
+    .nav {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      border-bottom: 2px solid var(--border);
+      z-index: 999;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 32px;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: var(--navy);
+      white-space: nowrap;
+    }
+    .logo-diamond {
+      width: 20px;
+      height: 20px;
+      background: var(--coral);
+      transform: rotate(45deg);
+      flex-shrink: 0;
+      border-radius: 2px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text);
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: color 0.2s, background 0.2s;
+      white-space: nowrap;
+    }
+    .nav-links a:hover { color: var(--navy); background: var(--bg-alt); }
+    .nav-cta {
+      background: var(--coral);
+      color: #fff !important;
+      padding: 10px 20px !important;
+      border-radius: 6px;
+      font-weight: 700 !important;
+      transition: background 0.2s, transform 0.1s !important;
+    }
+    .nav-cta:hover { background: var(--coral-dark) !important; transform: translateY(-1px); }
+
+    /* ==================== HERO ==================== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    /* Before/After split background */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      display: flex;
+    }
+    .hero-before {
+      flex: 1;
+      background: linear-gradient(135deg,
+        #4a4a4a 0%,
+        #6b6b6b 20%,
+        #555 35%,
+        #787878 50%,
+        #5a5a5a 65%,
+        #696969 80%,
+        #4f4f4f 100%
+      );
+      position: relative;
+    }
+    /* Peeling texture effect on "before" side */
+    .hero-before::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 40px,
+          rgba(0,0,0,0.06) 40px,
+          rgba(0,0,0,0.06) 41px
+        ),
+        repeating-linear-gradient(
+          90deg,
+          transparent,
+          transparent 60px,
+          rgba(255,255,255,0.04) 60px,
+          rgba(255,255,255,0.04) 61px
+        );
+    }
+    .hero-before::after {
+      content: 'BEFORE';
+      position: absolute;
+      bottom: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      color: rgba(255,255,255,0.35);
+    }
+    .hero-after {
+      flex: 1;
+      background: linear-gradient(135deg,
+        #1A237E 0%,
+        #283593 25%,
+        #3949AB 45%,
+        #E8E0D5 65%,
+        #F5EFE7 80%,
+        #EDE0D0 100%
+      );
+      position: relative;
+    }
+    .hero-after::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(229,57,53,0.12) 0%, transparent 60%);
+    }
+    .hero-after::after {
+      content: 'AFTER';
+      position: absolute;
+      bottom: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      color: rgba(255,255,255,0.45);
+    }
+    /* Diagonal divider line */
+    .hero-divider {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 4px;
+      background: #fff;
+      transform: translateX(-50%);
+      z-index: 2;
+      box-shadow: 0 0 20px rgba(255,255,255,0.6);
+    }
+    .hero-divider::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 44px;
+      height: 44px;
+      background: #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 0 6px rgba(255,255,255,0.3);
+    }
+    .hero-divider::after {
+      content: '↔';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.1rem;
+      color: var(--navy);
+      font-weight: 900;
+      z-index: 1;
+    }
+    /* Dark overlay for readability */
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.4) 0%,
+        rgba(0,0,0,0.55) 50%,
+        rgba(0,0,0,0.45) 100%
+      );
+      z-index: 3;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 4;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 32px;
+      text-align: center;
+      color: #fff;
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      background: var(--coral);
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 6px 18px;
+      border-radius: 30px;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 800;
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      line-height: 1.1;
+      color: #fff;
+      margin-bottom: 20px;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.4);
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: #FFD54F;
+    }
+    .hero-sub {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      font-weight: 500;
+      color: rgba(255,255,255,0.9);
+      max-width: 600px;
+      margin: 0 auto 36px;
+      text-shadow: 0 1px 8px rgba(0,0,0,0.3);
+    }
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: var(--coral);
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 16px 32px;
+      border-radius: 8px;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(229,57,53,0.4);
+    }
+    .btn-primary:hover {
+      background: var(--coral-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(229,57,53,0.5);
+    }
+    .btn-outline {
+      display: inline-block;
+      background: transparent;
+      color: #fff;
+      border: 2px solid rgba(255,255,255,0.8);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 14px 30px;
+      border-radius: 8px;
+      transition: background 0.2s, border-color 0.2s, transform 0.15s;
+    }
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: #fff;
+      transform: translateY(-2px);
+    }
+    .hero-trust {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 6px 20px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.85);
+      background: rgba(0,0,0,0.3);
+      backdrop-filter: blur(4px);
+      border-radius: 40px;
+      padding: 12px 28px;
+      max-width: 820px;
+      margin: 0 auto;
+    }
+    .hero-trust span { white-space: nowrap; }
+    .trust-sep {
+      color: rgba(255,255,255,0.35);
+      font-size: 1rem;
+    }
+
+    /* ==================== STATS BAR ==================== */
+    .stats-bar {
+      background: var(--navy);
+      padding: 40px 32px;
+    }
+    .stats-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      text-align: center;
+    }
+    .stat-item {
+      padding: 16px;
+      border-right: 1px solid rgba(255,255,255,0.1);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-number {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 900;
+      color: #FFD54F;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .stat-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.75);
+      letter-spacing: 0.03em;
+    }
+
+    /* ==================== SECTION TITLES ==================== */
+    .section-tag {
+      display: inline-block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--coral);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .section-sub {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 580px;
+      margin: 0 auto 48px;
+    }
+    .section-header { text-align: center; margin-bottom: 48px; }
+
+    /* ==================== SERVICES ==================== */
+    .services {
+      padding: 80px 32px;
+      background: var(--bg-alt);
+    }
+    .services-inner { max-width: 1200px; margin: 0 auto; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .service-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 32px 28px;
+      border: 1px solid var(--border);
+      transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--coral);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+    }
+    .service-card:hover {
+      box-shadow: 0 8px 32px rgba(26,35,126,0.12);
+      transform: translateY(-4px);
+      border-color: rgba(229,57,53,0.2);
+    }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      font-size: 1.4rem;
+    }
+    .service-card h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+    .service-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* ==================== COLOR CONSULTATION FEATURE ==================== */
+    .color-section {
+      background: var(--navy);
+      padding: 80px 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    .color-section::before {
+      content: '';
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.03);
+    }
+    .color-section::after {
+      content: '';
+      position: absolute;
+      bottom: -60px;
+      left: -60px;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: rgba(229,57,53,0.06);
+    }
+    .color-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .color-inner .section-title { color: #fff; }
+    .color-inner .section-tag { color: #FFD54F; }
+    .color-inner .section-sub { color: rgba(255,255,255,0.7); }
+    .color-feature-text {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.8);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-left: 3px solid var(--coral);
+      border-radius: 8px;
+      padding: 14px 20px;
+      max-width: 560px;
+      margin: -24px auto 40px;
+      text-align: center;
+    }
+    .color-swatches {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .swatch {
+      aspect-ratio: 1;
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+      transition: transform 0.2s, box-shadow 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .swatch:hover {
+      transform: scale(1.08) translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    }
+    .swatch-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0,0,0,0.5);
+      color: rgba(255,255,255,0.9);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.55rem;
+      font-weight: 600;
+      text-align: center;
+      padding: 4px 2px;
+      letter-spacing: 0.04em;
+    }
+    .sw-1  { background: #1A237E; }
+    .sw-2  { background: #E53935; }
+    .sw-3  { background: #F5F5DC; }
+    .sw-4  { background: #4E342E; }
+    .sw-5  { background: #2E7D32; }
+    .sw-6  { background: #F57F17; }
+    .sw-7  { background: #4A90D9; }
+    .sw-8  { background: #795548; }
+    .sw-9  { background: #ECEFF1; }
+    .sw-10 { background: #37474F; }
+    .sw-11 { background: #E8D5B7; }
+    .sw-12 { background: #BF360C; }
+    .bm-sw-badges {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 36px;
+      flex-wrap: wrap;
+    }
+    .bm-badge {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 8px;
+      padding: 12px 24px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .bm-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--coral);
+    }
+
+    /* ==================== TRANSFORMATION GALLERY ==================== */
+    .gallery {
+      padding: 80px 32px;
+      background: #fff;
+    }
+    .gallery-inner { max-width: 1200px; margin: 0 auto; }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .gallery-card {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .gallery-card:hover {
+      box-shadow: 0 12px 36px rgba(26,35,126,0.12);
+      transform: translateY(-4px);
+    }
+    /* Before/after split panel inside each card */
+    .ba-panel {
+      position: relative;
+      height: 220px;
+      display: flex;
+      overflow: hidden;
+    }
+    .ba-before, .ba-after {
+      flex: 1;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 14px;
+    }
+    .ba-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      color: rgba(255,255,255,0.6);
+    }
+    /* Living room */
+    .ba-lr-before {
+      background: linear-gradient(160deg, #C8B89A 0%, #B8A88A 40%, #A89878 70%, #9A8A6A 100%);
+    }
+    .ba-lr-after {
+      background: linear-gradient(160deg, #607D8B 0%, #546E7A 40%, #455A64 70%, #37474F 100%);
+    }
+    /* Kitchen cabinets */
+    .ba-kc-before {
+      background: linear-gradient(160deg, #8D6E63 0%, #795548 40%, #6D4C41 70%, #5D4037 100%);
+    }
+    .ba-kc-after {
+      background: linear-gradient(160deg, #F5F5F5 0%, #FAFAFA 40%, #ECEFF1 70%, #F0F0F0 100%);
+    }
+    /* Home exterior */
+    .ba-he-before {
+      background: linear-gradient(160deg, #D4B86A 0%, #C8A84A 40%, #BCA040 70%, #B09030 100%);
+    }
+    .ba-he-after {
+      background: linear-gradient(160deg, #1A237E 0%, #283593 40%, #3949AB 60%, #E8E4DC 80%, #F0EDE5 100%);
+    }
+    .ba-divider {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 3px;
+      background: #fff;
+      transform: translateX(-50%);
+      z-index: 2;
+      box-shadow: 0 0 10px rgba(255,255,255,0.5);
+    }
+    .ba-divider::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 28px;
+      height: 28px;
+      background: #fff;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    .ba-divider::after {
+      content: '↔';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 0.7rem;
+      color: var(--navy);
+      font-weight: 900;
+      z-index: 1;
+    }
+    .gallery-info {
+      padding: 20px 22px;
+      background: #fff;
+    }
+    .gallery-badge {
+      display: inline-block;
+      background: rgba(229,57,53,0.08);
+      color: var(--coral);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 8px;
+    }
+    .gallery-info h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.98rem;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .gallery-info p {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+    }
+    .gallery-location {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-top: 10px;
+    }
+
+    /* ==================== PROCESS ==================== */
+    .process {
+      padding: 80px 32px;
+      background: var(--bg-alt);
+    }
+    .process-inner { max-width: 1100px; margin: 0 auto; }
+    .process-steps {
+      display: flex;
+      gap: 0;
+      position: relative;
+    }
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 32px;
+      left: calc(10% + 32px);
+      right: calc(10% + 32px);
+      height: 2px;
+      background: linear-gradient(90deg, var(--navy) 0%, var(--coral) 100%);
+      z-index: 0;
+    }
+    .step {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0 12px;
+      position: relative;
+      z-index: 1;
+    }
+    .step-number {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      border: 4px solid var(--bg-alt);
+      box-shadow: 0 4px 16px rgba(26,35,126,0.2);
+      transition: background 0.2s, transform 0.2s;
+    }
+    .step:hover .step-number {
+      background: var(--coral);
+      transform: scale(1.1);
+    }
+    .step h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .step p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* ==================== MATERIALS ==================== */
+    .materials {
+      padding: 80px 32px;
+      background: #fff;
+    }
+    .materials-inner { max-width: 1200px; margin: 0 auto; }
+    .materials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .material-card {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .material-card:hover {
+      box-shadow: 0 8px 28px rgba(26,35,126,0.1);
+      transform: translateY(-3px);
+    }
+    .material-header {
+      padding: 24px 24px 20px;
+      position: relative;
+    }
+    .mat-bm .material-header  { background: linear-gradient(135deg, #1A237E 0%, #3949AB 100%); }
+    .mat-sw .material-header  { background: linear-gradient(135deg, #2E7D32 0%, #43A047 100%); }
+    .mat-behr .material-header { background: linear-gradient(135deg, #E65100 0%, #F57C00 100%); }
+    .material-header h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .material-header .sub {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 0.06em;
+    }
+    .material-body {
+      padding: 20px 24px 24px;
+      background: #fff;
+    }
+    .material-body p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 14px;
+    }
+    .material-badge {
+      display: inline-block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .mat-bm .material-badge  { background: rgba(26,35,126,0.08); color: var(--navy); }
+    .mat-sw .material-badge  { background: rgba(46,125,50,0.08); color: #2E7D32; }
+    .mat-behr .material-badge { background: rgba(230,81,0,0.08); color: #E65100; }
+    .coats-note {
+      text-align: center;
+      margin-top: 36px;
+      background: var(--navy);
+      color: #fff;
+      border-radius: 10px;
+      padding: 18px 28px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+    .coats-note span { color: #FFD54F; }
+
+    /* ==================== LEAD SAFE ==================== */
+    .lead-safe {
+      padding: 60px 32px;
+      background: var(--bg-alt);
+    }
+    .lead-safe-inner { max-width: 900px; margin: 0 auto; }
+    .lead-safe-card {
+      background: #1A1A2E;
+      border: 2px solid var(--coral);
+      border-radius: 16px;
+      padding: 44px 48px;
+      display: flex;
+      gap: 36px;
+      align-items: flex-start;
+      position: relative;
+      overflow: hidden;
+    }
+    .lead-safe-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--coral) 0%, var(--coral-light) 100%);
+    }
+    .lead-icon {
+      width: 64px;
+      height: 64px;
+      background: rgba(229,57,53,0.15);
+      border: 2px solid rgba(229,57,53,0.3);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      flex-shrink: 0;
+    }
+    .lead-text h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 1.3rem;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .lead-text p {
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .lead-badges {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .lead-badge {
+      background: rgba(229,57,53,0.15);
+      border: 1px solid rgba(229,57,53,0.3);
+      color: #FF7961;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+
+    /* ==================== TESTIMONIALS ==================== */
+    .testimonials {
+      padding: 80px 32px;
+      background: #fff;
+    }
+    .testimonials-inner { max-width: 1200px; margin: 0 auto; }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .testimonial-card {
+      background: var(--bg-alt);
+      border-radius: 14px;
+      padding: 32px 28px;
+      border: 1px solid var(--border);
+      position: relative;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .testimonial-card:hover {
+      box-shadow: 0 8px 28px rgba(26,35,126,0.1);
+      transform: translateY(-3px);
+    }
+    .testimonial-card::before {
+      content: '"';
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem;
+      color: var(--coral);
+      opacity: 0.15;
+      position: absolute;
+      top: -10px;
+      left: 18px;
+      line-height: 1;
+    }
+    .stars {
+      color: #FFB300;
+      font-size: 0.9rem;
+      margin-bottom: 14px;
+      letter-spacing: 2px;
+    }
+    .testimonial-card p {
+      font-size: 0.92rem;
+      color: var(--text);
+      line-height: 1.75;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+    .reviewer {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .reviewer-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 800;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .av-1 { background: linear-gradient(135deg, var(--navy), var(--navy-light)); }
+    .av-2 { background: linear-gradient(135deg, #2E7D32, #43A047); }
+    .av-3 { background: linear-gradient(135deg, #6A1B9A, #8E24AA); }
+    .reviewer-name {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: var(--navy);
+    }
+    .reviewer-loc {
+      font-size: 0.77rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* ==================== SERVICE AREAS ==================== */
+    .areas {
+      padding: 60px 32px;
+      background: var(--bg-alt);
+    }
+    .areas-inner { max-width: 1200px; margin: 0 auto; }
+    .areas-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+    }
+    .area-pill {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 14px;
+      text-align: center;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--navy);
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+    }
+    .area-pill:hover {
+      background: var(--navy);
+      color: #fff;
+      border-color: var(--navy);
+    }
+
+    /* ==================== CTA BANNER ==================== */
+    .cta-banner {
+      padding: 80px 32px;
+      background: #fff;
+    }
+    .cta-banner-inner {
+      max-width: 820px;
+      margin: 0 auto;
+      text-align: center;
+      border: 2px solid var(--coral);
+      border-radius: 20px;
+      padding: 60px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-banner-inner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--coral) 0%, #FF7961 50%, var(--coral) 100%);
+    }
+    .cta-banner-inner .section-title { font-size: clamp(1.6rem, 3vw, 2rem); margin-bottom: 12px; }
+    .cta-sub {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 36px;
+    }
+    .cta-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .btn-cta-lg {
+      display: inline-block;
+      background: var(--coral);
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 1rem;
+      padding: 18px 36px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(229,57,53,0.35);
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    }
+    .btn-cta-lg:hover {
+      background: var(--coral-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(229,57,53,0.45);
+    }
+    .cta-phone {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: var(--navy);
+    }
+    .cta-phone a { color: var(--navy); transition: color 0.2s; }
+    .cta-phone a:hover { color: var(--coral); }
+
+    /* ==================== FOOTER ==================== */
+    .footer {
+      background: var(--bg-alt);
+      border-top: 1px solid var(--border);
+      padding: 56px 32px 32px;
+    }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-brand .nav-logo { margin-bottom: 14px; font-size: 1.1rem; }
+    .footer-tagline {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .footer-contact a {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 6px;
+      transition: color 0.2s;
+    }
+    .footer-contact a:hover { color: var(--coral); }
+    .footer-col h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+    .footer-col ul {
+      list-style: none;
+    }
+    .footer-col ul li {
+      margin-bottom: 8px;
+    }
+    .footer-col ul li a {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      transition: color 0.2s;
+    }
+    .footer-col ul li a:hover { color: var(--navy); }
+    .footer-certs {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .footer-cert-badge {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-bottom p {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    .footer-back-link {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--navy);
+      border: 1px solid var(--navy);
+      padding: 6px 14px;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .footer-back-link:hover { background: var(--navy); color: #fff; }
+
+    /* ==================== DIVIDERS ==================== */
+    .section-divider {
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ==================== RESPONSIVE ==================== */
+    @media (max-width: 1024px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .areas-grid { grid-template-columns: repeat(4, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    }
+
+    @media (max-width: 768px) {
+      .back-link-bar { padding: 8px 16px; }
+      .nav-inner { padding: 0 16px; }
+      .nav-links { display: none; }
+      .hero-content { padding: 40px 20px; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .stat-item:nth-child(2) { border-right: none; }
+      .stat-item:nth-child(4) { border-right: none; }
+      .services { padding: 60px 20px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .color-section { padding: 60px 20px; }
+      .color-swatches { grid-template-columns: repeat(4, 1fr); }
+      .gallery { padding: 60px 20px; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .process { padding: 60px 20px; }
+      .process-steps { flex-direction: column; align-items: flex-start; gap: 24px; }
+      .process-steps::before { display: none; }
+      .step { flex-direction: row; text-align: left; gap: 16px; padding: 0; }
+      .step-number { margin-bottom: 0; flex-shrink: 0; }
+      .materials { padding: 60px 20px; }
+      .materials-grid { grid-template-columns: 1fr; }
+      .lead-safe { padding: 48px 20px; }
+      .lead-safe-card { flex-direction: column; padding: 28px 24px; gap: 20px; }
+      .testimonials { padding: 60px 20px; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .areas { padding: 48px 20px; }
+      .areas-grid { grid-template-columns: repeat(2, 1fr); }
+      .cta-banner { padding: 48px 20px; }
+      .cta-banner-inner { padding: 36px 24px; }
+      .footer { padding: 40px 20px 24px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+
+    @media (max-width: 480px) {
+      .promo-bar { font-size: 0.75rem; }
+      .hero-trust { font-size: 0.7rem; padding: 10px 16px; gap: 6px 12px; }
+      .trust-sep { display: none; }
+      .stats-inner { grid-template-columns: 1fr 1fr; }
+      .color-swatches { grid-template-columns: repeat(3, 1fr); }
+      .areas-grid { grid-template-columns: repeat(2, 1fr); }
+      .cta-actions { flex-direction: column; }
+      .hero-ctas { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PROMO BAR -->
+  <div class="promo-bar">
+    🎨 Spring Special: Free Color Consultation + 10% Off Interior Painting &nbsp;|&nbsp; <a href="tel:+16195550830">(619) 555-0830</a>
+  </div>
+
+  <!-- BACK LINK -->
+  <div class="back-link-bar">
+    <a href="../index.html">← Back to Blueprint Digital</a>
+  </div>
+
+  <!-- STICKY NAV -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#top" class="nav-logo">
+        <div class="logo-diamond" aria-hidden="true"></div>
+        True Color Painting
+      </a>
+      <ul class="nav-links">
+        <li><a href="#services">Interior</a></li>
+        <li><a href="#services">Exterior</a></li>
+        <li><a href="#services">Commercial</a></li>
+        <li><a href="#color">Colors</a></li>
+        <li><a href="tel:+16195550830" class="nav-cta">Free Estimate</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="top" aria-label="Hero">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="hero-before"></div>
+      <div class="hero-after"></div>
+    </div>
+    <div class="hero-divider" aria-hidden="true"></div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="hero-content">
+      <span class="hero-eyebrow">San Diego's Premier Painting Contractors</span>
+      <h1>Your Home,<br /><em>Transformed.</em></h1>
+      <p class="hero-sub">San Diego's painting experts — flawless finish, on time, every time. Interior, exterior, cabinets, and more.</p>
+      <div class="hero-ctas">
+        <a href="tel:+16195550830" class="btn-primary">Get Free Estimate</a>
+        <a href="#gallery" class="btn-outline">See Our Work</a>
+      </div>
+      <div class="hero-trust">
+        <span>⭐ 4.8/5 (1,200+ Reviews)</span>
+        <span class="trust-sep">|</span>
+        <span>✔ Licensed &amp; Bonded</span>
+        <span class="trust-sep">|</span>
+        <span>CSLB #PA-294817</span>
+        <span class="trust-sep">|</span>
+        <span>Lead-Safe Certified</span>
+        <span class="trust-sep">|</span>
+        <span>5-Year Warranty</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <section class="stats-bar" aria-label="Company statistics">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <div class="stat-number">2,400+</div>
+        <div class="stat-label">Homes Transformed</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">12</div>
+        <div class="stat-label">Years in San Diego</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">5-Year</div>
+        <div class="stat-label">Written Warranty</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Satisfaction Guarantee</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services" aria-labelledby="services-title">
+    <div class="services-inner">
+      <div class="section-header">
+        <span class="section-tag">What We Do</span>
+        <h2 class="section-title" id="services-title">Complete Painting Services<br />for San Diego Homes</h2>
+        <p class="section-sub">From single rooms to full exterior makeovers — we handle every surface with care and precision.</p>
+      </div>
+      <div class="services-grid">
+
+        <div class="service-card">
+          <div class="service-icon" aria-hidden="true">🏠</div>
+          <h3>Interior Painting</h3>
+          <p>Walls, ceilings, trim, and doors — we prep surfaces properly, use premium paints, and leave your home spotless. Furniture and floors always protected.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon" aria-hidden="true">🌤️</div>
+          <h3>Exterior Painting</h3>
+          <p>Complete exterior transformation with weather-resistant coatings built for San Diego's sun and coastal air. Full prep, caulking, and priming included.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon" aria-hidden="true">🗄️</div>
+          <h3>Cabinet Refinishing</h3>
+          <p>Kitchen and bathroom cabinets refinished to a factory-smooth finish. Save thousands compared to full replacement with results that look brand new.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon" aria-hidden="true">🌿</div>
+          <h3>Deck &amp; Fence Staining</h3>
+          <p>UV-protective stains and sealers for decks, fences, and pergolas. We clean, sand, and apply the right product for long-lasting color and protection.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon" aria-hidden="true">🏢</div>
+          <h3>Commercial Painting</h3>
+          <p>Offices, retail spaces, restaurants, and multi-family properties. We work around your schedule — nights and weekends available to minimize disruption.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon" aria-hidden="true">🎨</div>
+          <h3>Color Consultation</h3>
+          <p>Benjamin Moore and Sherwin-Williams certified consultants help you find the perfect palette — with samples applied to your actual walls before we start.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- COLOR CONSULTATION FEATURE -->
+  <section class="color-section" id="color" aria-labelledby="color-title">
+    <div class="color-inner">
+      <div class="section-header">
+        <span class="section-tag">Complimentary Service</span>
+        <h2 class="section-title" id="color-title">Not Sure What Color? We Help.</h2>
+        <p class="section-sub">Our certified color consultants work with Benjamin Moore and Sherwin-Williams palettes to find the perfect color for your home — before we pick up a brush.</p>
+      </div>
+      <div class="color-feature-text">
+        ✦ Free color samples applied to your wall before we start — so you love the result before it's final.
+      </div>
+      <div class="color-swatches" aria-label="Color palette samples">
+        <div class="swatch sw-1"><div class="swatch-label">Navy Classic</div></div>
+        <div class="swatch sw-2"><div class="swatch-label">Coral Red</div></div>
+        <div class="swatch sw-3"><div class="swatch-label">Warm Linen</div></div>
+        <div class="swatch sw-4"><div class="swatch-label">Espresso</div></div>
+        <div class="swatch sw-5"><div class="swatch-label">Forest</div></div>
+        <div class="swatch sw-6"><div class="swatch-label">Golden Hour</div></div>
+        <div class="swatch sw-7"><div class="swatch-label">Sky Blue</div></div>
+        <div class="swatch sw-8"><div class="swatch-label">Walnut</div></div>
+        <div class="swatch sw-9"><div class="swatch-label">Crisp White</div></div>
+        <div class="swatch sw-10"><div class="swatch-label">Slate Gray</div></div>
+        <div class="swatch sw-11"><div class="swatch-label">Sand Dune</div></div>
+        <div class="swatch sw-12"><div class="swatch-label">Terracotta</div></div>
+      </div>
+      <div class="bm-sw-badges">
+        <div class="bm-badge"><div class="bm-dot"></div> Benjamin Moore Certified</div>
+        <div class="bm-badge"><div class="bm-dot"></div> Sherwin-Williams Certified</div>
+        <div class="bm-badge"><div class="bm-dot"></div> Free with Any Project</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRANSFORMATION GALLERY -->
+  <section class="gallery" id="gallery" aria-labelledby="gallery-title">
+    <div class="gallery-inner">
+      <div class="section-header">
+        <span class="section-tag">Real Projects</span>
+        <h2 class="section-title" id="gallery-title">Before &amp; After Transformations</h2>
+        <p class="section-sub">Every project tells a story. Here's what a fresh coat of paint can do for a San Diego home.</p>
+      </div>
+      <div class="gallery-grid">
+
+        <article class="gallery-card">
+          <div class="ba-panel" aria-label="Living room interior before and after">
+            <div class="ba-before ba-lr-before">
+              <span class="ba-label">BEFORE</span>
+            </div>
+            <div class="ba-after ba-lr-after">
+              <span class="ba-label">AFTER</span>
+            </div>
+            <div class="ba-divider" aria-hidden="true"></div>
+          </div>
+          <div class="gallery-info">
+            <span class="gallery-badge">Interior Painting</span>
+            <h3>Living Room &amp; Dining Area</h3>
+            <p>Dull beige replaced with rich warm gray — an instant modern upgrade that transformed the entire feel of the space.</p>
+            <div class="gallery-location">📍 Chula Vista, CA</div>
+          </div>
+        </article>
+
+        <article class="gallery-card">
+          <div class="ba-panel" aria-label="Kitchen cabinet refinishing before and after">
+            <div class="ba-before ba-kc-before">
+              <span class="ba-label">BEFORE</span>
+            </div>
+            <div class="ba-after ba-kc-after">
+              <span class="ba-label">AFTER</span>
+            </div>
+            <div class="ba-divider" aria-hidden="true"></div>
+          </div>
+          <div class="gallery-info">
+            <span class="gallery-badge">Cabinet Refinishing</span>
+            <h3>Full Kitchen Cabinet Refresh</h3>
+            <p>Dated oak-brown cabinets transformed to crisp factory-white. Client saved $8,200 vs. full replacement — and loves the result.</p>
+            <div class="gallery-location">📍 National City, CA</div>
+          </div>
+        </article>
+
+        <article class="gallery-card">
+          <div class="ba-panel" aria-label="Home exterior before and after">
+            <div class="ba-before ba-he-before">
+              <span class="ba-label">BEFORE</span>
+            </div>
+            <div class="ba-after ba-he-after">
+              <span class="ba-label">AFTER</span>
+            </div>
+            <div class="ba-divider" aria-hidden="true"></div>
+          </div>
+          <div class="gallery-info">
+            <span class="gallery-badge">Exterior Painting</span>
+            <h3>Complete Home Exterior</h3>
+            <p>Faded yellow siding refreshed with a deep navy body and crisp white trim. Curb appeal transformed — neighbors stopped to compliment.</p>
+            <div class="gallery-location">📍 Bonita, CA</div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- PROCESS -->
+  <section class="process" id="process" aria-labelledby="process-title">
+    <div class="process-inner">
+      <div class="section-header">
+        <span class="section-tag">How It Works</span>
+        <h2 class="section-title" id="process-title">Our 5-Step Process</h2>
+        <p class="section-sub">From first call to final walkthrough — a seamless, stress-free experience every time.</p>
+      </div>
+      <div class="process-steps" role="list">
+
+        <div class="step" role="listitem">
+          <div class="step-number" aria-hidden="true">1</div>
+          <div>
+            <h4>Free Estimate</h4>
+            <p>We assess your project on-site and deliver a detailed, transparent quote within 24 hours. No pressure, no surprise fees.</p>
+          </div>
+        </div>
+
+        <div class="step" role="listitem">
+          <div class="step-number" aria-hidden="true">2</div>
+          <div>
+            <h4>Color Consultation</h4>
+            <p>Our certified consultant helps you choose the perfect palette. Samples applied to your walls before any commitment.</p>
+          </div>
+        </div>
+
+        <div class="step" role="listitem">
+          <div class="step-number" aria-hidden="true">3</div>
+          <div>
+            <h4>Prep &amp; Protect</h4>
+            <p>We cover floors, furniture, and fixtures completely. Surfaces are cleaned, sanded, caulked, and primed for maximum adhesion.</p>
+          </div>
+        </div>
+
+        <div class="step" role="listitem">
+          <div class="step-number" aria-hidden="true">4</div>
+          <div>
+            <h4>Painting</h4>
+            <p>2 coats minimum applied with precision. No cutting corners — we work methodically for a flawless, even finish on every surface.</p>
+          </div>
+        </div>
+
+        <div class="step" role="listitem">
+          <div class="step-number" aria-hidden="true">5</div>
+          <div>
+            <h4>Final Walkthrough</h4>
+            <p>We walk through every room with you, touch up anything that isn't perfect, and don't consider the job done until you're fully satisfied.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MATERIALS -->
+  <section class="materials" aria-labelledby="materials-title">
+    <div class="materials-inner">
+      <div class="section-header">
+        <span class="section-tag">Our Standards</span>
+        <h2 class="section-title" id="materials-title">We Only Use Premium Paints</h2>
+        <p class="section-sub">The right paint makes the difference between a job that lasts 2 years and one that lasts 10. We choose quality every time.</p>
+      </div>
+      <div class="materials-grid">
+
+        <div class="material-card mat-bm">
+          <div class="material-header">
+            <h3>Benjamin Moore Aura</h3>
+            <div class="sub">PREMIUM INTERIOR — OUR TOP PICK</div>
+          </div>
+          <div class="material-body">
+            <p>The gold standard for interior painting. Color Lock technology delivers stunning depth with just two coats — no separate primer needed. Exceptional hide, durability, and a velvet finish that holds up to cleaning.</p>
+            <span class="material-badge">Self-Priming &nbsp;·&nbsp; Color Lock Technology</span>
+          </div>
+        </div>
+
+        <div class="material-card mat-sw">
+          <div class="material-header">
+            <h3>Sherwin-Williams Emerald</h3>
+            <div class="sub">PREMIUM EXTERIOR — WEATHER TOUGH</div>
+          </div>
+          <div class="material-body">
+            <p>Engineered for durability in sun, humidity, and coastal air. Resists peeling, fading, and mildew. LifeMaster technology ensures color stays vibrant through San Diego's sun-intense climate year after year.</p>
+            <span class="material-badge">Weather-Resistant &nbsp;·&nbsp; Anti-Mildew</span>
+          </div>
+        </div>
+
+        <div class="material-card mat-behr">
+          <div class="material-header">
+            <h3>Behr Premium Plus</h3>
+            <div class="sub">BUDGET-FRIENDLY OPTION</div>
+          </div>
+          <div class="material-body">
+            <p>When budgets are tight, Behr Premium Plus delivers solid performance — stain-blocking primer and paint in one, durable finish, and good coverage. We still apply 2 coats minimum. No shortcuts, ever.</p>
+            <span class="material-badge">Paint + Primer &nbsp;·&nbsp; Budget Option</span>
+          </div>
+        </div>
+
+      </div>
+      <div class="coats-note">
+        ✔ We apply <span>2 coats minimum</span> on every project — no cutting corners, no rushing. That's our guarantee.
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- LEAD SAFE -->
+  <section class="lead-safe" aria-labelledby="lead-title">
+    <div class="lead-safe-inner">
+      <div class="lead-safe-card">
+        <div class="lead-icon" aria-hidden="true">🛡️</div>
+        <div class="lead-text">
+          <h2 id="lead-title">Is Your Home Pre-1978? We're Lead-Safe Certified.</h2>
+          <p>Homes built before 1978 may contain lead-based paint. Disturbing these surfaces without proper precautions creates health hazards — especially for children and pregnant women.</p>
+          <p>True Color Painting is fully certified under the <strong style="color:#fff;">EPA RRP (Renovation, Repair &amp; Painting)</strong> Lead-Safe program. We follow strict containment, work practice, and cleanup procedures — protecting your family and our crew every step of the way.</p>
+          <div class="lead-badges">
+            <span class="lead-badge">EPA RRP Certified</span>
+            <span class="lead-badge">Lead-Safe Protocols</span>
+            <span class="lead-badge">CSLB #PA-294817</span>
+            <span class="lead-badge">Pre-1978 Specialists</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" aria-labelledby="testimonials-title">
+    <div class="testimonials-inner">
+      <div class="section-header">
+        <span class="section-tag">Real Reviews</span>
+        <h2 class="section-title" id="testimonials-title">What San Diego Homeowners Say</h2>
+        <p class="section-sub">Over 1,200 five-star reviews across Google and Yelp. Here's what our customers say about working with us.</p>
+      </div>
+      <div class="testimonials-grid">
+
+        <div class="testimonial-card">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>"They painted our entire 1,800 sq ft interior in 3 days. Immaculate — they protected every piece of furniture and cleaned up completely each day. The finish looks incredible. I'll never use anyone else."</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar av-1" aria-hidden="true">SR</div>
+            <div>
+              <div class="reviewer-name">Sandra R.</div>
+              <div class="reviewer-loc">Chula Vista, CA &nbsp;·&nbsp; Interior Painting</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>"Cabinet refinishing looks factory-new. Saved us $8,000 versus full replacement and took less than a week. The detail work is outstanding — you'd never know these weren't new cabinets. Highly recommend."</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar av-2" aria-hidden="true">MD</div>
+            <div>
+              <div class="reviewer-name">Mike D.</div>
+              <div class="reviewer-loc">National City, CA &nbsp;·&nbsp; Cabinet Refinishing</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>"The color consultation was a game-changer. I was nervous about navy walls but they showed me exactly how it would look using real samples on my walls. I love it. The whole process was seamless and professional."</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar av-3" aria-hidden="true">PL</div>
+            <div>
+              <div class="reviewer-name">Patricia L.</div>
+              <div class="reviewer-loc">Bonita, CA &nbsp;·&nbsp; Interior + Color Consult</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE AREAS -->
+  <section class="areas" aria-labelledby="areas-title">
+    <div class="areas-inner">
+      <div class="section-header">
+        <span class="section-tag">Coverage</span>
+        <h2 class="section-title" id="areas-title">Serving All of San Diego County</h2>
+        <p class="section-sub">Local crews across the county — no travel fees, no long waits.</p>
+      </div>
+      <div class="areas-grid" role="list">
+        <div class="area-pill" role="listitem">San Diego</div>
+        <div class="area-pill" role="listitem">Chula Vista</div>
+        <div class="area-pill" role="listitem">National City</div>
+        <div class="area-pill" role="listitem">Bonita</div>
+        <div class="area-pill" role="listitem">El Cajon</div>
+        <div class="area-pill" role="listitem">La Mesa</div>
+        <div class="area-pill" role="listitem">Santee</div>
+        <div class="area-pill" role="listitem">Escondido</div>
+        <div class="area-pill" role="listitem">Vista</div>
+        <div class="area-pill" role="listitem">Oceanside</div>
+        <div class="area-pill" role="listitem">Carlsbad</div>
+        <div class="area-pill" role="listitem">Encinitas</div>
+        <div class="area-pill" role="listitem">Poway</div>
+        <div class="area-pill" role="listitem">Spring Valley</div>
+        <div class="area-pill" role="listitem">Lemon Grove</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner" aria-labelledby="cta-title">
+    <div class="cta-banner-inner">
+      <span class="section-tag">Get Started Today</span>
+      <h2 class="section-title" id="cta-title">Ready to Transform Your Home?</h2>
+      <p class="cta-sub">Get your free, no-obligation estimate within 24 hours. No pressure — just expert advice and a fair price.</p>
+      <div class="cta-actions">
+        <a href="tel:+16195550830" class="btn-cta-lg">Schedule My Free Estimate →</a>
+        <div class="cta-phone">
+          or call <a href="tel:+16195550830">(619) 555-0830</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <div class="nav-logo">
+            <div class="logo-diamond" aria-hidden="true"></div>
+            True Color Painting
+          </div>
+          <p class="footer-tagline">San Diego's Most Trusted Painters — Transformations That Last. Serving South Bay and all of San Diego County since 2012.</p>
+          <div class="footer-contact">
+            <a href="tel:+16195550830">(619) 555-0830</a>
+            <a href="mailto:info@truecolorpainting-demo.com">info@truecolorpainting-demo.com</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Interior Painting</a></li>
+            <li><a href="#services">Exterior Painting</a></li>
+            <li><a href="#services">Cabinet Refinishing</a></li>
+            <li><a href="#services">Deck &amp; Fence Staining</a></li>
+            <li><a href="#services">Commercial Painting</a></li>
+            <li><a href="#color">Color Consultation</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Service Areas</h4>
+          <ul>
+            <li><a href="#areas">San Diego</a></li>
+            <li><a href="#areas">Chula Vista</a></li>
+            <li><a href="#areas">National City</a></li>
+            <li><a href="#areas">Bonita</a></li>
+            <li><a href="#areas">El Cajon</a></li>
+            <li><a href="#areas">View All Areas</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Certifications</h4>
+          <div class="footer-certs">
+            <div class="footer-cert-badge">✔ CSLB #PA-294817</div>
+            <div class="footer-cert-badge">✔ EPA Lead-Safe Certified</div>
+            <div class="footer-cert-badge">✔ Licensed &amp; Bonded</div>
+            <div class="footer-cert-badge">✔ 5-Year Written Warranty</div>
+          </div>
+        </div>
+
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 True Color Painting · San Diego, CA · <em>Demo site created by Blueprint Digital</em></p>
+        <a href="../index.html" class="footer-back-link">← Back to Blueprint Digital</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
