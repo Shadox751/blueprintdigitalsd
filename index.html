@@ -2038,10 +2038,13 @@
   function closeMenu() { document.getElementById('mobile-menu').classList.remove('open'); }
 
   // ── Scroll fade-in
+  const fadeEls = document.querySelectorAll('.fade-in');
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.05, rootMargin: '0px 0px 50px 0px' });
+  fadeEls.forEach(el => observer.observe(el));
+  // Fallback: force all visible after 2s in case observer doesn't fire
+  setTimeout(() => { fadeEls.forEach(el => el.classList.add('visible')); }, 2000);
 
   // ── Hero chat demo
   const heroReplies = [
