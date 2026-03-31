@@ -8,6 +8,7 @@
   <meta property="og:title" content="Blueprint Digital — Websites + AI Call Receptionists for Contractors" />
   <meta property="og:description" content="We build websites and AI phone receptionists for contractors. Never miss a call again." />
   <meta property="og:type" content="website" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -90,27 +91,8 @@
     }
     .logo-icon {
       width: 32px; height: 32px;
-      background: var(--orange);
-      border-radius: 4px;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 2px;
-      padding: 5px;
+      flex-shrink: 0;
     }
-    .logo-icon span {
-      background: white;
-      border-radius: 1px;
-      display: block;
-    }
-    .logo-icon span:nth-child(1),
-    .logo-icon span:nth-child(2),
-    .logo-icon span:nth-child(3) { height: 3px; }
-    .logo-icon span:nth-child(4),
-    .logo-icon span:nth-child(5),
-    .logo-icon span:nth-child(6) { height: 3px; opacity: 0.6; }
-    .logo-icon span:nth-child(7),
-    .logo-icon span:nth-child(8),
-    .logo-icon span:nth-child(9) { height: 3px; opacity: 0.3; }
     .logo span.blue { color: var(--white); }
     .logo span.orange { color: var(--orange); }
     .nav-links {
@@ -1144,11 +1126,15 @@
 <nav id="main-nav">
   <div class="nav-inner">
     <a href="#" class="logo">
-      <div class="logo-icon">
-        <span></span><span></span><span></span>
-        <span></span><span></span><span></span>
-        <span></span><span></span><span></span>
-      </div>
+      <svg class="logo-icon" viewBox="0 0 64 64" fill="none">
+        <rect x="8" y="4" width="12" height="56" fill="currentColor"/>
+        <rect x="20" y="4" width="24" height="12" fill="currentColor"/>
+        <rect x="20" y="28" width="22" height="12" fill="currentColor"/>
+        <rect x="20" y="48" width="24" height="12" fill="currentColor"/>
+        <rect x="44" y="12" width="12" height="20" fill="currentColor"/>
+        <rect x="42" y="36" width="14" height="16" fill="currentColor"/>
+        <rect x="4" y="48" width="8" height="16" rx="2" fill="#F57C20"/>
+      </svg>
       <span><span class="blue">BLUEPRINT</span> <span class="orange">DIGITAL</span></span>
     </a>
     <ul class="nav-links">
