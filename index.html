@@ -717,132 +717,31 @@
       font-family: 'Montserrat', sans-serif;
     }
 
-    /* Mini site previews inside portfolio cards */
-    .mini-site {
+    /* Portfolio photo previews */
+    .portfolio-photo {
       width: 100%; height: 100%;
-      font-family: sans-serif;
-      transform-origin: top left;
-      pointer-events: none;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.4s ease;
+    }
+    .portfolio-card:hover .portfolio-photo { transform: scale(1.05); }
+    .portfolio-photo-overlay {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 16px 14px;
+      background: linear-gradient(0deg, rgba(8,15,28,0.85) 0%, rgba(8,15,28,0.3) 60%, transparent 100%);
       display: flex;
       flex-direction: column;
+      justify-content: flex-end;
+      height: 100%;
     }
-    .mini-nav {
-      height: 28px;
-      display: flex;
-      align-items: center;
-      padding: 0 12px;
-      gap: 8px;
-      font-size: 6px;
-      font-weight: 700;
+    .portfolio-photo-overlay .photo-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: 0.5px;
     }
-    .mini-nav span { margin-left: auto; }
-    .mini-hero {
-      padding: 16px 12px;
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-      flex: 1;
-    }
-    .mini-label { font-size: 5px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
-    .mini-h1 { font-size: 11px; font-weight: 900; line-height: 1.2; }
-    .mini-p { font-size: 5.5px; line-height: 1.4; opacity: 0.75; }
-    .mini-btn { display: inline-block; padding: 4px 8px; border-radius: 2px; font-size: 5px; font-weight: 700; margin-top: 4px; }
-    .mini-cards { display: flex; gap: 5px; padding: 8px 12px; }
-    .mini-card { flex: 1; border-radius: 3px; padding: 6px; }
-    .mini-card-title { font-size: 5.5px; font-weight: 700; margin-bottom: 2px; }
-    .mini-card-p { font-size: 4.5px; opacity: 0.7; }
-
-
-    /* Plumbing — Navy #1B3A5C + Orange #E87A2E */
-    .mini-plumbing .mini-nav { background: #1B3A5C; color: #FFFFFF; }
-    .mini-plumbing .mini-hero { background: linear-gradient(135deg, #1B3A5C 0%, #2A5A8C 100%); color: #FFFFFF; }
-    .mini-plumbing .mini-label { color: #E87A2E; }
-    .mini-plumbing .mini-h1 { color: #FFFFFF; }
-    .mini-plumbing .mini-btn { background: #E87A2E; color: white; }
-    .mini-plumbing .mini-cards { background: #F5F5F5; }
-    .mini-plumbing .mini-card { background: #FFFFFF; border-top: 2px solid #1B3A5C; }
-    .mini-plumbing .mini-card-title { color: #1B3A5C; }
-
-    /* Roofing — Charcoal #2D2D2D + Orange #FF6B35 */
-    .mini-roofing .mini-nav { background: #2D2D2D; color: #FFFFFF; }
-    .mini-roofing .mini-hero { background: linear-gradient(135deg, #2D2D2D 0%, #444444 100%); color: #FFFFFF; }
-    .mini-roofing .mini-label { color: #FF6B35; }
-    .mini-roofing .mini-h1 { color: #FFFFFF; }
-    .mini-roofing .mini-btn { background: #FF6B35; color: white; }
-    .mini-roofing .mini-cards { background: #F5F5F5; }
-    .mini-roofing .mini-card { background: #FFFFFF; border-left: 2px solid #FF6B35; }
-    .mini-roofing .mini-card-title { color: #2D2D2D; }
-
-    /* HVAC — Blue #2563EB + Green #28A745 */
-    .mini-hvac .mini-nav { background: #003366; color: #FFFFFF; }
-    .mini-hvac .mini-hero { background: linear-gradient(135deg, #003366 0%, #2563EB 100%); color: #FFFFFF; }
-    .mini-hvac .mini-label { color: #28A745; }
-    .mini-hvac .mini-h1 { color: #FFFFFF; }
-    .mini-hvac .mini-btn { background: #28A745; color: white; }
-    .mini-hvac .mini-cards { background: #F0F7FF; }
-    .mini-hvac .mini-card { background: #FFFFFF; border-top: 2px solid #2563EB; }
-    .mini-hvac .mini-card-title { color: #003366; }
-
-    /* Electrical — Dark Blue #0D2B4E + Yellow #FFD700 */
-    .mini-electrical .mini-nav { background: #0D2B4E; color: #FFFFFF; }
-    .mini-electrical .mini-hero { background: linear-gradient(135deg, #0D2B4E 0%, #143d6b 100%); color: #FFFFFF; }
-    .mini-electrical .mini-label { color: #FFD700; }
-    .mini-electrical .mini-h1 { color: #FFFFFF; }
-    .mini-electrical .mini-btn { background: #FFD700; color: #0D2B4E; }
-    .mini-electrical .mini-cards { background: #F5F5F5; }
-    .mini-electrical .mini-card { background: #FFFFFF; border-left: 2px solid #FFD700; }
-    .mini-electrical .mini-card-title { color: #0D2B4E; }
-
-    /* Landscaping — Forest Green #1B5E20 + Gold #F9A825 */
-    .mini-landscaping .mini-nav { background: #1B5E20; color: #FFFFFF; }
-    .mini-landscaping .mini-hero { background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 100%); color: #FFFFFF; }
-    .mini-landscaping .mini-label { color: #F9A825; }
-    .mini-landscaping .mini-h1 { color: #FFFFFF; }
-    .mini-landscaping .mini-btn { background: #F9A825; color: #1B5E20; }
-    .mini-landscaping .mini-cards { background: #F1F8E9; }
-    .mini-landscaping .mini-card { background: #FFFFFF; border-top: 2px solid #1B5E20; }
-    .mini-landscaping .mini-card-title { color: #1B5E20; }
-
-    /* Carpentry — Dark Wood #3E2723 + Gold #D4A017 */
-    .mini-carpentry .mini-nav { background: #3E2723; color: #FAF8F5; }
-    .mini-carpentry .mini-hero { background: linear-gradient(135deg, #3E2723 0%, #5D4037 100%); color: #FAF8F5; }
-    .mini-carpentry .mini-label { color: #D4A017; }
-    .mini-carpentry .mini-h1 { color: #FFFFFF; }
-    .mini-carpentry .mini-btn { background: #D4A017; color: #3E2723; }
-    .mini-carpentry .mini-cards { background: #FAF8F5; }
-    .mini-carpentry .mini-card { background: #FFFFFF; border-left: 2px solid #D4A017; }
-    .mini-carpentry .mini-card-title { color: #3E2723; }
-    /* Solar — Deep Blue #1A365D + Green #22C55E */
-    .mini-solar .mini-nav { background: #1A365D; color: #FFFFFF; }
-    .mini-solar .mini-hero { background: linear-gradient(135deg, #1A365D 0%, #0F2847 100%); color: #FFFFFF; }
-    .mini-solar .mini-label { color: #22C55E; }
-    .mini-solar .mini-h1 { color: #FFFFFF; }
-    .mini-solar .mini-p { color: #CBD5E1; }
-    .mini-solar .mini-btn { background: #22C55E; color: white; }
-    .mini-solar .mini-cards { background: #F0FDF4; }
-    .mini-solar .mini-card { background: #FFFFFF; border-left: 2px solid #22C55E; }
-    .mini-solar .mini-card-title { color: #1A365D; }
-    .mini-solar .mini-card-p { color: #64748B; }
-    /* Painting — Teal #0D9488 + Coral #FF6B6B */
-    .mini-painting .mini-nav { background: #0D9488; color: #FFFFFF; }
-    .mini-painting .mini-hero { background: linear-gradient(135deg, #0D9488 0%, #0B7E73 100%); color: #FFFFFF; }
-    .mini-painting .mini-label { color: #FF6B6B; }
-    .mini-painting .mini-h1 { color: #FFFFFF; }
-    .mini-painting .mini-p { color: #E0F2F1; }
-    .mini-painting .mini-btn { background: #FF6B6B; color: white; }
-    .mini-painting .mini-cards { background: #F8F9FA; }
-    .mini-painting .mini-card { background: #FFFFFF; border-left: 2px solid #0D9488; }
-    .mini-painting .mini-card-title { color: #0D9488; }
-    /* Concrete — Warm Gray #6B7280 + Rust #C2572A */
-    .mini-concrete .mini-nav { background: #2D2D2D; color: #FFFFFF; }
-    .mini-concrete .mini-hero { background: linear-gradient(135deg, #2D2D2D 0%, #4B4B4B 100%); color: #FFFFFF; }
-    .mini-concrete .mini-label { color: #C2572A; }
-    .mini-concrete .mini-h1 { color: #FFFFFF; }
-    .mini-concrete .mini-p { color: #9CA3AF; }
-    .mini-concrete .mini-btn { background: #C2572A; color: white; }
-    .mini-concrete .mini-cards { background: #F5F5F0; }
-    .mini-concrete .mini-card { background: #FFFFFF; border-left: 2px solid #C2572A; }
-    .mini-concrete .mini-card-title { color: #2D2D2D; }
 
     /* ── PRICING ── */
     #pricing { background: var(--navy-mid); }
@@ -1435,20 +1334,8 @@
       <!-- Plumbing -->
       <div class="portfolio-card fade-in" onclick="window.open('portfolio/plumbing.html','_blank')" role="link" tabindex="0">
         <div class="portfolio-preview">
-          <div class="mini-site mini-plumbing" style="width:100%; height:100%;">
-            <div class="mini-nav">RAPID FLOW PLUMBING <span>☰</span></div>
-            <div class="mini-hero">
-              <div class="mini-label">Licensed & Insured — Since 2008</div>
-              <div class="mini-h1">San Diego's Most Trusted<br/>Licensed Plumber</div>
-              <div class="mini-p">Emergency plumbing, water heaters, drain cleaning & repiping. Available 24/7.</div>
-              <div class="mini-btn">Call Now — (619) 555-0100</div>
-            </div>
-            <div class="mini-cards">
-              <div class="mini-card"><div class="mini-card-title">Emergency Repair</div><div class="mini-card-p">24/7 response</div></div>
-              <div class="mini-card"><div class="mini-card-title">Water Heaters</div><div class="mini-card-p">Install & repair</div></div>
-              <div class="mini-card"><div class="mini-card-title">Drain Cleaning</div><div class="mini-card-p">Hydro-jetting</div></div>
-            </div>
-          </div>
+          <div class="portfolio-photo" style="background-image:url('https://images.pexels.com/photos/5710332/pexels-photo-5710332.jpeg?auto=compress&cs=tinysrgb&w=600')"></div>
+          <div class="portfolio-photo-overlay"><span class="photo-title">Rapid Flow Plumbing</span></div>
           <div class="preview-label">Plumbing</div>
           <div class="view-btn">View Demo →</div>
         </div>
@@ -1466,20 +1353,8 @@
       <!-- Roofing -->
       <div class="portfolio-card fade-in" onclick="window.open('portfolio/roofing.html','_blank')" role="link" tabindex="0">
         <div class="portfolio-preview">
-          <div class="mini-site mini-roofing" style="width:100%; height:100%;">
-            <div class="mini-nav">SUMMIT ROOFING CO. <span>☰</span></div>
-            <div class="mini-hero">
-              <div class="mini-label">GAF Master Elite — Since 2005</div>
-              <div class="mini-h1">San Diego's Premier<br/>Roofing Contractor</div>
-              <div class="mini-p">Roof replacement, repair & inspection. Licensed, bonded & insured. Free estimates.</div>
-              <div class="mini-btn">Get a Free Estimate</div>
-            </div>
-            <div class="mini-cards">
-              <div class="mini-card"><div class="mini-card-title">Roof Replacement</div><div class="mini-card-p">All materials</div></div>
-              <div class="mini-card"><div class="mini-card-title">Roof Repair</div><div class="mini-card-p">Storm damage</div></div>
-              <div class="mini-card"><div class="mini-card-title">Inspections</div><div class="mini-card-p">Same-day</div></div>
-            </div>
-          </div>
+          <div class="portfolio-photo" style="background-image:url('https://images.pexels.com/photos/18098285/pexels-photo-18098285.jpeg?auto=compress&cs=tinysrgb&w=600')"></div>
+          <div class="portfolio-photo-overlay"><span class="photo-title">Summit Roofing Co.</span></div>
           <div class="preview-label">Roofing</div>
           <div class="view-btn">View Demo →</div>
         </div>
@@ -1497,20 +1372,8 @@
       <!-- HVAC -->
       <div class="portfolio-card fade-in" onclick="window.open('portfolio/hvac.html','_blank')" role="link" tabindex="0">
         <div class="portfolio-preview">
-          <div class="mini-site mini-hvac" style="width:100%; height:100%;">
-            <div class="mini-nav">COOL BREEZE HVAC <span>☰</span></div>
-            <div class="mini-hero">
-              <div class="mini-label">NATE Certified — Since 2010</div>
-              <div class="mini-h1">Keep Your Family<br/>Comfortable Year-Round</div>
-              <div class="mini-p">AC repair, installation & maintenance. Same-day service in San Diego County.</div>
-              <div class="mini-btn">Book AC Service — $89 Tune-Up</div>
-            </div>
-            <div class="mini-cards">
-              <div class="mini-card"><div class="mini-card-title">AC Repair</div><div class="mini-card-p">Same-day</div></div>
-              <div class="mini-card"><div class="mini-card-title">Installation</div><div class="mini-card-p">All brands</div></div>
-              <div class="mini-card"><div class="mini-card-title">Maintenance</div><div class="mini-card-p">Tune-up plans</div></div>
-            </div>
-          </div>
+          <div class="portfolio-photo" style="background-image:url('https://images.pexels.com/photos/32497161/pexels-photo-32497161.jpeg?auto=compress&cs=tinysrgb&w=600')"></div>
+          <div class="portfolio-photo-overlay"><span class="photo-title">Cool Breeze HVAC</span></div>
           <div class="preview-label">HVAC</div>
           <div class="view-btn">View Demo →</div>
         </div>
@@ -1528,20 +1391,8 @@
       <!-- Electrical -->
       <div class="portfolio-card fade-in" onclick="window.open('portfolio/electrical.html','_blank')" role="link" tabindex="0">
         <div class="portfolio-preview">
-          <div class="mini-site mini-electrical" style="width:100%; height:100%;">
-            <div class="mini-nav">VOLT ELECTRIC SD <span>☰</span></div>
-            <div class="mini-hero">
-              <div class="mini-label">C-10 Licensed — Since 2011</div>
-              <div class="mini-h1">San Diego's Trusted<br/>C-10 Licensed Electrician</div>
-              <div class="mini-p">Panel upgrades, EV chargers, rewiring & electrical repair. Free estimates.</div>
-              <div class="mini-btn">Get a Free Estimate</div>
-            </div>
-            <div class="mini-cards">
-              <div class="mini-card"><div class="mini-card-title">Panel Upgrades</div><div class="mini-card-p">200A service</div></div>
-              <div class="mini-card"><div class="mini-card-title">EV Chargers</div><div class="mini-card-p">Level 2 install</div></div>
-              <div class="mini-card"><div class="mini-card-title">Rewiring</div><div class="mini-card-p">Whole-home</div></div>
-            </div>
-          </div>
+          <div class="portfolio-photo" style="background-image:url('https://images.unsplash.com/photo-PkHf7BUWbtk?w=600&fit=crop')"></div>
+          <div class="portfolio-photo-overlay"><span class="photo-title">Volt Electric SD</span></div>
           <div class="preview-label">Electrical</div>
           <div class="view-btn">View Demo →</div>
         </div>
@@ -1559,20 +1410,8 @@
       <!-- Landscaping -->
       <div class="portfolio-card fade-in" onclick="window.open('portfolio/landscaping.html','_blank')" role="link" tabindex="0">
         <div class="portfolio-preview">
-          <div class="mini-site mini-landscaping" style="width:100%; height:100%;">
-            <div class="mini-nav">GREEN LEAF LANDSCAPES <span>☰</span></div>
-            <div class="mini-hero">
-              <div class="mini-label">Best of Houzz — Since 2007</div>
-              <div class="mini-h1">Transform Your<br/>Outdoor Living Space</div>
-              <div class="mini-p">Landscape design, hardscaping, irrigation & lawn care for San Diego homes.</div>
-              <div class="mini-btn">Free Consultation</div>
-            </div>
-            <div class="mini-cards">
-              <div class="mini-card"><div class="mini-card-title">Lawn Care</div><div class="mini-card-p">Weekly plans</div></div>
-              <div class="mini-card"><div class="mini-card-title">Hardscaping</div><div class="mini-card-p">Patios & walls</div></div>
-              <div class="mini-card"><div class="mini-card-title">Irrigation</div><div class="mini-card-p">Drip systems</div></div>
-            </div>
-          </div>
+          <div class="portfolio-photo" style="background-image:url('https://images.unsplash.com/photo-WACZrgiESh8?w=600&fit=crop')"></div>
+          <div class="portfolio-photo-overlay"><span class="photo-title">Green Leaf Landscapes</span></div>
           <div class="preview-label">Landscaping</div>
           <div class="view-btn">View Demo →</div>
         </div>
@@ -1590,20 +1429,8 @@
       <!-- Carpentry/GC -->
       <div class="portfolio-card fade-in" onclick="window.open('portfolio/carpentry.html','_blank')" role="link" tabindex="0">
         <div class="portfolio-preview">
-          <div class="mini-site mini-carpentry" style="width:100%; height:100%;">
-            <div class="mini-nav">CRAFTLINE CONSTRUCTION <span>☰</span></div>
-            <div class="mini-hero">
-              <div class="mini-label">Master Craftsmen — Since 2006</div>
-              <div class="mini-h1">Master Craftsmanship.<br/>Timeless Results.</div>
-              <div class="mini-p">Kitchens, bathrooms, additions & custom carpentry. CSLB Licensed. 20+ years.</div>
-              <div class="mini-btn">Free Consultation</div>
-            </div>
-            <div class="mini-cards">
-              <div class="mini-card"><div class="mini-card-title">Kitchen Remodels</div><div class="mini-card-p">Full gut & design</div></div>
-              <div class="mini-card"><div class="mini-card-title">Bathrooms</div><div class="mini-card-p">Luxury renovations</div></div>
-              <div class="mini-card"><div class="mini-card-title">Additions</div><div class="mini-card-p">Room & ADU</div></div>
-            </div>
-          </div>
+          <div class="portfolio-photo" style="background-image:url('https://images.unsplash.com/photo-ps3cAZGdFI8?w=600&fit=crop')"></div>
+          <div class="portfolio-photo-overlay"><span class="photo-title">Craftline Construction</span></div>
           <div class="preview-label">Carpentry & GC</div>
           <div class="view-btn">View Demo →</div>
         </div>
@@ -1621,20 +1448,8 @@
       <!-- Solar -->
       <div class="portfolio-card fade-in" onclick="window.open('portfolio/solar.html','_blank')" role="link" tabindex="0">
         <div class="portfolio-preview">
-          <div class="mini-site mini-solar" style="width:100%; height:100%;">
-            <div class="mini-nav">SUNRAY SOLAR <span>☰</span></div>
-            <div class="mini-hero">
-              <div class="mini-label">NABCEP Certified — Since 2012</div>
-              <div class="mini-h1">Go Solar.<br/>Save Thousands.</div>
-              <div class="mini-p">$0 down financing. NABCEP Certified. NEM 3.0 experts in San Diego.</div>
-              <div class="mini-btn">Get Free Solar Quote</div>
-            </div>
-            <div class="mini-cards">
-              <div class="mini-card"><div class="mini-card-title">Residential Solar</div><div class="mini-card-p">Custom design</div></div>
-              <div class="mini-card"><div class="mini-card-title">Battery Storage</div><div class="mini-card-p">Backup power</div></div>
-              <div class="mini-card"><div class="mini-card-title">EV Chargers</div><div class="mini-card-p">Level 2 install</div></div>
-            </div>
-          </div>
+          <div class="portfolio-photo" style="background-image:url('https://images.unsplash.com/photo-L9LrBpNY5sw?w=600&fit=crop')"></div>
+          <div class="portfolio-photo-overlay"><span class="photo-title">SunRay Solar</span></div>
           <div class="preview-label">Solar</div>
           <div class="view-btn">View Demo →</div>
         </div>
@@ -1652,20 +1467,8 @@
       <!-- Painting -->
       <div class="portfolio-card fade-in" onclick="window.open('portfolio/painting.html','_blank')" role="link" tabindex="0">
         <div class="portfolio-preview">
-          <div class="mini-site mini-painting" style="width:100%; height:100%;">
-            <div class="mini-nav">TRUE COLOR PAINTING <span>☰</span></div>
-            <div class="mini-hero">
-              <div class="mini-label">PDCA Certified — Since 2009</div>
-              <div class="mini-h1">Transform Your Home<br/>with Expert Painting</div>
-              <div class="mini-p">Interior, exterior & cabinet refinishing. 5-year warranty. Free color consultation.</div>
-              <div class="mini-btn">Free Estimate</div>
-            </div>
-            <div class="mini-cards">
-              <div class="mini-card"><div class="mini-card-title">Interior Painting</div><div class="mini-card-p">Rooms, ceilings, trim</div></div>
-              <div class="mini-card"><div class="mini-card-title">Exterior</div><div class="mini-card-p">Full home repaints</div></div>
-              <div class="mini-card"><div class="mini-card-title">Cabinets</div><div class="mini-card-p">Factory-finish look</div></div>
-            </div>
-          </div>
+          <div class="portfolio-photo" style="background-image:url('https://images.pexels.com/photos/994164/pexels-photo-994164.jpeg?auto=compress&cs=tinysrgb&w=600')"></div>
+          <div class="portfolio-photo-overlay"><span class="photo-title">True Color Painting</span></div>
           <div class="preview-label">Painting</div>
           <div class="view-btn">View Demo →</div>
         </div>
@@ -1683,20 +1486,8 @@
       <!-- Concrete -->
       <div class="portfolio-card fade-in" onclick="window.open('portfolio/concrete.html','_blank')" role="link" tabindex="0">
         <div class="portfolio-preview">
-          <div class="mini-site mini-concrete" style="width:100%; height:100%;">
-            <div class="mini-nav">SOLID GROUND CONCRETE <span>☰</span></div>
-            <div class="mini-hero">
-              <div class="mini-label">22+ Years — Since 2004</div>
-              <div class="mini-h1">Quality Concrete Work<br/>That Lasts</div>
-              <div class="mini-p">Driveways, patios, retaining walls & stamped concrete. CSLB Licensed.</div>
-              <div class="mini-btn">Free Estimate</div>
-            </div>
-            <div class="mini-cards">
-              <div class="mini-card"><div class="mini-card-title">Driveways</div><div class="mini-card-p">30-50 year lifespan</div></div>
-              <div class="mini-card"><div class="mini-card-title">Stamped Concrete</div><div class="mini-card-p">5 finish types</div></div>
-              <div class="mini-card"><div class="mini-card-title">Retaining Walls</div><div class="mini-card-p">Engineered design</div></div>
-            </div>
-          </div>
+          <div class="portfolio-photo" style="background-image:url('https://images.unsplash.com/photo-hylxE-8vgm4?w=600&fit=crop')"></div>
+          <div class="portfolio-photo-overlay"><span class="photo-title">Solid Ground Concrete</span></div>
           <div class="preview-label">Concrete</div>
           <div class="view-btn">View Demo →</div>
         </div>
