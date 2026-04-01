@@ -3,2052 +3,1312 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Craftline Construction | San Diego Home Remodeling & Carpentry</title>
-  <meta name="description" content="San Diego's award-winning remodeling specialists. Kitchens, bathrooms, custom carpentry & additions. CSLB Licensed #GC-619204. Free in-home consultations." />
+  <title>Craftline Construction | San Diego Custom Carpentry & Remodeling</title>
+  <meta name="description" content="San Diego's custom carpentry & remodeling experts. Custom cabinetry, kitchen remodels, decks & fine woodwork. Family-owned since 2006. CA License #1067890. Free consultations." />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <meta property="og:title" content="Craftline Construction | Demo by Blueprint Digital">
+  <meta property="og:description" content="Website demo built by Blueprint Digital — Websites + AI Receptionists for Contractors in San Diego.">
+  <meta property="og:image" content="https://blueprintdigitalsd.com/og-image.png">
+  <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
   <style>
-    /* ─── RESET & BASE ─── */
+    /* WATERMARK OVERLAY */
+    .service-card-img, .gallery-item, .about-image, .about-img { position: relative; overflow: hidden; }
+    .hero::after, .service-card-img::after, .gallery-item::after, .about-image::after, .about-img::after {
+      content: '';
+      position: absolute;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='120'%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14' font-weight='700' fill='white' opacity='0.12' transform='rotate(-30 150 60)'%3EBLUEPRINTDIGITALSD.COM%3C/text%3E%3C/svg%3E");
+      background-repeat: repeat;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* RESET & BASE */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
       font-family: 'Inter', sans-serif;
       background: #FAF8F5;
-      color: #2C1810;
-      line-height: 1.6;
+      color: #2D2D2D;
+      line-height: 1.7;
       overflow-x: hidden;
     }
-
-    /* ─── COLOR TOKENS ─── */
-    :root {
-      --wood:    #2C1810;
-      --warm-white: #FAF8F5;
-      --gold:    #C4955A;
-      --charcoal:#1A1A1A;
-      --rust:    #B85C38;
-      --rust-dark:#9A4A2C;
-      --gold-light: #D4A96A;
-      --cream:   #F0EBE3;
-      --tan:     #E8D5BC;
-      --mid-wood:#4A2C1C;
-    }
-
-    img { display: block; max-width: 100%; }
+    img { max-width: 100%; display: block; }
     a { text-decoration: none; color: inherit; }
     ul { list-style: none; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-    /* ─── TYPOGRAPHY ─── */
-    .font-serif  { font-family: 'Playfair Display', Georgia, serif; }
-    .font-sans   { font-family: 'Montserrat', sans-serif; }
-    .font-body   { font-family: 'Inter', sans-serif; }
-
-    /* ─── TOP BAR ─── */
-    .topbar {
-      background: var(--charcoal);
-      color: var(--gold);
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
+    /* TYPOGRAPHY */
+    h1, h2, h3 { font-family: 'Playfair Display', serif; color: #3E2723; }
+    h2 { font-size: 2.4rem; margin-bottom: 16px; }
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: #666;
+      max-width: 600px;
+      margin: 0 auto 48px;
+    }
+    .section-label {
+      display: inline-block;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 3px;
       text-transform: uppercase;
-      text-align: center;
-      padding: 9px 20px;
-      border-bottom: 1px solid rgba(196, 149, 90, 0.2);
-    }
-    .topbar span {
-      color: rgba(250,248,245,0.55);
-      margin: 0 10px;
+      color: #D4A017;
+      margin-bottom: 12px;
     }
 
-    /* ─── NAVIGATION ─── */
-    .nav-wrap {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: var(--wood);
-      border-bottom: 2px solid var(--gold);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    /* BUTTONS */
+    .btn {
+      display: inline-block;
+      padding: 16px 36px;
+      border-radius: 6px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: none;
+      text-align: center;
     }
-    nav {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
+    .btn-gold {
+      background: #D4A017;
+      color: #2D2D2D;
+    }
+    .btn-gold:hover {
+      background: #b8880f;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(212,160,23,0.35);
+    }
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      border: 2px solid #fff;
+    }
+    .btn-outline:hover {
+      background: #fff;
+      color: #3E2723;
+    }
+
+    /* ────────────────────────────────
+       HEADER
+    ──────────────────────────────── */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(62,39,35,0.97);
+      backdrop-filter: blur(10px);
+      transition: box-shadow 0.3s ease;
+    }
+    .header.scrolled {
+      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+    }
+    .header-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 70px;
+      padding: 0 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+      height: 80px;
     }
-    .nav-logo {
+    .logo {
       display: flex;
       align-items: center;
       gap: 12px;
     }
-    .logo-mark {
-      width: 42px;
-      height: 42px;
-      background: var(--gold);
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--wood);
+    .logo-icon {
+      width: 40px;
+      height: 40px;
       position: relative;
-      overflow: hidden;
     }
-    .logo-mark::after {
+    .logo-icon::before {
       content: '';
       position: absolute;
-      left: 0; right: 0;
-      top: 50%;
-      height: 2px;
-      background: rgba(44,24,16,0.25);
-      transform: translateY(-50%);
+      width: 24px;
+      height: 4px;
+      background: #D4A017;
+      top: 10px;
+      left: 8px;
+      border-radius: 2px;
+    }
+    .logo-icon::after {
+      content: '';
+      position: absolute;
+      width: 4px;
+      height: 20px;
+      background: #D4A017;
+      bottom: 4px;
+      left: 18px;
+      border-radius: 2px;
     }
     .logo-text {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.1;
-    }
-    .logo-name {
       font-family: 'Playfair Display', serif;
       font-size: 1.15rem;
       font-weight: 700;
-      color: var(--warm-white);
-      letter-spacing: 0.02em;
+      color: #FFF8E1;
+      letter-spacing: 1.5px;
+      line-height: 1.2;
     }
-    .logo-sub {
-      font-family: 'Montserrat', sans-serif;
+    .logo-text span {
+      display: block;
+      font-family: 'Inter', sans-serif;
       font-size: 0.6rem;
-      font-weight: 600;
-      color: var(--gold);
-      letter-spacing: 0.15em;
+      font-weight: 400;
+      letter-spacing: 3px;
       text-transform: uppercase;
+      color: #D4A017;
+      margin-top: 2px;
     }
-    .nav-links {
+    .nav { display: flex; align-items: center; gap: 32px; }
+    .nav a {
+      color: #FFF8E1;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.3s;
+      letter-spacing: 0.3px;
+    }
+    .nav a:hover { color: #D4A017; }
+    .header-phone {
       display: flex;
       align-items: center;
-      gap: 4px;
-    }
-    .nav-links a {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.78rem;
+      gap: 8px;
+      color: #FFF8E1;
       font-weight: 600;
-      color: rgba(250,248,245,0.8);
-      padding: 8px 12px;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      border-radius: 4px;
-      transition: color 0.2s, background 0.2s;
+      font-size: 0.95rem;
     }
-    .nav-links a:hover { color: var(--gold); background: rgba(196,149,90,0.1); }
-    .nav-links a.back-link {
-      color: rgba(250,248,245,0.4);
-      font-size: 0.7rem;
-      border-right: 1px solid rgba(196,149,90,0.2);
-      margin-right: 8px;
-      padding-right: 16px;
+    .header-phone svg { width: 18px; height: 18px; fill: #D4A017; }
+    .header-cta {
+      padding: 12px 24px;
+      font-size: 0.85rem;
     }
-    .nav-links a.back-link:hover { color: var(--gold); background: none; }
-    .btn-nav-cta {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.78rem;
-      font-weight: 700;
-      background: var(--rust);
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 4px;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      transition: background 0.2s, transform 0.1s;
-      white-space: nowrap;
-    }
-    .btn-nav-cta:hover { background: var(--rust-dark); transform: translateY(-1px); }
 
-    /* ─── HERO ─── */
+    /* HAMBURGER */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 8px;
+    }
+    .hamburger span {
+      width: 26px;
+      height: 3px;
+      background: #FFF8E1;
+      border-radius: 3px;
+      transition: all 0.3s ease;
+    }
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+
+    /* MOBILE NAV */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 80px;
+      left: 0;
+      width: 100%;
+      background: #3E2723;
+      padding: 24px;
+      z-index: 999;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+    .mobile-nav.active { display: block; }
+    .mobile-nav a {
+      display: block;
+      color: #FFF8E1;
+      padding: 14px 0;
+      font-size: 1.05rem;
+      font-weight: 500;
+      border-bottom: 1px solid rgba(255,248,225,0.1);
+    }
+    .mobile-nav a:last-child { border-bottom: none; }
+    .mobile-nav .btn-gold {
+      display: block;
+      text-align: center;
+      margin-top: 16px;
+    }
+
+    /* ────────────────────────────────
+       HERO
+    ──────────────────────────────── */
     .hero {
       position: relative;
       min-height: 100vh;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      background-color: var(--wood);
-      overflow: hidden;
+      align-items: center;
+      background: url('https://images.unsplash.com/photo-ps3cAZGdFI8?w=1200&fit=crop') center/cover no-repeat;
     }
-    /* CSS wood grain texture */
     .hero::before {
       content: '';
       position: absolute;
       inset: 0;
-      background:
-        repeating-linear-gradient(
-          180deg,
-          transparent 0px,
-          transparent 14px,
-          rgba(255,255,255,0.018) 14px,
-          rgba(255,255,255,0.018) 15px,
-          transparent 15px,
-          transparent 28px,
-          rgba(0,0,0,0.06) 28px,
-          rgba(0,0,0,0.06) 29px
-        ),
-        repeating-linear-gradient(
-          175deg,
-          transparent 0px,
-          transparent 60px,
-          rgba(196,149,90,0.03) 60px,
-          rgba(196,149,90,0.03) 61px
-        );
-      pointer-events: none;
-    }
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 120px;
-      background: linear-gradient(to bottom, transparent, rgba(250,248,245,0.04));
-      pointer-events: none;
-    }
-    .hero-inner {
-      position: relative;
+      background: linear-gradient(135deg, rgba(62,39,35,0.88) 0%, rgba(62,39,35,0.65) 100%);
       z-index: 1;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 80px 40px 60px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
     }
-    .hero-eyebrow {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.72rem;
-      font-weight: 700;
-      color: var(--gold);
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      margin-bottom: 24px;
-      display: flex;
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 720px;
+      padding-top: 80px;
+    }
+    .hero-badge {
+      display: inline-flex;
       align-items: center;
-      gap: 12px;
-    }
-    .hero-eyebrow::before {
-      content: '';
-      display: block;
-      width: 40px;
-      height: 2px;
-      background: var(--gold);
+      gap: 8px;
+      background: rgba(212,160,23,0.15);
+      border: 1px solid rgba(212,160,23,0.4);
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #D4A017;
+      margin-bottom: 28px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
     }
     .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.6rem, 5.5vw, 4.2rem);
-      font-weight: 900;
-      color: var(--warm-white);
-      line-height: 1.1;
-      max-width: 800px;
-      margin-bottom: 28px;
-      letter-spacing: -0.01em;
+      font-size: 3.8rem;
+      color: #FFF8E1;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      font-weight: 700;
     }
     .hero h1 em {
-      color: var(--gold);
       font-style: italic;
+      color: #D4A017;
     }
     .hero-sub {
-      font-family: 'Inter', sans-serif;
-      font-size: 1.1rem;
-      color: rgba(250,248,245,0.75);
-      max-width: 620px;
-      margin-bottom: 42px;
-      line-height: 1.7;
+      font-size: 1.15rem;
+      color: rgba(255,248,225,0.85);
+      line-height: 1.8;
+      margin-bottom: 40px;
+      max-width: 560px;
     }
-    .hero-ctas {
+    .hero-buttons {
       display: flex;
       gap: 16px;
       flex-wrap: wrap;
-      margin-bottom: 56px;
     }
-    .btn-primary {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 0.88rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      background: var(--rust);
-      color: #fff;
-      padding: 16px 32px;
-      border-radius: 4px;
-      border: 2px solid var(--rust);
-      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-      cursor: pointer;
-      display: inline-block;
+
+    /* ────────────────────────────────
+       TRUST BAR
+    ──────────────────────────────── */
+    .trust-bar {
+      background: #3E2723;
+      padding: 20px 0;
     }
-    .btn-primary:hover {
-      background: var(--rust-dark);
-      border-color: var(--rust-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(184,92,56,0.35);
-    }
-    .btn-outline-gold {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 0.88rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      background: transparent;
-      color: var(--gold);
-      padding: 16px 32px;
-      border-radius: 4px;
-      border: 2px solid var(--gold);
-      transition: background 0.2s, color 0.2s, transform 0.15s;
-      cursor: pointer;
-      display: inline-block;
-    }
-    .btn-outline-gold:hover {
-      background: var(--gold);
-      color: var(--wood);
-      transform: translateY(-2px);
-    }
-    .hero-trust {
+    .trust-items {
       display: flex;
-      align-items: center;
-      gap: 0;
-      flex-wrap: wrap;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      color: rgba(250,248,245,0.55);
-      border-top: 1px solid rgba(196,149,90,0.2);
-      padding-top: 24px;
-      width: 100%;
-    }
-    .hero-trust-item {
-      padding: 0 18px;
-      color: rgba(250,248,245,0.7);
-    }
-    .hero-trust-item:first-child { padding-left: 0; }
-    .hero-trust-item .highlight { color: var(--gold); }
-    .hero-trust-sep {
-      color: rgba(196,149,90,0.3);
-      font-size: 1rem;
-    }
-
-    /* ─── SECTION SHELL ─── */
-    section { width: 100%; }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 40px;
-    }
-    .section-pad { padding: 96px 0; }
-    .section-pad-sm { padding: 64px 0; }
-
-    .section-eyebrow {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 14px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .section-eyebrow::before {
-      content: '';
-      display: block;
-      width: 28px;
-      height: 2px;
-      background: var(--gold);
-    }
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.9rem, 3.5vw, 2.8rem);
-      font-weight: 700;
-      line-height: 1.15;
-      margin-bottom: 18px;
-    }
-    .section-title.light { color: var(--warm-white); }
-    .section-title.dark  { color: var(--wood); }
-    .section-intro {
-      font-family: 'Inter', sans-serif;
-      font-size: 1.05rem;
-      color: rgba(250,248,245,0.72);
-      max-width: 560px;
-      line-height: 1.75;
-    }
-    .section-intro.dark-text { color: #5a3e2e; }
-
-    /* ─── BEFORE / AFTER ─── */
-    .ba-section {
-      background: var(--charcoal);
-      position: relative;
-      overflow: hidden;
-    }
-    .ba-section::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: repeating-linear-gradient(
-        180deg,
-        transparent 0px, transparent 18px,
-        rgba(196,149,90,0.025) 18px, rgba(196,149,90,0.025) 19px
-      );
-      pointer-events: none;
-    }
-    .ba-header {
-      text-align: center;
-      margin-bottom: 60px;
-    }
-    .ba-header .section-eyebrow {
       justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px 40px;
     }
-    .ba-header .section-eyebrow::before { display: none; }
-    .ba-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #FFF8E1;
+      font-size: 0.88rem;
+      font-weight: 500;
+      white-space: nowrap;
     }
-
-    .ba-card {
-      border-radius: 8px;
-      overflow: hidden;
-      background: #111;
-      border: 1px solid rgba(196,149,90,0.18);
-      position: relative;
-    }
-    .ba-card:hover { border-color: rgba(196,149,90,0.45); }
-    .ba-visual {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      height: 260px;
-      position: relative;
+    .trust-item svg {
+      width: 18px;
+      height: 18px;
+      fill: #D4A017;
+      flex-shrink: 0;
     }
 
-    /* BEFORE panel */
-    .ba-before {
-      position: relative;
-      overflow: hidden;
+    /* ────────────────────────────────
+       SERVICES
+    ──────────────────────────────── */
+    .services {
+      padding: 100px 0;
+      background: #FAF8F5;
     }
-    .ba-after {
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Kitchen BEFORE */
-    .ba-card-kitchen .ba-before {
-      background:
-        repeating-linear-gradient(90deg, #888 0px, #888 1px, #aaa 1px, #aaa 40px),
-        linear-gradient(180deg, #b0b0b0 0%, #9a9a9a 40%, #8a8a8a 100%);
-    }
-    .ba-card-kitchen .ba-before::before {
-      content: '';
-      position: absolute;
-      left: 8px; right: 8px; bottom: 0;
-      height: 50%;
-      background: repeating-linear-gradient(90deg, #999 0, #999 1px, #b5b5b5 1px, #b5b5b5 38px);
-      border-top: 2px solid #888;
-    }
-    .ba-card-kitchen .ba-before::after {
-      content: '';
-      position: absolute;
-      top: 20px; left: 12px;
-      width: 28px; height: 20px;
-      background: #ccc;
-      box-shadow: 36px 0 0 #ccc, 72px 0 0 #ccc;
-      border: 1px solid #aaa;
-    }
-
-    /* Kitchen AFTER */
-    .ba-card-kitchen .ba-after {
-      background: linear-gradient(160deg, #3d2412 0%, #5a3418 50%, #4a2c14 100%);
-    }
-    .ba-card-kitchen .ba-after::before {
-      content: '';
-      position: absolute;
-      left: 8px; right: 8px; bottom: 0;
-      height: 50%;
-      background:
-        repeating-linear-gradient(90deg,
-          rgba(196,149,90,0.15) 0, rgba(196,149,90,0.15) 1px,
-          #5a3418 1px, #5a3418 44px
-        );
-      border-top: 2px solid var(--gold);
-    }
-    .ba-card-kitchen .ba-after::after {
-      content: '';
-      position: absolute;
-      top: 16px; left: 10px;
-      width: 34px; height: 22px;
-      background: linear-gradient(180deg, rgba(255,220,120,0.9), rgba(200,160,60,0.8));
-      border-radius: 2px;
-      box-shadow: 40px 0 0 rgba(255,220,120,0.85), inset 0 2px 4px rgba(255,255,255,0.3);
-    }
-
-    /* Bathroom BEFORE */
-    .ba-card-bath .ba-before {
-      background: linear-gradient(180deg, #e0e0e0 0%, #d0d0d0 100%);
-    }
-    .ba-card-bath .ba-before::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        repeating-linear-gradient(90deg, transparent 0, transparent 19px, #c8c8c8 19px, #c8c8c8 20px),
-        repeating-linear-gradient(180deg, transparent 0, transparent 19px, #c8c8c8 19px, #c8c8c8 20px);
-    }
-    .ba-card-bath .ba-before::after {
-      content: '';
-      position: absolute;
-      bottom: 20px; left: 50%;
-      transform: translateX(-50%);
-      width: 60px; height: 28px;
-      background: #e8e8e8;
-      border: 2px solid #bbb;
-      border-radius: 30px 30px 0 0;
-    }
-
-    /* Bathroom AFTER */
-    .ba-card-bath .ba-after {
-      background: linear-gradient(160deg, #2e1f14 0%, #4a3020 50%, #3a2418 100%);
-    }
-    .ba-card-bath .ba-after::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        repeating-linear-gradient(90deg, transparent 0, transparent 29px, rgba(196,149,90,0.12) 29px, rgba(196,149,90,0.12) 30px),
-        repeating-linear-gradient(180deg, transparent 0, transparent 29px, rgba(196,149,90,0.12) 29px, rgba(196,149,90,0.12) 30px);
-    }
-    .ba-card-bath .ba-after::after {
-      content: '';
-      position: absolute;
-      bottom: 16px; left: 50%;
-      transform: translateX(-50%);
-      width: 64px; height: 30px;
-      background: linear-gradient(180deg, rgba(210,170,100,0.9), rgba(180,130,70,0.8));
-      border-radius: 32px 32px 0 0;
-      border: 1px solid rgba(255,210,120,0.4);
-    }
-
-    /* Living Space BEFORE */
-    .ba-card-living .ba-before {
-      background: linear-gradient(180deg, #c5bdb2 0%, #b8b0a5 100%);
-    }
-    .ba-card-living .ba-before::before {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 55%;
-      background: #a09890;
-      border-top: 3px solid #8a8278;
-    }
-    .ba-card-living .ba-before::after {
-      content: '';
-      position: absolute;
-      top: 20px; right: 10px;
-      width: 22px; height: 80px;
-      background: #b0a898;
-      border: 2px solid #9a9288;
-      box-shadow: -30px 0 0 2px #b0a898, -30px 0 0 2px #9a9288;
-    }
-
-    /* Living Space AFTER */
-    .ba-card-living .ba-after {
-      background: linear-gradient(160deg, #f0e8dc 0%, #e8d8c4 50%, #d8c8b0 100%);
-    }
-    .ba-card-living .ba-after::before {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 55%;
-      background: linear-gradient(180deg, #3d2412, #4a2c18);
-      border-top: 3px solid var(--gold);
-    }
-    .ba-card-living .ba-after::after {
-      content: '';
-      position: absolute;
-      top: 14px; right: 8px;
-      width: 24px; height: 90px;
-      background: linear-gradient(180deg, #5a3418, #4a2c14);
-      border: 1px solid rgba(196,149,90,0.4);
-      box-shadow:
-        -30px 0 0 0 #5a3418, -30px 0 0 0 rgba(196,149,90,0.3),
-        -60px 0 0 0 #5a3418;
-    }
-
-    /* BA divider line */
-    .ba-visual::after {
-      content: '';
-      position: absolute;
-      top: 0; bottom: 0;
-      left: 50%;
-      width: 3px;
-      background: linear-gradient(180deg, var(--gold), var(--rust));
-      transform: translateX(-50%);
-      z-index: 10;
-      box-shadow: 0 0 8px rgba(196,149,90,0.5);
-    }
-    /* BEFORE / AFTER labels */
-    .ba-label-before,
-    .ba-label-after {
-      position: absolute;
-      top: 10px;
-      z-index: 11;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.62rem;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      padding: 4px 8px;
-      border-radius: 3px;
-    }
-    .ba-label-before {
-      left: 8px;
-      background: rgba(30,30,30,0.75);
-      color: rgba(255,255,255,0.7);
-    }
-    .ba-label-after {
-      right: 8px;
-      background: rgba(196,149,90,0.85);
-      color: var(--wood);
-    }
-    .ba-card-footer {
-      padding: 20px 24px;
-      background: #161616;
-      border-top: 1px solid rgba(196,149,90,0.15);
-    }
-    .ba-card-footer h3 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.82rem;
-      font-weight: 700;
-      color: var(--warm-white);
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      margin-bottom: 6px;
-    }
-    .ba-card-footer p {
-      font-size: 0.78rem;
-      color: rgba(250,248,245,0.5);
-      margin-bottom: 12px;
-    }
-    .ba-view-link {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.72rem;
-      font-weight: 700;
-      color: var(--gold);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      transition: color 0.2s;
-    }
-    .ba-view-link:hover { color: var(--gold-light); }
-    .ba-view-link::after { content: ' →'; }
-
-    /* ─── SERVICES ─── */
-    .services-section { background: var(--warm-white); }
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-top: 60px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
     }
     .service-card {
       background: #fff;
-      border: 1px solid #e8ddd0;
-      border-radius: 8px;
-      padding: 36px 28px;
-      position: relative;
-      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .service-card:hover {
-      border-color: var(--gold);
-      box-shadow: 0 12px 40px rgba(44,24,16,0.1);
-      transform: translateY(-4px);
+      transform: translateY(-6px);
+      box-shadow: 0 12px 36px rgba(0,0,0,0.12);
     }
-    .service-badge {
-      position: absolute;
-      top: -1px; right: 20px;
-      background: var(--rust);
-      color: #fff;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.58rem;
-      font-weight: 800;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 4px 10px;
-      border-radius: 0 0 4px 4px;
-    }
-    .service-icon {
-      width: 52px;
-      height: 52px;
-      margin-bottom: 20px;
-      color: var(--gold);
-    }
-    .service-card h3 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--wood);
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-    .service-card p {
-      font-size: 0.88rem;
-      color: #6a5040;
-      line-height: 1.7;
-    }
-
-    /* ─── PROCESS ─── */
-    .process-section { background: var(--wood); position: relative; overflow: hidden; }
-    .process-section::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: repeating-linear-gradient(
-        180deg,
-        transparent 0px, transparent 22px,
-        rgba(255,255,255,0.02) 22px, rgba(255,255,255,0.02) 23px
-      );
-      pointer-events: none;
-    }
-    .process-header { text-align: center; margin-bottom: 70px; }
-    .process-header .section-eyebrow { justify-content: center; }
-    .process-header .section-eyebrow::before { display: none; }
-    .process-steps {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 0;
-      position: relative;
-    }
-    .process-steps::before {
-      content: '';
-      position: absolute;
-      top: 36px;
-      left: calc(10% + 0px);
-      right: calc(10% + 0px);
-      height: 2px;
-      background: linear-gradient(90deg, var(--gold), var(--rust), var(--gold));
-    }
-    .process-step {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 0 16px;
-      position: relative;
-    }
-    .step-number {
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      background: var(--gold);
-      color: var(--wood);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin-bottom: 24px;
-      position: relative;
-      z-index: 1;
-      border: 3px solid var(--mid-wood);
-      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
-      flex-shrink: 0;
-    }
-    .process-step:nth-child(2) .step-number { background: var(--rust); color: #fff; }
-    .process-step:nth-child(4) .step-number { background: var(--rust); color: #fff; }
-    .process-step h3 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.82rem;
-      font-weight: 700;
-      color: var(--gold);
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-    .process-step p {
-      font-size: 0.8rem;
-      color: rgba(250,248,245,0.6);
-      line-height: 1.6;
-    }
-
-    /* ─── CRAFTSMANSHIP FEATURE ─── */
-    .craft-section { background: var(--cream); }
-    .craft-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-    }
-    .craft-quote-col {
-      position: relative;
-    }
-    .craft-big-quote {
-      font-family: 'Playfair Display', serif;
-      font-size: 8rem;
-      color: var(--gold);
-      opacity: 0.35;
-      line-height: 0.5;
-      margin-bottom: 24px;
-      user-select: none;
-    }
-    .craft-quote-text {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      font-weight: 600;
-      font-style: italic;
-      color: var(--wood);
-      line-height: 1.3;
-      margin-bottom: 40px;
-    }
-    .craft-points { display: flex; flex-direction: column; gap: 18px; }
-    .craft-point {
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-    }
-    .craft-point-icon {
-      width: 36px;
-      height: 36px;
-      background: var(--gold);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      color: var(--wood);
-    }
-    .craft-point-text h4 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.82rem;
-      font-weight: 700;
-      color: var(--wood);
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      margin-bottom: 4px;
-    }
-    .craft-point-text p {
-      font-size: 0.85rem;
-      color: #7a5a44;
-      line-height: 1.5;
-    }
-    .craft-right-col {
-      background: var(--wood);
-      border-radius: 10px;
-      padding: 52px 44px;
-      position: relative;
+    .service-card-img {
+      height: 220px;
       overflow: hidden;
     }
-    .craft-right-col::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: repeating-linear-gradient(
-        180deg,
-        transparent 0, transparent 16px,
-        rgba(255,255,255,0.025) 16px, rgba(255,255,255,0.025) 17px
-      );
+    .service-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
     }
-    .craft-right-col > * { position: relative; z-index: 1; }
-    .craft-right-col h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.9rem;
-      font-weight: 700;
-      color: var(--warm-white);
-      margin-bottom: 20px;
-      line-height: 1.2;
+    .service-card:hover .service-card-img img {
+      transform: scale(1.08);
     }
-    .craft-right-col p {
+    .service-card-body {
+      padding: 28px 24px;
+    }
+    .service-card-body h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #3E2723;
+    }
+    .service-card-body p {
       font-size: 0.92rem;
-      color: rgba(250,248,245,0.7);
-      line-height: 1.75;
-      margin-bottom: 36px;
+      color: #666;
+      line-height: 1.65;
+      margin-bottom: 16px;
     }
-
-    /* ─── LICENSE STRIP ─── */
-    .license-strip {
-      background: var(--charcoal);
-      border-top: 2px solid var(--gold);
-      border-bottom: 2px solid var(--gold);
-    }
-    .license-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 32px;
-      flex-wrap: wrap;
-      padding: 36px 40px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .license-text h3 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--gold);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 4px;
-    }
-    .license-text p {
-      font-size: 0.78rem;
-      color: rgba(250,248,245,0.5);
-    }
-    .license-text a {
-      color: var(--gold);
-      text-decoration: underline;
-    }
-    .license-badges {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-    .lic-badge {
-      display: flex;
-      flex-direction: column;
+    .service-link {
+      font-weight: 600;
+      font-size: 0.88rem;
+      color: #D4A017;
+      display: inline-flex;
       align-items: center;
       gap: 6px;
-      min-width: 90px;
+      transition: gap 0.3s ease;
     }
-    .lic-badge-icon {
-      width: 44px;
-      height: 44px;
+    .service-link:hover { gap: 10px; }
+
+    /* ────────────────────────────────
+       WHY CHOOSE US
+    ──────────────────────────────── */
+    .why-us {
+      padding: 100px 0;
+      background: #FFF8E1;
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+    }
+    .why-card {
+      text-align: center;
+      padding: 40px 24px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+      transition: transform 0.3s ease;
+    }
+    .why-card:hover { transform: translateY(-4px); }
+    .why-icon {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 20px;
+      background: linear-gradient(135deg, #3E2723, #5D4037);
       border-radius: 50%;
-      border: 2px solid var(--gold);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--gold);
     }
-    .lic-badge span {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.6rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: rgba(250,248,245,0.65);
-      text-align: center;
+    .why-icon svg { width: 32px; height: 32px; fill: #D4A017; }
+    .why-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 10px;
+      color: #3E2723;
+    }
+    .why-card p {
+      font-size: 0.9rem;
+      color: #666;
+      line-height: 1.65;
     }
 
-    /* ─── GALLERY ─── */
-    .gallery-section { background: var(--warm-white); }
-    .gallery-header {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      margin-bottom: 48px;
-      gap: 24px;
-      flex-wrap: wrap;
+    /* ────────────────────────────────
+       GALLERY
+    ──────────────────────────────── */
+    .gallery {
+      padding: 100px 0;
+      background: #FAF8F5;
     }
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      gap: 20px;
     }
-    .gallery-card {
-      border-radius: 8px;
+    .gallery-item {
+      border-radius: 12px;
       overflow: hidden;
-      background: #fff;
-      border: 1px solid #e8ddd0;
-      transition: box-shadow 0.25s, transform 0.2s;
+      height: 300px;
+      cursor: pointer;
     }
-    .gallery-card:hover {
-      box-shadow: 0 16px 48px rgba(44,24,16,0.12);
-      transform: translateY(-5px);
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
     }
-    .gallery-thumb {
-      height: 200px;
-      position: relative;
-      overflow: hidden;
-    }
-    .gallery-card:nth-child(1) .gallery-thumb {
-      background: linear-gradient(135deg, #5a3418 0%, #3d2010 40%, #6a4020 70%, #4a2c14 100%);
-    }
-    .gallery-card:nth-child(2) .gallery-thumb {
-      background: linear-gradient(135deg, #2e1f14 0%, #4a3020 50%, #3a2418 100%);
-    }
-    .gallery-card:nth-child(3) .gallery-thumb {
-      background: linear-gradient(135deg, #3d3020 0%, #5a4430 50%, #4a3828 100%);
-    }
-    .gallery-card:nth-child(4) .gallery-thumb {
-      background: linear-gradient(135deg, #4a2c14 0%, #6a4424 50%, #5a3818 100%);
-    }
-    .gallery-card:nth-child(5) .gallery-thumb {
-      background: linear-gradient(135deg, #2e201a 0%, #503828 50%, #3e2c20 100%);
-    }
-    .gallery-card:nth-child(6) .gallery-thumb {
-      background: linear-gradient(135deg, #503020 0%, #6a4030 50%, #5a3828 100%);
-    }
-    /* decorative elements inside gallery thumbs */
-    .gallery-thumb::before {
-      content: '';
+    .gallery-item:hover img { transform: scale(1.1); }
+    .gallery-overlay {
       position: absolute;
       inset: 0;
-      background:
-        repeating-linear-gradient(180deg, transparent 0, transparent 18px, rgba(255,255,255,0.03) 18px, rgba(255,255,255,0.03) 19px);
-    }
-    .gallery-thumb::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 40%;
-      background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
-    }
-    .gallery-tag-row {
-      position: absolute;
-      top: 12px; left: 12px;
+      background: linear-gradient(to top, rgba(62,39,35,0.85) 0%, transparent 60%);
       display: flex;
-      gap: 6px;
-      z-index: 2;
+      align-items: flex-end;
+      padding: 24px;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: 1;
     }
-    .gtag {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.6rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 3px 8px;
-      border-radius: 3px;
-      background: rgba(196,149,90,0.85);
-      color: var(--wood);
-    }
-    .gallery-body {
-      padding: 22px 24px;
-    }
-    .gallery-body h3 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--wood);
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-      margin-bottom: 6px;
-    }
-    .gallery-price {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.8rem;
-      color: var(--rust);
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+    .gallery-overlay span {
+      color: #FFF8E1;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
       font-weight: 600;
-      margin-bottom: 4px;
-    }
-    .gallery-loc {
-      font-size: 0.76rem;
-      color: #9a7a62;
     }
 
-    /* ─── TESTIMONIALS ─── */
-    .testimonials-section { background: #F5F0EA; }
+    /* ────────────────────────────────
+       TESTIMONIALS
+    ──────────────────────────────── */
+    .testimonials {
+      padding: 100px 0;
+      background: #3E2723;
+    }
+    .testimonials h2, .testimonials .section-label { color: #FFF8E1; }
+    .testimonials .section-subtitle { color: rgba(255,248,225,0.7); }
     .testimonials-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 28px;
-      margin-top: 56px;
     }
-    .testi-card {
-      background: #fff;
-      border: 1px solid #e0d4c4;
-      border-radius: 8px;
-      padding: 36px 30px;
-      position: relative;
+    .testimonial-card {
+      background: rgba(255,248,225,0.08);
+      border: 1px solid rgba(255,248,225,0.1);
+      border-radius: 12px;
+      padding: 36px 28px;
+      transition: transform 0.3s ease;
     }
-    .testi-card::before {
-      content: '"';
-      font-family: 'Playfair Display', serif;
-      font-size: 5rem;
-      color: var(--gold);
-      opacity: 0.3;
-      position: absolute;
-      top: 10px; left: 20px;
-      line-height: 1;
-    }
-    .testi-stars {
-      display: flex;
-      gap: 3px;
-      margin-bottom: 18px;
-    }
-    .star {
-      color: var(--gold);
+    .testimonial-card:hover { transform: translateY(-4px); }
+    .testimonial-stars {
+      color: #D4A017;
       font-size: 1.1rem;
+      margin-bottom: 16px;
+      letter-spacing: 2px;
     }
-    .testi-quote {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.9rem;
-      color: #4a3428;
-      line-height: 1.75;
-      margin-bottom: 28px;
-      position: relative;
-      z-index: 1;
-    }
-    .testi-author {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      border-top: 1px solid #e8ddd0;
-      padding-top: 20px;
-    }
-    .testi-avatar {
-      width: 44px; height: 44px;
-      border-radius: 50%;
-      background: var(--gold);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Montserrat', sans-serif;
+    .testimonial-text {
       font-size: 1rem;
-      font-weight: 700;
-      color: var(--wood);
-      flex-shrink: 0;
+      line-height: 1.75;
+      color: rgba(255,248,225,0.9);
+      margin-bottom: 24px;
+      font-style: italic;
     }
-    .testi-name {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.82rem;
-      font-weight: 700;
-      color: var(--wood);
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-    .testi-loc {
-      font-size: 0.75rem;
-      color: #9a7a62;
-    }
-
-    /* ─── SERVICE AREA ─── */
-    .area-section { background: var(--warm-white); }
-    .area-header { margin-bottom: 50px; }
-    .area-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
+    .testimonial-author {
+      display: flex;
+      align-items: center;
       gap: 12px;
     }
-    .area-pill {
-      background: #fff;
-      border: 1px solid #e0d4c4;
-      border-radius: 6px;
-      padding: 14px 16px;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--wood);
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      text-align: center;
-      transition: border-color 0.2s, background 0.2s;
-    }
-    .area-pill:hover {
-      border-color: var(--gold);
-      background: #fdf7ef;
-      color: var(--rust);
-    }
-
-    /* ─── CTA BANNER ─── */
-    .cta-banner {
-      background: var(--wood);
-      position: relative;
-      overflow: hidden;
-      text-align: center;
-    }
-    .cta-banner::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: repeating-linear-gradient(
-        180deg,
-        transparent 0, transparent 14px,
-        rgba(255,255,255,0.02) 14px, rgba(255,255,255,0.02) 15px
-      );
-    }
-    .cta-banner-inner {
-      position: relative;
-      z-index: 1;
-    }
-    .cta-banner h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-      font-weight: 700;
-      color: var(--warm-white);
-      margin-bottom: 16px;
-      line-height: 1.2;
-    }
-    .cta-banner p {
-      font-size: 1rem;
-      color: rgba(250,248,245,0.65);
-      max-width: 560px;
-      margin: 0 auto 36px;
-      line-height: 1.7;
-    }
-    .cta-info-row {
+    .testimonial-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #D4A017;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 32px;
-      margin-top: 28px;
-      flex-wrap: wrap;
-    }
-    .cta-info-item {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.72rem;
-      font-weight: 600;
-      color: rgba(250,248,245,0.5);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-    .cta-info-item strong { color: var(--gold); display: block; font-size: 1rem; }
-
-    /* ─── FOOTER ─── */
-    footer {
-      background: var(--charcoal);
-      border-top: 3px solid var(--gold);
-    }
-    .footer-main {
-      display: grid;
-      grid-template-columns: 1.6fr 1fr 1fr 1fr;
-      gap: 48px;
-      padding: 64px 40px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .footer-brand .logo-name { font-size: 1.3rem; margin-bottom: 4px; }
-    .footer-brand .logo-sub { margin-bottom: 20px; display: block; }
-    .footer-brand p {
-      font-size: 0.83rem;
-      color: rgba(250,248,245,0.5);
-      line-height: 1.7;
-      margin-bottom: 20px;
-      max-width: 280px;
-    }
-    .footer-phone {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.1rem;
       font-weight: 700;
-      color: var(--gold);
+      font-size: 1.1rem;
+      color: #3E2723;
+    }
+    .testimonial-name {
+      color: #FFF8E1;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .testimonial-location {
+      color: rgba(255,248,225,0.5);
+      font-size: 0.82rem;
+      margin-top: 2px;
+    }
+
+    /* ────────────────────────────────
+       ABOUT
+    ──────────────────────────────── */
+    .about {
+      padding: 100px 0;
+      background: #FAF8F5;
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .about-img {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+    }
+    .about-img img {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+    }
+    .about-content h2 { margin-bottom: 20px; }
+    .about-content p {
+      font-size: 1.02rem;
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 32px;
+    }
+    .about-stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #D4A017;
+    }
+    .about-stat-label {
+      font-size: 0.85rem;
+      color: #888;
+      margin-top: 4px;
+    }
+
+    /* ────────────────────────────────
+       SERVICE AREA
+    ──────────────────────────────── */
+    .service-area {
+      padding: 80px 0;
+      background: #FFF8E1;
+      text-align: center;
+    }
+    .area-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 32px;
+    }
+    .area-tag {
+      background: #fff;
+      border: 1px solid rgba(62,39,35,0.12);
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #3E2723;
+      transition: all 0.3s ease;
+    }
+    .area-tag:hover {
+      background: #3E2723;
+      color: #FFF8E1;
+    }
+
+    /* ────────────────────────────────
+       CONTACT
+    ──────────────────────────────── */
+    .contact {
+      padding: 100px 0;
+      background: #FAF8F5;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+    }
+    .contact-form {
+      background: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+    .contact-form h3 {
+      font-size: 1.6rem;
+      margin-bottom: 8px;
+    }
+    .contact-form .form-sub {
+      font-size: 0.92rem;
+      color: #888;
+      margin-bottom: 28px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #3E2723;
       margin-bottom: 6px;
     }
-    .footer-lic {
-      font-size: 0.72rem;
-      color: rgba(250,248,245,0.35);
-      font-family: 'Montserrat', sans-serif;
-      letter-spacing: 0.06em;
-    }
-    .footer-col h4 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 20px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid rgba(196,149,90,0.2);
-    }
-    .footer-col ul li {
-      margin-bottom: 10px;
-    }
-    .footer-col ul li a {
-      font-size: 0.82rem;
-      color: rgba(250,248,245,0.55);
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
       font-family: 'Inter', sans-serif;
-      transition: color 0.2s;
+      font-size: 0.95rem;
+      transition: border-color 0.3s ease;
+      background: #FAF8F5;
     }
-    .footer-col ul li a:hover { color: var(--gold); }
-    .footer-bottom {
-      border-top: 1px solid rgba(196,149,90,0.15);
-      padding: 20px 40px;
-      max-width: 1200px;
-      margin: 0 auto;
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #D4A017;
+      box-shadow: 0 0 0 3px rgba(212,160,23,0.12);
+    }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-submit {
+      width: 100%;
+      padding: 18px;
+      font-size: 1.05rem;
+    }
+    .contact-info {
+      padding-top: 20px;
+    }
+    .contact-info h3 {
+      font-size: 1.6rem;
+      margin-bottom: 24px;
+    }
+    .contact-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .contact-detail-icon {
+      width: 48px;
+      height: 48px;
+      background: #3E2723;
+      border-radius: 10px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-detail-icon svg { width: 22px; height: 22px; fill: #D4A017; }
+    .contact-detail-label {
+      font-size: 0.82rem;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+    .contact-detail-value {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #3E2723;
+      margin-top: 4px;
+    }
+    .contact-hours {
+      margin-top: 32px;
+      padding: 24px;
+      background: #FFF8E1;
+      border-radius: 10px;
+    }
+    .contact-hours h4 {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #3E2723;
+      margin-bottom: 12px;
+    }
+    .contact-hours p {
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.8;
+    }
+
+    /* ────────────────────────────────
+       FOOTER
+    ──────────────────────────────── */
+    .footer {
+      background: #3E2723;
+      padding: 60px 0 0;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255,248,225,0.1);
+    }
+    .footer-brand .logo-text {
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+    }
+    .footer-brand p {
+      color: rgba(255,248,225,0.6);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      max-width: 300px;
+    }
+    .footer-col h4 {
+      color: #FFF8E1;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 20px;
+    }
+    .footer-col a {
+      display: block;
+      color: rgba(255,248,225,0.6);
+      font-size: 0.9rem;
+      padding: 6px 0;
+      transition: color 0.3s;
+    }
+    .footer-col a:hover { color: #D4A017; }
+    .footer-bottom {
+      text-align: center;
+      padding: 24px 0;
+      margin-top: 20px;
     }
     .footer-bottom p {
-      font-size: 0.72rem;
-      color: rgba(250,248,245,0.3);
-      font-family: 'Montserrat', sans-serif;
-      letter-spacing: 0.04em;
+      color: rgba(255,248,225,0.4);
+      font-size: 0.82rem;
     }
-    .footer-bottom a { color: rgba(196,149,90,0.6); }
-    .footer-bottom a:hover { color: var(--gold); }
+    .footer-bottom a { color: #D4A017; font-weight: 600; }
+    .footer-bottom a:hover { text-decoration: underline; }
 
-    /* ─── UTILITIES ─── */
-    .text-center { text-align: center; }
-    .text-gold { color: var(--gold); }
-    .mt-auto { margin-top: auto; }
+    /* ────────────────────────────────
+       SCROLL ANIMATIONS
+    ──────────────────────────────── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-    /* ─── MOBILE RESPONSIVE ─── */
+    /* ────────────────────────────────
+       RESPONSIVE
+    ──────────────────────────────── */
     @media (max-width: 1024px) {
-      .ba-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
-      .services-grid { grid-template-columns: repeat(2, 1fr); }
-      .process-steps { grid-template-columns: repeat(3, 1fr); gap: 32px; }
-      .process-steps::before { display: none; }
-      .craft-grid { grid-template-columns: 1fr; gap: 48px; }
-      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-      .testimonials-grid { grid-template-columns: 1fr; }
-      .footer-main { grid-template-columns: 1fr 1fr; }
-      .area-grid { grid-template-columns: repeat(3, 1fr); }
+      .services-grid, .why-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-top { grid-template-columns: 1fr 1fr; }
     }
 
     @media (max-width: 768px) {
-      .container { padding: 0 20px; }
-      .section-pad { padding: 60px 0; }
-      nav { height: auto; padding: 16px 20px; flex-wrap: wrap; gap: 14px; }
-      .nav-links { display: none; }
-      .btn-nav-cta { display: none; }
-      .hero-inner { padding: 60px 20px 48px; }
-      .hero-trust { flex-direction: column; gap: 8px; align-items: flex-start; }
-      .hero-trust-sep { display: none; }
-      .hero-trust-item { padding: 0; }
-      .process-steps { grid-template-columns: 1fr 1fr; }
-      .footer-main { grid-template-columns: 1fr; gap: 32px; }
-      .footer-bottom { flex-direction: column; text-align: center; }
-      .license-inner { flex-direction: column; align-items: flex-start; gap: 24px; }
-      .gallery-header { flex-direction: column; align-items: flex-start; }
+      .nav, .header-phone, .header-cta { display: none; }
+      .hamburger { display: flex; }
+      .hero h1 { font-size: 2.4rem; }
+      .hero-sub { font-size: 1rem; }
+      h2 { font-size: 1.8rem; }
+      .services-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr 1fr; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; }
+      .trust-items { gap: 8px 24px; }
+      .trust-item { font-size: 0.78rem; }
+      .hero-buttons { flex-direction: column; }
+      .hero-buttons .btn { text-align: center; }
     }
 
     @media (max-width: 480px) {
-      .topbar { font-size: 0.62rem; letter-spacing: 0.04em; }
-      .hero h1 { font-size: 2.1rem; }
-      .services-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr; }
       .gallery-grid { grid-template-columns: 1fr; }
-      .area-grid { grid-template-columns: repeat(2, 1fr); }
-      .process-steps { grid-template-columns: 1fr; }
-      .license-badges { flex-wrap: wrap; }
-      .cta-info-row { flex-direction: column; gap: 16px; }
+      .about-stats { grid-template-columns: 1fr; text-align: center; }
+      .hero h1 { font-size: 2rem; }
     }
   </style>
 </head>
 <body>
 
-<!-- ══════════════════════════════════════
-     TOP BAR
-══════════════════════════════════════ -->
-<div class="topbar">
-  CSLB Licensed General Contractor #GC-619204
-  <span>·</span>
-  Free In-Home Consultations
-  <span>·</span>
-  San Diego, CA
-</div>
-
-<!-- ══════════════════════════════════════
-     NAVIGATION
-══════════════════════════════════════ -->
-<div class="nav-wrap">
-  <nav>
-    <div class="nav-logo">
-      <div class="logo-mark">C</div>
-      <div class="logo-text">
-        <span class="logo-name">Craftline Construction</span>
-        <span class="logo-sub">San Diego, CA</span>
-      </div>
-    </div>
-
-    <div class="nav-links">
-      <a href="../index.html" class="back-link">← Back to Blueprint Digital</a>
-      <a href="#services">Kitchen</a>
-      <a href="#services">Bathroom</a>
-      <a href="#services">Additions</a>
-      <a href="#services">Custom Work</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#contact">Contact</a>
-      <a href="#contact" class="btn-nav-cta" style="margin-left:12px;">Free Consultation</a>
-    </div>
-  </nav>
-</div>
-
-<!-- ══════════════════════════════════════
-     HERO
-══════════════════════════════════════ -->
-<section class="hero" id="top">
-  <div class="hero-inner">
-    <div class="hero-eyebrow">San Diego's Premier Remodeling Specialists</div>
-    <h1>Where <em>Craftsmanship</em> Meets<br>Home Transformation</h1>
-    <p class="hero-sub">
-      San Diego's Award-Winning Remodeling Specialists — Kitchens, Bathrooms &amp; Custom Carpentry.
-      CSLB Licensed. Same crew, start to finish. No subcontractor surprises.
-    </p>
-    <div class="hero-ctas">
-      <a href="#contact" class="btn-primary">Schedule Free Consultation</a>
-      <a href="#gallery" class="btn-outline-gold">View Our Work</a>
-    </div>
-    <div class="hero-trust">
-      <div class="hero-trust-item">CSLB <span class="highlight">#GC-619204</span></div>
-      <span class="hero-trust-sep">|</span>
-      <div class="hero-trust-item">BBB <span class="highlight">A+</span></div>
-      <span class="hero-trust-sep">|</span>
-      <div class="hero-trust-item"><span class="highlight">⭐ 4.9</span> (194 reviews)</div>
-      <span class="hero-trust-sep">|</span>
-      <div class="hero-trust-item"><span class="highlight">22+</span> Years in San Diego</div>
-      <span class="hero-trust-sep">|</span>
-      <div class="hero-trust-item"><span class="highlight">1,200+</span> Homes Transformed</div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════
-     BEFORE / AFTER TRANSFORMATIONS
-══════════════════════════════════════ -->
-<section class="ba-section section-pad" id="transformations">
-  <div class="container">
-    <div class="ba-header">
-      <div class="section-eyebrow">The Craftline Difference</div>
-      <h2 class="section-title light">The Craftline Transformation</h2>
-      <p class="section-intro" style="margin: 0 auto; text-align:center;">
-        See the dramatic difference our team delivers — every project is a complete reinvention of your space.
-      </p>
-    </div>
-
-    <div class="ba-grid">
-
-      <!-- Card 1: Kitchen -->
-      <div class="ba-card ba-card-kitchen">
-        <div class="ba-visual">
-          <div class="ba-before"></div>
-          <div class="ba-after"></div>
-          <span class="ba-label-before">Before</span>
-          <span class="ba-label-after">After</span>
-        </div>
-        <div class="ba-card-footer">
-          <h3>Mission Hills Kitchen Remodel</h3>
-          <p>Dated builder-grade cabinets → custom walnut cabinetry, quartz countertops, full gut remodel</p>
-          <a href="#gallery" class="ba-view-link">View Project</a>
-        </div>
-      </div>
-
-      <!-- Card 2: Bathroom -->
-      <div class="ba-card ba-card-bath">
-        <div class="ba-visual">
-          <div class="ba-before"></div>
-          <div class="ba-after"></div>
-          <span class="ba-label-before">Before</span>
-          <span class="ba-label-after">After</span>
-        </div>
-        <div class="ba-card-footer">
-          <h3>Chula Vista Master Bath</h3>
-          <p>Cold white builder tile → warm natural stone, frameless glass, freestanding soaker tub</p>
-          <a href="#gallery" class="ba-view-link">View Project</a>
-        </div>
-      </div>
-
-      <!-- Card 3: Living Space -->
-      <div class="ba-card ba-card-living">
-        <div class="ba-visual">
-          <div class="ba-before"></div>
-          <div class="ba-after"></div>
-          <span class="ba-label-before">Before</span>
-          <span class="ba-label-after">After</span>
-        </div>
-        <div class="ba-card-footer">
-          <h3>Del Mar Living Room Built-Ins</h3>
-          <p>Bare walls with dated shelving → floor-to-ceiling custom built-ins, integrated lighting</p>
-          <a href="#gallery" class="ba-view-link">View Project</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════
-     SERVICES
-══════════════════════════════════════ -->
-<section class="services-section section-pad" id="services">
-  <div class="container">
-    <div class="section-eyebrow">What We Build</div>
-    <h2 class="section-title dark">Expert Craftsmanship<br>Across Every Room</h2>
-
-    <div class="services-grid">
-
-      <!-- Kitchen Remodels -->
-      <div class="service-card">
-        <span class="service-badge">Most Popular</span>
-        <svg class="service-icon" viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1.8">
-          <rect x="4" y="18" width="44" height="28" rx="2"/>
-          <line x1="4" y1="30" x2="48" y2="30"/>
-          <rect x="8" y="34" width="10" height="8" rx="1"/>
-          <rect x="22" y="34" width="10" height="8" rx="1"/>
-          <rect x="36" y="34" width="8" height="8" rx="1"/>
-          <path d="M14 18V8a4 4 0 018 0v10"/>
-          <circle cx="30" cy="12" r="3"/>
-          <line x1="30" y1="9" x2="30" y2="4"/>
-        </svg>
-        <h3>Kitchen Remodels</h3>
-        <p>Full gut-and-rebuild kitchen transformations. Custom cabinetry, quartz or stone countertops, tile work, appliance integration, and full permit management.</p>
-      </div>
-
-      <!-- Bathroom Renovations -->
-      <div class="service-card">
-        <svg class="service-icon" viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1.8">
-          <rect x="6" y="26" width="40" height="18" rx="3"/>
-          <path d="M14 26V14a4 4 0 018 0v2"/>
-          <line x1="6" y1="38" x2="6" y2="44"/>
-          <line x1="46" y1="38" x2="46" y2="44"/>
-          <circle cx="36" cy="14" r="5"/>
-          <path d="M32 14h-6v-4"/>
-          <line x1="18" y1="33" x2="34" y2="33"/>
-        </svg>
-        <h3>Bathroom Renovations</h3>
-        <p>Master baths, guest baths, powder rooms. Walk-in showers, freestanding tubs, custom vanities, heated floors, frameless glass enclosures.</p>
-      </div>
-
-      <!-- Room Additions -->
-      <div class="service-card">
-        <svg class="service-icon" viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1.8">
-          <path d="M4 46h44"/>
-          <path d="M8 46V28L26 12l18 16v18"/>
-          <rect x="20" y="34" width="12" height="12"/>
-          <path d="M38 46V32l8 6"/>
-          <line x1="38" y1="20" x2="38" y2="12"/>
-          <line x1="34" y1="16" x2="42" y2="16"/>
-        </svg>
-        <h3>Room Additions</h3>
-        <p>Permitted additions that expand your living space — master suites, in-law quarters, sunrooms, garage conversions (ADUs). Full structural work included.</p>
-      </div>
-
-      <!-- Custom Cabinetry -->
-      <div class="service-card">
-        <svg class="service-icon" viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1.8">
-          <rect x="4" y="8" width="44" height="36" rx="2"/>
-          <line x1="26" y1="8" x2="26" y2="44"/>
-          <line x1="4" y1="26" x2="26" y2="26"/>
-          <circle cx="20" cy="17" r="2"/>
-          <circle cx="20" cy="35" r="2"/>
-          <circle cx="38" cy="26" r="2"/>
-          <rect x="32" y="14" width="10" height="24" rx="1"/>
-          <line x1="37" y1="14" x2="37" y2="38"/>
-        </svg>
-        <h3>Custom Cabinetry &amp; Built-Ins</h3>
-        <p>Bespoke built-in shelving, entertainment centers, home offices, mudrooms. Hand-selected hardwoods and soft-close hardware. Furniture-grade quality.</p>
-      </div>
-
-      <!-- Deck & Patio -->
-      <div class="service-card">
-        <svg class="service-icon" viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1.8">
-          <rect x="4" y="32" width="44" height="10" rx="1"/>
-          <line x1="10" y1="32" x2="10" y2="20"/>
-          <line x1="20" y1="32" x2="20" y2="20"/>
-          <line x1="30" y1="32" x2="30" y2="20"/>
-          <line x1="40" y1="32" x2="40" y2="20"/>
-          <line x1="6" y1="20" x2="46" y2="20"/>
-          <line x1="10" y1="20" x2="10" y2="14"/>
-          <line x1="40" y1="20" x2="40" y2="14"/>
-          <line x1="10" y1="14" x2="40" y2="14"/>
-          <line x1="4" y1="42" x2="4" y2="48"/>
-          <line x1="48" y1="42" x2="48" y2="48"/>
-        </svg>
-        <h3>Deck &amp; Patio Construction</h3>
-        <p>Composite and hardwood decks, pergolas, outdoor kitchens, covered patios. Designed for San Diego's indoor-outdoor lifestyle. Permitted and engineered.</p>
-      </div>
-
-      <!-- Full-Home Remodels -->
-      <div class="service-card">
-        <svg class="service-icon" viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1.8">
-          <path d="M6 46h40V22L26 8 6 22v24z"/>
-          <rect x="20" y="34" width="12" height="12"/>
-          <rect x="8" y="28" width="10" height="10" rx="1"/>
-          <rect x="34" y="28" width="10" height="10" rx="1"/>
-          <path d="M26 8v4"/>
-          <circle cx="26" cy="16" r="3"/>
-          <line x1="22" y1="22" x2="30" y2="22"/>
-        </svg>
-        <h3>Full-Home Remodels</h3>
-        <p>Complete home transformations from foundation to finish. Structural, plumbing, electrical, all trades coordinated under one CSLB general contractor license.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════
-     PROCESS
-══════════════════════════════════════ -->
-<section class="process-section section-pad" id="process">
-  <div class="container">
-    <div class="process-header">
-      <div class="section-eyebrow">Our Proven Method</div>
-      <h2 class="section-title light">From Vision to Reality in 5 Steps</h2>
-      <p class="section-intro" style="margin: 0 auto; text-align:center; margin-top:12px;">
-        A transparent, stress-free process from the very first handshake to your final walkthrough.
-      </p>
-    </div>
-
-    <div class="process-steps">
-
-      <div class="process-step">
-        <div class="step-number">1</div>
-        <h3>Consultation</h3>
-        <p>Free in-home visit. We assess your space, listen to your vision, and discuss budget and timeline openly.</p>
-      </div>
-
-      <div class="process-step">
-        <div class="step-number">2</div>
-        <h3>Design &amp; Plans</h3>
-        <p>Detailed architectural plans, 3D renderings, and permit preparation. You approve every detail before we break ground.</p>
-      </div>
-
-      <div class="process-step">
-        <div class="step-number">3</div>
-        <h3>Material Selection</h3>
-        <p>We guide you through hand-selected materials at our trade partner showrooms — no guesswork, just beautiful choices.</p>
-      </div>
-
-      <div class="process-step">
-        <div class="step-number">4</div>
-        <h3>The Build</h3>
-        <p>Our own crew — not subcontractors — executes with precision. Daily progress updates. Clean jobsite guaranteed.</p>
-      </div>
-
-      <div class="process-step">
-        <div class="step-number">5</div>
-        <h3>Final Walkthrough</h3>
-        <p>We walk every inch with you. Nothing is done until you're fully satisfied. 5-year craftsmanship warranty issued.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════
-     CRAFTSMANSHIP FEATURE
-══════════════════════════════════════ -->
-<section class="craft-section section-pad" id="craftsmanship">
-  <div class="container">
-    <div class="craft-grid">
-
-      <div class="craft-quote-col">
-        <div class="craft-big-quote">"</div>
-        <p class="craft-quote-text">We don't cut corners —<br>we build them.</p>
-
-        <div class="craft-points">
-
-          <div class="craft-point">
-            <div class="craft-point-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/>
-              </svg>
-            </div>
-            <div class="craft-point-text">
-              <h4>Hand-Selected Materials</h4>
-              <p>We source premium hardwoods, stone, and tile from trusted San Diego trade partners — nothing off the bargain shelf.</p>
-            </div>
-          </div>
-
-          <div class="craft-point">
-            <div class="craft-point-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <rect x="3" y="3" width="18" height="18" rx="2"/>
-                <path d="M8 12l3 3 5-5"/>
-              </svg>
-            </div>
-            <div class="craft-point-text">
-              <h4>Permit-Pulling Included</h4>
-              <p>Every remodel that requires a permit — we pull it, schedule inspections, and handle the city for you. Zero surprises.</p>
-            </div>
-          </div>
-
-          <div class="craft-point">
-            <div class="craft-point-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <circle cx="12" cy="8" r="4"/>
-                <path d="M6 20v-1a6 6 0 0112 0v1"/>
-              </svg>
-            </div>
-            <div class="craft-point-text">
-              <h4>Same Crew, Start to Finish</h4>
-              <p>The team you meet at the consultation is the team that builds your home. No rotating subcontractors, no handoff chaos.</p>
-            </div>
-          </div>
-
-          <div class="craft-point">
-            <div class="craft-point-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <path d="M12 22s8-4 8-10V6l-8-4-8 4v6c0 6 8 10 8 10z"/>
-              </svg>
-            </div>
-            <div class="craft-point-text">
-              <h4>5-Year Craftsmanship Warranty</h4>
-              <p>We stand behind every nail and seam. Full written warranty on all workmanship. Call us if anything isn't right — ever.</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="craft-right-col">
-        <h2>Our Commitment<br>to Quality</h2>
-        <p>
-          Since 2002, Craftline Construction has been building and transforming San Diego homes with the same obsessive attention to quality that defines true craftsmanship. We've never treated remodeling as a commodity. Every joint, every finish, every material choice reflects the homeowner's investment and our professional pride.
-        </p>
-        <p>
-          Our crews train together, work together, and share the same standards. When you hire Craftline, you get artisans — not assembly-line workers. That's why our clients refer us to their neighbors, and why 38% of our business comes from repeat customers and word of mouth.
-        </p>
-        <a href="#contact" class="btn-primary">Start Your Transformation</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════
-     LICENSE & CREDENTIALS
-══════════════════════════════════════ -->
-<div class="license-strip">
-  <div class="license-inner">
-    <div class="license-text">
-      <h3>CSLB License #GC-619204</h3>
-      <p>General Contractor, State of California &mdash; <a href="https://www.cslb.ca.gov" target="_blank" rel="noopener">Verify at CSLB.ca.gov</a></p>
-    </div>
-    <div class="license-badges">
-
-      <div class="lic-badge">
-        <div class="lic-badge-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 22s8-4 8-10V6l-8-4-8 4v6c0 6 8 10 8 10z"/>
-            <path d="M9 12l2 2 4-4"/>
-          </svg>
-        </div>
-        <span>Licensed<br>General Contractor</span>
-      </div>
-
-      <div class="lic-badge">
-        <div class="lic-badge-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="2" y="7" width="20" height="14" rx="2"/>
-            <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/>
-            <line x1="12" y1="12" x2="12" y2="16"/>
-            <circle cx="12" cy="12" r="1" fill="currentColor"/>
-          </svg>
-        </div>
-        <span>Insured &amp;<br>Bonded</span>
-      </div>
-
-      <div class="lic-badge">
-        <div class="lic-badge-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"/>
-            <path d="M8 12l3 3 5-5"/>
-          </svg>
-        </div>
-        <span>BBB<br>A+ Rated</span>
-      </div>
-
-      <div class="lic-badge">
-        <div class="lic-badge-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="8" r="4"/>
-            <path d="M4 20v-1a8 8 0 0116 0v1"/>
-          </svg>
-        </div>
-        <span>22 Years<br>Experience</span>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════
-     GALLERY
-══════════════════════════════════════ -->
-<section class="gallery-section section-pad" id="gallery">
-  <div class="container">
-    <div class="gallery-header">
-      <div>
-        <div class="section-eyebrow">Portfolio</div>
-        <h2 class="section-title dark">Recent Projects</h2>
-      </div>
-      <p style="font-size:0.88rem; color:#7a5a44; max-width:320px; line-height:1.6;">
-        A sampling of our recent work across San Diego County — each project a complete transformation.
-      </p>
-    </div>
-
-    <div class="gallery-grid">
-
-      <div class="gallery-card">
-        <div class="gallery-thumb">
-          <div class="gallery-tag-row">
-            <span class="gtag">Kitchen</span>
-            <span class="gtag">Full Gut</span>
-          </div>
-        </div>
-        <div class="gallery-body">
-          <h3>Mission Hills Kitchen Gut Remodel</h3>
-          <p class="gallery-price">Approx. $42K–$68K</p>
-          <p class="gallery-loc">Mission Hills, San Diego · Completed 2024</p>
-        </div>
-      </div>
-
-      <div class="gallery-card">
-        <div class="gallery-thumb">
-          <div class="gallery-tag-row">
-            <span class="gtag">Bathroom</span>
-            <span class="gtag">Master Bath</span>
-          </div>
-        </div>
-        <div class="gallery-body">
-          <h3>Chula Vista Master Bath Renovation</h3>
-          <p class="gallery-price">Approx. $28K–$45K</p>
-          <p class="gallery-loc">Chula Vista · Completed 2024</p>
-        </div>
-      </div>
-
-      <div class="gallery-card">
-        <div class="gallery-thumb">
-          <div class="gallery-tag-row">
-            <span class="gtag">Addition</span>
-            <span class="gtag">ADU</span>
-          </div>
-        </div>
-        <div class="gallery-body">
-          <h3>Bonita 600 sq ft Addition</h3>
-          <p class="gallery-price">Approx. $85K–$130K</p>
-          <p class="gallery-loc">Bonita, San Diego · Completed 2023</p>
-        </div>
-      </div>
-
-      <div class="gallery-card">
-        <div class="gallery-thumb">
-          <div class="gallery-tag-row">
-            <span class="gtag">Built-Ins</span>
-            <span class="gtag">Custom</span>
-          </div>
-        </div>
-        <div class="gallery-body">
-          <h3>Del Mar Floor-to-Ceiling Built-Ins</h3>
-          <p class="gallery-price">Approx. $18K–$32K</p>
-          <p class="gallery-loc">Del Mar, San Diego · Completed 2024</p>
-        </div>
-      </div>
-
-      <div class="gallery-card">
-        <div class="gallery-thumb">
-          <div class="gallery-tag-row">
-            <span class="gtag">Kitchen</span>
-            <span class="gtag">Bathroom</span>
-          </div>
-        </div>
-        <div class="gallery-body">
-          <h3>La Jolla Full-Home Remodel</h3>
-          <p class="gallery-price">Approx. $165K–$220K</p>
-          <p class="gallery-loc">La Jolla · Completed 2023</p>
-        </div>
-      </div>
-
-      <div class="gallery-card">
-        <div class="gallery-thumb">
-          <div class="gallery-tag-row">
-            <span class="gtag">Deck</span>
-            <span class="gtag">Outdoor</span>
-          </div>
-        </div>
-        <div class="gallery-body">
-          <h3>Rancho Bernardo Deck &amp; Pergola</h3>
-          <p class="gallery-price">Approx. $22K–$38K</p>
-          <p class="gallery-loc">Rancho Bernardo · Completed 2024</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════
-     TESTIMONIALS
-══════════════════════════════════════ -->
-<section class="testimonials-section section-pad" id="testimonials">
-  <div class="container">
-    <div class="section-eyebrow">Client Stories</div>
-    <h2 class="section-title dark">What San Diego Homeowners Say</h2>
-
-    <div class="testimonials-grid">
-
-      <div class="testi-card">
-        <div class="testi-stars">
-          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-        </div>
-        <p class="testi-quote">
-          "Craftline completely transformed our 1970s kitchen into something out of a magazine. The custom walnut cabinetry they built is absolutely stunning — I've had every guest ask who built them. The crew was professional, punctual, and cleaned up every single day. Worth every penny."
-        </p>
-        <div class="testi-author">
-          <div class="testi-avatar">MR</div>
-          <div>
-            <p class="testi-name">Maria &amp; Robert Chen</p>
-            <p class="testi-loc">Mission Hills, San Diego</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="testi-card">
-        <div class="testi-stars">
-          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-        </div>
-        <p class="testi-quote">
-          "Our master bathroom renovation was a complete luxury overhaul — heated tile floors, frameless glass shower, the whole nine yards. What impressed me most was the same team was here day one and day forty-two. No subcontractors, no strangers. They treated our home like it was their own."
-        </p>
-        <div class="testi-author">
-          <div class="testi-avatar">JD</div>
-          <div>
-            <p class="testi-name">James Delgado</p>
-            <p class="testi-loc">Chula Vista</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="testi-card">
-        <div class="testi-stars">
-          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-        </div>
-        <p class="testi-quote">
-          "The 600 square foot addition Craftline built for us came in on budget and on schedule — I was shocked, honestly. The permit process was completely handled by their team. The craftsmanship on the woodwork and trim is exceptional. I've referred them to three neighbors already."
-        </p>
-        <div class="testi-author">
-          <div class="testi-avatar">SK</div>
-          <div>
-            <p class="testi-name">Sandra &amp; Kevin Walsh</p>
-            <p class="testi-loc">Bonita, San Diego</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════
-     SERVICE AREA
-══════════════════════════════════════ -->
-<section class="area-section section-pad-sm">
-  <div class="container">
-    <div class="area-header">
-      <div class="section-eyebrow">Where We Work</div>
-      <h2 class="section-title dark" style="font-size:1.6rem;">Serving Greater San Diego County</h2>
-    </div>
-    <div class="area-grid">
-      <div class="area-pill">Mission Hills</div>
-      <div class="area-pill">La Jolla</div>
-      <div class="area-pill">Chula Vista</div>
-      <div class="area-pill">Bonita</div>
-      <div class="area-pill">Del Mar</div>
-      <div class="area-pill">Rancho Bernardo</div>
-      <div class="area-pill">Kensington</div>
-      <div class="area-pill">North Park</div>
-      <div class="area-pill">Point Loma</div>
-      <div class="area-pill">Hillcrest</div>
-      <div class="area-pill">Coronado</div>
-      <div class="area-pill">Santee</div>
-      <div class="area-pill">El Cajon</div>
-      <div class="area-pill">Lemon Grove</div>
-      <div class="area-pill">National City</div>
-      <div class="area-pill">Spring Valley</div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════
-     CTA BANNER
-══════════════════════════════════════ -->
-<section class="cta-banner section-pad" id="contact">
-  <div class="container">
-    <div class="cta-banner-inner">
-      <h2>Ready to Transform<br>Your Home?</h2>
-      <p>
-        Schedule a free, no-obligation in-home consultation with our lead designer.
-        We'll assess your space, discuss your vision, and provide a detailed written estimate — no pressure, no surprises.
-      </p>
-      <a href="tel:6195550670" class="btn-primary" style="display:inline-block;">
-        Call (619) 555-0670 — Free Consult
-      </a>
-      <div class="cta-info-row">
-        <div class="cta-info-item">
-          <strong>(619) 555-0670</strong>
-          Direct Line
-        </div>
-        <div class="cta-info-item">
-          <strong>Free</strong>
-          In-Home Consultation
-        </div>
-        <div class="cta-info-item">
-          <strong>$0</strong>
-          Written Estimate
-        </div>
-        <div class="cta-info-item">
-          <strong>22+ Years</strong>
-          San Diego Experience
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════
-     FOOTER
-══════════════════════════════════════ -->
-<footer>
-  <div class="footer-main">
-
-    <div class="footer-brand">
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
-        <div class="logo-mark" style="width:36px;height:36px;font-size:1.2rem;">C</div>
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="#" class="logo">
+        <div class="logo-icon"></div>
         <div class="logo-text">
-          <span class="logo-name">Craftline Construction</span>
-          <span class="logo-sub">San Diego, CA</span>
+          CRAFTLINE
+          <span>Construction</span>
+        </div>
+      </a>
+      <nav class="nav">
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+        <a href="#testimonials">Reviews</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a href="tel:6195550123" class="header-phone">
+        <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.25 1.01l-2.2 2.2z"/></svg>
+        (619) 555-0123
+      </a>
+      <a href="#contact" class="btn btn-gold header-cta">Free Consultation</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE NAV -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#services" onclick="closeMobile()">Services</a>
+    <a href="#gallery" onclick="closeMobile()">Gallery</a>
+    <a href="#about" onclick="closeMobile()">About</a>
+    <a href="#testimonials" onclick="closeMobile()">Reviews</a>
+    <a href="#contact" onclick="closeMobile()">Contact</a>
+    <a href="tel:6195550123" onclick="closeMobile()">Call (619) 555-0123</a>
+    <a href="#contact" class="btn btn-gold" onclick="closeMobile()">Free Consultation</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">San Diego's Trusted Craftsmen Since 2006</div>
+        <h1>Master Craftsmanship. <em>Timeless Results.</em></h1>
+        <p class="hero-sub">Custom cabinetry, kitchen remodels, decks & fine woodwork. Family-owned, San Diego proud since 2006.</p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn btn-gold">Get Your Free Consultation</a>
+          <a href="tel:6195550123" class="btn btn-outline">Call (619) 555-0123</a>
         </div>
       </div>
-      <p>Handcrafted home transformations since 2002. San Diego's most trusted general contractor for kitchens, bathrooms, additions, and custom carpentry.</p>
-      <p class="footer-phone">(619) 555-0670</p>
-      <p class="footer-lic">CSLB License #GC-619204 — State of California</p>
     </div>
+  </section>
 
-    <div class="footer-col">
-      <h4>Services</h4>
-      <ul>
-        <li><a href="#services">Kitchen Remodels</a></li>
-        <li><a href="#services">Bathroom Renovations</a></li>
-        <li><a href="#services">Room Additions</a></li>
-        <li><a href="#services">Custom Cabinetry</a></li>
-        <li><a href="#services">Deck &amp; Patio</a></li>
-        <li><a href="#services">Full-Home Remodels</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-col">
-      <h4>Company</h4>
-      <ul>
-        <li><a href="#craftsmanship">About Craftline</a></li>
-        <li><a href="#process">Our Process</a></li>
-        <li><a href="#gallery">Project Gallery</a></li>
-        <li><a href="#testimonials">Client Reviews</a></li>
-        <li><a href="https://www.cslb.ca.gov" target="_blank" rel="noopener">Verify CSLB License</a></li>
-        <li><a href="../index.html">← Blueprint Digital</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-col">
-      <h4>Contact</h4>
-      <ul>
-        <li><a href="tel:6195550670">(619) 555-0670</a></li>
-        <li><a href="#contact">Free Consultation</a></li>
-        <li><a href="#area">Service Areas</a></li>
-      </ul>
-      <div style="margin-top:24px;">
-        <p style="font-size:0.72rem;color:rgba(250,248,245,0.35);font-family:'Montserrat',sans-serif;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:8px;">Serving Since</p>
-        <p style="font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--gold);font-weight:700;">2002</p>
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="container">
+      <div class="trust-items">
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          4.9 Stars &mdash; 178 Reviews
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+          Licensed & Insured &mdash; CA #1067890
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6h-6z"/></svg>
+          20+ Years Experience
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+          Family-Owned
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg>
+          NARI Member
+        </div>
       </div>
     </div>
-
   </div>
 
-  <div class="footer-bottom">
-    <p>&copy; 2024 Craftline Construction. All rights reserved. CSLB #GC-619204. San Diego, CA.</p>
-    <p>
-      Demo page by <a href="../index.html">Blueprint Digital SD</a> &mdash; Websites for Contractors
-    </p>
-  </div>
-</footer>
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
+      <div style="text-align:center;" class="fade-up">
+        <span class="section-label">What We Do</span>
+        <h2>Our Carpentry Services</h2>
+        <p class="section-subtitle">From custom cabinetry to structural framing, we bring precision and artistry to every project.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card fade-up">
+          <div class="service-card-img">
+            <img src="https://images.unsplash.com/photo-iQlwxMGPS_I?w=800&fit=crop" alt="Custom cabinetry and built-ins" loading="lazy" />
+          </div>
+          <div class="service-card-body">
+            <h3>Custom Cabinetry & Built-Ins</h3>
+            <p>Handcrafted cabinets, entertainment centers, bookshelves, and storage solutions designed to fit your space perfectly.</p>
+            <a href="#contact" class="service-link">Get a Quote &rarr;</a>
+          </div>
+        </div>
+        <div class="service-card fade-up">
+          <div class="service-card-img">
+            <img src="https://images.unsplash.com/photo-c1Qvzrq4_eg?w=800&fit=crop" alt="Framing and structural work" loading="lazy" />
+          </div>
+          <div class="service-card-body">
+            <h3>Framing & Structural Work</h3>
+            <p>Walls, roofs, additions, and load-bearing modifications. Precision framing that stands the test of time.</p>
+            <a href="#contact" class="service-link">Get a Quote &rarr;</a>
+          </div>
+        </div>
+        <div class="service-card fade-up">
+          <div class="service-card-img">
+            <img src="https://images.unsplash.com/photo-dhFpe7CTI5Y?w=800&fit=crop" alt="Finish carpentry and trim" loading="lazy" />
+          </div>
+          <div class="service-card-body">
+            <h3>Finish Carpentry & Trim</h3>
+            <p>Crown molding, wainscoting, mantels, and custom trim work that adds character and elegance to any room.</p>
+            <a href="#contact" class="service-link">Get a Quote &rarr;</a>
+          </div>
+        </div>
+        <div class="service-card fade-up">
+          <div class="service-card-img">
+            <img src="https://images.unsplash.com/photo-h4r2V9fdf5Q?w=800&fit=crop" alt="Custom decks and outdoor living" loading="lazy" />
+          </div>
+          <div class="service-card-body">
+            <h3>Custom Decks & Outdoor Living</h3>
+            <p>Decks, pergolas, outdoor kitchens, and living spaces built to enjoy San Diego's year-round sunshine.</p>
+            <a href="#contact" class="service-link">Get a Quote &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- WHY CHOOSE US -->
+  <section class="why-us">
+    <div class="container">
+      <div style="text-align:center;" class="fade-up">
+        <span class="section-label">Why Craftline</span>
+        <h2>Why Choose Us</h2>
+        <p class="section-subtitle">Two decades of delivering exceptional carpentry throughout San Diego County.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card fade-up">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+          </div>
+          <h3>Master Craftsmen</h3>
+          <p>Our team consists of journeyman-level carpenters with decades of hands-on experience in every discipline.</p>
+        </div>
+        <div class="why-card fade-up">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+          </div>
+          <h3>Premium Materials Only</h3>
+          <p>We source the finest hardwoods, hardware, and finishes. No shortcuts, no compromises on quality.</p>
+        </div>
+        <div class="why-card fade-up">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/><path d="M2 12l1.41 1.41L12 4.83l8.59 8.58L22 12 12 2 2 12z" style="display:none"/></svg>
+          </div>
+          <h3>Clean Jobsites</h3>
+          <p>We treat your home with respect. Daily cleanup, protective coverings, and a spotless handoff every time.</p>
+        </div>
+        <div class="why-card fade-up">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14zM5 15h14v3H5z"/></svg>
+          </div>
+          <h3>3D Design Previews</h3>
+          <p>See your project before we build it. Full 3D renderings so you can visualize every detail in advance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <div style="text-align:center;" class="fade-up">
+        <span class="section-label">Our Work</span>
+        <h2>Recent Projects</h2>
+        <p class="section-subtitle">A glimpse of the craftsmanship we bring to every San Diego home.</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item fade-up">
+          <img src="https://images.unsplash.com/photo-SwtyCf0lKYc?w=600&fit=crop" alt="Custom kitchen remodel" loading="lazy" />
+          <div class="gallery-overlay"><span>Kitchen Remodel &mdash; La Jolla</span></div>
+        </div>
+        <div class="gallery-item fade-up">
+          <img src="https://images.unsplash.com/photo-EKp8sFgDQuw?w=600&fit=crop" alt="Custom built-in shelving" loading="lazy" />
+          <div class="gallery-overlay"><span>Built-In Shelving &mdash; Del Mar</span></div>
+        </div>
+        <div class="gallery-item fade-up">
+          <img src="https://images.unsplash.com/photo-dQyi9-yObiM?w=600&fit=crop" alt="Outdoor deck construction" loading="lazy" />
+          <div class="gallery-overlay"><span>Redwood Deck &mdash; Encinitas</span></div>
+        </div>
+        <div class="gallery-item fade-up">
+          <img src="https://images.unsplash.com/photo-iQlwxMGPS_I?w=800&fit=crop" alt="Custom cabinetry project" loading="lazy" />
+          <div class="gallery-overlay"><span>Custom Cabinets &mdash; Coronado</span></div>
+        </div>
+        <div class="gallery-item fade-up">
+          <img src="https://images.unsplash.com/photo-dhFpe7CTI5Y?w=800&fit=crop" alt="Crown molding installation" loading="lazy" />
+          <div class="gallery-overlay"><span>Crown Molding &mdash; Point Loma</span></div>
+        </div>
+        <div class="gallery-item fade-up">
+          <img src="https://images.unsplash.com/photo-c1Qvzrq4_eg?w=800&fit=crop" alt="Structural framing project" loading="lazy" />
+          <div class="gallery-overlay"><span>Room Addition &mdash; Carlsbad</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div style="text-align:center;" class="fade-up">
+        <span class="section-label">Client Reviews</span>
+        <h2>What Our Clients Say</h2>
+        <p class="section-subtitle">Real feedback from San Diego homeowners who trusted us with their homes.</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card fade-up">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">"The craftsmanship is absolutely incredible. Craftline built custom bookshelves and a fireplace mantel for us, and the level of detail blew us away. You can tell they genuinely love what they do."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">MR</div>
+            <div>
+              <div class="testimonial-name">Michael R.</div>
+              <div class="testimonial-location">La Jolla, CA</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-up">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">"Their attention to detail is second to none. Every joint, every edge, every finish was perfect. Our kitchen remodel came out even better than the 3D rendering they showed us."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">SL</div>
+            <div>
+              <div class="testimonial-name">Sarah L.</div>
+              <div class="testimonial-location">Del Mar, CA</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-up">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">"We hired Craftline for a full kitchen remodel and couldn't be happier. From the initial design to the final walkthrough, everything was professional, on time, and absolutely beautiful."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">DK</div>
+            <div>
+              <div class="testimonial-name">David K.</div>
+              <div class="testimonial-location">Chula Vista, CA</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-img fade-up">
+          <img src="https://images.unsplash.com/photo-r8Viw9Bt2mA?w=800&fit=crop" alt="Craftline Construction team" loading="lazy" />
+        </div>
+        <div class="about-content fade-up">
+          <span class="section-label">About Craftline</span>
+          <h2>Family-Owned Since 2006</h2>
+          <p>We're master craftsmen with 20+ years of fine woodworking experience. What started as a father-son operation has grown into one of San Diego's most trusted carpentry and remodeling firms.</p>
+          <p>Every project we take on reflects our commitment to precision, quality materials, and honest communication. We treat every home like it's our own &mdash; because your trust means everything to us.</p>
+          <p>Over 800 custom projects completed across San Diego County and counting.</p>
+          <div class="about-stats">
+            <div>
+              <div class="about-stat-number">800+</div>
+              <div class="about-stat-label">Projects Completed</div>
+            </div>
+            <div>
+              <div class="about-stat-number">20+</div>
+              <div class="about-stat-label">Years Experience</div>
+            </div>
+            <div>
+              <div class="about-stat-number">4.9</div>
+              <div class="about-stat-label">Star Rating</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE AREA -->
+  <section class="service-area">
+    <div class="container fade-up">
+      <span class="section-label">Service Area</span>
+      <h2>Proudly Serving San Diego County</h2>
+      <div class="area-tags">
+        <span class="area-tag">San Diego</span>
+        <span class="area-tag">La Jolla</span>
+        <span class="area-tag">Del Mar</span>
+        <span class="area-tag">Encinitas</span>
+        <span class="area-tag">Carlsbad</span>
+        <span class="area-tag">Coronado</span>
+        <span class="area-tag">Chula Vista</span>
+        <span class="area-tag">Point Loma</span>
+        <span class="area-tag">Escondido</span>
+        <span class="area-tag">Poway</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div style="text-align:center;" class="fade-up">
+        <span class="section-label">Get Started</span>
+        <h2>Request Your Free Consultation</h2>
+        <p class="section-subtitle">No obligation. Takes 30 seconds. We'll get back to you within one business day.</p>
+      </div>
+      <div class="contact-grid">
+        <form class="contact-form fade-up" onsubmit="event.preventDefault(); alert('Demo only — form not connected.');">
+          <h3>Tell Us About Your Project</h3>
+          <p class="form-sub">Fill out the form below and we'll reach out shortly.</p>
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="John Smith" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" placeholder="(619) 555-0000" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="john@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="service">Service Needed</label>
+            <select id="service" required>
+              <option value="" disabled selected>Select a service...</option>
+              <option>Custom Cabinetry & Built-Ins</option>
+              <option>Framing & Structural Work</option>
+              <option>Finish Carpentry & Trim</option>
+              <option>Custom Decks & Outdoor Living</option>
+              <option>Kitchen Remodel</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Project Details</label>
+            <textarea id="message" placeholder="Tell us about your project, timeline, and budget..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-gold form-submit">Get Your Free Consultation</button>
+        </form>
+        <div class="contact-info fade-up">
+          <h3>Get in Touch</h3>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">
+              <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.25 1.01l-2.2 2.2z"/></svg>
+            </div>
+            <div>
+              <div class="contact-detail-label">Phone</div>
+              <a href="tel:6195550123" class="contact-detail-value">(619) 555-0123</a>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">
+              <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </div>
+            <div>
+              <div class="contact-detail-label">Email</div>
+              <div class="contact-detail-value">info@craftlineconstruction.com</div>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
+            </div>
+            <div>
+              <div class="contact-detail-label">Location</div>
+              <div class="contact-detail-value">San Diego, CA</div>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+            </div>
+            <div>
+              <div class="contact-detail-label">License</div>
+              <div class="contact-detail-value">CA License #1067890</div>
+            </div>
+          </div>
+          <div class="contact-hours">
+            <h4>Business Hours</h4>
+            <p>Monday &ndash; Friday: 7:00 AM &ndash; 5:00 PM<br>
+            Saturday: 8:00 AM &ndash; 2:00 PM<br>
+            Sunday: Closed</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo-text">
+            CRAFTLINE
+            <span>Construction</span>
+          </div>
+          <p style="margin-top:16px;">San Diego's custom carpentry & remodeling experts. Family-owned since 2006. CA License #1067890.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="#services">Custom Cabinetry</a>
+          <a href="#services">Framing & Structural</a>
+          <a href="#services">Finish Carpentry</a>
+          <a href="#services">Decks & Outdoor</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="#about">About Us</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#testimonials">Reviews</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="tel:6195550123">(619) 555-0123</a>
+          <a href="#">San Diego, CA</a>
+          <a href="#">CA Lic #1067890</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2006&ndash;2026 Craftline Construction. All rights reserved. | Website by <a href="https://blueprintdigitalsd.com" target="_blank" rel="noopener">Blueprint Digital</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // HAMBURGER MENU
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobileNav.classList.toggle('active');
+    });
+    function closeMobile() {
+      hamburger.classList.remove('active');
+      mobileNav.classList.remove('active');
+    }
+
+    // STICKY HEADER SHADOW
+    window.addEventListener('scroll', () => {
+      document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // SCROLL ANIMATIONS
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>

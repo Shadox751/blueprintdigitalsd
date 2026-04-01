@@ -1,6 +1,5 @@
 .planning/
 SESSIONS.md
-LOVABLE-PROMPT.md
 business-card.html
 card-*.html
 card-*.png
@@ -9,5 +8,19 @@ CARD-*.png
 FRONTTT.png
 BACKKK.png
 *.pdf
-Welding Gates/
 ai/
+node_modules/
+CONTRACTOR-*.md
+TRADES-WEBSITE-RESEARCH.md
+ROOFING-SOLAR-PAINTING-RESEARCH.md
+CONCRETE-WEBSITE-RESEARCH.md
+SOLAR-WEBSITE-RESEARCH.md
+SALES_PLAYBOOK.md
+verify-photos.html
+logo-concepts.html
+og-image.html
+og-preview.html
+screenshot-og.js
+package.json
+package-lock.json
+s4l3s-d3ck-8x7k2m.html

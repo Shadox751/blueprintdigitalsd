@@ -3,1430 +3,707 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rapid Plumbing | San Diego's 24/7 Emergency Plumber</title>
-  <meta name="description" content="Rapid Plumbing — San Diego's most trusted emergency plumber. Available 24/7. Licensed #PL-847291. Call (619) 555-0100 for fast same-day service." />
+  <title>Rapid Flow Plumbing | San Diego's #1 24/7 Emergency Plumber</title>
+  <meta name="description" content="Rapid Flow Plumbing — San Diego's most trusted licensed plumber. 24/7 emergency service, same-day appointments, upfront pricing. Call (619) 555-0100." />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <meta property="og:title" content="Rapid Flow Plumbing | Demo by Blueprint Digital" />
+  <meta property="og:description" content="Website demo built by Blueprint Digital — Websites + AI Receptionists for Contractors in San Diego." />
+  <meta property="og:image" content="https://blueprintdigitalsd.com/og-image.png" />
+  <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-    /* ===== RESET & BASE ===== */
+    /* WATERMARK OVERLAY */
+    .service-card-img, .gallery-item, .about-image, .about-img { position: relative; overflow: hidden; }
+    .hero::after, .service-card-img::after, .gallery-item::after, .about-image::after, .about-img::after {
+      content: '';
+      position: absolute;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='120'%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14' font-weight='700' fill='white' opacity='0.12' transform='rotate(-30 150 60)'%3EBLUEPRINTDIGITALSD.COM%3C/text%3E%3C/svg%3E");
+      background-repeat: repeat;
+      pointer-events: none;
+      z-index: 2;
+    }
+    /* ===== RESET ===== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; font-size: 16px; }
-    body {
-      font-family: 'Inter', sans-serif;
-      color: #1a1a2e;
-      background: #ffffff;
-      line-height: 1.6;
-    }
+    body { font-family: 'Inter', sans-serif; color: #1E293B; background: #fff; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    button { border: none; cursor: pointer; font-family: inherit; }
 
     /* ===== VARIABLES ===== */
     :root {
-      --navy: #003366;
-      --navy-dark: #00224d;
-      --navy-light: #004080;
-      --orange: #FF6D00;
-      --orange-dark: #e05e00;
-      --steel: #4FC3F7;
-      --steel-dark: #29B6F6;
-      --white: #ffffff;
-      --gray-light: #f4f6f9;
-      --gray-mid: #e0e6ef;
-      --gray-text: #64748b;
-      --text-dark: #0f172a;
+      --navy: #1B3A5C;
+      --navy-dark: #132942;
+      --white: #FFFFFF;
+      --orange: #E87A2E;
+      --orange-hover: #D06A20;
+      --red: #DC3545;
+      --red-dark: #B52D3A;
+      --light-bg: #F8FAFC;
+      --text-dark: #1E293B;
+      --text-muted: #475569;
+      --gray-200: #E2E8F0;
+      --gray-400: #94A3B8;
+      --radius: 12px;
+      --radius-sm: 8px;
+      --shadow: 0 4px 20px rgba(0,0,0,0.08);
+      --shadow-lg: 0 12px 40px rgba(0,0,0,0.12);
+      --transition: 0.3s ease;
     }
 
-    /* ===== UTILITY ===== */
-    .container {
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-    .btn-orange {
-      display: inline-block;
-      background: var(--orange);
-      color: var(--white);
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 1rem;
-      padding: 14px 32px;
-      border-radius: 4px;
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-      letter-spacing: 0.03em;
-    }
-    .btn-orange:hover {
-      background: var(--orange-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 24px rgba(255, 109, 0, 0.35);
-    }
-    .btn-outline-white {
-      display: inline-block;
-      background: transparent;
-      color: var(--white);
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 1rem;
-      padding: 13px 32px;
-      border-radius: 4px;
-      text-decoration: none;
-      border: 2px solid rgba(255,255,255,0.7);
-      cursor: pointer;
-      transition: background 0.2s, border-color 0.2s, transform 0.15s;
-      letter-spacing: 0.03em;
-    }
-    .btn-outline-white:hover {
-      background: rgba(255,255,255,0.12);
-      border-color: var(--white);
-      transform: translateY(-2px);
-    }
-    section { position: relative; }
+    /* ===== TYPOGRAPHY ===== */
+    h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; line-height: 1.2; }
+    .section-label { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2.5px; color: var(--orange); margin-bottom: 0.5rem; }
+    .section-title { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; margin-bottom: 1rem; color: var(--navy); }
+    .section-sub { font-size: 1.05rem; color: var(--text-muted); max-width: 620px; margin: 0 auto 2.5rem; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.25rem; }
+    .text-center { text-align: center; }
 
-    /* ===== BACK LINK ===== */
-    .back-link-bar {
-      background: var(--navy-dark);
-      padding: 6px 24px;
-      text-align: left;
-    }
-    .back-link-bar a {
-      color: var(--steel);
-      text-decoration: none;
-      font-size: 0.8rem;
-      font-family: 'Inter', sans-serif;
-      font-weight: 500;
-      letter-spacing: 0.02em;
-      transition: color 0.2s;
-    }
-    .back-link-bar a:hover { color: var(--white); }
-    .back-link-bar a::before { content: '← '; }
+    /* ===== BUTTONS ===== */
+    .btn { display: inline-flex; align-items: center; gap: 0.5rem; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.95rem; padding: 0.85rem 2rem; border-radius: 50px; border: none; cursor: pointer; transition: var(--transition); text-align: center; }
+    .btn-orange { background: var(--orange); color: var(--white); }
+    .btn-orange:hover { background: var(--orange-hover); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(232,122,46,0.4); }
+    .btn-white { background: var(--white); color: var(--navy); }
+    .btn-white:hover { background: #f0f0f0; transform: translateY(-2px); }
+    .btn-outline { background: transparent; color: var(--white); border: 2px solid var(--white); }
+    .btn-outline:hover { background: var(--white); color: var(--navy); transform: translateY(-2px); }
 
-    /* ===== EMERGENCY TOP BAR ===== */
-    .emergency-bar {
-      background: #1a0a00;
-      border-bottom: 2px solid var(--orange);
-      padding: 10px 24px;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    .emergency-bar p {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 0.9rem;
-      color: var(--orange);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-    .emergency-bar a {
-      color: var(--white);
-      text-decoration: none;
-      border-bottom: 1px solid var(--orange);
-      transition: color 0.2s;
-    }
-    .emergency-bar a:hover { color: var(--orange); }
-    .emergency-bar .pulse-dot {
-      display: inline-block;
-      width: 8px;
-      height: 8px;
-      background: var(--orange);
-      border-radius: 50%;
-      margin-right: 8px;
-      animation: pulse 1.4s infinite;
-      vertical-align: middle;
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.5; transform: scale(1.4); }
-    }
+    /* ===== PROMO BAR ===== */
+    .promo-bar { background: var(--red); color: var(--white); text-align: center; padding: 0.6rem 1rem; font-size: 0.9rem; font-weight: 600; }
+    .promo-bar a { color: var(--white); text-decoration: underline; font-weight: 700; }
 
-    /* ===== STICKY NAV ===== */
-    .site-nav {
-      background: var(--navy);
-      padding: 0 24px;
-      position: sticky;
-      top: 42px;
-      z-index: 999;
-      box-shadow: 0 2px 16px rgba(0,0,0,0.25);
-    }
-    .nav-inner {
-      max-width: 1140px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 68px;
-    }
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-    }
-    .nav-logo-icon {
-      width: 36px;
-      height: 36px;
-      background: var(--orange);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    .nav-logo-icon svg { width: 20px; height: 20px; fill: white; }
-    .nav-logo-text {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 900;
-      font-size: 1.25rem;
-      color: var(--white);
-      line-height: 1.1;
-    }
-    .nav-logo-text span { color: var(--orange); }
-    .nav-logo-sub {
-      font-size: 0.65rem;
-      color: var(--steel);
-      font-weight: 500;
-      letter-spacing: 0.05em;
-      font-family: 'Inter', sans-serif;
-      display: block;
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      list-style: none;
-    }
-    .nav-links a {
-      color: rgba(255,255,255,0.85);
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 500;
-      padding: 8px 14px;
-      border-radius: 4px;
-      transition: color 0.2s, background 0.2s;
-    }
-    .nav-links a:hover { color: var(--white); background: rgba(255,255,255,0.08); }
-    .nav-cta { margin-left: 8px; }
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      padding: 4px;
-      background: none;
-      border: none;
-    }
-    .hamburger span {
-      display: block;
-      width: 26px;
-      height: 2px;
-      background: var(--white);
-      border-radius: 2px;
-      transition: all 0.3s;
-    }
+    /* ===== HEADER ===== */
+    .header { background: var(--white); border-bottom: 1px solid var(--gray-200); position: sticky; top: 0; z-index: 1000; transition: box-shadow var(--transition); }
+    .header.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.1); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 0; }
+    .logo { display: flex; align-items: center; gap: 0.6rem; }
+    .logo-icon { width: 40px; height: 40px; background: var(--navy); border-radius: 10px; display: flex; align-items: center; justify-content: center; position: relative; }
+    .logo-icon::before { content: ''; width: 16px; height: 16px; border: 3px solid var(--white); border-radius: 50%; position: absolute; top: 6px; }
+    .logo-icon::after { content: ''; width: 3px; height: 12px; background: var(--white); position: absolute; bottom: 5px; border-radius: 2px; }
+    .logo-text { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.15rem; color: var(--navy); line-height: 1.1; }
+    .logo-text span { display: block; font-size: 0.6rem; font-weight: 600; color: var(--text-muted); letter-spacing: 1.5px; text-transform: uppercase; }
+    .nav { display: flex; align-items: center; gap: 2rem; }
+    .nav-links { display: flex; gap: 1.75rem; }
+    .nav-links a { font-size: 0.9rem; font-weight: 600; color: var(--text-dark); transition: color var(--transition); }
+    .nav-links a:hover { color: var(--orange); }
+    .header-phone { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1rem; color: var(--navy); }
+    .header-phone svg { vertical-align: middle; margin-right: 4px; }
+    .header-cta { padding: 0.65rem 1.5rem; font-size: 0.85rem; }
+
+    /* Hamburger */
+    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 26px; height: 3px; background: var(--navy); border-radius: 2px; transition: var(--transition); }
+
+    /* Mobile Nav */
+    .mobile-nav { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--white); z-index: 2000; flex-direction: column; padding: 5rem 2rem 2rem; }
+    .mobile-nav.active { display: flex; }
+    .mobile-nav a { font-family: 'Montserrat', sans-serif; font-size: 1.4rem; font-weight: 700; color: var(--navy); padding: 1rem 0; border-bottom: 1px solid var(--gray-200); }
+    .mobile-nav .btn { margin-top: 1.5rem; justify-content: center; }
+    .mobile-close { position: absolute; top: 1.25rem; right: 1.25rem; background: none; border: none; font-size: 2rem; color: var(--navy); cursor: pointer; }
 
     /* ===== HERO ===== */
-    .hero {
-      min-height: 100vh;
-      background-color: var(--navy);
-      background-image:
-        linear-gradient(rgba(0, 51, 102, 0.92) 0%, rgba(0, 34, 77, 0.97) 100%),
-        repeating-linear-gradient(
-          0deg,
-          transparent,
-          transparent 59px,
-          rgba(79, 195, 247, 0.07) 59px,
-          rgba(79, 195, 247, 0.07) 60px
-        ),
-        repeating-linear-gradient(
-          90deg,
-          transparent,
-          transparent 59px,
-          rgba(79, 195, 247, 0.07) 59px,
-          rgba(79, 195, 247, 0.07) 60px
-        );
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 80px 24px;
-    }
-    .hero-inner { max-width: 860px; }
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(255, 109, 0, 0.15);
-      border: 1px solid rgba(255, 109, 0, 0.4);
-      color: var(--orange);
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 0.75rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 6px 16px;
-      border-radius: 100px;
-      margin-bottom: 28px;
-    }
-    .hero-badge::before {
-      content: '';
-      width: 7px;
-      height: 7px;
-      background: var(--orange);
-      border-radius: 50%;
-      animation: pulse 1.4s infinite;
-    }
-    .hero h1 {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 900;
-      font-size: clamp(2.2rem, 5.5vw, 4rem);
-      color: var(--white);
-      line-height: 1.1;
-      margin-bottom: 20px;
-      letter-spacing: -0.02em;
-    }
-    .hero h1 em {
-      font-style: normal;
-      color: var(--orange);
-    }
-    .hero-sub {
-      font-size: clamp(1rem, 2.2vw, 1.2rem);
-      color: rgba(255,255,255,0.75);
-      max-width: 600px;
-      margin: 0 auto 40px;
-      line-height: 1.65;
-    }
-    .hero-ctas {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 52px;
-    }
-    .btn-hero-phone {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--orange);
-      color: var(--white);
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 1.15rem;
-      padding: 18px 36px;
-      border-radius: 4px;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-      letter-spacing: 0.02em;
-      box-shadow: 0 4px 20px rgba(255, 109, 0, 0.4);
-    }
-    .btn-hero-phone:hover {
-      background: var(--orange-dark);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 32px rgba(255, 109, 0, 0.5);
-    }
-    .btn-hero-phone svg { width: 22px; height: 22px; fill: white; flex-shrink: 0; }
-    .hero-trust-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px 20px;
-      justify-content: center;
-      align-items: center;
-      border-top: 1px solid rgba(255,255,255,0.12);
-      padding-top: 28px;
-    }
-    .trust-badge-item {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      color: rgba(255,255,255,0.75);
-      font-size: 0.82rem;
-      font-weight: 500;
-    }
-    .trust-badge-item svg { width: 16px; height: 16px; fill: var(--steel); flex-shrink: 0; }
-    .trust-badge-item .star { fill: #FFB300; }
-    .trust-sep {
-      width: 4px;
-      height: 4px;
-      background: rgba(255,255,255,0.25);
-      border-radius: 50%;
-    }
+    .hero { position: relative; min-height: 600px; display: flex; align-items: center; background: url('https://images.pexels.com/photos/5710332/pexels-photo-5710332.jpeg?auto=compress&cs=tinysrgb&w=1200') center/cover no-repeat; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: rgba(27,58,92,0.5); }
+    .hero-content { position: relative; z-index: 1; max-width: 700px; color: var(--white); padding: 4rem 0; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(255,255,255,0.15); backdrop-filter: blur(8px); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.25); }
+    .hero h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 900; margin-bottom: 1.25rem; line-height: 1.1; }
+    .hero p { font-size: 1.15rem; opacity: 0.92; margin-bottom: 2rem; max-width: 560px; line-height: 1.7; }
+    .hero-btns { display: flex; flex-wrap: wrap; gap: 1rem; }
 
-    /* ===== SERVICES GRID ===== */
-    .services {
-      background: var(--gray-light);
-      padding: 88px 0;
-    }
-    .section-header {
-      text-align: center;
-      margin-bottom: 52px;
-    }
-    .section-label {
-      display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--orange);
-      margin-bottom: 10px;
-    }
-    .section-title {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 900;
-      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-      color: var(--navy);
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-    }
-    .section-sub {
-      font-size: 1.05rem;
-      color: var(--gray-text);
-      margin-top: 12px;
-      max-width: 560px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-    .service-card {
-      background: var(--white);
-      border-radius: 10px;
-      padding: 32px 28px;
-      box-shadow: 0 2px 12px rgba(0,51,102,0.07);
-      transition: transform 0.22s, box-shadow 0.22s;
-      position: relative;
-      overflow: hidden;
-    }
-    .service-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: var(--steel);
-      transition: background 0.2s;
-    }
-    .service-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 32px rgba(0,51,102,0.13);
-    }
-    .service-card:hover::before { background: var(--orange); }
-    .service-card-top {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      margin-bottom: 16px;
-    }
-    .service-icon {
-      width: 52px;
-      height: 52px;
-      background: rgba(0, 51, 102, 0.07);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    .service-icon svg { width: 26px; height: 26px; fill: var(--navy); }
-    .emergency-badge {
-      background: #ff3333;
-      color: white;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 0.65rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 3px 9px;
-      border-radius: 100px;
-      align-self: flex-start;
-    }
-    .service-card h3 {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 1.08rem;
-      color: var(--navy);
-      margin-bottom: 8px;
-    }
-    .service-card p {
-      font-size: 0.9rem;
-      color: var(--gray-text);
-      line-height: 1.6;
-      margin-bottom: 18px;
-    }
-    .service-link {
-      font-size: 0.88rem;
-      font-weight: 600;
-      color: var(--orange);
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      transition: gap 0.2s, color 0.2s;
-    }
-    .service-link:hover { gap: 8px; color: var(--orange-dark); }
-    .service-link::after { content: '→'; }
+    /* ===== TRUST BAR ===== */
+    .trust-bar { background: var(--light-bg); border-bottom: 1px solid var(--gray-200); padding: 1.25rem 0; }
+    .trust-bar-inner { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem 2.5rem; }
+    .trust-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; font-weight: 600; color: var(--navy); white-space: nowrap; }
+    .trust-item .icon { font-size: 1.2rem; }
 
-    /* ===== STATS BAR ===== */
-    .stats-bar {
-      background: var(--navy);
-      padding: 56px 24px;
-      background-image: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-light) 100%);
-    }
-    .stats-grid {
-      max-width: 1140px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-      text-align: center;
-    }
-    .stat-item {
-      padding: 8px 16px;
-      border-right: 1px solid rgba(255,255,255,0.12);
-    }
-    .stat-item:last-child { border-right: none; }
-    .stat-number {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 900;
-      font-size: clamp(2rem, 4vw, 3rem);
-      color: var(--orange);
-      line-height: 1;
-      margin-bottom: 6px;
-      letter-spacing: -0.02em;
-    }
-    .stat-label {
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.75);
-      font-weight: 500;
-      letter-spacing: 0.03em;
-    }
+    /* ===== SERVICES ===== */
+    .services { padding: 5rem 0; }
+    .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+    .service-card { background: var(--white); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: var(--transition); }
+    .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+    .service-card-img { height: 200px; overflow: hidden; }
+    .service-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .service-card:hover .service-card-img img { transform: scale(1.08); }
+    .service-card-body { padding: 1.5rem; }
+    .service-card-body h3 { font-size: 1.1rem; font-weight: 800; margin-bottom: 0.6rem; color: var(--navy); }
+    .service-card-body p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.6; }
+    .service-card-body a { font-size: 0.85rem; font-weight: 700; color: var(--orange); transition: var(--transition); }
+    .service-card-body a:hover { color: var(--orange-hover); }
 
     /* ===== WHY CHOOSE US ===== */
-    .why-us {
-      background: var(--white);
-      padding: 96px 0;
-    }
-    .why-us-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 72px;
-      align-items: center;
-    }
-    .why-us-left .section-header { text-align: left; margin-bottom: 32px; }
-    .why-us-left .section-title { font-size: clamp(1.7rem, 3vw, 2.3rem); }
-    .why-checklist {
-      list-style: none;
-      margin-bottom: 36px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .why-checklist li {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      font-size: 0.97rem;
-      color: #334155;
-      line-height: 1.5;
-    }
-    .check-icon {
-      width: 24px;
-      height: 24px;
-      background: rgba(0, 51, 102, 0.08);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      margin-top: 1px;
-    }
-    .check-icon svg { width: 12px; height: 12px; fill: var(--navy); }
-    .why-checklist li strong {
-      display: block;
-      font-weight: 600;
-      color: var(--navy);
-      margin-bottom: 2px;
-    }
-    .call-card {
-      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-light) 100%);
-      border-radius: 16px;
-      padding: 48px 40px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 16px 48px rgba(0, 51, 102, 0.3);
-    }
-    .call-card::before {
-      content: '';
-      position: absolute;
-      top: -60px; right: -60px;
-      width: 200px; height: 200px;
-      background: rgba(255, 109, 0, 0.1);
-      border-radius: 50%;
-    }
-    .call-card::after {
-      content: '';
-      position: absolute;
-      bottom: -80px; left: -40px;
-      width: 240px; height: 240px;
-      background: rgba(79, 195, 247, 0.06);
-      border-radius: 50%;
-    }
-    .call-card-icon {
-      width: 64px;
-      height: 64px;
-      background: var(--orange);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 20px;
-      box-shadow: 0 0 0 12px rgba(255, 109, 0, 0.15);
-    }
-    .call-card-icon svg { width: 30px; height: 30px; fill: white; }
-    .call-card-label {
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--steel);
-      margin-bottom: 8px;
-    }
-    .call-card-number {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 900;
-      font-size: clamp(1.6rem, 3vw, 2.2rem);
-      color: var(--white);
-      margin-bottom: 6px;
-      letter-spacing: -0.01em;
-    }
-    .call-card-sub {
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.65);
-      margin-bottom: 28px;
-    }
-    .call-card .btn-orange { width: 100%; text-align: center; font-size: 1.05rem; padding: 16px; }
-    .call-card-guarantee {
-      margin-top: 16px;
-      font-size: 0.78rem;
-      color: rgba(255,255,255,0.5);
-    }
+    .why-us { padding: 5rem 0; background: var(--navy); color: var(--white); }
+    .why-us .section-label { color: var(--orange); }
+    .why-us .section-title { color: var(--white); }
+    .why-us .section-sub { color: rgba(255,255,255,0.7); }
+    .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+    .why-card { text-align: center; padding: 2rem 1.25rem; border-radius: var(--radius); background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); transition: var(--transition); }
+    .why-card:hover { background: rgba(255,255,255,0.1); transform: translateY(-4px); }
+    .why-icon { width: 60px; height: 60px; margin: 0 auto 1.25rem; background: var(--orange); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
+    .why-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.6rem; }
+    .why-card p { font-size: 0.9rem; opacity: 0.75; line-height: 1.6; }
+
+    /* ===== GALLERY ===== */
+    .gallery { padding: 5rem 0; background: var(--light-bg); }
+    .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+    .gallery-item { position: relative; border-radius: var(--radius); overflow: hidden; aspect-ratio: 4/3; cursor: pointer; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .gallery-item:hover img { transform: scale(1.08); }
+    .gallery-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(27,58,92,0.85) 0%, transparent 60%); display: flex; flex-direction: column; justify-content: flex-end; padding: 1.25rem; opacity: 0; transition: opacity var(--transition); }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+    .gallery-overlay h4 { color: var(--white); font-size: 1rem; font-weight: 700; }
+    .gallery-overlay span { color: rgba(255,255,255,0.7); font-size: 0.85rem; }
 
     /* ===== TESTIMONIALS ===== */
-    .testimonials {
-      background: var(--gray-light);
-      padding: 88px 0;
-    }
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-top: 52px;
-    }
-    .testimonial-card {
-      background: var(--white);
-      border-radius: 12px;
-      padding: 32px 28px;
-      box-shadow: 0 2px 16px rgba(0,51,102,0.06);
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .testimonial-stars {
-      display: flex;
-      gap: 3px;
-    }
-    .testimonial-stars svg { width: 18px; height: 18px; fill: #FFB300; }
-    .testimonial-quote {
-      font-size: 0.97rem;
-      color: #334155;
-      line-height: 1.7;
-      flex: 1;
-      font-style: italic;
-    }
-    .testimonial-quote::before { content: '\201C'; }
-    .testimonial-quote::after { content: '\201D'; }
-    .testimonial-author {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      border-top: 1px solid var(--gray-mid);
-      padding-top: 16px;
-    }
-    .author-avatar {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 1rem;
-      color: white;
-      flex-shrink: 0;
-    }
-    .author-avatar.blue { background: var(--navy); }
-    .author-avatar.teal { background: #0097a7; }
-    .author-avatar.green { background: #2e7d32; }
-    .author-name {
-      font-weight: 600;
-      font-size: 0.92rem;
-      color: var(--text-dark);
-    }
-    .author-detail {
-      font-size: 0.78rem;
-      color: var(--gray-text);
-      margin-top: 2px;
-    }
-    .verified-badge {
-      margin-left: auto;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      font-size: 0.72rem;
-      color: #16a34a;
-      font-weight: 600;
-    }
-    .verified-badge svg { width: 14px; height: 14px; fill: #16a34a; }
+    .testimonials { padding: 5rem 0; }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .testimonial-card { background: var(--white); border-radius: var(--radius); padding: 2rem; box-shadow: var(--shadow); border: 1px solid var(--gray-200); transition: var(--transition); }
+    .testimonial-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .stars { color: #F59E0B; font-size: 1.1rem; margin-bottom: 1rem; letter-spacing: 2px; }
+    .testimonial-card p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1.25rem; font-style: italic; }
+    .testimonial-author { display: flex; align-items: center; gap: 0.75rem; }
+    .testimonial-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--navy); color: var(--white); display: flex; align-items: center; justify-content: center; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1rem; }
+    .testimonial-name { font-weight: 700; font-size: 0.95rem; color: var(--text-dark); }
+    .testimonial-location { font-size: 0.8rem; color: var(--text-muted); }
+
+    /* ===== ABOUT ===== */
+    .about { padding: 5rem 0; background: var(--light-bg); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+    .about-img { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-lg); }
+    .about-img img { width: 100%; height: 100%; object-fit: cover; }
+    .about-text .section-label { text-align: left; }
+    .about-text .section-title { text-align: left; }
+    .about-text p { color: var(--text-muted); margin-bottom: 1.25rem; line-height: 1.8; }
+    .about-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 1.5rem; }
+    .about-stat { text-align: center; }
+    .about-stat .num { font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 900; color: var(--orange); }
+    .about-stat .label { font-size: 0.8rem; color: var(--text-muted); font-weight: 600; }
 
     /* ===== SERVICE AREA ===== */
-    .service-area {
-      background: var(--white);
-      padding: 88px 0;
-    }
-    .service-area-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: center;
-    }
-    .area-text .section-header { text-align: left; margin-bottom: 24px; }
-    .area-intro {
-      font-size: 1rem;
-      color: var(--gray-text);
-      margin-bottom: 28px;
-      line-height: 1.7;
-    }
-    .area-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 28px;
-    }
-    .area-tag {
-      background: var(--gray-light);
-      border: 1px solid var(--gray-mid);
-      color: var(--navy);
-      font-size: 0.85rem;
-      font-weight: 600;
-      padding: 7px 16px;
-      border-radius: 100px;
-      transition: background 0.2s, border-color 0.2s, color 0.2s;
-    }
-    .area-tag:hover {
-      background: var(--navy);
-      border-color: var(--navy);
-      color: white;
-    }
-    .area-map-visual {
-      background: linear-gradient(135deg, var(--navy-dark) 0%, #004080 100%);
-      border-radius: 16px;
-      padding: 48px 32px;
-      text-align: center;
-      min-height: 320px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-      box-shadow: 0 12px 40px rgba(0,51,102,0.2);
-      position: relative;
-      overflow: hidden;
-    }
-    .area-map-visual::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at 30% 40%, rgba(79,195,247,0.12) 0%, transparent 50%),
-        radial-gradient(circle at 70% 70%, rgba(255,109,0,0.08) 0%, transparent 45%);
-    }
-    .map-pin-icon {
-      width: 64px;
-      height: 64px;
-      background: var(--orange);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 0 0 16px rgba(255,109,0,0.15);
-      position: relative;
-      z-index: 1;
-    }
-    .map-pin-icon svg { width: 30px; height: 30px; fill: white; }
-    .area-map-title {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 900;
-      font-size: 1.4rem;
-      color: white;
-      position: relative;
-      z-index: 1;
-    }
-    .area-map-sub {
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.65);
-      max-width: 240px;
-      position: relative;
-      z-index: 1;
-    }
-    .area-radius-badge {
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.2);
-      color: var(--steel);
-      font-size: 0.82rem;
-      font-weight: 600;
-      padding: 6px 18px;
-      border-radius: 100px;
-      position: relative;
-      z-index: 1;
-    }
+    .service-area { padding: 4rem 0; background: var(--white); }
+    .area-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; margin-top: 1.5rem; }
+    .area-tag { background: var(--light-bg); border: 1px solid var(--gray-200); padding: 0.5rem 1.25rem; border-radius: 50px; font-size: 0.9rem; font-weight: 600; color: var(--navy); transition: var(--transition); }
+    .area-tag:hover { background: var(--navy); color: var(--white); }
 
-    /* ===== CTA BANNER ===== */
-    .cta-banner {
-      background: var(--navy-dark);
-      background-image: linear-gradient(135deg, #00224d 0%, #003366 50%, #00224d 100%);
-      padding: 72px 24px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .cta-banner::before {
-      content: '';
-      position: absolute;
-      top: -100px; left: 50%;
-      transform: translateX(-50%);
-      width: 600px; height: 400px;
-      background: radial-gradient(circle, rgba(255,109,0,0.1) 0%, transparent 65%);
-    }
-    .cta-banner-inner { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
-    .cta-banner h2 {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 900;
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      color: var(--white);
-      margin-bottom: 12px;
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-    }
-    .cta-banner h2 em { font-style: normal; color: var(--orange); }
-    .cta-banner p {
-      font-size: 1.05rem;
-      color: rgba(255,255,255,0.7);
-      margin-bottom: 36px;
-      max-width: 520px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .cta-banner-buttons {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .btn-cta-big {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--orange);
-      color: white;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 1.1rem;
-      padding: 18px 40px;
-      border-radius: 4px;
-      text-decoration: none;
-      box-shadow: 0 4px 24px rgba(255,109,0,0.4);
-      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-    }
-    .btn-cta-big:hover {
-      background: var(--orange-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 36px rgba(255,109,0,0.5);
-    }
-    .btn-cta-big svg { width: 20px; height: 20px; fill: white; }
+    /* ===== CONTACT ===== */
+    .contact { padding: 5rem 0; background: var(--light-bg); }
+    .contact-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; }
+    .contact-form { background: var(--white); border-radius: var(--radius); padding: 2.5rem; box-shadow: var(--shadow); }
+    .contact-form h3 { font-size: 1.4rem; font-weight: 800; color: var(--navy); margin-bottom: 0.25rem; }
+    .contact-form .micro { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+    .form-group { margin-bottom: 1rem; }
+    .form-group label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.35rem; color: var(--text-dark); }
+    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.75rem 1rem; border: 1.5px solid var(--gray-200); border-radius: var(--radius-sm); font-family: 'Inter', sans-serif; font-size: 0.95rem; transition: border-color var(--transition); background: var(--white); color: var(--text-dark); }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--orange); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .contact-info { display: flex; flex-direction: column; justify-content: center; gap: 1.5rem; }
+    .contact-info-item { display: flex; gap: 1rem; align-items: flex-start; }
+    .contact-info-icon { width: 48px; height: 48px; background: var(--navy); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .contact-info-icon svg { width: 22px; height: 22px; fill: var(--white); }
+    .contact-info-item h4 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 0.15rem; }
+    .contact-info-item p, .contact-info-item a { font-size: 0.9rem; color: var(--text-muted); }
+    .contact-info-item a:hover { color: var(--orange); }
 
     /* ===== FOOTER ===== */
-    .site-footer {
-      background: #070d1a;
-      padding: 64px 24px 32px;
-    }
-    .footer-top {
-      max-width: 1140px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 48px;
-      padding-bottom: 48px;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-    .footer-brand .nav-logo { margin-bottom: 16px; }
-    .footer-brand p {
-      font-size: 0.88rem;
-      color: rgba(255,255,255,0.5);
-      max-width: 300px;
-      line-height: 1.65;
-      margin-bottom: 20px;
-    }
-    .footer-contact-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 10px;
-    }
-    .footer-contact-item svg { width: 16px; height: 16px; fill: var(--steel); flex-shrink: 0; }
-    .footer-contact-item a, .footer-contact-item span {
-      font-size: 0.88rem;
-      color: rgba(255,255,255,0.7);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .footer-contact-item a:hover { color: var(--orange); }
-    .footer-col h4 {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 0.82rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.4);
-      margin-bottom: 16px;
-    }
-    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    .footer-col ul a {
-      font-size: 0.88rem;
-      color: rgba(255,255,255,0.65);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .footer-col ul a:hover { color: var(--orange); }
-    .footer-bottom {
-      max-width: 1140px;
-      margin: 0 auto;
-      padding-top: 28px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .footer-bottom p {
-      font-size: 0.78rem;
-      color: rgba(255,255,255,0.3);
-    }
-    .footer-license {
-      font-size: 0.78rem;
-      color: rgba(255,255,255,0.3);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .footer-license span { color: var(--steel); }
+    .footer { background: var(--navy-dark); color: var(--white); padding: 2.5rem 0; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .footer-logo { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.1rem; }
+    .footer-center { text-align: center; font-size: 0.85rem; opacity: 0.7; }
+    .footer-center a { color: var(--orange); text-decoration: underline; }
+    .footer-right { text-align: right; font-size: 0.85rem; opacity: 0.7; }
 
-    /* ===== MOBILE RESPONSIVE ===== */
-    @media (max-width: 960px) {
+    /* ===== SCROLL ANIMATIONS ===== */
+    .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
       .services-grid { grid-template-columns: repeat(2, 1fr); }
-      .why-us-grid { grid-template-columns: 1fr; gap: 40px; }
-      .why-us-left .section-header { text-align: center; }
-      .why-us-left .section-header .section-label { display: block; }
-      .why-checklist li { align-items: flex-start; }
-      .service-area-inner { grid-template-columns: 1fr; gap: 40px; }
-      .area-text .section-header { text-align: center; }
-      .area-text .area-intro { text-align: center; }
-      .area-tags { justify-content: center; }
-      .footer-top { grid-template-columns: 1fr 1fr; }
-      .footer-brand { grid-column: 1 / -1; }
+      .why-grid { grid-template-columns: repeat(2, 1fr); }
+      .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 768px) {
-      .emergency-bar p { font-size: 0.75rem; }
-      .site-nav { top: 38px; }
-      .nav-links, .nav-cta { display: none; }
+      .nav-links, .header-phone, .header-cta { display: none; }
       .hamburger { display: flex; }
-      .hero { min-height: auto; padding: 72px 24px 60px; }
+      .hero { min-height: 500px; }
+      .hero h1 { font-size: 2rem; }
+      .hero-btns { flex-direction: column; }
       .services-grid { grid-template-columns: 1fr; }
-      .stats-grid { grid-template-columns: repeat(2, 1fr); }
-      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.12); padding: 20px 16px; }
-      .stat-item:nth-child(2n) { border-right: none; }
-      .stat-item:nth-last-child(-n+2) { border-bottom: none; }
+      .why-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
       .testimonials-grid { grid-template-columns: 1fr; }
-      .footer-top { grid-template-columns: 1fr; gap: 32px; }
-      .footer-brand { grid-column: auto; }
-      .footer-bottom { flex-direction: column; text-align: center; }
-      .why-us { padding: 64px 0; }
+      .about-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .trust-bar-inner { gap: 0.75rem 1.25rem; justify-content: center; }
+      .trust-item { font-size: 0.8rem; }
+      .footer-inner { flex-direction: column; text-align: center; }
+      .footer-right { text-align: center; }
     }
 
     @media (max-width: 480px) {
-      .hero h1 { font-size: 1.9rem; }
-      .btn-hero-phone { font-size: 1rem; padding: 15px 24px; }
-      .btn-outline-white { font-size: 0.9rem; padding: 12px 20px; }
-      .hero-ctas { flex-direction: column; align-items: stretch; text-align: center; }
-      .hero-ctas a { justify-content: center; }
-      .trust-sep { display: none; }
-      .hero-trust-badges { gap: 10px 12px; }
-      .section-title { font-size: 1.65rem; }
-      .stats-grid { grid-template-columns: 1fr 1fr; }
-      .cta-banner-buttons { flex-direction: column; align-items: stretch; }
-      .cta-banner-buttons a { justify-content: center; }
-      .call-card { padding: 36px 24px; }
-      .stat-item:nth-child(even) { border-right: none; }
-      .stat-item:nth-child(1), .stat-item:nth-child(2) { border-bottom: 1px solid rgba(255,255,255,0.12); }
+      .hero { min-height: 420px; }
+      .hero-content { padding: 2.5rem 0; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .about-stats { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-  <!-- BACK LINK -->
-  <div class="back-link-bar">
-    <a href="../index.html">Back to Blueprint Digital</a>
+  <!-- ===== PROMO BAR ===== -->
+  <div class="promo-bar">
+    &#x1F6A8; 24/7 Emergency Service &mdash; Call Now: <a href="tel:6195550100">(619) 555-0100</a>
   </div>
 
-  <!-- EMERGENCY TOP BAR -->
-  <div class="emergency-bar">
-    <p><span class="pulse-dot"></span>24/7 EMERGENCY SERVICE &mdash; CALL NOW: <a href="tel:6195550100">(619) 555-0100</a></p>
-  </div>
-
-  <!-- STICKY NAV -->
-  <nav class="site-nav" role="navigation" aria-label="Main navigation">
-    <div class="nav-inner">
-      <a href="#hero" class="nav-logo" aria-label="Rapid Plumbing Home">
-        <div class="nav-logo-icon">
-          <!-- Wrench SVG -->
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 3C14.015 3 12 5.015 12 7.5c0 .41.054.806.152 1.184L3 17.836 6.165 21 15.317 11.848c.378.098.774.152 1.183.152C19.985 12 22 9.985 22 7.5 22 5.015 19.985 3 16.5 3zm0 7.5c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/></svg>
-        </div>
-        <div>
-          <div class="nav-logo-text">Rapid <span>Plumbing</span></div>
-          <span class="nav-logo-sub">San Diego, CA</span>
-        </div>
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="header">
+    <div class="container header-inner">
+      <a href="#" class="logo">
+        <div class="logo-icon"></div>
+        <div class="logo-text">RAPID FLOW<br>PLUMBING <span>San Diego, CA</span></div>
       </a>
-      <ul class="nav-links" role="list">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#why-us">About</a></li>
-        <li><a href="#service-area">Service Area</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <a href="tel:6195550100" class="btn-orange nav-cta">Call Now</a>
-      <button class="hamburger" aria-label="Open navigation" aria-expanded="false">
+      <nav class="nav">
+        <ul class="nav-links">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="tel:6195550100" class="header-phone">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          (619) 555-0100
+        </a>
+        <a href="#contact" class="btn btn-orange header-cta">Get Free Estimate</a>
+      </nav>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
     </div>
-  </nav>
+  </header>
 
-  <!-- HERO -->
-  <section class="hero" id="hero" aria-label="Hero">
-    <div class="hero-inner">
-      <div class="hero-badge">Live Dispatch &bull; Responding Now</div>
-      <h1>San Diego's Emergency Plumber —<br/><em>Available 24/7</em></h1>
-      <p class="hero-sub">Burst pipe at midnight? No hot water before work? We dispatch a licensed plumber fast — most San Diego jobs start within 45 minutes. Same-day service, upfront pricing, no surprises.</p>
-      <div class="hero-ctas">
-        <a href="tel:6195550100" class="btn-hero-phone">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-          Call (619) 555-0100
-        </a>
-        <a href="#services" class="btn-outline-white">Request Service Online</a>
-      </div>
-      <div class="hero-trust-badges">
-        <div class="trust-badge-item">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
-          Licensed #PL-847291
-        </div>
-        <div class="trust-sep"></div>
-        <div class="trust-badge-item">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-          Insured &amp; Bonded
-        </div>
-        <div class="trust-sep"></div>
-        <div class="trust-badge-item">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-          BBB A+ Rated
-        </div>
-        <div class="trust-sep"></div>
-        <div class="trust-badge-item">
-          <svg viewBox="0 0 24 24" class="star" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-          4.9 Stars (312 Reviews)
-        </div>
-        <div class="trust-sep"></div>
-        <div class="trust-badge-item">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-          Serving SD Since 2008
-        </div>
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-close" id="mobileClose" aria-label="Close menu">&times;</button>
+    <a href="#services" onclick="closeMobile()">Services</a>
+    <a href="#gallery" onclick="closeMobile()">Gallery</a>
+    <a href="#about" onclick="closeMobile()">About</a>
+    <a href="#reviews" onclick="closeMobile()">Reviews</a>
+    <a href="#contact" onclick="closeMobile()">Contact</a>
+    <a href="tel:6195550100" class="btn btn-orange" onclick="closeMobile()">Call (619) 555-0100</a>
+    <a href="#contact" class="btn btn-outline" style="color:var(--navy);border-color:var(--navy);" onclick="closeMobile()">Get Free Estimate</a>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="hero-badge">&#x2B50; Rated 4.8/5 &mdash; 312+ Reviews</div>
+      <h1>San Diego's Most Trusted Licensed Plumber</h1>
+      <p>24/7 emergency service, same-day appointments, upfront pricing &mdash; no surprises. Serving San Diego since 2008.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn btn-orange">Get Your Free Estimate</a>
+        <a href="tel:6195550100" class="btn btn-outline">Call (619) 555-0100</a>
       </div>
     </div>
   </section>
 
-  <!-- SERVICES GRID -->
-  <section class="services" id="services" aria-label="Our Services">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-label">What We Do</span>
-        <h2 class="section-title">Full-Service Plumbing for<br/>Every San Diego Home</h2>
-        <p class="section-sub">From clogged drains to full repipes, our licensed technicians handle it all — fast, clean, and done right the first time.</p>
-      </div>
-      <div class="services-grid">
-
-        <!-- Card 1 -->
-        <div class="service-card">
-          <div class="service-card-top">
-            <div class="service-icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
-            </div>
-            <span class="emergency-badge">24/7</span>
-          </div>
-          <h3>Emergency Repair</h3>
-          <p>Burst pipes, major leaks, sewer backups — when every minute counts, our emergency crew is dispatched immediately. Average 45-minute response across San Diego.</p>
-          <a href="tel:6195550100" class="service-link">Call Now</a>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="service-card">
-          <div class="service-card-top">
-            <div class="service-icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 5.5c0-1.1-.9-2-2-2s-2 .9-2 2 .9 2 2 2 2-.9 2-2zm-7 11c0 1.1.9 2 2 2s2-.9 2-2-.9-2-2-2-2 .9-2 2zm14 0c0 1.1.9 2 2 2s2-.9 2-2-.9-2-2-2-2 .9-2 2zm-6 2c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm7.04-7.61c-.35-1.66-1.83-2.89-3.6-2.89h-1.88L10 6.03V4h-2v2.76L5.03 9H3.5C2.12 9 1 10.12 1 11.5S2.12 14 3.5 14H4v1c0 2.21 1.79 4 4 4s4-1.79 4-4v-1h1.44c1.77 0 3.25-1.22 3.6-2.89l.32-1.51-.32-1.21z"/></svg>
-            </div>
-          </div>
-          <h3>Drain Cleaning</h3>
-          <p>Slow drains, stubborn clogs, recurring blockages — we use professional hydro-jetting and snaking equipment to clear any drain completely and keep it flowing.</p>
-          <a href="#contact" class="service-link">Get Quote</a>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="service-card">
-          <div class="service-card-top">
-            <div class="service-icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 5H3C1.9 5 1 5.9 1 7v10c0 1.1.9 2 2 2h11v-2H3V7h14v2h2V7c0-1.1-.9-2-2-2zm4 8h-8c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1h8c.55 0 1-.45 1-1v-6c0-.55-.45-1-1-1zm-1 6h-6v-4h6v4z"/></svg>
-            </div>
-          </div>
-          <h3>Water Heater Install &amp; Repair</h3>
-          <p>No hot water? We service all brands — traditional tank and tankless systems. Same-day installations available, with energy-efficient upgrade options that save money long-term.</p>
-          <a href="#contact" class="service-link">Get Quote</a>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="service-card">
-          <div class="service-card-top">
-            <div class="service-icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 6.5C21 4.01 18.99 2 16.5 2c-1.99 0-3.66 1.3-4.26 3.09L5 12.35V15H2v3h3v3h3v-3.02l5.51-5.51C14.11 12.77 15.24 13 16.5 13 18.99 13 21 10.99 21 8.5v-2zm-4.5 5c-1.93 0-3.5-1.57-3.5-3.5S14.57 4.5 16.5 4.5 20 6.07 20 8s-1.57 3.5-3.5 3.5z"/></svg>
-            </div>
-          </div>
-          <h3>Pipe Repair &amp; Repiping</h3>
-          <p>Corroded, cracked, or leaking pipes repaired or replaced correctly. We handle partial repairs to whole-home copper and PEX repiping with minimal disruption to your property.</p>
-          <a href="#contact" class="service-link">Get Quote</a>
-        </div>
-
-        <!-- Card 5 -->
-        <div class="service-card">
-          <div class="service-card-top">
-            <div class="service-icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
-            </div>
-          </div>
-          <h3>Leak Detection</h3>
-          <p>Hidden leaks cause serious damage and spike water bills. Our advanced detection technology pinpoints slab leaks, underground pipe failures, and concealed leaks without unnecessary demolition.</p>
-          <a href="#contact" class="service-link">Get Quote</a>
-        </div>
-
-        <!-- Card 6 -->
-        <div class="service-card">
-          <div class="service-card-top">
-            <div class="service-icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.36 5.64c-1.95-1.96-5.11-1.96-7.07 0L9.88 7.05 8.46 5.64l1.42-1.42c2.73-2.73 7.17-2.73 9.9 0 2.73 2.73 2.73 7.17 0 9.9l-1.42 1.41-1.41-1.41 1.41-1.42c1.96-1.96 1.96-5.12 0-7.06zm-2.12 3.53l-7.07 7.07-1.41-1.41 7.07-7.07 1.41 1.41zM5.64 18.36c1.96 1.96 5.12 1.96 7.07 0l1.41-1.41 1.41 1.41-1.41 1.42c-2.73 2.73-7.17 2.73-9.9 0-2.73-2.73-2.73-7.17 0-9.9L5.64 8.46l1.41 1.41-1.41 1.42c-1.96 1.96-1.96 5.12 0 7.07z"/></svg>
-            </div>
-          </div>
-          <h3>Fixture Installation</h3>
-          <p>Upgrade your bathroom or kitchen with professional fixture installation. Faucets, toilets, sinks, showers, garbage disposals — installed perfectly with full warranty on labor.</p>
-          <a href="#contact" class="service-link">Get Quote</a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- STATS BAR -->
-  <div class="stats-bar" aria-label="Company stats">
-    <div class="stats-grid">
-      <div class="stat-item">
-        <div class="stat-number">24/7</div>
-        <div class="stat-label">Always Available</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">45min</div>
-        <div class="stat-label">Avg. Response Time</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">15+</div>
-        <div class="stat-label">Years Serving SD</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">5,000+</div>
-        <div class="stat-label">Jobs Completed</div>
-      </div>
+  <!-- ===== TRUST BAR ===== -->
+  <div class="trust-bar">
+    <div class="container trust-bar-inner">
+      <div class="trust-item"><span class="icon">&#x2B50;</span> 4.8 Stars &mdash; 312 Reviews</div>
+      <div class="trust-item"><span class="icon">&#x1F6E1;&#xFE0F;</span> Licensed &amp; Insured &mdash; CA #1028754</div>
+      <div class="trust-item"><span class="icon">&#x1F4AA;</span> 18+ Years Experience</div>
+      <div class="trust-item"><span class="icon">&#x26A1;</span> Same-Day Service</div>
+      <div class="trust-item"><span class="icon">&#x2705;</span> Upfront Pricing</div>
     </div>
   </div>
 
-  <!-- WHY CHOOSE US -->
-  <section class="why-us" id="why-us" aria-label="Why Choose Us">
+  <!-- ===== SERVICES ===== -->
+  <section class="services" id="services">
     <div class="container">
-      <div class="why-us-grid">
-        <div class="why-us-left">
-          <div class="section-header">
-            <span class="section-label">Why Rapid Plumbing</span>
-            <h2 class="section-title">San Diego's Most Trusted Plumber</h2>
+      <div class="text-center fade-up">
+        <div class="section-label">What We Do</div>
+        <h2 class="section-title">Our Plumbing Services</h2>
+        <p class="section-sub">From emergency repairs to full remodels, we handle it all with licensed expertise and upfront pricing.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card fade-up">
+          <div class="service-card-img">
+            <img src="https://images.pexels.com/photos/10246156/pexels-photo-10246156.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Emergency Pipe Repair" loading="lazy" />
           </div>
-          <ul class="why-checklist">
-            <li>
-              <div class="check-icon">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-              </div>
-              <div>
-                <strong>C-36 Licensed Plumbing Contractor</strong>
-                State-licensed #PL-847291, fully insured and bonded. Every job meets California plumbing code — no shortcuts, no workarounds.
-              </div>
-            </li>
-            <li>
-              <div class="check-icon">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-              </div>
-              <div>
-                <strong>Upfront Flat-Rate Pricing</strong>
-                You'll see the price before we start — not after. No hidden fees, no surprise charges, no billing by the hour on drawn-out jobs.
-              </div>
-            </li>
-            <li>
-              <div class="check-icon">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-              </div>
-              <div>
-                <strong>Background-Checked Technicians</strong>
-                Every plumber on our team passes a thorough background check before entering your home. Trust and safety aren't optional.
-              </div>
-            </li>
-            <li>
-              <div class="check-icon">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-              </div>
-              <div>
-                <strong>Warranty on All Work</strong>
-                Parts and labor are backed by our written guarantee. If something isn't right, we come back and fix it — at no charge to you.
-              </div>
-            </li>
-          </ul>
-          <a href="tel:6195550100" class="btn-orange">Call (619) 555-0100 Now</a>
+          <div class="service-card-body">
+            <h3>Emergency Pipe Repair</h3>
+            <p>Burst pipe at 2 AM? We're on it. Our emergency team responds fast to stop water damage and get your plumbing back on track.</p>
+            <a href="#contact">Learn More &rarr;</a>
+          </div>
         </div>
-        <div class="why-us-right">
-          <div class="call-card" id="contact">
-            <div class="call-card-icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-            </div>
-            <div class="call-card-label">Emergency Dispatch Line</div>
-            <div class="call-card-number">(619) 555-0100</div>
-            <div class="call-card-sub">Live dispatcher available 24 hours a day,<br/>7 days a week — including holidays</div>
-            <a href="tel:6195550100" class="btn-orange">Call for Immediate Help</a>
-            <div class="call-card-guarantee">No hold times &bull; Dispatcher picks up live &bull; Plumber dispatched same call</div>
+        <div class="service-card fade-up">
+          <div class="service-card-img">
+            <img src="https://images.unsplash.com/photo-cEZNJ-wk1VY?w=800&fit=crop" alt="Water Heater Installation" loading="lazy" />
+          </div>
+          <div class="service-card-body">
+            <h3>Water Heater Installation</h3>
+            <p>Tank or tankless, we install and service all major brands. Enjoy hot water again with same-day installation available.</p>
+            <a href="#contact">Learn More &rarr;</a>
+          </div>
+        </div>
+        <div class="service-card fade-up">
+          <div class="service-card-img">
+            <img src="https://images.pexels.com/photos/6316060/pexels-photo-6316060.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Bathroom Remodeling" loading="lazy" />
+          </div>
+          <div class="service-card-body">
+            <h3>Bathroom Remodeling</h3>
+            <p>Transform your bathroom with expert fixture installation, re-piping, and custom plumbing layouts designed for your space.</p>
+            <a href="#contact">Learn More &rarr;</a>
+          </div>
+        </div>
+        <div class="service-card fade-up">
+          <div class="service-card-img">
+            <img src="https://images.pexels.com/photos/7006696/pexels-photo-7006696.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Drain Cleaning & Sewer" loading="lazy" />
+          </div>
+          <div class="service-card-body">
+            <h3>Drain Cleaning &amp; Sewer</h3>
+            <p>Slow drains and sewer backups eliminated fast. We use video inspection and hydro jetting for a lasting clean.</p>
+            <a href="#contact">Learn More &rarr;</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- TESTIMONIALS -->
-  <section class="testimonials" aria-label="Customer testimonials">
+  <!-- ===== WHY CHOOSE US ===== -->
+  <section class="why-us">
     <div class="container">
-      <div class="section-header">
-        <span class="section-label">Real Reviews</span>
-        <h2 class="section-title">What San Diego Homeowners Are Saying</h2>
-        <p class="section-sub">Over 312 five-star reviews from real customers across San Diego County.</p>
+      <div class="text-center fade-up">
+        <div class="section-label">Why Rapid Flow</div>
+        <h2 class="section-title">Why San Diego Homeowners Choose Us</h2>
+        <p class="section-sub">We built our reputation on showing up fast, charging fair, and getting it right the first time.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card fade-up">
+          <div class="why-icon">&#x1F6A8;</div>
+          <h3>24/7 Emergency Response</h3>
+          <p>Plumbing emergencies don't wait, and neither do we. Call any time &mdash; day, night, weekends, or holidays.</p>
+        </div>
+        <div class="why-card fade-up">
+          <div class="why-icon">&#x1F4B0;</div>
+          <h3>Upfront Flat-Rate Pricing</h3>
+          <p>Know the price before we start. No hidden fees, no surprise charges. The price we quote is the price you pay.</p>
+        </div>
+        <div class="why-card fade-up">
+          <div class="why-icon">&#x1F6E1;&#xFE0F;</div>
+          <h3>Licensed &amp; Background-Checked</h3>
+          <p>Every technician is state-licensed, fully insured, and background-checked for your peace of mind.</p>
+        </div>
+        <div class="why-card fade-up">
+          <div class="why-icon">&#x2705;</div>
+          <h3>100% Satisfaction Guarantee</h3>
+          <p>If you're not completely satisfied, we'll come back and make it right &mdash; free of charge. That's our promise.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GALLERY ===== -->
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <div class="text-center fade-up">
+        <div class="section-label">Our Work</div>
+        <h2 class="section-title">Recent Projects</h2>
+        <p class="section-sub">See the quality craftsmanship we bring to every job across San Diego County.</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item fade-up">
+          <img src="https://images.pexels.com/photos/8142977/pexels-photo-8142977.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Bathroom remodel in Chula Vista" loading="lazy" />
+          <div class="gallery-overlay"><h4>Bathroom Remodel</h4><span>Chula Vista, CA</span></div>
+        </div>
+        <div class="gallery-item fade-up">
+          <img src="https://images.unsplash.com/photo-I2UEWKTgCng?w=600&fit=crop" alt="Water heater install in La Mesa" loading="lazy" />
+          <div class="gallery-overlay"><h4>Tankless Water Heater</h4><span>La Mesa, CA</span></div>
+        </div>
+        <div class="gallery-item fade-up">
+          <img src="https://images.pexels.com/photos/9726985/pexels-photo-9726985.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Kitchen plumbing in El Cajon" loading="lazy" />
+          <div class="gallery-overlay"><h4>Kitchen Re-Pipe</h4><span>El Cajon, CA</span></div>
+        </div>
+        <div class="gallery-item fade-up">
+          <img src="https://images.pexels.com/photos/6316060/pexels-photo-6316060.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Fixture installation in Coronado" loading="lazy" />
+          <div class="gallery-overlay"><h4>Fixture Installation</h4><span>Coronado, CA</span></div>
+        </div>
+        <div class="gallery-item fade-up">
+          <img src="https://images.pexels.com/photos/10246156/pexels-photo-10246156.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Emergency pipe repair in San Diego" loading="lazy" />
+          <div class="gallery-overlay"><h4>Emergency Pipe Repair</h4><span>San Diego, CA</span></div>
+        </div>
+        <div class="gallery-item fade-up">
+          <img src="https://images.pexels.com/photos/7006696/pexels-photo-7006696.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Sewer line work in Santee" loading="lazy" />
+          <div class="gallery-overlay"><h4>Sewer Line Replacement</h4><span>Santee, CA</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="testimonials" id="reviews">
+    <div class="container">
+      <div class="text-center fade-up">
+        <div class="section-label">Testimonials</div>
+        <h2 class="section-title">What Our Customers Say</h2>
+        <p class="section-sub">Don't just take our word for it. Here's what San Diego homeowners have to say.</p>
       </div>
       <div class="testimonials-grid">
-
-        <div class="testimonial-card">
-          <div class="testimonial-stars">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-          </div>
-          <p class="testimonial-quote">Our main water line burst at 11pm on a Sunday night. I called Rapid Plumbing in a panic and the dispatcher was calm and helpful immediately. A plumber was at my door in under 40 minutes. He had it repaired and the water back on by 1am. I genuinely don't know what we would have done without them. Cannot recommend them enough.</p>
+        <div class="testimonial-card fade-up">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"Our kitchen pipe burst at midnight on a Sunday. Called Rapid Flow and they had a tech at our door in under 45 minutes. Fixed everything fast and the price was exactly what they quoted. Absolute lifesavers."</p>
           <div class="testimonial-author">
-            <div class="author-avatar blue">MT</div>
+            <div class="testimonial-avatar">MR</div>
             <div>
-              <div class="author-name">Maria T.</div>
-              <div class="author-detail">Chula Vista, CA &bull; Emergency Pipe Repair</div>
-            </div>
-            <div class="verified-badge">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-              Verified
+              <div class="testimonial-name">Maria Rodriguez</div>
+              <div class="testimonial-location">Chula Vista, CA</div>
             </div>
           </div>
         </div>
-
-        <div class="testimonial-card">
-          <div class="testimonial-stars">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-          </div>
-          <p class="testimonial-quote">I'd been getting quotes for a water heater replacement for two weeks — everyone was either too expensive or wouldn't give me a straight answer on price. Rapid Plumbing gave me an exact number on the phone, showed up the next morning, and had a new tankless unit running by noon. The price matched the quote exactly. That's how it should be done.</p>
+        <div class="testimonial-card fade-up">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"Best plumber we've ever used. Professional, on time, cleaned up after themselves. They replaced our old water heater in the same day we called. No hidden fees, no nonsense. Highly recommend."</p>
           <div class="testimonial-author">
-            <div class="author-avatar teal">JR</div>
+            <div class="testimonial-avatar">JT</div>
             <div>
-              <div class="author-name">James R.</div>
-              <div class="author-detail">La Mesa, CA &bull; Tankless Water Heater</div>
-            </div>
-            <div class="verified-badge">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-              Verified
+              <div class="testimonial-name">James Thompson</div>
+              <div class="testimonial-location">La Mesa, CA</div>
             </div>
           </div>
         </div>
-
-        <div class="testimonial-card">
-          <div class="testimonial-stars">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-          </div>
-          <p class="testimonial-quote">My water bill was mysteriously $200 higher than usual. Two other plumbers said they couldn't find anything. Rapid Plumbing's leak detection technician found a slab leak under my kitchen within an hour using some kind of acoustic equipment — no holes in the floor. Fixed it the same day. My bill is back to normal. They saved me thousands in potential damage.</p>
+        <div class="testimonial-card fade-up">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"We had a sewer backup that two other plumbers couldn't figure out. Rapid Flow came in with their camera inspection, found the issue in minutes, and had it fixed by end of day. Fair price too."</p>
           <div class="testimonial-author">
-            <div class="author-avatar green">SK</div>
+            <div class="testimonial-avatar">KN</div>
             <div>
-              <div class="author-name">Sarah K.</div>
-              <div class="author-detail">Santee, CA &bull; Slab Leak Detection</div>
-            </div>
-            <div class="verified-badge">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-              Verified
+              <div class="testimonial-name">Karen Nguyen</div>
+              <div class="testimonial-location">El Cajon, CA</div>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- SERVICE AREA -->
-  <section class="service-area" id="service-area" aria-label="Service area">
+  <!-- ===== ABOUT ===== -->
+  <section class="about" id="about">
     <div class="container">
-      <div class="service-area-inner">
-        <div class="area-text">
-          <div class="section-header">
-            <span class="section-label">Where We Work</span>
-            <h2 class="section-title">Serving All of<br/>San Diego County</h2>
-          </div>
-          <p class="area-intro">From the coastline to the East County, Rapid Plumbing covers the entire San Diego metro area. One call dispatches the closest licensed plumber to your location.</p>
-          <div class="area-tags">
-            <span class="area-tag">Chula Vista</span>
-            <span class="area-tag">National City</span>
-            <span class="area-tag">El Cajon</span>
-            <span class="area-tag">La Mesa</span>
-            <span class="area-tag">Santee</span>
-            <span class="area-tag">Spring Valley</span>
-            <span class="area-tag">Lemon Grove</span>
-            <span class="area-tag">Bonita</span>
-            <span class="area-tag">San Diego</span>
-            <span class="area-tag">Coronado</span>
-            <span class="area-tag">Escondido</span>
-            <span class="area-tag">El Centro</span>
-          </div>
-          <p style="font-size:0.88rem; color:var(--gray-text);">Not sure if we cover your area? Call <strong>(619) 555-0100</strong> — we'll tell you right away.</p>
+      <div class="about-grid">
+        <div class="about-img fade-up">
+          <img src="https://images.pexels.com/photos/8486978/pexels-photo-8486978.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Rapid Flow Plumbing team" loading="lazy" />
         </div>
-        <div class="area-map-visual" aria-label="San Diego County service area illustration">
-          <div class="map-pin-icon">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        <div class="about-text fade-up">
+          <div class="section-label">About Us</div>
+          <h2 class="section-title">Family-Owned Since 2008</h2>
+          <p>What started as a one-truck operation has grown into one of San Diego County's most trusted plumbing companies. Over 18 years, we've served more than 5,000 homes and businesses across the region.</p>
+          <p>We're BBB A+ rated, fully licensed (CA #1028754), and every member of our team is background-checked and drug-tested. When you call Rapid Flow, you're getting San Diego's best &mdash; guaranteed.</p>
+          <div class="about-stats">
+            <div class="about-stat">
+              <div class="num">5,000+</div>
+              <div class="label">Jobs Completed</div>
+            </div>
+            <div class="about-stat">
+              <div class="num">18+</div>
+              <div class="label">Years in Business</div>
+            </div>
+            <div class="about-stat">
+              <div class="num">A+</div>
+              <div class="label">BBB Rating</div>
+            </div>
           </div>
-          <div class="area-map-title">San Diego County</div>
-          <div class="area-map-sub">All neighborhoods covered — north, south, east, and coastal communities</div>
-          <div class="area-radius-badge">Full County Coverage</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA BANNER -->
-  <section class="cta-banner" aria-label="Call to action">
-    <div class="cta-banner-inner">
-      <h2>Don't Wait — <em>Plumbing Problems Get Worse</em></h2>
-      <p>Every hour a leak goes unaddressed, water damage grows. Every backup risks sewage contamination. Call now — our dispatcher is live and a plumber can be at your door today.</p>
-      <div class="cta-banner-buttons">
-        <a href="tel:6195550100" class="btn-cta-big">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-          Call Now: (619) 555-0100
-        </a>
-        <a href="mailto:info@rapidplumbing.com" class="btn-outline-white">Email Us</a>
+  <!-- ===== SERVICE AREA ===== -->
+  <section class="service-area">
+    <div class="container text-center">
+      <div class="fade-up">
+        <div class="section-label">Service Area</div>
+        <h2 class="section-title">Proudly Serving San Diego County</h2>
+        <p class="section-sub">Fast response times across the entire metro area. If you're in San Diego County, we've got you covered.</p>
+      </div>
+      <div class="area-list fade-up">
+        <span class="area-tag">San Diego</span>
+        <span class="area-tag">Chula Vista</span>
+        <span class="area-tag">National City</span>
+        <span class="area-tag">El Cajon</span>
+        <span class="area-tag">La Mesa</span>
+        <span class="area-tag">Spring Valley</span>
+        <span class="area-tag">Santee</span>
+        <span class="area-tag">Poway</span>
+        <span class="area-tag">Escondido</span>
+        <span class="area-tag">Oceanside</span>
+        <span class="area-tag">Coronado</span>
+        <span class="area-tag">Imperial Beach</span>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="site-footer" role="contentinfo">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <a href="#hero" class="nav-logo">
-          <div class="nav-logo-icon">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 3C14.015 3 12 5.015 12 7.5c0 .41.054.806.152 1.184L3 17.836 6.165 21 15.317 11.848c.378.098.774.152 1.183.152C19.985 12 22 9.985 22 7.5 22 5.015 19.985 3 16.5 3zm0 7.5c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/></svg>
-          </div>
-          <div>
-            <div class="nav-logo-text">Rapid <span>Plumbing</span></div>
-            <span class="nav-logo-sub">San Diego, CA</span>
-          </div>
-        </a>
-        <p>Fast. Reliable. Fixed Right. San Diego's emergency plumbing specialists since 2008 — available 24 hours a day, 365 days a year. Licensed, insured, and committed to your satisfaction.</p>
-        <div class="footer-contact-item">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-          <a href="tel:6195550100">(619) 555-0100</a>
-        </div>
-        <div class="footer-contact-item">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-          <a href="mailto:info@rapidplumbing.com">info@rapidplumbing.com</a>
-        </div>
-        <div class="footer-contact-item">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-          <span>San Diego, CA 92101</span>
-        </div>
+  <!-- ===== CONTACT ===== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="text-center fade-up">
+        <div class="section-label">Contact Us</div>
+        <h2 class="section-title">Get Your Free Estimate</h2>
+        <p class="section-sub">Tell us about your project and we'll get back to you within the hour &mdash; usually sooner.</p>
       </div>
-      <div class="footer-col">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="#services">Emergency Repair</a></li>
-          <li><a href="#services">Drain Cleaning</a></li>
-          <li><a href="#services">Water Heater Service</a></li>
-          <li><a href="#services">Pipe Repair &amp; Repiping</a></li>
-          <li><a href="#services">Leak Detection</a></li>
-          <li><a href="#services">Fixture Installation</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="#why-us">About Us</a></li>
-          <li><a href="#service-area">Service Area</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="tel:6195550100">Emergency Line</a></li>
-        </ul>
+      <div class="contact-grid">
+        <div class="contact-form fade-up">
+          <h3>Request Your Free Estimate</h3>
+          <p class="micro">No obligation. Takes 30 seconds.</p>
+          <form onsubmit="event.preventDefault(); alert('Thank you! We will call you shortly.');">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="John Smith" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="(619) 555-0000" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" placeholder="john@example.com" />
+            </div>
+            <div class="form-group">
+              <label for="service">Service Needed</label>
+              <select id="service">
+                <option value="">Select a service...</option>
+                <option>Emergency Pipe Repair</option>
+                <option>Water Heater Installation</option>
+                <option>Bathroom Remodeling</option>
+                <option>Drain Cleaning &amp; Sewer</option>
+                <option>General Plumbing</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Tell Us About Your Project</label>
+              <textarea id="message" placeholder="Describe your plumbing issue or project..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-orange" style="width:100%;justify-content:center;font-size:1rem;padding:1rem;">Get Your Free Estimate</button>
+          </form>
+        </div>
+        <div class="contact-info fade-up">
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.11 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <h4>Call Us 24/7</h4>
+              <a href="tel:6195550100">(619) 555-0100</a>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6" fill="none" stroke="#fff" stroke-width="2"/></svg>
+            </div>
+            <div>
+              <h4>Email Us</h4>
+              <a href="mailto:info@rapidflowplumbing.com">info@rapidflowplumbing.com</a>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3" fill="none" stroke="#fff" stroke-width="2"/></svg>
+            </div>
+            <div>
+              <h4>Service Address</h4>
+              <p>San Diego, CA 92101</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14" fill="none" stroke="#fff" stroke-width="2"/></svg>
+            </div>
+            <div>
+              <h4>Hours</h4>
+              <p>Emergency: 24/7/365</p>
+              <p>Office: Mon-Fri 7AM-6PM</p>
+              <p>Sat: 8AM-4PM</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div>
+              <h4>License</h4>
+              <p>CA License #1028754</p>
+              <p>Fully Licensed, Bonded &amp; Insured</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2024 Rapid Plumbing San Diego. All rights reserved.</p>
-      <div class="footer-license">
-        California Licensed Plumbing Contractor &bull; License <span>#PL-847291</span>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-logo">RAPID FLOW PLUMBING</div>
+      <div class="footer-center">
+        &copy; 2026 Rapid Flow Plumbing. All rights reserved.<br>
+        CA License #1028754 | <a href="tel:6195550100">(619) 555-0100</a><br>
+        <small>Demo site by <a href="https://blueprintdigitalsd.com" target="_blank">Blueprint Digital</a></small>
+      </div>
+      <div class="footer-right">
+        San Diego, CA<br>
+        Available 24/7/365
       </div>
     </div>
   </footer>
+
+  <!-- ===== JAVASCRIPT ===== -->
+  <script>
+    // Sticky header shadow
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    // Mobile nav
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    const mobileClose = document.getElementById('mobileClose');
+
+    hamburgerBtn.addEventListener('click', () => {
+      mobileNav.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+
+    function closeMobile() {
+      mobileNav.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    mobileClose.addEventListener('click', closeMobile);
+
+    // Scroll fade-in animations
+    const fadeEls = document.querySelectorAll('.fade-up');
+    const fadeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          fadeObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+    fadeEls.forEach(el => fadeObserver.observe(el));
+  </script>
 
 </body>
 </html>
