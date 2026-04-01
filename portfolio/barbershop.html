@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A-List Barbershop | Premium Cuts & Grooming</title>
+  <meta name="description" content="A-List Barbershop — Premium cuts, fades, and grooming for men who demand the best. Walk-ins welcome.">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <meta property="og:title" content="A-List Barbershop | Demo by Blueprint Digital">
+  <meta property="og:description" content="Website demo built by Blueprint Digital — Websites + AI Receptionists for Contractors in San Diego.">
+  <meta property="og:image" content="https://blueprintdigitalsd.com/og-image.png">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* WATERMARK OVERLAY */
+    .service-card, .gallery-item, .about-image { position: relative; overflow: hidden; }
+    .hero::after, .service-card::after, .gallery-item::after, .about-image::after {
+      content: '';
+      position: absolute;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='120'%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14' font-weight='700' fill='white' opacity='0.12' transform='rotate(-30 150 60)'%3EBLUEPRINTDIGITALSD.COM%3C/text%3E%3C/svg%3E");
+      background-repeat: repeat;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* ── RESET ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #000000;
+      color: #FFFFFF;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 1px; line-height: 1.2; }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    ul { list-style: none; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+    /* ── VARIABLES ── */
+    :root {
+      --black: #000000;
+      --black-light: #0A0A0F;
+      --black-card: #0D0D14;
+      --blue: #1E6FFF;
+      --blue-glow: #3B8AFF;
+      --blue-dark: #0A2A5E;
+      --blue-subtle: #121828;
+      --white: #FFFFFF;
+      --gray-100: #E8E8E8;
+      --gray-400: #888899;
+      --gray-600: #555566;
+      --gold: #C9A84C;
+      --radius: 8px;
+      --shadow: 0 4px 30px rgba(30, 111, 255, 0.08);
+      --glow: 0 0 30px rgba(30, 111, 255, 0.15);
+    }
+
+    /* ── HEADER ── */
+    .header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(30, 111, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+    .header.scrolled {
+      background: rgba(0,0,0,0.95);
+      box-shadow: 0 2px 40px rgba(0,0,0,0.5);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-placeholder {
+      width: 44px; height: 44px;
+      border: 2px solid var(--blue);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--blue);
+      background: rgba(30, 111, 255, 0.08);
+    }
+    .logo-text {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+    .logo-text span { color: var(--blue); }
+
+    .nav-desktop { display: flex; align-items: center; gap: 32px; }
+    .nav-desktop a {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      transition: color 0.3s;
+    }
+    .nav-desktop a:hover { color: var(--white); }
+    .nav-desktop .btn-book {
+      background: var(--blue);
+      color: white;
+      padding: 10px 24px;
+      border-radius: 4px;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    .nav-desktop .btn-book:hover {
+      background: var(--blue-glow);
+      box-shadow: 0 0 20px rgba(30, 111, 255, 0.4);
+    }
+
+    /* Hamburger */
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; z-index: 101; }
+    .hamburger span { width: 24px; height: 2px; background: var(--white); transition: all 0.3s; }
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    .nav-mobile {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.97);
+      z-index: 99;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+    }
+    .nav-mobile.active { display: flex; }
+    .nav-mobile a {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      transition: color 0.3s;
+    }
+    .nav-mobile a:hover { color: var(--blue); }
+
+    @media (max-width: 768px) {
+      .nav-desktop { display: none; }
+      .hamburger { display: flex; }
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: var(--black);
+    }
+    .hero-bg {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0.95) 100%),
+                  url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90" opacity="0.03">💈</text></svg>');
+      background-size: cover, 200px;
+    }
+    /* Hex light effect */
+    .hero-hex {
+      position: absolute;
+      top: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 400px;
+      height: 200px;
+      background: radial-gradient(ellipse at center, rgba(30, 111, 255, 0.12) 0%, transparent 70%);
+      filter: blur(40px);
+      pointer-events: none;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      text-align: center;
+      padding: 120px 20px 80px;
+      max-width: 800px;
+    }
+    .hero-badge {
+      display: inline-block;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--blue);
+      border: 1px solid rgba(30, 111, 255, 0.3);
+      padding: 8px 24px;
+      border-radius: 2px;
+      margin-bottom: 32px;
+      background: rgba(30, 111, 255, 0.05);
+    }
+    .hero h1 {
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      font-weight: 700;
+      letter-spacing: 6px;
+      margin-bottom: 24px;
+      line-height: 1.05;
+    }
+    .hero h1 .accent { color: var(--blue); }
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--gray-400);
+      max-width: 500px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+    .hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 14px 36px;
+      background: var(--blue);
+      color: var(--white);
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .btn-primary:hover {
+      background: var(--blue-glow);
+      box-shadow: 0 0 30px rgba(30, 111, 255, 0.4);
+      transform: translateY(-2px);
+    }
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 14px 36px;
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .btn-outline:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+      background: rgba(30, 111, 255, 0.05);
+    }
+
+    /* Scroll indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: var(--gray-600);
+      font-size: 0.7rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-family: 'Oswald', sans-serif;
+      animation: pulse 2s ease infinite;
+    }
+    .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--blue), transparent); }
+    @keyframes pulse { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
+
+    /* ── DIVIDER ── */
+    .section-divider {
+      width: 60px;
+      height: 2px;
+      background: var(--blue);
+      margin: 0 auto 20px;
+      box-shadow: 0 0 10px rgba(30, 111, 255, 0.3);
+    }
+    .section-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--blue);
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      text-align: center;
+      margin-bottom: 16px;
+      letter-spacing: 4px;
+    }
+    .section-sub {
+      text-align: center;
+      color: var(--gray-400);
+      max-width: 600px;
+      margin: 0 auto 48px;
+      font-weight: 300;
+    }
+
+    /* ── SERVICES ── */
+    .services {
+      padding: 100px 0;
+      background: var(--black-light);
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .service-card {
+      background: var(--black-card);
+      border: 1px solid rgba(30, 111, 255, 0.06);
+      border-radius: var(--radius);
+      padding: 40px 32px;
+      text-align: center;
+      transition: all 0.4s ease;
+    }
+    .service-card:hover {
+      border-color: rgba(30, 111, 255, 0.2);
+      transform: translateY(-4px);
+      box-shadow: var(--glow);
+    }
+    .service-icon {
+      width: 60px; height: 60px;
+      margin: 0 auto 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(30, 111, 255, 0.08);
+      border: 1px solid rgba(30, 111, 255, 0.15);
+      font-size: 1.5rem;
+    }
+    .service-card h3 {
+      font-size: 1.1rem;
+      letter-spacing: 3px;
+      margin-bottom: 12px;
+    }
+    .service-card p {
+      color: var(--gray-400);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+    .service-price {
+      display: inline-block;
+      margin-top: 20px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.1rem;
+      color: var(--blue);
+      letter-spacing: 1px;
+    }
+
+    /* ── GALLERY ── */
+    .gallery {
+      padding: 100px 0;
+      background: var(--black);
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4px;
+    }
+    .gallery-item {
+      position: relative;
+      aspect-ratio: 1;
+      overflow: hidden;
+      background: var(--black-card);
+      cursor: pointer;
+    }
+    .gallery-item img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease, filter 0.6s ease;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.08);
+      filter: brightness(0.7);
+    }
+    .gallery-overlay {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 20px;
+      background: linear-gradient(transparent, rgba(0,0,0,0.9));
+      transform: translateY(100%);
+      transition: transform 0.4s ease;
+    }
+    .gallery-item:hover .gallery-overlay { transform: translateY(0); }
+    .gallery-overlay span {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--blue);
+    }
+    /* Placeholder images */
+    .gallery-placeholder {
+      width: 100%; height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #0A0A14 0%, #0D1220 100%);
+      color: var(--gray-600);
+      font-size: 0.75rem;
+      font-family: 'Oswald', sans-serif;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    @media (max-width: 768px) {
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* ── ABOUT ── */
+    .about {
+      padding: 100px 0;
+      background: var(--black-light);
+    }
+    .about-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .about-image {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      background: linear-gradient(135deg, #0A0A14, #0D1220);
+    }
+    .about-image-placeholder {
+      width: 100%; height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      color: var(--gray-600);
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+    }
+    .about-image::before {
+      content: '';
+      position: absolute;
+      top: -2px; left: -2px; right: -2px; bottom: -2px;
+      background: linear-gradient(135deg, var(--blue) 0%, transparent 50%);
+      border-radius: var(--radius);
+      z-index: 0;
+      opacity: 0.3;
+    }
+    .about-content { position: relative; z-index: 1; }
+    .about-content h2 {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      letter-spacing: 4px;
+      margin-bottom: 24px;
+    }
+    .about-content h2 span { color: var(--blue); }
+    .about-content p {
+      color: var(--gray-400);
+      margin-bottom: 16px;
+      font-weight: 300;
+      line-height: 1.8;
+    }
+    .about-stats {
+      display: flex;
+      gap: 40px;
+      margin-top: 40px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .about-stat h4 {
+      font-size: 2rem;
+      color: var(--blue);
+      letter-spacing: 2px;
+    }
+    .about-stat p {
+      font-size: 0.75rem;
+      color: var(--gray-600);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 0;
+    }
+    @media (max-width: 768px) {
+      .about-inner { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    /* ── REVIEWS ── */
+    .reviews {
+      padding: 100px 0;
+      background: var(--black);
+    }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    .review-card {
+      background: var(--black-card);
+      border: 1px solid rgba(30, 111, 255, 0.06);
+      border-radius: var(--radius);
+      padding: 36px;
+      transition: border-color 0.3s;
+    }
+    .review-card:hover { border-color: rgba(30, 111, 255, 0.15); }
+    .review-stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 16px; letter-spacing: 2px; }
+    .review-text {
+      color: var(--gray-100);
+      font-size: 0.95rem;
+      line-height: 1.8;
+      font-weight: 300;
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+    .review-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .review-avatar {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: var(--blue-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--blue);
+    }
+    .review-name {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .review-loc { font-size: 0.75rem; color: var(--gray-600); }
+
+    /* ── HOURS / LOCATION ── */
+    .location {
+      padding: 100px 0;
+      background: var(--black-light);
+    }
+    .location-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+    }
+    .hours-card {
+      background: var(--black-card);
+      border: 1px solid rgba(30, 111, 255, 0.06);
+      border-radius: var(--radius);
+      padding: 40px;
+    }
+    .hours-card h3 {
+      font-size: 1.2rem;
+      letter-spacing: 3px;
+      margin-bottom: 24px;
+      color: var(--blue);
+    }
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      font-size: 0.9rem;
+    }
+    .hours-day { color: var(--gray-400); font-weight: 300; }
+    .hours-time { color: var(--white); font-weight: 500; }
+    .map-placeholder {
+      background: linear-gradient(135deg, #0A0A14, #0D1220);
+      border: 1px solid rgba(30, 111, 255, 0.06);
+      border-radius: var(--radius);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      color: var(--gray-600);
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      min-height: 300px;
+    }
+    .map-pin { font-size: 2rem; }
+    @media (max-width: 768px) {
+      .location-inner { grid-template-columns: 1fr; }
+    }
+
+    /* ── CTA BANNER ── */
+    .cta-banner {
+      padding: 80px 0;
+      background: linear-gradient(135deg, var(--blue-dark) 0%, #050A18 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-banner::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle at 50% 0%, rgba(30, 111, 255, 0.15) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .cta-banner h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: 6px;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 1;
+    }
+    .cta-banner p {
+      color: var(--gray-400);
+      margin-bottom: 36px;
+      position: relative;
+      z-index: 1;
+      font-weight: 300;
+    }
+    .cta-banner .btn-primary { position: relative; z-index: 1; }
+
+    /* ── CONTACT ── */
+    .contact {
+      padding: 100px 0;
+      background: var(--black);
+    }
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+    }
+    .contact-form { display: flex; flex-direction: column; gap: 16px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gray-400);
+    }
+    .form-group input, .form-group select, .form-group textarea {
+      padding: 14px 16px;
+      background: var(--black-card);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 4px;
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      transition: border-color 0.3s;
+      outline: none;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(30, 111, 255, 0.1);
+    }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-group select { cursor: pointer; }
+    .form-submit { margin-top: 8px; }
+    .form-submit .btn-primary { width: 100%; justify-content: center; border: none; font-size: 1rem; padding: 16px; }
+    .form-micro { text-align: center; color: var(--gray-600); font-size: 0.8rem; margin-top: 8px; }
+
+    .contact-info { display: flex; flex-direction: column; gap: 32px; }
+    .contact-block h4 {
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      color: var(--blue);
+      margin-bottom: 12px;
+    }
+    .contact-block p {
+      color: var(--gray-400);
+      font-weight: 300;
+      line-height: 1.8;
+    }
+    .contact-block a { color: var(--white); transition: color 0.3s; }
+    .contact-block a:hover { color: var(--blue); }
+
+    .social-links { display: flex; gap: 16px; margin-top: 8px; }
+    .social-link {
+      width: 44px; height: 44px;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gray-400);
+      font-size: 0.85rem;
+      transition: all 0.3s;
+    }
+    .social-link:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+      background: rgba(30, 111, 255, 0.05);
+    }
+
+    @media (max-width: 768px) {
+      .contact-inner { grid-template-columns: 1fr; }
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      padding: 40px 0;
+      border-top: 1px solid rgba(255,255,255,0.04);
+      background: var(--black);
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-copy { color: var(--gray-600); font-size: 0.8rem; font-weight: 300; }
+    .footer-credit { color: var(--gray-600); font-size: 0.75rem; }
+    .footer-credit a { color: var(--blue); transition: color 0.3s; }
+    .footer-credit a:hover { color: var(--blue-glow); }
+
+    /* ── ANIMATIONS ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.2s; }
+    .delay-3 { transition-delay: 0.3s; }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="#" class="logo">
+        <div class="logo-placeholder">A</div>
+        <div class="logo-text">A-<span>List</span></div>
+      </a>
+      <nav class="nav-desktop">
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact" class="btn-book">Book Now</a>
+      </nav>
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav -->
+  <nav class="nav-mobile" id="mobileNav">
+    <a href="#services" onclick="closeMenu()">Services</a>
+    <a href="#gallery" onclick="closeMenu()">Gallery</a>
+    <a href="#about" onclick="closeMenu()">About</a>
+    <a href="#reviews" onclick="closeMenu()">Reviews</a>
+    <a href="#contact" onclick="closeMenu()">Book Now</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-hex"></div>
+    <div class="hero-content">
+      <div class="hero-badge">Premium Barbershop</div>
+      <h1>THE WORLD<br>IS <span class="accent">YOURS</span></h1>
+      <p class="hero-sub">Premium cuts, fades & grooming for men who demand the best. Walk-ins welcome.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary">Book Appointment</a>
+        <a href="tel:+16195550000" class="btn-outline">Call Now</a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      Scroll
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-label fade-in">What We Do</div>
+      <h2 class="section-title fade-in">Services</h2>
+      <div class="section-divider fade-in"></div>
+      <p class="section-sub fade-in">Every cut is a craft. Every visit is an experience.</p>
+      <div class="services-grid">
+        <div class="service-card fade-in delay-1">
+          <div class="service-icon">&#9986;</div>
+          <h3>Haircuts</h3>
+          <p>Classic cuts, skin fades, tapers, and textured crops — tailored to your style. Hot towel finish included.</p>
+          <span class="service-price">From $35</span>
+        </div>
+        <div class="service-card fade-in delay-2">
+          <div class="service-icon">&#128136;</div>
+          <h3>Beard Grooming</h3>
+          <p>Precision beard shaping, hot towel treatment, and premium oil finish. Sharp lines every time.</p>
+          <span class="service-price">From $20</span>
+        </div>
+        <div class="service-card fade-in delay-3">
+          <div class="service-icon">&#9731;</div>
+          <h3>Shaves</h3>
+          <p>Old-school straight razor shave with hot lather, steamed towels, and aftershave balm. The full experience.</p>
+          <span class="service-price">From $30</span>
+        </div>
+        <div class="service-card fade-in delay-1">
+          <div class="service-icon">&#10024;</div>
+          <h3>VIP Package</h3>
+          <p>Haircut, beard shape, hot towel, scalp massage, and eyebrow cleanup. The complete A-List treatment.</p>
+          <span class="service-price">From $65</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <div class="section-label fade-in">Our Work</div>
+      <h2 class="section-title fade-in">Gallery</h2>
+      <div class="section-divider fade-in"></div>
+      <p class="section-sub fade-in">Clean cuts. Sharp lines. Every. Single. Time.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item fade-in">
+        <div class="gallery-placeholder">Skin Fade</div>
+        <div class="gallery-overlay"><span>Skin Fade</span></div>
+      </div>
+      <div class="gallery-item fade-in">
+        <div class="gallery-placeholder">Beard Shape</div>
+        <div class="gallery-overlay"><span>Beard Shape-Up</span></div>
+      </div>
+      <div class="gallery-item fade-in">
+        <div class="gallery-placeholder">Taper</div>
+        <div class="gallery-overlay"><span>Low Taper</span></div>
+      </div>
+      <div class="gallery-item fade-in">
+        <div class="gallery-placeholder">Textured Crop</div>
+        <div class="gallery-overlay"><span>Textured Crop</span></div>
+      </div>
+      <div class="gallery-item fade-in">
+        <div class="gallery-placeholder">Line Up</div>
+        <div class="gallery-overlay"><span>Line Up</span></div>
+      </div>
+      <div class="gallery-item fade-in">
+        <div class="gallery-placeholder">VIP Package</div>
+        <div class="gallery-overlay"><span>VIP Package</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-inner">
+        <div class="about-image fade-in">
+          <div class="about-image-placeholder">
+            <span style="font-size: 2rem;">&#128136;</span>
+            <span>Shop Photo</span>
+          </div>
+        </div>
+        <div class="about-content fade-in">
+          <div class="section-label" style="text-align:left">Our Story</div>
+          <h2>More Than<br>A <span>Barbershop</span></h2>
+          <p>A-List isn't just where you get a cut — it's where you level up. Premium atmosphere, skilled barbers, and an experience that keeps you coming back.</p>
+          <p>Every detail matters. From the hex lights to the hot towels, we built this place for guys who take their look seriously.</p>
+          <div class="about-stats">
+            <div class="about-stat">
+              <h4>5.0</h4>
+              <p>Google Rating</p>
+            </div>
+            <div class="about-stat">
+              <h4>1K+</h4>
+              <p>Happy Clients</p>
+            </div>
+            <div class="about-stat">
+              <h4>A-List</h4>
+              <p>Experience</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews" id="reviews">
+    <div class="container">
+      <div class="section-label fade-in">Testimonials</div>
+      <h2 class="section-title fade-in">What They Say</h2>
+      <div class="section-divider fade-in"></div>
+      <p class="section-sub fade-in">Don't take our word for it — hear from the A-List.</p>
+      <div class="reviews-grid">
+        <div class="review-card fade-in delay-1">
+          <div class="review-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+          <p class="review-text">"Best barbershop I've been to. The vibe is unmatched — Scarface mural, hex lights, the whole setup is clean. My fade was perfect. I'm never going anywhere else."</p>
+          <div class="review-author">
+            <div class="review-avatar">MR</div>
+            <div>
+              <div class="review-name">Marcus R.</div>
+              <div class="review-loc">San Diego, CA</div>
+            </div>
+          </div>
+        </div>
+        <div class="review-card fade-in delay-2">
+          <div class="review-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+          <p class="review-text">"Walked in with no appointment and they still got me right. The attention to detail is crazy — lined me up perfect. Plus the shop looks like a movie set."</p>
+          <div class="review-author">
+            <div class="review-avatar">JL</div>
+            <div>
+              <div class="review-name">Jason L.</div>
+              <div class="review-loc">Chula Vista, CA</div>
+            </div>
+          </div>
+        </div>
+        <div class="review-card fade-in delay-3">
+          <div class="review-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+          <p class="review-text">"VIP package is worth every dollar. Haircut, beard, hot towel, scalp massage — I left feeling like a new man. These guys take pride in their craft."</p>
+          <div class="review-author">
+            <div class="review-avatar">DT</div>
+            <div>
+              <div class="review-name">Danny T.</div>
+              <div class="review-loc">National City, CA</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2 class="fade-in">Ready to Look<br>Your Best?</h2>
+      <p class="fade-in">Walk-ins welcome. Appointments guaranteed.</p>
+      <a href="#contact" class="btn-primary fade-in">Book Your Spot</a>
+    </div>
+  </section>
+
+  <!-- HOURS & LOCATION -->
+  <section class="location" id="location">
+    <div class="container">
+      <div class="section-label fade-in">Find Us</div>
+      <h2 class="section-title fade-in">Hours & Location</h2>
+      <div class="section-divider fade-in"></div>
+      <div class="location-inner">
+        <div class="hours-card fade-in">
+          <h3>Hours</h3>
+          <div class="hours-row"><span class="hours-day">Monday</span><span class="hours-time">9:00 AM — 7:00 PM</span></div>
+          <div class="hours-row"><span class="hours-day">Tuesday</span><span class="hours-time">9:00 AM — 7:00 PM</span></div>
+          <div class="hours-row"><span class="hours-day">Wednesday</span><span class="hours-time">9:00 AM — 7:00 PM</span></div>
+          <div class="hours-row"><span class="hours-day">Thursday</span><span class="hours-time">9:00 AM — 7:00 PM</span></div>
+          <div class="hours-row"><span class="hours-day">Friday</span><span class="hours-time">9:00 AM — 8:00 PM</span></div>
+          <div class="hours-row"><span class="hours-day">Saturday</span><span class="hours-time">8:00 AM — 6:00 PM</span></div>
+          <div class="hours-row" style="border:none"><span class="hours-day">Sunday</span><span class="hours-time">Closed</span></div>
+        </div>
+        <div class="fade-in" style="border-radius:var(--radius);overflow:hidden;min-height:300px;">
+          <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=3632+University+Ave,San+Diego,CA+92104&zoom=15" width="100%" height="300" style="border:0;filter:invert(90%) hue-rotate(180deg) brightness(0.8) contrast(1.2);" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-label fade-in">Get In Touch</div>
+      <h2 class="section-title fade-in">Book Your Appointment</h2>
+      <div class="section-divider fade-in"></div>
+      <div class="contact-inner">
+        <form class="contact-form fade-in" onsubmit="event.preventDefault()">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" placeholder="(619) 000-0000">
+          </div>
+          <div class="form-group">
+            <label for="barber">Your Barber</label>
+            <select id="barber">
+              <option value="">No Preference</option>
+              <option value="omar">Omar</option>
+              <option value="anthony">Anthony</option>
+              <option value="eddy">Eddy</option>
+              <option value="alex">Alex</option>
+              <option value="ian">Ian</option>
+              <option value="beltran">Beltran</option>
+              <option value="adrian">Adrian</option>
+              <option value="fernee">Fernee</option>
+              <option value="anthony-2">Anthony M.</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="service">Service</label>
+            <select id="service">
+              <option value="">Select a service</option>
+              <option value="haircut">Haircut</option>
+              <option value="beard">Beard Grooming</option>
+              <option value="shave">Straight Razor Shave</option>
+              <option value="vip">VIP Package</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Preferred Day & Time</label>
+            <textarea id="message" placeholder="e.g. Saturday afternoon"></textarea>
+          </div>
+          <div class="form-submit">
+            <button type="submit" class="btn-primary">Book Appointment</button>
+          </div>
+          <p class="form-micro">Walk-ins always welcome. Appointments guarantee your spot.</p>
+        </form>
+        <div class="contact-info fade-in">
+          <div class="contact-block">
+            <h4>Phone</h4>
+            <p><a href="tel:+16195550000">(619) 555-0000</a></p>
+          </div>
+          <div class="contact-block">
+            <h4>Location</h4>
+            <p>3632 University Ave<br>San Diego, CA 92104</p>
+          </div>
+          <div class="contact-block">
+            <h4>Follow Us</h4>
+            <div class="social-links">
+              <a href="#" class="social-link" title="Instagram">IG</a>
+              <a href="#" class="social-link" title="TikTok">TT</a>
+              <a href="#" class="social-link" title="Facebook">FB</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-copy">&copy; 2026 A-List Barbershop. All rights reserved.</div>
+        <div class="footer-credit">Website by <a href="https://blueprintdigitalsd.com" target="_blank">Blueprint Digital</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Sticky header
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Mobile menu
+    function toggleMenu() {
+      document.getElementById('hamburger').classList.toggle('active');
+      document.getElementById('mobileNav').classList.toggle('active');
+      document.body.style.overflow = document.getElementById('mobileNav').classList.contains('active') ? 'hidden' : '';
+    }
+    function closeMenu() {
+      document.getElementById('hamburger').classList.remove('active');
+      document.getElementById('mobileNav').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
