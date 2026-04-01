@@ -90,27 +90,7 @@
       align-items: center;
       gap: 12px;
     }
-    .logo-placeholder {
-      width: 44px; height: 44px;
-      border: 2px solid var(--blue);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Oswald', sans-serif;
-      font-weight: 700;
-      font-size: 16px;
-      color: var(--blue);
-      background: rgba(30, 111, 255, 0.08);
-    }
-    .logo-text {
-      font-family: 'Oswald', sans-serif;
-      font-size: 1.3rem;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-    }
-    .logo-text span { color: var(--blue); }
+    .logo img { height: 48px; }
 
     .nav-desktop { display: flex; align-items: center; gap: 32px; }
     .nav-desktop a {
@@ -184,9 +164,10 @@
     .hero-bg {
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0.95) 100%),
-                  url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90" opacity="0.03">💈</text></svg>');
-      background-size: cover, 200px;
+      background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.92) 100%),
+                  url('images/barbershop-interior.jpg');
+      background-size: cover;
+      background-position: center;
     }
     /* Hex light effect */
     .hero-hex {
@@ -774,8 +755,7 @@
   <header class="header" id="header">
     <div class="header-inner">
       <a href="#" class="logo">
-        <div class="logo-placeholder">A</div>
-        <div class="logo-text">A-<span>List</span></div>
+        <img src="images/alist-logo.svg" alt="A-List Barbershop" style="height:48px;">
       </a>
       <nav class="nav-desktop">
         <a href="#services">Services</a>
