@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>American Plumbing Co | 5-Star Plumber in San Diego Since 1983</title>
+  <meta name="description" content="American Plumbing Co — San Diego's 5-Star rated plumber since 1983. 40+ years experience, A+ BBB, 360+ reviews. Call Charlie directly: (619) 723-1114. Free estimates." />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <meta property="og:title" content="American Plumbing Co | Demo by Blueprint Digital" />
+  <meta property="og:description" content="Website demo built by Blueprint Digital for American Plumbing Co." />
+  <meta property="og:image" content="https://blueprintdigitalsd.com/og-image.png" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ===== WATERMARK ===== */
+    .hero-visual, .split-img, .gallery-card { position: relative; overflow: hidden; }
+    .hero-visual::after, .split-img::after, .gallery-card::after {
+      content: '';
+      position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='120'%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14' font-weight='700' fill='white' opacity='0.12' transform='rotate(-30 150 60)'%3EBLUEPRINTDIGITALSD.COM%3C/text%3E%3C/svg%3E");
+      background-repeat: repeat; pointer-events: none; z-index: 2;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      color: #1a1a1a;
+      background: #FAFAF8;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    button { border: none; cursor: pointer; font-family: inherit; }
+
+    :root {
+      --ink: #1a1a1a;
+      --warm: #F5F2ED;
+      --cream: #FAFAF8;
+      --accent: #B8382C;
+      --accent-dark: #922B22;
+      --gold: #C9943E;
+      --navy: #1B2D5B;
+      --slate: #5A6575;
+      --border: #E5E1DB;
+      --radius: 16px;
+      --shadow: 0 2px 24px rgba(0,0,0,0.06);
+    }
+
+    h1, h2, h3 { font-family: 'DM Serif Display', serif; font-weight: 400; line-height: 1.15; }
+
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* ===== DEMO STRIP ===== */
+    .demo-strip {
+      background: var(--ink);
+      color: rgba(255,255,255,0.85);
+      text-align: center;
+      padding: 0.6rem 1rem;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+    .demo-strip a { color: var(--gold); text-decoration: underline; font-weight: 600; }
+
+    /* ===== TOP BAR ===== */
+    .top-bar {
+      background: var(--accent);
+      color: #fff;
+      text-align: center;
+      padding: 0.65rem 1rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+    .top-bar a { color: #fff; text-decoration: underline; font-weight: 700; }
+
+    /* ===== NAV ===== */
+    .nav-wrap {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 100;
+      transition: box-shadow 0.3s ease;
+    }
+    .nav-wrap.scrolled { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.8rem 0;
+    }
+    .nav-brand {
+      display: flex; align-items: center; gap: 0.7rem;
+    }
+    .brand-mark {
+      width: 42px; height: 42px;
+      background: var(--navy);
+      border-radius: 8px;
+      display: grid; place-items: center;
+      color: #fff; font-weight: 700; font-size: 0.85rem;
+      letter-spacing: -0.5px;
+    }
+    .brand-text {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.15rem;
+      color: var(--ink);
+      line-height: 1.15;
+    }
+    .brand-text small {
+      display: block;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.6rem;
+      font-weight: 600;
+      color: var(--slate);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+    .nav-links { display: flex; gap: 1.75rem; align-items: center; }
+    .nav-links a { font-size: 0.88rem; font-weight: 500; color: var(--slate); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-phone {
+      font-weight: 700; font-size: 0.95rem; color: var(--ink);
+      display: flex; align-items: center; gap: 0.4rem;
+    }
+    .nav-cta {
+      background: var(--accent); color: #fff;
+      padding: 0.6rem 1.4rem;
+      border-radius: 50px;
+      font-weight: 600; font-size: 0.85rem;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .nav-cta:hover { background: var(--accent-dark); transform: translateY(-1px); }
+    .hamburger { display: none; background: none; flex-direction: column; gap: 5px; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2.5px; background: var(--ink); border-radius: 2px; }
+
+    /* Mobile overlay */
+    .mob-nav {
+      display: none; position: fixed; inset: 0; background: #fff; z-index: 200;
+      flex-direction: column; padding: 5rem 2rem 2rem; gap: 0.25rem;
+    }
+    .mob-nav.open { display: flex; }
+    .mob-nav a { font-size: 1.3rem; font-weight: 600; padding: 0.9rem 0; border-bottom: 1px solid var(--border); color: var(--ink); }
+    .mob-close { position: absolute; top: 1.2rem; right: 1.2rem; background: none; font-size: 2rem; color: var(--ink); }
+
+    /* ===== HERO ===== */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 580px;
+      align-items: center;
+      gap: 3rem;
+      padding: 4rem 0;
+    }
+    .hero-text { max-width: 540px; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--warm);
+      border: 1px solid var(--border);
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      font-size: 0.8rem; font-weight: 600;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+    .hero-eyebrow span { color: var(--slate); }
+    .hero h1 { font-size: clamp(2.4rem, 4.5vw, 3.4rem); margin-bottom: 1.25rem; color: var(--ink); }
+    .hero h1 em { font-style: normal; color: var(--accent); }
+    .hero-p { font-size: 1.1rem; color: var(--slate); margin-bottom: 2rem; max-width: 480px; line-height: 1.75; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; }
+    .btn-primary {
+      background: var(--accent); color: #fff;
+      padding: 0.9rem 2rem;
+      border-radius: 50px;
+      font-weight: 700; font-size: 0.95rem;
+      transition: 0.2s;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+    }
+    .btn-primary:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(184,56,44,0.3); }
+    .btn-ghost {
+      padding: 0.9rem 2rem;
+      border-radius: 50px;
+      font-weight: 700; font-size: 0.95rem;
+      border: 2px solid var(--border);
+      color: var(--ink);
+      transition: 0.2s;
+    }
+    .btn-ghost:hover { border-color: var(--ink); transform: translateY(-2px); }
+    .hero-visual {
+      border-radius: var(--radius);
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      background: url('https://images.pexels.com/photos/6419128/pexels-photo-6419128.jpeg?auto=compress&cs=tinysrgb&w=900') center/cover no-repeat;
+      position: relative;
+    }
+    .hero-visual-card {
+      position: absolute;
+      bottom: 1.25rem; left: 1.25rem;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      display: flex; align-items: center; gap: 0.75rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+      z-index: 3;
+    }
+    .hvc-stars { color: #E8A838; font-size: 1rem; letter-spacing: 1px; }
+    .hvc-text { font-size: 0.82rem; font-weight: 600; color: var(--ink); }
+    .hvc-text span { display: block; font-size: 0.72rem; font-weight: 400; color: var(--slate); }
+
+    /* ===== CREDENTIAL STRIP ===== */
+    .cred-strip { background: var(--navy); padding: 2.5rem 0; }
+    .cred-grid {
+      display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5rem;
+      text-align: center; color: #fff;
+    }
+    .cred-item .cred-big {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.8rem;
+      color: var(--gold);
+    }
+    .cred-item .cred-label { font-size: 0.78rem; opacity: 0.7; margin-top: 0.15rem; }
+
+    /* ===== SECTIONS SHARED ===== */
+    .sec { padding: 5rem 0; }
+    .sec-label {
+      font-size: 0.72rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 3px;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .sec-title { font-size: clamp(1.8rem, 3.5vw, 2.4rem); margin-bottom: 0.75rem; color: var(--ink); }
+    .sec-sub { font-size: 1.05rem; color: var(--slate); max-width: 600px; }
+    .sec-sub.center { margin: 0 auto; text-align: center; }
+    .sec-head { margin-bottom: 3rem; }
+    .sec-head.center { text-align: center; }
+
+    /* ===== SERVICES — BENTO GRID ===== */
+    .bento {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: minmax(200px, auto);
+      gap: 1.25rem;
+    }
+    .bento-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .bento-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .bento-card.featured {
+      grid-column: span 2;
+      background: var(--navy);
+      color: #fff;
+      border: none;
+    }
+    .bento-card.featured .bento-label { color: var(--gold); }
+    .bento-card.featured p { color: rgba(255,255,255,0.75); }
+    .bento-card.accent-bg {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+    }
+    .bento-card.accent-bg p { color: rgba(255,255,255,0.8); }
+    .bento-card.accent-bg .bento-label { color: rgba(255,255,255,0.6); }
+    .bento-icon { font-size: 2rem; margin-bottom: 1rem; }
+    .bento-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--slate); margin-bottom: 0.4rem; }
+    .bento-card h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+    .bento-card p { font-size: 0.9rem; color: var(--slate); line-height: 1.6; }
+
+    /* ===== THE CHARLIE DIFFERENCE (split) ===== */
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .split-img {
+      border-radius: var(--radius); overflow: hidden;
+      aspect-ratio: 5/4;
+    }
+    .split-img img { width: 100%; height: 100%; object-fit: cover; }
+    .split-content .check-list { margin-top: 1.5rem; display: grid; gap: 0.75rem; }
+    .check-item {
+      display: flex; align-items: flex-start; gap: 0.75rem;
+      font-size: 0.95rem; color: var(--ink);
+    }
+    .check-dot {
+      width: 24px; height: 24px; flex-shrink: 0;
+      background: var(--accent);
+      border-radius: 50%;
+      display: grid; place-items: center;
+      color: #fff; font-size: 0.7rem; font-weight: 700;
+      margin-top: 2px;
+    }
+
+    /* ===== REVIEWS — MASONRY-STYLE ===== */
+    .reviews-sec { background: var(--warm); }
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+    .review-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .review-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+    .review-source-tag {
+      font-size: 0.68rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1.5px;
+      color: var(--slate);
+      margin-bottom: 0.6rem;
+    }
+    .review-stars { color: #E8A838; font-size: 0.95rem; letter-spacing: 2px; margin-bottom: 0.75rem; }
+    .review-card blockquote { font-size: 0.92rem; color: var(--slate); line-height: 1.7; font-style: italic; margin-bottom: 1rem; }
+    .review-author { font-weight: 700; font-size: 0.88rem; color: var(--ink); }
+    .review-loc { font-size: 0.78rem; color: var(--slate); }
+    .review-card.highlight {
+      background: var(--navy);
+      color: #fff;
+      border: none;
+    }
+    .review-card.highlight blockquote { color: rgba(255,255,255,0.8); }
+    .review-card.highlight .review-author { color: #fff; }
+    .review-card.highlight .review-loc { color: rgba(255,255,255,0.6); }
+    .review-card.highlight .review-source-tag { color: var(--gold); }
+
+    /* ===== SERVICE AREAS — PILL CLOUD ===== */
+    .areas-cloud {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem;
+      margin-top: 2rem;
+    }
+    .area-pill {
+      padding: 0.55rem 1.3rem;
+      border-radius: 50px;
+      font-size: 0.88rem; font-weight: 500;
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--ink);
+      transition: 0.25s;
+    }
+    .area-pill:hover { background: var(--navy); color: #fff; border-color: var(--navy); }
+
+    /* ===== FAQ ===== */
+    .faq-list { max-width: 720px; margin: 0 auto; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-q {
+      width: 100%; text-align: left; background: none;
+      padding: 1.25rem 0;
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.1rem; color: var(--ink);
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .faq-q .arr { transition: transform 0.3s; font-size: 1.1rem; color: var(--accent); font-family: 'Space Grotesk', sans-serif; }
+    .faq-item.open .faq-q .arr { transform: rotate(45deg); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+    .faq-a-inner { padding-bottom: 1.25rem; font-size: 0.95rem; color: var(--slate); line-height: 1.7; }
+
+    /* ===== CTA BANNER ===== */
+    .cta-banner {
+      background: var(--accent);
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 3.5rem;
+      text-align: center;
+      margin: 0 1.5rem;
+    }
+    .cta-banner h2 { color: #fff; margin-bottom: 0.75rem; }
+    .cta-banner p { color: rgba(255,255,255,0.85); margin-bottom: 2rem; font-size: 1.05rem; }
+    .cta-banner .btn-white {
+      background: #fff; color: var(--accent);
+      padding: 0.9rem 2.2rem; border-radius: 50px;
+      font-weight: 700; font-size: 0.95rem;
+      transition: 0.2s; display: inline-flex; align-items: center; gap: 0.5rem;
+    }
+    .cta-banner .btn-white:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0,0,0,0.15); }
+
+    /* ===== CONTACT ===== */
+    .contact-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 3rem; align-items: start; }
+    .contact-form-wrap {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+    }
+    .contact-form-wrap h3 { font-size: 1.4rem; margin-bottom: 0.25rem; }
+    .contact-form-wrap .micro { font-size: 0.85rem; color: var(--slate); margin-bottom: 1.5rem; }
+    .form-group { margin-bottom: 1rem; }
+    .form-group label { display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 0.3rem; }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; padding: 0.75rem 1rem;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.95rem;
+      transition: border-color 0.2s;
+      background: var(--cream);
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--accent); }
+    .form-group textarea { resize: vertical; min-height: 90px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+    .contact-cards { display: flex; flex-direction: column; gap: 1.25rem; }
+    .c-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      display: flex; gap: 1rem; align-items: flex-start;
+      transition: 0.2s;
+    }
+    .c-card:hover { box-shadow: var(--shadow); }
+    .c-card-icon {
+      width: 44px; height: 44px;
+      background: var(--warm);
+      border-radius: 10px;
+      display: grid; place-items: center;
+      flex-shrink: 0; font-size: 1.2rem;
+    }
+    .c-card h4 { font-family: 'Space Grotesk', sans-serif; font-size: 0.92rem; font-weight: 700; margin-bottom: 0.15rem; }
+    .c-card p, .c-card a { font-size: 0.88rem; color: var(--slate); }
+    .c-card a:hover { color: var(--accent); }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--ink);
+      color: rgba(255,255,255,0.7);
+      padding: 2.5rem 0;
+      margin-top: 5rem;
+    }
+    .footer-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-brand { font-family: 'DM Serif Display', serif; font-size: 1.1rem; color: #fff; }
+    .footer-mid { text-align: center; font-size: 0.82rem; }
+    .footer-mid a { color: var(--gold); text-decoration: underline; }
+    .footer-right { text-align: right; font-size: 0.82rem; }
+    .footer-right a { color: var(--gold); }
+
+    /* ===== ANIMATIONS ===== */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .bento { grid-template-columns: repeat(2, 1fr); }
+      .bento-card.featured { grid-column: span 2; }
+      .review-grid { grid-template-columns: repeat(2, 1fr); }
+      .cred-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .nav-links, .nav-phone, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .hero { grid-template-columns: 1fr; gap: 2rem; padding: 2.5rem 0; }
+      .hero-visual { aspect-ratio: 16/9; }
+      .bento { grid-template-columns: 1fr; }
+      .bento-card.featured { grid-column: span 1; }
+      .split { grid-template-columns: 1fr; gap: 2rem; }
+      .split-img { order: -1; }
+      .review-grid { grid-template-columns: 1fr; }
+      .cred-grid { grid-template-columns: repeat(2, 1fr); }
+      .contact-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .cta-banner { margin: 0; border-radius: 0; padding: 2.5rem 1.5rem; }
+      .footer-inner { flex-direction: column; text-align: center; }
+      .footer-right { text-align: center; }
+    }
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 2rem; }
+      .cred-grid { grid-template-columns: 1fr 1fr; }
+      .areas-cloud { gap: 0.4rem; }
+      .area-pill { font-size: 0.8rem; padding: 0.45rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- DEMO STRIP -->
+<div class="demo-strip">
+  Free website demo by <a href="https://blueprintdigitalsd.com">Blueprint Digital</a> &mdash; websites + AI receptionists for San Diego contractors
+</div>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  Emergency? Call Charlie Now: <a href="tel:6197231114">(619) 723-1114</a> &mdash; A Licensed Plumber Answers Every Call
+</div>
+
+<!-- NAV -->
+<nav class="nav-wrap" id="navWrap">
+  <div class="wrap nav-inner">
+    <a href="#" class="nav-brand">
+      <div class="brand-mark">AP</div>
+      <div class="brand-text">American Plumbing Co.<small>San Diego &bull; Est. 1983</small></div>
+    </a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#difference">Why Us</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#areas">Areas</a>
+      <a href="#contact">Contact</a>
+      <a href="tel:6197231114" class="nav-phone">&#9742; (619) 723-1114</a>
+      <a href="#contact" class="nav-cta">Free Estimate</a>
+    </div>
+    <button class="hamburger" id="hamBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mob-nav" id="mobNav">
+  <button class="mob-close" id="mobClose">&times;</button>
+  <a href="#services" onclick="closeMob()">Services</a>
+  <a href="#difference" onclick="closeMob()">Why Us</a>
+  <a href="#reviews" onclick="closeMob()">Reviews</a>
+  <a href="#areas" onclick="closeMob()">Areas</a>
+  <a href="#contact" onclick="closeMob()">Contact</a>
+  <a href="tel:6197231114" onclick="closeMob()" style="color:var(--accent);font-weight:700;">&#9742; (619) 723-1114</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="sec" style="padding-bottom:0;">
+  <div class="wrap">
+    <div class="hero">
+      <div class="hero-text reveal">
+        <div class="hero-eyebrow">&#9733; 360+ Five-Star Reviews <span>&bull; Google &amp; Yelp</span></div>
+        <h1>Your San Diego plumber <em>since 1983.</em></h1>
+        <p class="hero-p">No call center. No runaround. When you call American Plumbing, a licensed plumber with 40+ years of experience picks up the phone. That's Charlie &mdash; and he still does every job himself.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn-primary">Get a Free Estimate &rarr;</a>
+          <a href="tel:6197231114" class="btn-ghost">Call (619) 723-1114</a>
+        </div>
+      </div>
+      <div class="hero-visual reveal">
+        <div class="hero-visual-card">
+          <div>
+            <div class="hvc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <div class="hvc-text">5.0 on Google<span>360+ verified reviews</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CREDENTIAL STRIP ===== -->
+<section class="cred-strip">
+  <div class="wrap">
+    <div class="cred-grid">
+      <div class="cred-item reveal"><div class="cred-big">40+</div><div class="cred-label">Years Experience</div></div>
+      <div class="cred-item reveal"><div class="cred-big">360+</div><div class="cred-label">5-Star Reviews</div></div>
+      <div class="cred-item reveal"><div class="cred-big">A+</div><div class="cred-label">BBB Rating</div></div>
+      <div class="cred-item reveal"><div class="cred-big">0</div><div class="cred-label">CSLB Complaints</div></div>
+      <div class="cred-item reveal"><div class="cred-big">#708829</div><div class="cred-label">CA License</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES BENTO ===== -->
+<section class="sec" id="services">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <div class="sec-label">Services</div>
+      <h2 class="sec-title">Everything your home's plumbing needs</h2>
+      <p class="sec-sub center">Free estimates on every job. 40+ years of getting it right the first time.</p>
+    </div>
+
+    <div class="bento">
+      <div class="bento-card featured reveal">
+        <div class="bento-icon">&#128167;</div>
+        <div class="bento-label">Most Requested</div>
+        <h3>Leak Repair &amp; Repiping</h3>
+        <p>Hidden leaks cause mold, water damage, and rising bills. We locate them fast and fix them right. For older homes, we upgrade to copper lines built to last 50+ years.</p>
+      </div>
+      <div class="bento-card reveal">
+        <div class="bento-icon">&#128293;</div>
+        <div class="bento-label">Install &amp; Repair</div>
+        <h3>Water Heaters</h3>
+        <p>Gas or electric, tank or tankless. Same-day installation available. Free estimates.</p>
+      </div>
+      <div class="bento-card reveal">
+        <div class="bento-icon">&#129527;</div>
+        <div class="bento-label">Clogs &amp; Backups</div>
+        <h3>Drain &amp; Sewer</h3>
+        <p>From simple snaking to full drain line replacement and two-way cleanout installations.</p>
+      </div>
+      <div class="bento-card accent-bg reveal">
+        <div class="bento-icon">&#127785;</div>
+        <div class="bento-label">7 Days a Week</div>
+        <h3>Emergency Plumbing</h3>
+        <p>Burst pipes, flooding, sewer backups. Call Charlie directly &mdash; open until 7 or 8 PM, including weekends.</p>
+      </div>
+      <div class="bento-card reveal">
+        <div class="bento-icon">&#128701;</div>
+        <div class="bento-label">Bathroom &amp; Kitchen</div>
+        <h3>Fixture &amp; Toilet Repair</h3>
+        <p>Running toilets, leaky faucets, shower valves. Fast, clean repairs in a single visit.</p>
+      </div>
+      <div class="bento-card reveal">
+        <div class="bento-icon">&#9889;</div>
+        <div class="bento-label">Protect Your Pipes</div>
+        <h3>Pressure Regulators</h3>
+        <p>High pressure damages pipes and appliances. We install and calibrate regulators to protect your system.</p>
+      </div>
+      <div class="bento-card reveal">
+        <div class="bento-icon">&#128736;</div>
+        <div class="bento-label">Full Access</div>
+        <h3>Shut-Off Valves</h3>
+        <p>Faulty shut-off valves turn minor repairs into emergencies. We replace them so you keep control.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== THE CHARLIE DIFFERENCE ===== -->
+<section class="sec" id="difference" style="background: var(--warm);">
+  <div class="wrap">
+    <div class="split">
+      <div class="split-img reveal">
+        <img src="https://images.pexels.com/photos/8486978/pexels-photo-8486978.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Licensed plumber at work in San Diego" loading="lazy" />
+      </div>
+      <div class="split-content reveal">
+        <div class="sec-label">The Charlie Difference</div>
+        <h2 class="sec-title">Not a franchise.<br>Not a call center.<br>Just a damn good plumber.</h2>
+        <p class="sec-sub" style="margin-bottom:0;">Charlie has been plumbing San Diego since 1983. Hotels, hospitals, custom homes, apartment buildings &mdash; he's done it all. When you call, he picks up. When you book, he shows up. The price he quotes is the price you pay.</p>
+        <div class="check-list">
+          <div class="check-item"><div class="check-dot">&#10003;</div><div><strong>You talk directly to the plumber.</strong> Not a dispatcher, not a receptionist &mdash; the person doing the work.</div></div>
+          <div class="check-item"><div class="check-dot">&#10003;</div><div><strong>P.H.C.C. Certified since 1984.</strong> Professionally trained, continuously educated for four decades.</div></div>
+          <div class="check-item"><div class="check-dot">&#10003;</div><div><strong>Zero complaints with CSLB.</strong> License #708829, clean record since day one.</div></div>
+          <div class="check-item"><div class="check-dot">&#10003;</div><div><strong>Hotels &amp; hospitals trust him.</strong> La Quinta Hotels, Sharp Medical Center Chula Vista, and thousands of San Diego homes.</div></div>
+          <div class="check-item"><div class="check-dot">&#10003;</div><div><strong>Wraps every copper pipe with insulation.</strong> He'd rather spend a little more and do an excellent job. Always has.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== REVIEWS ===== -->
+<section class="sec reviews-sec" id="reviews">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <div class="sec-label">Real Reviews</div>
+      <h2 class="sec-title">360+ five-star reviews can't be wrong</h2>
+      <p class="sec-sub center">Every one of these is from a real, verified customer on Google or Yelp.</p>
+    </div>
+
+    <div class="review-grid">
+      <div class="review-card highlight reveal">
+        <div class="review-source-tag">Google Review</div>
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"Christmas Day and here I am trying to find a plumber because a water pipe was leaking and flooding my garage. Charlie answered right away. He was at my house within two hours. The pricing was more than fair especially for coming out on a holiday."</blockquote>
+        <div class="review-author">Liz M.</div>
+        <div class="review-loc">San Diego, CA</div>
+      </div>
+
+      <div class="review-card reveal">
+        <div class="review-source-tag">Google Review</div>
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"Thank goodness for Charlie &mdash; he saved us from a flooding disaster! Washing machine backing up into the laundry room AND both kitchen sinks. He showed up within 45 minutes and solved it in under 2 hours at a reasonable price."</blockquote>
+        <div class="review-author">Aislinn Renee</div>
+        <div class="review-loc">San Diego, CA</div>
+      </div>
+
+      <div class="review-card reveal">
+        <div class="review-source-tag">Yelp Review</div>
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"If you need an HONEST, EXPERIENCED plumber, Charlie is your man! Found and replaced the corroded pipe in an older home. I appreciate a professional who knows his stuff and gives it to you straight!"</blockquote>
+        <div class="review-author">Frieda M.</div>
+        <div class="review-loc">San Diego, CA</div>
+      </div>
+
+      <div class="review-card reveal">
+        <div class="review-source-tag">Google Review</div>
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"Punctual, courteous, extremely knowledgeable. Explained everything clearly, completed the work efficiently, and showed true professionalism throughout. Highly recommend American Plumbing."</blockquote>
+        <div class="review-author">Chad Hagedorn</div>
+        <div class="review-loc">Mission Valley, CA</div>
+      </div>
+
+      <div class="review-card highlight reveal">
+        <div class="review-source-tag">Google Review</div>
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"My kitchen sink was overflowing. Charlie was very responsive, timely, courteous. Did a great job and also corrected a mistake from a previous plumber. I will definitely use his services again."</blockquote>
+        <div class="review-author">John Z.</div>
+        <div class="review-loc">Mission Valley, CA</div>
+      </div>
+
+      <div class="review-card reveal">
+        <div class="review-source-tag">Yelp Review</div>
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"Charlie is absolutely fantastic! We were in a bind with a major leak in North Park. He's professional, efficient, and we were instantly at ease. Knew exactly how to fix it."</blockquote>
+        <div class="review-author">Erin W.</div>
+        <div class="review-loc">North Park, CA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICE AREAS ===== -->
+<section class="sec" id="areas">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <div class="sec-label">Service Area</div>
+      <h2 class="sec-title">Serving all of San Diego</h2>
+      <p class="sec-sub center">Fast response times, transparent pricing, and 40+ years of local expertise &mdash; wherever you are.</p>
+    </div>
+    <div class="areas-cloud reveal">
+      <span class="area-pill">Downtown</span>
+      <span class="area-pill">North Park</span>
+      <span class="area-pill">University Heights</span>
+      <span class="area-pill">Pacific Beach</span>
+      <span class="area-pill">Point Loma</span>
+      <span class="area-pill">Ocean Beach</span>
+      <span class="area-pill">Clairemont</span>
+      <span class="area-pill">Allied Gardens</span>
+      <span class="area-pill">Del Cerro</span>
+      <span class="area-pill">Tierrasanta</span>
+      <span class="area-pill">Mission Valley</span>
+      <span class="area-pill">Golden Hill</span>
+      <span class="area-pill">Talmadge</span>
+      <span class="area-pill">Chula Vista</span>
+      <span class="area-pill">National City</span>
+      <span class="area-pill">Paradise Hills</span>
+      <span class="area-pill">Logan Heights</span>
+      <span class="area-pill">La Mesa</span>
+      <span class="area-pill">Lemon Grove</span>
+      <span class="area-pill">Spring Valley</span>
+      <span class="area-pill">El Cajon</span>
+      <span class="area-pill">Serra Mesa</span>
+      <span class="area-pill">Oak Park</span>
+      <span class="area-pill">Fairmont Park</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="sec" style="background: var(--warm);">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <div class="sec-label">FAQ</div>
+      <h2 class="sec-title">Common questions</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-q">Are you actually affordable? <span class="arr">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Been plumbing since 1983. Worked on homes, hotels, and hospitals. No big-company overhead means better prices &mdash; just fair pricing from someone who's done this for 40+ years. Free estimates on every job.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Do you give free estimates? <span class="arr">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Yes, always. Call Charlie directly at (619) 723-1114 and he'll come out to assess the job at no charge. No obligation, no pressure.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What are your hours? <span class="arr">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Open 7 days a week, usually until 7:00 or 8:00 PM. For emergencies, call anytime &mdash; Charlie answers his phone directly, not a call center.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">My water pressure is too low / too high &mdash; can you fix it? <span class="arr">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Absolutely. We install and replace water pressure regulators that protect your pipes, appliances, and fixtures. We calibrate the flow so you don't get leaks, noise, or stress on your system.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Why does my shower keep switching from hot to cold? <span class="arr">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Usually a worn-out shower valve or mixing cartridge. We specialize in shower valve repair &mdash; we'll diagnose it and fix it so your water runs at a consistent temperature.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">My toilet keeps running. Is that a big deal? <span class="arr">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">It wastes water and money every day it runs. Usually it's a faulty fill valve or flapper &mdash; we can fix it in a single visit. The longer you wait, the higher the water bill.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA BANNER ===== -->
+<section class="sec" style="padding-bottom: 0;">
+  <div class="cta-banner reveal">
+    <h2>Ready for honest plumbing?</h2>
+    <p>Free estimates. Fair pricing. A licensed plumber who answers the phone.</p>
+    <a href="tel:6197231114" class="btn-white">Call Charlie: (619) 723-1114 &rarr;</a>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="sec" id="contact">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <div class="sec-label">Contact</div>
+      <h2 class="sec-title">Get your free estimate</h2>
+      <p class="sec-sub center">Fill out the form or just call. Charlie &mdash; not a call center &mdash; will get back to you.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-form-wrap reveal">
+        <h3>Request a Free Estimate</h3>
+        <p class="micro">No obligation. Takes 30 seconds.</p>
+        <form onsubmit="event.preventDefault(); alert('Thank you! Charlie will call you shortly.');">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" placeholder="John Smith" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" placeholder="(619) 555-0000" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="john@example.com" />
+          </div>
+          <div class="form-group">
+            <label for="service">Service Needed</label>
+            <select id="service">
+              <option value="">Select a service...</option>
+              <option>Leak Repair</option>
+              <option>Water Heater</option>
+              <option>Drain / Sewer</option>
+              <option>Copper Repiping</option>
+              <option>Emergency / Burst Pipe</option>
+              <option>Toilet / Fixture Repair</option>
+              <option>Pressure Regulator</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="msg">What's going on?</label>
+            <textarea id="msg" placeholder="Describe your plumbing issue..."></textarea>
+          </div>
+          <button type="submit" class="btn-primary" style="width:100%;justify-content:center;padding:1rem;">Get Your Free Estimate &rarr;</button>
+        </form>
+      </div>
+
+      <div class="contact-cards reveal">
+        <div class="c-card">
+          <div class="c-card-icon">&#9742;</div>
+          <div>
+            <h4>Call Charlie Directly</h4>
+            <a href="tel:6197231114">(619) 723-1114</a>
+            <p>A licensed plumber answers every call</p>
+          </div>
+        </div>
+        <div class="c-card">
+          <div class="c-card-icon">&#128205;</div>
+          <div>
+            <h4>Location</h4>
+            <p>422 21st St, San Diego, CA 92102</p>
+            <p>Serving all of San Diego County</p>
+          </div>
+        </div>
+        <div class="c-card">
+          <div class="c-card-icon">&#128338;</div>
+          <div>
+            <h4>Hours</h4>
+            <p>Open 7 Days a Week</p>
+            <p>Usually until 7:00 &ndash; 8:00 PM</p>
+          </div>
+        </div>
+        <div class="c-card">
+          <div class="c-card-icon">&#128179;</div>
+          <div>
+            <h4>Licensed &amp; Rated</h4>
+            <p>CA License #708829 &bull; A+ BBB</p>
+            <p>5-Star on Google &amp; Yelp</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">American Plumbing Co.</div>
+    <div class="footer-mid">
+      &copy; 2025 American Plumbing Co. &bull; CA License #708829<br>
+      Demo by <a href="https://blueprintdigitalsd.com">Blueprint Digital</a>
+    </div>
+    <div class="footer-right">
+      422 21st St, San Diego, CA 92102<br>
+      <a href="tel:6197231114">(619) 723-1114</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav
+  document.getElementById('hamBtn').addEventListener('click', () => document.getElementById('mobNav').classList.add('open'));
+  document.getElementById('mobClose').addEventListener('click', () => document.getElementById('mobNav').classList.remove('open'));
+  function closeMob() { document.getElementById('mobNav').classList.remove('open'); }
+
+  // Sticky shadow
+  window.addEventListener('scroll', () => {
+    document.getElementById('navWrap').classList.toggle('scrolled', scrollY > 40);
+  });
+
+  // Scroll reveal
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const ans = item.querySelector('.faq-a');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-a').style.maxHeight = null;
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        ans.style.maxHeight = ans.scrollHeight + 'px';
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
