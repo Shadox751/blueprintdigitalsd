@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cano Roofing | San Diego's Trusted Roofing Experts | 15+ Years Experience</title>
+<meta name="description" content="Cano Roofing - Family-owned roofing company serving San Diego for 15+ years. Free estimates, licensed & insured. Call (619) 930-4372.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        primary: '#DC2626',
+        'primary-dark': '#991B1B',
+        accent: '#F59E0B',
+        dark: '#0a0a0a',
+        card: '#141414',
+        'card-light': '#1c1c1c',
+        warm: '#1a1510',
+      },
+      fontFamily: {
+        heading: ['Outfit', 'sans-serif'],
+        body: ['Inter', 'sans-serif'],
+      }
+    }
+  }
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; }
+  .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+  .hero-overlay { background: linear-gradient(to right, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.3) 100%); }
+  .service-img { transition: transform 0.5s ease; }
+  .service-card:hover .service-img { transform: scale(1.05); }
+  .review-card { background: linear-gradient(145deg, #141414, #1c1c1c); }
+  .cta-section { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1632759145351-1d592919f522?w=1920&q=80') center/cover no-repeat; }
+  .about-img { background: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80') center/cover no-repeat; }
+</style>
+</head>
+<body class="bg-dark text-white">
+
+<!-- TOP BAR -->
+<div class="bg-primary text-white text-center py-2.5 px-4 text-sm font-medium tracking-wide">
+  Family-Owned &amp; Operated &bull; Serving San Diego for 15+ Years &bull; <a href="tel:6199304372" class="underline font-bold hover:text-white/90">(619) 930-4372</a>
+</div>
+
+<!-- NAV -->
+<nav class="sticky top-0 z-50 bg-dark/95 backdrop-blur-md border-b border-white/5">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 21h18M3 21V8l9-5 9 5v13M9 21v-6h6v6"/></svg>
+      </div>
+      <div>
+        <span class="font-heading text-xl font-extrabold tracking-tight">CANO</span>
+        <span class="font-heading text-xl font-extrabold text-primary ml-1">ROOFING</span>
+      </div>
+    </div>
+    <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
+      <a href="#services" class="hover:text-white transition">Services</a>
+      <a href="#about" class="hover:text-white transition">About</a>
+      <a href="#work" class="hover:text-white transition">Our Work</a>
+      <a href="#reviews" class="hover:text-white transition">Reviews</a>
+      <a href="#contact" class="hover:text-white transition">Contact</a>
+    </div>
+    <a href="tel:6199304372" class="bg-primary hover:bg-primary-dark text-white px-5 py-2.5 rounded-lg font-semibold text-sm transition-all flex items-center gap-2">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+      <span class="hidden sm:inline">(619) 930-4372</span>
+      <span class="sm:hidden">Call</span>
+    </a>
+  </div>
+</nav>
+
+<!-- HERO — Full background image -->
+<section class="relative min-h-[90vh] flex items-center">
+  <img src="https://images.unsplash.com/photo-1632759145351-1d592919f522?w=1920&q=80" alt="Professional roofing work" class="absolute inset-0 w-full h-full object-cover">
+  <div class="hero-overlay absolute inset-0"></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-6 py-24">
+    <div class="max-w-2xl">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="bg-primary text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">Licensed &amp; Insured</span>
+        <span class="bg-white/10 backdrop-blur text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">Free Estimates</span>
+      </div>
+      <h1 class="font-heading text-5xl md:text-7xl font-black leading-[0.95] tracking-tight mb-6">
+        San Diego's Most Trusted <span class="text-primary">Roofers</span>
+      </h1>
+      <p class="text-lg md:text-xl text-gray-300 max-w-xl mb-10 leading-relaxed">
+        Protecting San Diego homes for over 15 years. From small repairs to full replacements, our family delivers quality craftsmanship yours can count on.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="tel:6199304372" class="bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-xl font-bold text-lg transition-all text-center shadow-lg shadow-primary/25">
+          Get Your Free Estimate
+        </a>
+        <a href="#services" class="bg-white/10 backdrop-blur hover:bg-white/20 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all text-center border border-white/10">
+          View Services
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<section class="bg-card border-y border-white/5">
+  <div class="max-w-7xl mx-auto px-6 py-10">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <div>
+        <div class="text-4xl font-heading font-black text-white">15+</div>
+        <div class="text-sm text-gray-500 font-medium mt-1">Years in Business</div>
+      </div>
+      <div>
+        <div class="text-4xl font-heading font-black text-white">500+</div>
+        <div class="text-sm text-gray-500 font-medium mt-1">Roofs Completed</div>
+      </div>
+      <div>
+        <div class="flex items-center justify-center gap-1 mb-1">
+          <svg class="w-6 h-6 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <span class="text-4xl font-heading font-black text-white">5.0</span>
+        </div>
+        <div class="text-sm text-gray-500 font-medium">Star Rating</div>
+      </div>
+      <div>
+        <div class="text-4xl font-heading font-black text-white">100%</div>
+        <div class="text-sm text-gray-500 font-medium mt-1">Satisfaction Guaranteed</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES — with real photos -->
+<section id="services" class="py-24 bg-dark">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16 fade-in">
+      <span class="text-primary text-sm font-bold uppercase tracking-widest">What We Do</span>
+      <h2 class="font-heading text-4xl md:text-5xl font-black mt-3">Our Roofing Services</h2>
+      <p class="text-gray-500 mt-4 max-w-2xl mx-auto">Complete roofing solutions for homes and businesses across San Diego County.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6 fade-in">
+      <!-- Service 1 -->
+      <div class="service-card group bg-card rounded-2xl overflow-hidden border border-white/5 hover:border-primary/30 transition-all">
+        <div class="h-52 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1635424710928-0544e8603ac4?w=600&q=80" alt="Roof replacement" class="service-img w-full h-full object-cover">
+        </div>
+        <div class="p-7">
+          <h3 class="font-heading text-xl font-bold mb-2">Roof Replacement</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Full tear-off and replacement with premium materials. Asphalt shingles, tile, flat roofing — backed by manufacturer warranties.</p>
+        </div>
+      </div>
+      <!-- Service 2 -->
+      <div class="service-card group bg-card rounded-2xl overflow-hidden border border-white/5 hover:border-primary/30 transition-all">
+        <div class="h-52 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&q=80" alt="Roof repair" class="service-img w-full h-full object-cover">
+        </div>
+        <div class="p-7">
+          <h3 class="font-heading text-xl font-bold mb-2">Roof Repairs</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Leaks, storm damage, missing shingles, flashing issues. Fast response, honest assessment, and lasting repairs.</p>
+        </div>
+      </div>
+      <!-- Service 3 -->
+      <div class="service-card group bg-card rounded-2xl overflow-hidden border border-white/5 hover:border-primary/30 transition-all">
+        <div class="h-52 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" alt="Roof inspection" class="service-img w-full h-full object-cover">
+        </div>
+        <div class="p-7">
+          <h3 class="font-heading text-xl font-bold mb-2">Inspections &amp; Maintenance</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Thorough inspections for home buyers, insurance claims, or routine maintenance. Detailed reports with photos.</p>
+        </div>
+      </div>
+      <!-- Service 4 -->
+      <div class="service-card group bg-card rounded-2xl overflow-hidden border border-white/5 hover:border-primary/30 transition-all">
+        <div class="h-52 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=600&q=80" alt="Asphalt shingles" class="service-img w-full h-full object-cover">
+        </div>
+        <div class="p-7">
+          <h3 class="font-heading text-xl font-bold mb-2">Asphalt Shingles</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Our specialty. Premium shingle installation from top brands. Durable, affordable, and built for San Diego's climate.</p>
+        </div>
+      </div>
+      <!-- Service 5 -->
+      <div class="service-card group bg-card rounded-2xl overflow-hidden border border-white/5 hover:border-primary/30 transition-all">
+        <div class="h-52 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1597484661643-2f5fef640dd1?w=600&q=80" alt="Flat roofing" class="service-img w-full h-full object-cover">
+        </div>
+        <div class="p-7">
+          <h3 class="font-heading text-xl font-bold mb-2">Flat Roofing</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">TPO, modified bitumen, and built-up systems for commercial and residential flat roofs. Leak-proof and energy efficient.</p>
+        </div>
+      </div>
+      <!-- Service 6 -->
+      <div class="service-card group bg-card rounded-2xl overflow-hidden border border-white/5 hover:border-primary/30 transition-all">
+        <div class="h-52 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1513880989635-6eb491ce7f5b?w=600&q=80" alt="Emergency storm damage" class="service-img w-full h-full object-cover">
+        </div>
+        <div class="p-7">
+          <h3 class="font-heading text-xl font-bold mb-2">Emergency Repairs</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Storm damage? Sudden leak? We respond fast. Call us any time and we'll get your home protected right away.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT / WHY US — split image + text -->
+<section id="about" class="py-24 bg-card border-y border-white/5">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="fade-in">
+        <div class="rounded-2xl overflow-hidden h-[500px]">
+          <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80" alt="Roofing crew at work" class="w-full h-full object-cover">
+        </div>
+      </div>
+      <div class="fade-in">
+        <span class="text-primary text-sm font-bold uppercase tracking-widest">About Cano Roofing</span>
+        <h2 class="font-heading text-4xl md:text-5xl font-black mt-3 mb-6">Built on Hard Work &amp; Honest Service</h2>
+        <p class="text-gray-400 leading-relaxed mb-8">For over 15 years, the Cano family has been up on San Diego rooftops — through the summer heat, the Santa Ana winds, and everything in between. We started this company because we believed homeowners deserved a roofer they could actually trust. That hasn't changed.</p>
+        <div class="space-y-5">
+          <div class="flex gap-4 items-start">
+            <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <div>
+              <h4 class="font-bold text-lg">Family Owned &amp; Operated</h4>
+              <p class="text-gray-500 text-sm mt-1">You deal directly with the Cano family. No salespeople, no runaround.</p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <div>
+              <h4 class="font-bold text-lg">Licensed, Bonded &amp; Insured</h4>
+              <p class="text-gray-500 text-sm mt-1">Fully licensed California contractor. Your home is protected start to finish.</p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <div>
+              <h4 class="font-bold text-lg">Honest, Upfront Pricing</h4>
+              <p class="text-gray-500 text-sm mt-1">No hidden fees. Detailed written estimates before any work begins.</p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <div>
+              <h4 class="font-bold text-lg">We Clean Up After Ourselves</h4>
+              <p class="text-gray-500 text-sm mt-1">Your property will look better than when we got there. That's our promise.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK / GALLERY -->
+<section id="work" class="py-24 bg-dark">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16 fade-in">
+      <span class="text-primary text-sm font-bold uppercase tracking-widest">Our Work</span>
+      <h2 class="font-heading text-4xl md:text-5xl font-black mt-3">Recent Projects</h2>
+      <p class="text-gray-500 mt-4">A few of the roofs we've been proud to put our name on.</p>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 fade-in">
+      <div class="rounded-xl overflow-hidden h-64 md:col-span-2 md:row-span-2 md:h-auto">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="Completed roof - residential home" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+      </div>
+      <div class="rounded-xl overflow-hidden h-64">
+        <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&q=80" alt="Beautiful home with new roof" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+      </div>
+      <div class="rounded-xl overflow-hidden h-64">
+        <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400&q=80" alt="Modern home roofing project" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+      </div>
+      <div class="rounded-xl overflow-hidden h-64">
+        <img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?w=400&q=80" alt="Residential roofing project" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+      </div>
+      <div class="rounded-xl overflow-hidden h-64">
+        <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=400&q=80" alt="Home exterior with new roof" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="py-24 bg-card border-y border-white/5">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16 fade-in">
+      <span class="text-primary text-sm font-bold uppercase tracking-widest">Testimonials</span>
+      <h2 class="font-heading text-4xl md:text-5xl font-black mt-3">What Homeowners Say</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6 fade-in">
+      <div class="review-card rounded-2xl p-8 border border-white/5">
+        <div class="flex gap-0.5 mb-4">
+          <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+        </div>
+        <p class="text-gray-300 leading-relaxed mb-6">"Cano Roofing replaced our entire roof and it looks amazing. They were professional from start to finish. The crew was respectful, cleaned up everything, and the price was very fair. Highly recommend!"</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold text-sm">MR</div>
+          <div>
+            <div class="font-semibold text-sm">Maria R.</div>
+            <div class="text-gray-600 text-xs">Chula Vista, CA</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card rounded-2xl p-8 border border-white/5">
+        <div class="flex gap-0.5 mb-4">
+          <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+        </div>
+        <p class="text-gray-300 leading-relaxed mb-6">"Had a leak two other companies couldn't fix. Cano came out, found the real problem in 20 minutes, and had it repaired same day. These guys know what they're doing. Won't call anyone else."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold text-sm">JT</div>
+          <div>
+            <div class="font-semibold text-sm">James T.</div>
+            <div class="text-gray-600 text-xs">National City, CA</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card rounded-2xl p-8 border border-white/5">
+        <div class="flex gap-0.5 mb-4">
+          <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+        </div>
+        <p class="text-gray-300 leading-relaxed mb-6">"Best roofer in San Diego, hands down. Fair pricing, quality work, and they actually show up when they say they will. The Cano family is the real deal. Already referred them to three of my neighbors."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold text-sm">SL</div>
+          <div>
+            <div class="font-semibold text-sm">Sandra L.</div>
+            <div class="text-gray-600 text-xs">San Diego, CA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE AREA -->
+<section class="py-20 bg-dark">
+  <div class="max-w-7xl mx-auto px-6 text-center fade-in">
+    <span class="text-primary text-sm font-bold uppercase tracking-widest">Service Area</span>
+    <h2 class="font-heading text-3xl md:text-4xl font-black mt-3 mb-8">Proudly Serving All of San Diego County</h2>
+    <div class="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
+      <span class="bg-card px-4 py-2 rounded-lg text-sm text-gray-400 border border-white/5">San Diego</span>
+      <span class="bg-card px-4 py-2 rounded-lg text-sm text-gray-400 border border-white/5">Chula Vista</span>
+      <span class="bg-card px-4 py-2 rounded-lg text-sm text-gray-400 border border-white/5">National City</span>
+      <span class="bg-card px-4 py-2 rounded-lg text-sm text-gray-400 border border-white/5">El Cajon</span>
+      <span class="bg-card px-4 py-2 rounded-lg text-sm text-gray-400 border border-white/5">La Mesa</span>
+      <span class="bg-card px-4 py-2 rounded-lg text-sm text-gray-400 border border-white/5">Spring Valley</span>
+      <span class="bg-card px-4 py-2 rounded-lg text-sm text-gray-400 border border-white/5">Lemon Grove</span>
+      <span class="bg-card px-4 py-2 rounded-lg text-sm text-gray-400 border border-white/5">Coronado</span>
+      <span class="bg-card px-4 py-2 rounded-lg text-sm text-gray-400 border border-white/5">Imperial Beach</span>
+      <span class="bg-card px-4 py-2 rounded-lg text-sm text-gray-400 border border-white/5">Bonita</span>
+      <span class="bg-card px-4 py-2 rounded-lg text-sm text-gray-400 border border-white/5">Santee</span>
+      <span class="bg-card px-4 py-2 rounded-lg text-sm text-gray-400 border border-white/5">Oceanside</span>
+    </div>
+  </div>
+</section>
+
+<!-- BIG CTA — background image -->
+<section id="contact" class="cta-section py-28 border-y border-white/5">
+  <div class="max-w-4xl mx-auto px-6 text-center fade-in">
+    <span class="text-primary text-sm font-bold uppercase tracking-widest">Ready to Get Started?</span>
+    <h2 class="font-heading text-4xl md:text-6xl font-black mt-4 mb-6">Get Your Free<br>Roofing Estimate Today</h2>
+    <p class="text-gray-300 text-lg max-w-2xl mx-auto mb-10">Call us now for a no-obligation inspection and written estimate. We'll give you an honest assessment and a fair price — guaranteed.</p>
+    <a href="tel:6199304372" class="inline-flex items-center gap-3 bg-primary hover:bg-primary-dark text-white px-10 py-5 rounded-2xl font-bold text-xl transition-all shadow-lg shadow-primary/25">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+      (619) 930-4372
+    </a>
+    <p class="text-gray-500 text-sm mt-6">829 S 38th St, San Diego, CA &bull; Mon-Sat 7am-6pm</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-card border-t border-white/5 py-12">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 bg-primary rounded-lg flex items-center justify-center">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 21h18M3 21V8l9-5 9 5v13M9 21v-6h6v6"/></svg>
+        </div>
+        <span class="font-heading text-lg font-extrabold">CANO <span class="text-primary">ROOFING</span></span>
+      </div>
+      <div class="text-gray-600 text-sm text-center">
+        &copy; 2026 Cano Roofing. All rights reserved. Licensed &amp; Insured California Roofing Contractor.
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="tel:6199304372" class="text-gray-400 hover:text-primary transition text-sm font-medium">(619) 930-4372</a>
+        <a href="https://www.yelp.com/biz/cano-roofing-san-diego" target="_blank" class="text-gray-400 hover:text-primary transition text-sm font-medium">Yelp</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- MOBILE STICKY CTA -->
+<div class="md:hidden fixed bottom-0 left-0 right-0 bg-dark/95 backdrop-blur-md border-t border-white/10 p-3 z-50">
+  <a href="tel:6199304372" class="flex items-center justify-center gap-2 bg-primary text-white py-3.5 rounded-xl font-bold text-lg w-full">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+    Call Now — Free Estimate
+  </a>
+</div>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
