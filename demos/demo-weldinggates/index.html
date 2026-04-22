@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welding Gates — Custom Gates & Fences | Chula Vista, CA</title>
+  <meta name="description" content="Premium custom gates, fences, and welding services in San Diego County. Where craftsmanship meets security and aesthetics. Call (619) 955-0454.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --orange: #E8600A;
+      --orange-light: #FF7A1A;
+      --dark: #0D0D0D;
+      --dark-surface: #1A1A1A;
+      --dark-card: #222;
+      --gray-text: #999;
+      --light-text: #E5E5E5;
+      --white: #FFFFFF;
+      --spark: #FFB347;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--dark);
+      color: var(--light-text);
+      overflow-x: hidden;
+    }
+
+    /* ===== NAV ===== */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(13,13,13,0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(232,96,10,0.15);
+      transition: all 0.3s;
+    }
+    nav.scrolled { padding: 0.6rem 2rem; background: rgba(13,13,13,0.95); }
+    .nav-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+    .nav-logo img { height: 44px; }
+    .nav-logo span {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      color: var(--white);
+      letter-spacing: 2px;
+    }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-links a {
+      color: var(--gray-text);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--orange); }
+    .nav-cta {
+      background: var(--orange) !important;
+      color: var(--white) !important;
+      padding: 0.6rem 1.4rem;
+      border-radius: 4px;
+      font-weight: 600 !important;
+      transition: background 0.3s !important;
+    }
+    .nav-cta:hover { background: var(--orange-light) !important; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      z-index: 101;
+    }
+    .hamburger span {
+      width: 28px; height: 2px;
+      background: var(--white);
+      transition: all 0.3s;
+    }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('images/hero.jpg') center/cover no-repeat;
+    }
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(13,13,13,0.92) 0%, rgba(13,13,13,0.6) 50%, rgba(232,96,10,0.15) 100%);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 720px;
+      padding: 0 4rem;
+    }
+    .hero-badge {
+      display: inline-block;
+      padding: 0.4rem 1rem;
+      border: 1px solid var(--orange);
+      color: var(--orange);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      border-radius: 2px;
+    }
+    .hero h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 8vw, 6rem);
+      line-height: 0.95;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 .accent { color: var(--orange); }
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--gray-text);
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+      max-width: 520px;
+    }
+    .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.9rem 2rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: all 0.3s;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--orange);
+      color: var(--white);
+    }
+    .btn-primary:hover { background: var(--orange-light); transform: translateY(-2px); }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.25);
+    }
+    .btn-outline:hover { border-color: var(--orange); color: var(--orange); }
+
+    /* Spark particles */
+    .sparks {
+      position: absolute;
+      top: 0; right: 0;
+      width: 50%; height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .spark {
+      position: absolute;
+      width: 3px; height: 3px;
+      background: var(--spark);
+      border-radius: 50%;
+      opacity: 0;
+      animation: sparkFloat 3s infinite;
+    }
+    @keyframes sparkFloat {
+      0% { opacity: 0; transform: translateY(0) scale(1); }
+      20% { opacity: 1; }
+      100% { opacity: 0; transform: translateY(-200px) translateX(40px) scale(0); }
+    }
+
+    /* ===== STATS BAR ===== */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: var(--dark-surface);
+      border-top: 2px solid var(--orange);
+    }
+    .stat {
+      padding: 2.5rem 2rem;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.05);
+    }
+    .stat:last-child { border-right: none; }
+    .stat-number {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.8rem;
+      color: var(--orange);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--gray-text);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-top: 0.3rem;
+    }
+
+    /* ===== SECTIONS ===== */
+    section { padding: 6rem 2rem; }
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .section-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 1rem;
+    }
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      color: var(--white);
+      line-height: 1;
+    }
+    .section-sub {
+      color: var(--gray-text);
+      max-width: 560px;
+      margin: 1rem auto 0;
+      line-height: 1.7;
+    }
+
+    /* ===== SERVICES ===== */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .service-card {
+      background: var(--dark-surface);
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.05);
+      transition: all 0.4s;
+      position: relative;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(232,96,10,0.3);
+      box-shadow: 0 20px 50px rgba(232,96,10,0.08);
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--orange);
+      transform: scaleX(0);
+      transition: transform 0.4s;
+    }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-icon {
+      padding: 2rem 2rem 0;
+      font-size: 2.5rem;
+    }
+    .service-card h3 {
+      padding: 1rem 2rem 0.5rem;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.5rem;
+      color: var(--white);
+      letter-spacing: 1px;
+    }
+    .service-card p {
+      padding: 0 2rem 2rem;
+      font-size: 0.9rem;
+      color: var(--gray-text);
+      line-height: 1.6;
+    }
+
+    /* ===== GALLERY ===== */
+    #gallery { background: var(--dark-surface); }
+    .gallery-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      columns: 3;
+      column-gap: 1rem;
+    }
+    .gallery-item {
+      break-inside: avoid;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+    }
+    .gallery-item img {
+      width: 100%;
+      display: block;
+      transition: transform 0.5s;
+    }
+    .gallery-item:hover img { transform: scale(1.05); }
+    .gallery-item::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(232,96,10,0.3), transparent);
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    .gallery-item:hover::after { opacity: 1; }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: rgba(0,0,0,0.95);
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 85vh;
+      border-radius: 8px;
+      object-fit: contain;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 1.5rem; right: 2rem;
+      color: var(--white);
+      font-size: 2rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      z-index: 201;
+    }
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--white);
+      font-size: 2.5rem;
+      cursor: pointer;
+      background: rgba(232,96,10,0.3);
+      border: none;
+      width: 50px; height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s;
+    }
+    .lightbox-nav:hover { background: var(--orange); }
+    .lightbox-prev { left: 1.5rem; }
+    .lightbox-next { right: 1.5rem; }
+
+    /* ===== WHY US ===== */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .why-card {
+      padding: 2.5rem;
+      background: var(--dark-surface);
+      border-radius: 8px;
+      border-left: 3px solid var(--orange);
+      transition: all 0.3s;
+    }
+    .why-card:hover {
+      background: var(--dark-card);
+      transform: translateX(6px);
+    }
+    .why-number {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3rem;
+      color: rgba(232,96,10,0.2);
+      line-height: 1;
+    }
+    .why-card h3 {
+      font-size: 1.1rem;
+      color: var(--white);
+      margin: 0.5rem 0;
+    }
+    .why-card p {
+      font-size: 0.9rem;
+      color: var(--gray-text);
+      line-height: 1.6;
+    }
+
+    /* ===== TESTIMONIALS ===== */
+    #testimonials { background: var(--dark-surface); }
+    .testimonials-track {
+      display: flex;
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      padding-bottom: 1rem;
+    }
+    .testimonials-track::-webkit-scrollbar { display: none; }
+    .testimonial-card {
+      min-width: 340px;
+      flex-shrink: 0;
+      scroll-snap-align: start;
+      background: var(--dark-card);
+      border-radius: 8px;
+      padding: 2rem;
+      border: 1px solid rgba(255,255,255,0.05);
+      position: relative;
+    }
+    .testimonial-card::before {
+      content: '\201C';
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 5rem;
+      color: var(--orange);
+      opacity: 0.2;
+      position: absolute;
+      top: 0.5rem; left: 1.5rem;
+      line-height: 1;
+    }
+    .testimonial-stars {
+      color: var(--spark);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      letter-spacing: 2px;
+    }
+    .testimonial-card blockquote {
+      font-size: 0.95rem;
+      color: var(--light-text);
+      line-height: 1.7;
+      font-style: italic;
+      margin-bottom: 1.5rem;
+    }
+    .testimonial-author {
+      font-weight: 600;
+      color: var(--white);
+      font-size: 0.9rem;
+    }
+
+    /* ===== AREAS ===== */
+    .areas-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .area-tag {
+      padding: 0.6rem 1.5rem;
+      background: var(--dark-surface);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 100px;
+      font-size: 0.85rem;
+      color: var(--light-text);
+      transition: all 0.3s;
+    }
+    .area-tag:hover {
+      border-color: var(--orange);
+      color: var(--orange);
+      background: rgba(232,96,10,0.05);
+    }
+
+    /* ===== CTA ===== */
+    .cta-section {
+      background: linear-gradient(135deg, var(--orange) 0%, #c44e00 100%);
+      text-align: center;
+      padding: 5rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('images/work-6.jpg') center/cover no-repeat;
+      opacity: 0.1;
+    }
+    .cta-section * { position: relative; z-index: 1; }
+    .cta-section h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+    .cta-section p {
+      color: rgba(255,255,255,0.85);
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+    .cta-phone {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.5rem;
+      color: var(--white);
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      transition: transform 0.3s;
+    }
+    .cta-phone:hover { transform: scale(1.05); }
+    .btn-white {
+      background: var(--white);
+      color: var(--orange);
+      font-weight: 700;
+    }
+    .btn-white:hover { background: var(--light-text); transform: translateY(-2px); }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--dark-surface);
+      padding: 3rem 2rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem;
+    }
+    .footer-brand img { height: 40px; margin-bottom: 1rem; }
+    .footer-brand p {
+      color: var(--gray-text);
+      font-size: 0.85rem;
+      line-height: 1.7;
+      max-width: 320px;
+    }
+    .footer-col h4 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.2rem;
+      color: var(--white);
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+    }
+    .footer-col a {
+      display: block;
+      color: var(--gray-text);
+      text-decoration: none;
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
+      transition: color 0.3s;
+    }
+    .footer-col a:hover { color: var(--orange); }
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 2rem auto 0;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: var(--gray-text);
+    }
+    .footer-social { display: flex; gap: 1rem; }
+    .footer-social a {
+      color: var(--gray-text);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .footer-social a:hover { color: var(--orange); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .gallery-grid { columns: 2; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .stats-bar { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        top: 0; right: -100%;
+        width: 75%;
+        height: 100vh;
+        background: var(--dark-surface);
+        flex-direction: column;
+        padding: 5rem 2rem;
+        gap: 1.5rem;
+        transition: right 0.4s;
+        border-left: 1px solid rgba(232,96,10,0.2);
+      }
+      .nav-links.open { right: 0; }
+      .hamburger { display: flex; }
+      .hero-content { padding: 0 2rem; }
+    }
+    @media (max-width: 600px) {
+      .gallery-grid { columns: 1; }
+      .stats-bar { grid-template-columns: repeat(2, 1fr); }
+      .stat { padding: 1.5rem 1rem; }
+      .testimonial-card { min-width: 280px; }
+      .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+    }
+
+    /* ===== BILINGUAL TOGGLE ===== */
+    .lang-toggle {
+      display: flex;
+      gap: 0;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-left: 1rem;
+    }
+    .lang-btn {
+      padding: 0.35rem 0.7rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      background: transparent;
+      color: var(--gray-text);
+      border: none;
+      transition: all 0.3s;
+    }
+    .lang-btn.active {
+      background: var(--orange);
+      color: var(--white);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">
+      <img src="images/logo.png" alt="Welding Gates">
+      <span>Welding Gates</span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#services">Services</a>
+      <a href="#gallery">Our Work</a>
+      <a href="#why">Why Us</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#areas">Areas</a>
+      <a href="tel:6199550454" class="nav-cta">Call Now</a>
+      <div class="lang-toggle">
+        <button class="lang-btn active" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" onclick="setLang('es')">ES</button>
+      </div>
+    </div>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="sparks" id="sparks"></div>
+    <div class="hero-content">
+      <div class="hero-badge" data-en="Chula Vista's Trusted Welders" data-es="Los Soldadores de Confianza de Chula Vista">Chula Vista's Trusted Welders</div>
+      <h1>
+        <span data-en="Custom Gates" data-es="Puertas"  >Custom Gates</span><br>
+        <span data-en="& Fences Built" data-es="& Cercas Hechas">& Fences Built</span><br>
+        <span class="accent" data-en="To Last" data-es="Para Durar">To Last</span>
+      </h1>
+      <p data-en="Where craftsmanship meets security and aesthetics. Premium welding, gates, and fences for residential and commercial properties across San Diego County." data-es="Donde la artesania se encuentra con la seguridad y la estetica. Soldadura premium, puertas y cercas para propiedades residenciales y comerciales en todo el Condado de San Diego.">Where craftsmanship meets security and aesthetics. Premium welding, gates, and fences for residential and commercial properties across San Diego County.</p>
+      <div class="hero-buttons">
+        <a href="tel:6199550454" class="btn btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <span data-en="(619) 955-0454" data-es="(619) 955-0454">(619) 955-0454</span>
+        </a>
+        <a href="#gallery" class="btn btn-outline" data-en="See Our Work" data-es="Ver Nuestro Trabajo">See Our Work</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-bar">
+    <div class="stat">
+      <div class="stat-number">500+</div>
+      <div class="stat-label" data-en="Projects Completed" data-es="Proyectos Completados">Projects Completed</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">10+</div>
+      <div class="stat-label" data-en="Years Experience" data-es="Anos de Experiencia">Years Experience</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">100%</div>
+      <div class="stat-label" data-en="Licensed & Insured" data-es="Licenciado y Asegurado">Licensed & Insured</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">EN/ES</div>
+      <div class="stat-label" data-en="Bilingual Service" data-es="Servicio Bilingue">Bilingual Service</div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="section-header">
+      <div class="section-tag" data-en="What We Do" data-es="Lo Que Hacemos">What We Do</div>
+      <h2 class="section-title" data-en="Our Services" data-es="Nuestros Servicios">Our Services</h2>
+      <p class="section-sub" data-en="From custom fabrication to full installations — we handle every step with precision." data-es="Desde fabricacion personalizada hasta instalaciones completas — manejamos cada paso con precision.">From custom fabrication to full installations — we handle every step with precision.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">&#9881;</div>
+        <h3 data-en="Custom Welding" data-es="Soldadura Personalizada">Custom Welding</h3>
+        <p data-en="Equipped with the latest welding technology to deliver precision metalwork for any project, big or small." data-es="Equipados con la ultima tecnologia en soldadura para entregar trabajos de metal de precision para cualquier proyecto.">Equipped with the latest welding technology to deliver precision metalwork for any project, big or small.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#9964;</div>
+        <h3 data-en="Residential Gates" data-es="Puertas Residenciales">Residential Gates</h3>
+        <p data-en="Designed to enhance curb appeal while providing security and privacy for your home. Custom styles to match any property." data-es="Disenadas para mejorar el atractivo de su hogar mientras proporcionan seguridad y privacidad. Estilos personalizados.">Designed to enhance curb appeal while providing security and privacy for your home. Custom styles to match any property.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#9960;</div>
+        <h3 data-en="Commercial Gates" data-es="Puertas Comerciales">Commercial Gates</h3>
+        <p data-en="Built to withstand heavy usage and ensure maximum protection for your business. Durable, secure, professional." data-es="Construidas para soportar uso intensivo y asegurar la maxima proteccion para su negocio. Duraderas y profesionales.">Built to withstand heavy usage and ensure maximum protection for your business. Durable, secure, professional.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#9935;</div>
+        <h3 data-en="Gate Installation" data-es="Instalacion de Puertas">Gate Installation</h3>
+        <p data-en="Professional installation of driveway gates, pedestrian gates, and sliding gates with motorized options available." data-es="Instalacion profesional de puertas de entrada, peatonales y deslizantes con opciones motorizadas disponibles.">Professional installation of driveway gates, pedestrian gates, and sliding gates with motorized options available.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#9638;</div>
+        <h3 data-en="Fence Installation" data-es="Instalacion de Cercas">Fence Installation</h3>
+        <p data-en="Functional and beautiful fence designs for every property. Iron, steel, and custom metal fencing solutions." data-es="Disenos de cercas funcionales y hermosas para cada propiedad. Soluciones en hierro, acero y metal personalizado.">Functional and beautiful fence designs for every property. Iron, steel, and custom metal fencing solutions.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#9874;</div>
+        <h3 data-en="Repairs & Maintenance" data-es="Reparaciones y Mantenimiento">Repairs & Maintenance</h3>
+        <p data-en="Gate repairs, motorized gate servicing, and fence restoration. We fix it right the first time." data-es="Reparacion de puertas, servicio de puertas motorizadas y restauracion de cercas. Lo arreglamos bien a la primera.">Gate repairs, motorized gate servicing, and fence restoration. We fix it right the first time.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="section-header">
+      <div class="section-tag" data-en="Portfolio" data-es="Portafolio">Portfolio</div>
+      <h2 class="section-title" data-en="Our Work Speaks for Itself" data-es="Nuestro Trabajo Habla por Si Mismo">Our Work Speaks for Itself</h2>
+      <p class="section-sub" data-en="Every project is a testament to our commitment to quality craftsmanship." data-es="Cada proyecto es un testimonio de nuestro compromiso con la artesania de calidad.">Every project is a testament to our commitment to quality craftsmanship.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item" onclick="openLightbox(0)"><img src="images/work-1.jpg" alt="Custom welding gate project" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLightbox(1)"><img src="images/work-2.jpg" alt="Iron fence installation" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLightbox(2)"><img src="images/work-3.jpg" alt="Residential gate design" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLightbox(3)"><img src="images/work-4.jpg" alt="Metal fabrication work" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLightbox(4)"><img src="images/work-5.jpg" alt="Commercial gate installation" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLightbox(5)"><img src="images/work-6.jpg" alt="Custom iron gate" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLightbox(6)"><img src="images/work-7.jpg" alt="Welded fence panel" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLightbox(7)"><img src="images/work-8.jpg" alt="Driveway gate project" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLightbox(8)"><img src="images/work-9.jpg" alt="Security gate installation" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLightbox(9)"><img src="images/work-10.jpg" alt="Decorative iron work" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLightbox(10)"><img src="images/work-11.jpg" alt="Custom metal fence" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLightbox(11)"><img src="images/work-12.jpg" alt="Gate repair project" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLightbox(12)"><img src="images/work-13.jpg" alt="Ornamental iron gate" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLightbox(13)"><img src="images/work-14.jpg" alt="Welding fabrication" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLightbox(14)"><img src="images/work-15.jpg" alt="Property fence installation" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLightbox(15)"><img src="images/work-16.jpg" alt="Sliding gate system" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLightbox(16)"><img src="images/work-17.jpg" alt="Custom gate design" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLightbox(17)"><img src="images/work-18.jpg" alt="Metal railing project" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLightbox(18)"><img src="images/work-19.jpg" alt="Fence and gate combo" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLightbox(19)"><img src="images/work-20.jpg" alt="Commercial fencing" loading="lazy"></div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section id="why">
+    <div class="section-header">
+      <div class="section-tag" data-en="Why Choose Us" data-es="Por Que Elegirnos">Why Choose Us</div>
+      <h2 class="section-title" data-en="Built Different" data-es="Construido Diferente">Built Different</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-number">01</div>
+        <h3 data-en="Uncompromising Quality" data-es="Calidad Sin Compromiso">Uncompromising Quality</h3>
+        <p data-en="Premium materials and skilled welders ensure every gate and fence meets the highest standards of durability and finish." data-es="Materiales premium y soldadores expertos aseguran que cada puerta y cerca cumpla con los mas altos estandares de durabilidad y acabado.">Premium materials and skilled welders ensure every gate and fence meets the highest standards of durability and finish.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-number">02</div>
+        <h3 data-en="Competitive Pricing" data-es="Precios Competitivos">Competitive Pricing</h3>
+        <p data-en="Quality work doesn't have to break the bank. We offer fair, transparent pricing with no hidden fees." data-es="El trabajo de calidad no tiene que ser caro. Ofrecemos precios justos y transparentes sin cargos ocultos.">Quality work doesn't have to break the bank. We offer fair, transparent pricing with no hidden fees.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-number">03</div>
+        <h3 data-en="Fully Custom" data-es="Totalmente Personalizado">Fully Custom</h3>
+        <p data-en="Every property is unique. We design and fabricate custom solutions tailored to your specific needs and style." data-es="Cada propiedad es unica. Disenamos y fabricamos soluciones personalizadas adaptadas a sus necesidades y estilo especificos.">Every property is unique. We design and fabricate custom solutions tailored to your specific needs and style.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-number">04</div>
+        <h3 data-en="Bilingual Team" data-es="Equipo Bilingue">Bilingual Team</h3>
+        <p data-en="We speak your language. Full service available in both English and Spanish for clear communication throughout your project." data-es="Hablamos tu idioma. Servicio completo disponible en ingles y espanol para una comunicacion clara durante todo tu proyecto.">We speak your language. Full service available in both English and Spanish for clear communication throughout your project.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-number">05</div>
+        <h3 data-en="Proven Track Record" data-es="Trayectoria Comprobada">Proven Track Record</h3>
+        <p data-en="Hundreds of satisfied residential and commercial clients across San Diego County trust us with their properties." data-es="Cientos de clientes residenciales y comerciales satisfechos en todo el Condado de San Diego confian en nosotros.">Hundreds of satisfied residential and commercial clients across San Diego County trust us with their properties.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <div class="section-header">
+      <div class="section-tag" data-en="Reviews" data-es="Resenas">Reviews</div>
+      <h2 class="section-title" data-en="What Our Clients Say" data-es="Lo Que Dicen Nuestros Clientes">What Our Clients Say</h2>
+    </div>
+    <div class="testimonials-track">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote data-en="Armando at Welding Gates went above and beyond to ensure our welding project was completed on time. The quality of the work exceeded our expectations. Highly recommend!" data-es="Armando en Welding Gates fue mas alla para asegurar que nuestro proyecto de soldadura se completara a tiempo. La calidad del trabajo supero nuestras expectativas. Muy recomendado!">Armando at Welding Gates went above and beyond to ensure our welding project was completed on time. The quality of the work exceeded our expectations. Highly recommend!</blockquote>
+        <div class="testimonial-author">— John D.</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote data-en="We've worked with Welding Gates on several occasions, and Armando's exceptional service has always impressed us. Professional, reliable, and the gates look amazing." data-es="Hemos trabajado con Welding Gates en varias ocasiones, y el servicio excepcional de Armando siempre nos ha impresionado. Profesional, confiable, y las puertas se ven increibles.">We've worked with Welding Gates on several occasions, and Armando's exceptional service has always impressed us. Professional, reliable, and the gates look amazing.</blockquote>
+        <div class="testimonial-author">— Emily G.</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote data-en="Armando's dedication to delivering top-notch service is evident in every aspect of his work. He took our vision and made it even better than we imagined." data-es="La dedicacion de Armando para entregar un servicio de primera es evidente en cada aspecto de su trabajo. Tomo nuestra vision y la hizo aun mejor de lo que imaginamos.">Armando's dedication to delivering top-notch service is evident in every aspect of his work. He took our vision and made it even better than we imagined.</blockquote>
+        <div class="testimonial-author">— David K.</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote data-en="Thanks to Armando's expertise and guidance, our commercial welding project turned out even better than we expected. Outstanding craftsmanship and attention to detail." data-es="Gracias a la experiencia y guia de Armando, nuestro proyecto de soldadura comercial resulto aun mejor de lo que esperabamos. Artesania excepcional y atencion al detalle.">Thanks to Armando's expertise and guidance, our commercial welding project turned out even better than we expected. Outstanding craftsmanship and attention to detail.</blockquote>
+        <div class="testimonial-author">— Mark S.</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote data-en="Armando's exceptional service has earned our trust and loyalty. His prompt responses, clear communication, and quality work make him the best in San Diego." data-es="El servicio excepcional de Armando se ha ganado nuestra confianza y lealtad. Sus respuestas rapidas, comunicacion clara y trabajo de calidad lo hacen el mejor en San Diego.">Armando's exceptional service has earned our trust and loyalty. His prompt responses, clear communication, and quality work make him the best in San Diego.</blockquote>
+        <div class="testimonial-author">— Rachel T.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE AREAS -->
+  <section id="areas">
+    <div class="section-header">
+      <div class="section-tag" data-en="Service Areas" data-es="Areas de Servicio">Service Areas</div>
+      <h2 class="section-title" data-en="Serving All of San Diego County" data-es="Sirviendo Todo el Condado de San Diego">Serving All of San Diego County</h2>
+    </div>
+    <div class="areas-list">
+      <span class="area-tag">Chula Vista</span>
+      <span class="area-tag">San Diego</span>
+      <span class="area-tag">El Cajon</span>
+      <span class="area-tag">La Jolla</span>
+      <span class="area-tag">Poway</span>
+      <span class="area-tag">Santee</span>
+      <span class="area-tag">Spring Valley</span>
+      <span class="area-tag">Claremont</span>
+      <span class="area-tag">Jamul</span>
+      <span class="area-tag">National City</span>
+      <span class="area-tag">Bonita</span>
+      <span class="area-tag">Eastlake</span>
+      <span class="area-tag">Otay Ranch</span>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2 data-en="Ready to Build Something Great?" data-es="Listo Para Construir Algo Grande?">Ready to Build Something Great?</h2>
+    <p data-en="Free estimates. Call today or visit us at 868 Elise St, Chula Vista." data-es="Estimaciones gratis. Llame hoy o visitenos en 868 Elise St, Chula Vista.">Free estimates. Call today or visit us at 868 Elise St, Chula Vista.</p>
+    <a href="tel:6199550454" class="cta-phone">(619) 955-0454</a><br>
+    <a href="mailto:contact@welding-gates.com" class="btn btn-white" data-en="Email Us" data-es="Escribanos">Email Us</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="images/logo.png" alt="Welding Gates">
+        <p data-en="Custom gates, fences, and welding services in Chula Vista and all of San Diego County. Where craftsmanship meets security and aesthetics." data-es="Puertas personalizadas, cercas y servicios de soldadura en Chula Vista y todo el Condado de San Diego. Donde la artesania se encuentra con la seguridad y la estetica.">Custom gates, fences, and welding services in Chula Vista and all of San Diego County. Where craftsmanship meets security and aesthetics.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-en="Services" data-es="Servicios">Services</h4>
+        <a href="#services" data-en="Custom Welding" data-es="Soldadura">Custom Welding</a>
+        <a href="#services" data-en="Residential Gates" data-es="Puertas Residenciales">Residential Gates</a>
+        <a href="#services" data-en="Commercial Gates" data-es="Puertas Comerciales">Commercial Gates</a>
+        <a href="#services" data-en="Fence Installation" data-es="Instalacion de Cercas">Fence Installation</a>
+        <a href="#services" data-en="Repairs" data-es="Reparaciones">Repairs</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-en="Contact" data-es="Contacto">Contact</h4>
+        <a href="tel:6199550454">(619) 955-0454</a>
+        <a href="tel:6194844948">(619) 484-4948</a>
+        <a href="mailto:contact@welding-gates.com">contact@welding-gates.com</a>
+        <a href="https://maps.google.com/?q=868+Elise+St+Chula+Vista+CA" target="_blank">868 Elise St, Chula Vista, CA</a>
+        <a href="#" data-en="Mon-Sat: 8AM - 5PM" data-es="Lun-Sab: 8AM - 5PM">Mon-Sat: 8AM - 5PM</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Welding Gates. All rights reserved.</span>
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook">FB</a>
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="Yelp">Yelp</a>
+        <a href="#" aria-label="Google">Google</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <button class="lightbox-nav lightbox-prev" onclick="navLightbox(-1)">&#8249;</button>
+    <img id="lightbox-img" src="" alt="Gallery image">
+    <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">&#8250;</button>
+  </div>
+
+  <script>
+    // Nav scroll effect
+    window.addEventListener('scroll', () => {
+      document.querySelector('nav').classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Mobile menu
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('open');
+      document.getElementById('hamburger').classList.toggle('open');
+    }
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      a.addEventListener('click', () => {
+        document.getElementById('navLinks').classList.remove('open');
+        document.getElementById('hamburger').classList.remove('open');
+      });
+    });
+
+    // Spark particles
+    const sparksContainer = document.getElementById('sparks');
+    for (let i = 0; i < 20; i++) {
+      const spark = document.createElement('div');
+      spark.className = 'spark';
+      spark.style.left = Math.random() * 100 + '%';
+      spark.style.top = 40 + Math.random() * 50 + '%';
+      spark.style.animationDelay = Math.random() * 3 + 's';
+      spark.style.animationDuration = 2 + Math.random() * 2 + 's';
+      sparksContainer.appendChild(spark);
+    }
+
+    // Gallery lightbox
+    const galleryImages = [];
+    for (let i = 1; i <= 20; i++) galleryImages.push('images/work-' + i + '.jpg');
+    let currentImg = 0;
+
+    function openLightbox(idx) {
+      currentImg = idx;
+      document.getElementById('lightbox-img').src = galleryImages[idx];
+      document.getElementById('lightbox').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    function navLightbox(dir) {
+      currentImg = (currentImg + dir + galleryImages.length) % galleryImages.length;
+      document.getElementById('lightbox-img').src = galleryImages[currentImg];
+    }
+    document.getElementById('lightbox').addEventListener('click', (e) => {
+      if (e.target === e.currentTarget) closeLightbox();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (!document.getElementById('lightbox').classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') navLightbox(-1);
+      if (e.key === 'ArrowRight') navLightbox(1);
+    });
+
+    // Bilingual toggle
+    function setLang(lang) {
+      document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+      document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
+      document.querySelectorAll('[data-' + lang + ']').forEach(el => {
+        el.textContent = el.getAttribute('data-' + lang);
+      });
+    }
+
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.service-card, .why-card, .gallery-item, .testimonial-card, .stat').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(30px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>
