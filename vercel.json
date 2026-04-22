@@ -2,7 +2,7 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/welding-gates", "destination": "/demos/demo-weldinggates/index.html" },
+    { "source": "/welding-gates", "destination": "/demos/demo-weldinggates" },
     { "source": "/welding-gates/(.*)", "destination": "/demos/demo-weldinggates/$1" }
   ]
 }
