@@ -22,6 +22,7 @@
       --off-white: #F5F5F3;
       --gray: #8a8a8a;
       --gray-line: #E5E5E5;
+      --blueprint: #003366;
     }
 
     html, body {
@@ -109,7 +110,6 @@
     }
 
     /* ===== CARD ===== */
-    /* Standard US business card 3.5" x 2" — 7:4 ratio */
     .card {
       width: 100%;
       max-width: 525px;
@@ -133,136 +133,121 @@
 
     /* ============================================
        DESIGN 1 — SIGNATURE BOLD
-       Solid orange front, dark back.
+       White front w/ logo. Orange back w/ info.
        ============================================ */
     .d1-front {
+      background: var(--white);
+      color: var(--dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+      position: relative;
+    }
+    .d1-front::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 8px;
+      background: var(--orange);
+    }
+    .d1-front img.logo {
+      max-width: 78%;
+      max-height: 65%;
+      object-fit: contain;
+    }
+    .d1-back {
       background: var(--orange);
       color: var(--white);
-      padding: 32px;
+      padding: 28px 32px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-    }
-    .d1-front .brand {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 900;
-      font-size: 32px;
-      letter-spacing: -0.02em;
-      line-height: 0.95;
-      text-transform: uppercase;
-    }
-    .d1-front .brand .light { font-weight: 400; opacity: 0.85; }
-    .d1-front .tagline {
-      font-size: 11px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      font-weight: 600;
-      opacity: 0.9;
-    }
-    .d1-front .corner {
-      position: absolute;
-      bottom: 24px;
-      right: 28px;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 1px;
-      opacity: 0.85;
-    }
-    .d1-back {
-      background: var(--darker);
-      color: var(--white);
-      padding: 28px 32px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-    .d1-back .col-left {
-      display: flex; flex-direction: column; justify-content: space-between;
+      position: relative;
     }
     .d1-back .name {
       font-family: 'Montserrat', sans-serif;
       font-weight: 800;
-      font-size: 18px;
+      font-size: 19px;
       letter-spacing: -0.01em;
     }
     .d1-back .role {
       font-size: 11px;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      color: var(--orange);
-      margin-top: 4px;
+      color: rgba(255,255,255,0.85);
+      margin-top: 3px;
       font-weight: 600;
     }
-    .d1-back .lic-badge {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 10px;
-      padding: 6px 10px;
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 4px;
-      align-self: flex-start;
-      letter-spacing: 1px;
+    .d1-back .info {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 18px;
+      font-size: 11.5px;
     }
-    .d1-back .col-right { display: flex; flex-direction: column; gap: 8px; font-size: 11.5px; }
-    .d1-back .col-right .label { color: var(--orange); font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700; margin-bottom: 2px; }
-    .d1-back .col-right .row { line-height: 1.3; }
+    .d1-back .info .item .k {
+      display: block;
+      font-size: 9px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 700;
+      opacity: 0.85;
+      margin-bottom: 2px;
+    }
+    .d1-back .info .item .v { font-weight: 500; }
+    .d1-back .lic {
+      position: absolute;
+      bottom: 12px;
+      right: 14px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 1.5px;
+      background: rgba(0,0,0,0.18);
+      padding: 4px 8px;
+      border-radius: 3px;
+    }
 
     /* ============================================
        DESIGN 2 — PREMIUM MINIMAL
+       Off-white front w/ logo + thin orange rule.
+       Dark back w/ info.
        ============================================ */
     .d2-front {
       background: var(--off-white);
       color: var(--dark);
-      padding: 36px;
+      padding: 32px 36px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       position: relative;
     }
-    .d2-front::before {
-      content: '';
-      position: absolute;
-      top: 36px; bottom: 36px;
-      left: 50%;
-      width: 1px;
+    .d2-front img.logo {
+      max-width: 70%;
+      max-height: 95px;
+      object-fit: contain;
+      align-self: flex-start;
+    }
+    .d2-front .rule {
+      width: 40px;
+      height: 2px;
       background: var(--orange);
-      opacity: 0.6;
+      margin: 14px 0 10px;
     }
-    .d2-front .brand {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 22px;
-      letter-spacing: -0.01em;
-      line-height: 1.05;
-    }
-    .d2-front .brand .accent { color: var(--orange); }
     .d2-front .meta {
+      font-family: 'JetBrains Mono', monospace;
       font-size: 9.5px;
       letter-spacing: 2px;
       text-transform: uppercase;
       color: var(--gray);
-      font-weight: 600;
+      font-weight: 500;
     }
-    .d2-front .right-text {
+    .d2-front .lic-corner {
       position: absolute;
+      bottom: 28px;
       right: 36px;
-      top: 36px;
-      bottom: 36px;
-      width: 42%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: flex-end;
-      text-align: right;
-    }
-    .d2-front .est {
       font-family: 'JetBrains Mono', monospace;
       font-size: 10px;
-      color: var(--gray);
       letter-spacing: 1px;
-    }
-    .d2-front .lic {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 10px;
       color: var(--charcoal);
     }
     .d2-back {
@@ -300,56 +285,69 @@
 
     /* ============================================
        DESIGN 3 — BLUEPRINT GRID
+       Blueprint front w/ logo on a "stamped" white title-block.
+       White back w/ info, blueprint accents.
        ============================================ */
     .d3-front {
       background:
-        linear-gradient(rgba(0, 51, 102, 0.92), rgba(0, 51, 102, 0.92)),
-        repeating-linear-gradient(0deg, rgba(255,255,255,0.08) 0, rgba(255,255,255,0.08) 1px, transparent 1px, transparent 24px),
-        repeating-linear-gradient(90deg, rgba(255,255,255,0.08) 0, rgba(255,255,255,0.08) 1px, transparent 1px, transparent 24px),
-        #003366;
+        linear-gradient(rgba(0, 51, 102, 0.93), rgba(0, 51, 102, 0.93)),
+        repeating-linear-gradient(0deg, rgba(255,255,255,0.10) 0, rgba(255,255,255,0.10) 1px, transparent 1px, transparent 22px),
+        repeating-linear-gradient(90deg, rgba(255,255,255,0.10) 0, rgba(255,255,255,0.10) 1px, transparent 1px, transparent 22px),
+        var(--blueprint);
       color: var(--white);
-      padding: 28px 32px;
+      padding: 18px;
       display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      align-items: center;
+      justify-content: center;
       position: relative;
       font-family: 'JetBrains Mono', monospace;
     }
     .d3-front .stamp {
       position: absolute;
-      top: 16px;
-      right: 18px;
+      top: 12px;
+      left: 16px;
       font-size: 9px;
       letter-spacing: 1.5px;
-      opacity: 0.7;
+      opacity: 0.75;
     }
-    .d3-front .brand {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 800;
-      font-size: 26px;
-      line-height: 1;
-      letter-spacing: -0.01em;
+    .d3-front .sheet {
+      position: absolute;
+      top: 12px;
+      right: 16px;
+      font-size: 9px;
+      letter-spacing: 1.5px;
+      opacity: 0.75;
     }
-    .d3-front .brand .sub {
-      display: block;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-      font-weight: 400;
-      letter-spacing: 2px;
-      margin-top: 8px;
-      opacity: 0.85;
+    .d3-front .title-block {
+      background: var(--white);
+      padding: 18px 22px;
+      border-radius: 4px;
+      width: 78%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+    }
+    .d3-front .title-block img.logo {
+      max-width: 100%;
+      max-height: 90px;
+      object-fit: contain;
     }
     .d3-front .specs {
-      font-size: 10px;
-      letter-spacing: 1px;
-      line-height: 1.6;
+      position: absolute;
+      bottom: 12px;
+      left: 16px;
+      right: 16px;
+      font-size: 9px;
+      letter-spacing: 1.5px;
       opacity: 0.85;
+      display: flex;
+      justify-content: space-between;
     }
-    .d3-front .specs span { color: #ffb463; }
     .d3-back {
       background: var(--white);
       color: var(--dark);
-      padding: 30px 32px;
+      padding: 28px 30px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -361,7 +359,7 @@
       position: absolute;
       left: 0; top: 0; bottom: 0;
       width: 6px;
-      background: #003366;
+      background: var(--blueprint);
     }
     .d3-back::after {
       content: '';
@@ -369,45 +367,58 @@
       right: 0; bottom: 0;
       width: 60px; height: 60px;
       background:
-        repeating-linear-gradient(45deg, #003366 0, #003366 1px, transparent 1px, transparent 6px);
+        repeating-linear-gradient(45deg, var(--blueprint) 0, var(--blueprint) 1px, transparent 1px, transparent 6px);
       opacity: 0.25;
     }
-    .d3-back .name {
+    .d3-back .name-row {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .d3-back .name-row .name {
       font-family: 'Montserrat', sans-serif;
       font-size: 17px;
       font-weight: 800;
       color: var(--dark);
     }
-    .d3-back .role {
-      font-size: 10px;
+    .d3-back .name-row .role {
+      font-size: 9.5px;
       letter-spacing: 1.5px;
-      color: #003366;
+      color: var(--blueprint);
       font-weight: 700;
       margin-top: 2px;
     }
+    .d3-back .name-row .lic {
+      font-size: 9px;
+      letter-spacing: 1.5px;
+      color: var(--blueprint);
+      border: 1px solid var(--blueprint);
+      padding: 4px 7px;
+      border-radius: 3px;
+    }
     .d3-back .info { font-size: 11px; line-height: 1.7; color: var(--charcoal); }
-    .d3-back .info .lbl { color: #003366; font-weight: 700; display: inline-block; min-width: 36px; }
+    .d3-back .info .lbl { color: var(--blueprint); font-weight: 700; display: inline-block; min-width: 36px; }
 
     /* ============================================
        DESIGN 4 — PHOTO HERO
+       Photo front w/ white logo bar at bottom.
+       White back w/ info.
        ============================================ */
     .d4-front {
       background-image:
-        linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.75) 100%),
+        linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.55) 70%),
         url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1100&q=85');
       background-size: cover;
       background-position: center;
       color: var(--white);
-      padding: 28px 32px;
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
+      justify-content: space-between;
       position: relative;
     }
     .d4-front .top-bar {
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      padding: 14px 32px;
+      padding: 14px 22px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -416,28 +427,28 @@
       letter-spacing: 1.5px;
       text-transform: uppercase;
     }
-    .d4-front .top-bar .lic { background: var(--orange); padding: 4px 8px; border-radius: 3px; font-weight: 700; }
-    .d4-front .brand {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 900;
-      font-size: 28px;
-      line-height: 1;
-      letter-spacing: -0.02em;
-      text-transform: uppercase;
+    .d4-front .top-bar .lic {
+      background: var(--orange);
+      padding: 4px 8px;
+      border-radius: 3px;
+      font-weight: 700;
     }
-    .d4-front .brand .accent { color: var(--orange); }
-    .d4-front .tagline {
-      margin-top: 10px;
-      font-size: 11px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      font-weight: 600;
-      opacity: 0.95;
+    .d4-front .logo-bar {
+      background: var(--white);
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .d4-front .logo-bar img.logo {
+      max-width: 92%;
+      max-height: 56px;
+      object-fit: contain;
     }
     .d4-back {
       background: var(--white);
       color: var(--dark);
-      padding: 28px 32px;
+      padding: 26px 32px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -536,43 +547,36 @@
     <header class="page-header">
       <div class="eyebrow">South Coast Installs · Card Concepts</div>
       <h1>Four Business Card Directions</h1>
-      <p>Each design is shown front + back, scaled to the standard US business card ratio (3.5" × 2"). Pick a direction — we'll prep print-ready files at 300 DPI with bleed.</p>
+      <p>Each design uses your real logo and is shown front + back, scaled to the standard US business card ratio (3.5" × 2"). Pick a direction — we'll prep print-ready files at 300 DPI with bleed.</p>
     </header>
 
     <!-- ============== DESIGN 1 ============== -->
     <section class="design">
       <div class="design-header">
         <div class="design-name"><span class="num">01</span>Signature Bold</div>
-        <div class="design-note">Solid orange front grabs attention from across a job site. Dark back delivers info with clear hierarchy and a license-number "trust badge."</div>
+        <div class="design-note">Logo front and center on clean white with an orange foot stripe. Orange back delivers contact info with maximum visibility — easy to spot on a desk or fridge.</div>
       </div>
       <div class="card-pair">
         <div style="position:relative;padding-top:28px;">
           <div class="face-label">Front</div>
           <div class="card d1-front">
-            <div>
-              <div class="brand">South<br /><span class="light">Coast</span></div>
-              <div class="tagline" style="margin-top:10px;">Installs · Construction</div>
-            </div>
-            <div class="tagline">Kitchens · Baths · Remodels</div>
-            <div class="corner">EST. SAN DIEGO</div>
+            <img src="/southcoast/logo.png" alt="South Coast Installs/Construction logo" class="logo" />
           </div>
         </div>
         <div style="position:relative;padding-top:28px;">
           <div class="face-label">Back</div>
           <div class="card d1-back">
-            <div class="col-left">
-              <div>
-                <div class="name">Allan Constantino</div>
-                <div class="role">General Contractor</div>
-              </div>
-              <div class="lic-badge">LIC #1125936</div>
+            <div>
+              <div class="name">Allan Constantino</div>
+              <div class="role">General Contractor</div>
             </div>
-            <div class="col-right">
-              <div class="row"><div class="label">Call</div>(619) 555-0000</div>
-              <div class="row"><div class="label">Email</div>info@southcoastinstalls.com</div>
-              <div class="row"><div class="label">Hours</div>Mon–Sun · 7AM–6PM</div>
-              <div class="row"><div class="label">Service</div>All of San Diego County</div>
+            <div class="info">
+              <div class="item"><span class="k">Phone</span><span class="v">(619) 555-0000</span></div>
+              <div class="item"><span class="k">Email</span><span class="v">info@southcoastinstalls.com</span></div>
+              <div class="item"><span class="k">Hours</span><span class="v">Mon–Sun · 7AM–6PM</span></div>
+              <div class="item"><span class="k">Service</span><span class="v">All of San Diego County</span></div>
             </div>
+            <div class="lic">LIC #1125936</div>
           </div>
         </div>
       </div>
@@ -582,20 +586,18 @@
     <section class="design">
       <div class="design-header">
         <div class="design-name"><span class="num">02</span>Premium Minimal</div>
-        <div class="design-note">Off-white linen feel with a single thin orange divider. Reads "high-end remodels" — appeals to homeowners hiring for bigger jobs.</div>
+        <div class="design-note">Logo top-left on warm off-white with a thin orange rule and a quiet license stamp. Reads "high-end remodels" — appeals to homeowners hiring for bigger jobs.</div>
       </div>
       <div class="card-pair">
         <div style="position:relative;padding-top:28px;">
           <div class="face-label">Front</div>
           <div class="card d2-front">
+            <img src="/southcoast/logo.png" alt="South Coast Installs/Construction logo" class="logo" />
             <div>
-              <div class="brand">South<br />Coast<br /><span class="accent">Construction.</span></div>
+              <div class="rule"></div>
+              <div class="meta">General Contractor · San Diego, CA</div>
             </div>
-            <div class="meta">General Contractor · San Diego</div>
-            <div class="right-text">
-              <div class="est">EST. SAN DIEGO</div>
-              <div class="lic">LIC #1125936</div>
-            </div>
+            <div class="lic-corner">LIC #1125936</div>
           </div>
         </div>
         <div style="position:relative;padding-top:28px;">
@@ -617,26 +619,33 @@
     <section class="design">
       <div class="design-header">
         <div class="design-name"><span class="num">03</span>Blueprint Grid</div>
-        <div class="design-note">Literal blueprint aesthetic — leans hard into the contractor identity. Memorable because it doesn't look like every other contractor card.</div>
+        <div class="design-note">Literal blueprint aesthetic with the logo dropped into a "title-block" stamp. Memorable because it doesn't look like every other contractor card — leans hard into the build identity.</div>
       </div>
       <div class="card-pair">
         <div style="position:relative;padding-top:28px;">
           <div class="face-label">Front</div>
           <div class="card d3-front">
             <div class="stamp">SHEET 01 / 02</div>
-            <div class="brand">SOUTH COAST<span class="sub">// CONSTRUCTION CO.</span></div>
+            <div class="sheet">SCALE 1:1</div>
+            <div class="title-block">
+              <img src="/southcoast/logo.png" alt="South Coast Installs/Construction logo" class="logo" />
+            </div>
             <div class="specs">
-              SCALE 1:1 · <span>SAN DIEGO, CA</span><br />
-              LIC #1125936 · EST. 2025
+              <span>SAN DIEGO, CA</span>
+              <span>LIC #1125936</span>
+              <span>EST. 2025</span>
             </div>
           </div>
         </div>
         <div style="position:relative;padding-top:28px;">
           <div class="face-label">Back</div>
           <div class="card d3-back">
-            <div>
-              <div class="name">Allan Constantino</div>
-              <div class="role">GENERAL CONTRACTOR</div>
+            <div class="name-row">
+              <div>
+                <div class="name">Allan Constantino</div>
+                <div class="role">GENERAL CONTRACTOR</div>
+              </div>
+              <div class="lic">#1125936</div>
             </div>
             <div class="info">
               <div><span class="lbl">TEL</span> (619) 555-0000</div>
@@ -653,7 +662,7 @@
     <section class="design">
       <div class="design-header">
         <div class="design-name"><span class="num">04</span>Photo Hero</div>
-        <div class="design-note">Kitchen hero photo upfront sells the work before the words do. Best for homeowners — they see the finished product, not just a logo.</div>
+        <div class="design-note">Kitchen hero photo sells the work before the words do. Logo sits in a clean white band at the bottom — like a brand seal. Best for homeowners — they see the finished product first.</div>
       </div>
       <div class="card-pair">
         <div style="position:relative;padding-top:28px;">
@@ -663,9 +672,8 @@
               <span>EST. SAN DIEGO</span>
               <span class="lic">LIC #1125936</span>
             </div>
-            <div>
-              <div class="brand">South <span class="accent">Coast</span></div>
-              <div class="tagline">Kitchen Remodels &amp; General Contracting</div>
+            <div class="logo-bar">
+              <img src="/southcoast/logo.png" alt="South Coast Installs/Construction logo" class="logo" />
             </div>
           </div>
         </div>
