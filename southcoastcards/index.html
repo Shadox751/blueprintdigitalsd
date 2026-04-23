@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Business Card Concepts — South Coast Installs</title>
-  <meta name="description" content="Twenty business card design concepts for South Coast Installs/Construction." />
+  <meta name="description" content="Twenty business card design concepts for South Coast Installs/Construction — Allan Constantino &amp; Miguel Gutierrez." />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -37,51 +37,33 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ===== PAGE LAYOUT ===== */
-    .page {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 64px 32px 96px;
-    }
+    .page { max-width: 1200px; margin: 0 auto; padding: 64px 32px 96px; }
 
     .page-header { text-align: center; margin-bottom: 56px; }
     .page-header .eyebrow {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 12px;
-      letter-spacing: 2px;
-      color: var(--orange);
-      text-transform: uppercase;
+      font-size: 12px; letter-spacing: 2px;
+      color: var(--orange); text-transform: uppercase;
       margin-bottom: 16px;
     }
     .page-header h1 {
       font-family: 'Montserrat', sans-serif;
       font-size: clamp(28px, 4vw, 44px);
-      font-weight: 800;
-      color: var(--dark);
-      letter-spacing: -0.02em;
-      margin-bottom: 12px;
+      font-weight: 800; color: var(--dark);
+      letter-spacing: -0.02em; margin-bottom: 12px;
     }
-    .page-header p {
-      max-width: 620px; margin: 0 auto;
-      color: var(--gray); font-size: 15px;
-    }
+    .page-header p { max-width: 620px; margin: 0 auto; color: var(--gray); font-size: 15px; }
     .page-header .stat {
-      display: inline-flex;
-      gap: 18px;
-      margin-top: 18px;
+      display: inline-flex; gap: 18px; margin-top: 18px;
       padding: 10px 18px;
-      background: var(--white);
-      border: 1px solid var(--gray-line);
+      background: var(--white); border: 1px solid var(--gray-line);
       border-radius: 999px;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-      letter-spacing: 1.5px;
-      color: var(--charcoal);
-      text-transform: uppercase;
+      font-size: 11px; letter-spacing: 1.5px;
+      color: var(--charcoal); text-transform: uppercase;
     }
     .page-header .stat span strong { color: var(--orange); margin-right: 4px; }
 
-    /* ===== DESIGN BLOCK ===== */
     .design { margin-bottom: 80px; border-top: 1px solid var(--gray-line); padding-top: 48px; }
     .design:first-of-type { border-top: 0; padding-top: 0; }
     .design-header {
@@ -99,14 +81,29 @@
     }
     .design-name .tag {
       display: inline-block;
-      background: var(--orange-soft);
-      color: var(--orange);
+      background: var(--orange-soft); color: var(--orange);
       font-family: 'JetBrains Mono', monospace;
       font-size: 9px; padding: 3px 7px; border-radius: 3px;
       letter-spacing: 1px; margin-left: 12px; vertical-align: middle;
       font-weight: 700;
     }
     .design-note { color: var(--gray); font-size: 13px; max-width: 540px; }
+
+    /* ===== PERSON BLOCK (Allan / Miguel) ===== */
+    .person-block { margin-bottom: 36px; }
+    .person-block:last-child { margin-bottom: 0; }
+    .person-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; letter-spacing: 2.5px;
+      color: var(--orange); text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 14px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .person-label::before {
+      content: ''; width: 22px; height: 1.5px; background: var(--orange);
+    }
+    .person-label .for { color: var(--gray); font-weight: 500; letter-spacing: 1.5px; margin-left: 4px; }
 
     .card-pair {
       display: grid;
@@ -119,7 +116,6 @@
     }
     .card-wrap { position: relative; padding-top: 28px; }
 
-    /* ===== CARD DEFAULTS ===== */
     .card {
       width: 100%; max-width: 525px;
       aspect-ratio: 7 / 4;
@@ -128,10 +124,7 @@
       overflow: hidden; position: relative;
       font-family: 'Inter', sans-serif;
     }
-    .card.portrait {
-      max-width: 300px;
-      aspect-ratio: 4 / 7;
-    }
+    .card.portrait { max-width: 300px; aspect-ratio: 4 / 7; }
     .face-label {
       position: absolute; top: -28px; left: 0;
       font-family: 'JetBrains Mono', monospace;
@@ -139,7 +132,6 @@
       color: var(--gray); text-transform: uppercase;
     }
 
-    /* Reusable blocks */
     .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 18px; font-size: 11.5px; }
     .info-grid .item .k { display: block; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700; margin-bottom: 2px; }
     .info-grid .item .v { font-weight: 500; }
@@ -338,8 +330,7 @@
     /* ============== 14 VINTAGE TRADESMAN ============== */
     .d14-front {
       background: var(--cream);
-      background-image:
-        radial-gradient(rgba(0,0,0,0.04) 1px, transparent 1px);
+      background-image: radial-gradient(rgba(0,0,0,0.04) 1px, transparent 1px);
       background-size: 4px 4px;
       padding: 14px 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; position: relative; text-align: center;
     }
@@ -475,120 +466,232 @@
     <header class="page-header">
       <div class="eyebrow">South Coast Installs · Card Concepts</div>
       <h1>Twenty Business Card Directions</h1>
-      <p>Twenty distinct concepts — each shown front + back at the standard US business card ratio (3.5" × 2"). Real logo used in 17 of 20. Pick a number and we'll prep print-ready files at 300 DPI with bleed.</p>
+      <p>Twenty distinct concepts — each shown front + back at the standard US business card ratio (3.5" × 2"). Every design is rendered for both Allan Constantino and Miguel Gutierrez. Pick a number — we'll prep print-ready files at 300 DPI with bleed.</p>
       <div class="stat">
         <span><strong>20</strong>concepts</span>
-        <span><strong>17</strong>logo-led</span>
-        <span><strong>3</strong>typographic</span>
+        <span><strong>×2</strong>per person</span>
+        <span><strong>40</strong>cards total</span>
       </div>
     </header>
 
-    <!-- ===== 01 ===== -->
+    <!-- ===== 01 SIGNATURE BOLD ===== -->
     <section class="design">
       <div class="design-header">
         <div class="design-name"><span class="num">01</span>Signature Bold<span class="tag">LOGO</span></div>
         <div class="design-note">Logo front and center on clean white with an orange foot stripe. Maximum-visibility orange back.</div>
       </div>
-      <div class="card-pair">
-        <div class="card-wrap"><div class="face-label">Front</div>
-          <div class="card d1-front"><img src="/southcoast/logo.png" alt="logo" /></div>
-        </div>
-        <div class="card-wrap"><div class="face-label">Back</div>
-          <div class="card d1-back">
-            <div><div class="name">Allan Constantino</div><div class="role">General Contractor</div></div>
-            <div class="info-grid">
-              <div class="item"><span class="k">Phone</span><span class="v">(619) 555-0000</span></div>
-              <div class="item"><span class="k">Email</span><span class="v">info@southcoastinstalls.com</span></div>
-              <div class="item"><span class="k">Hours</span><span class="v">Mon–Sun · 7AM–6PM</span></div>
-              <div class="item"><span class="k">Service</span><span class="v">All of San Diego County</span></div>
+
+      <div class="person-block">
+        <div class="person-label">Allan Constantino <span class="for">— card</span></div>
+        <div class="card-pair">
+          <div class="card-wrap"><div class="face-label">Front</div>
+            <div class="card d1-front"><img src="/southcoast/logo.png" alt="logo" /></div>
+          </div>
+          <div class="card-wrap"><div class="face-label">Back</div>
+            <div class="card d1-back">
+              <div><div class="name">Allan Constantino</div><div class="role">General Contractor</div></div>
+              <div class="info-grid">
+                <div class="item"><span class="k">Phone</span><span class="v">(619) 555-0000</span></div>
+                <div class="item"><span class="k">Email</span><span class="v">info@southcoastinstalls.com</span></div>
+                <div class="item"><span class="k">Hours</span><span class="v">Mon–Sun · 7AM–6PM</span></div>
+                <div class="item"><span class="k">Service</span><span class="v">All of San Diego County</span></div>
+              </div>
+              <div class="lic">LIC #1125936</div>
             </div>
-            <div class="lic">LIC #1125936</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="person-block">
+        <div class="person-label">Miguel Gutierrez <span class="for">— card</span></div>
+        <div class="card-pair">
+          <div class="card-wrap"><div class="face-label">Front</div>
+            <div class="card d1-front"><img src="/southcoast/logo.png" alt="logo" /></div>
+          </div>
+          <div class="card-wrap"><div class="face-label">Back</div>
+            <div class="card d1-back">
+              <div><div class="name">Miguel Gutierrez</div><div class="role">General Contractor</div></div>
+              <div class="info-grid">
+                <div class="item"><span class="k">Phone</span><span class="v">(619) 555-0001</span></div>
+                <div class="item"><span class="k">Email</span><span class="v">miguel@southcoastinstalls.com</span></div>
+                <div class="item"><span class="k">Hours</span><span class="v">Mon–Sun · 7AM–6PM</span></div>
+                <div class="item"><span class="k">Service</span><span class="v">All of San Diego County</span></div>
+              </div>
+              <div class="lic">LIC #1125936</div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== 02 ===== -->
+    <!-- ===== 02 PREMIUM MINIMAL ===== -->
     <section class="design">
       <div class="design-header">
         <div class="design-name"><span class="num">02</span>Premium Minimal<span class="tag">LOGO</span></div>
         <div class="design-note">Off-white front, thin orange rule, quiet license stamp. Reads "high-end remodels."</div>
       </div>
-      <div class="card-pair">
-        <div class="card-wrap"><div class="face-label">Front</div>
-          <div class="card d2-front">
-            <img src="/southcoast/logo.png" alt="logo" />
-            <div><div class="rule"></div><div class="meta">General Contractor · San Diego, CA</div></div>
-            <div class="lic-corner">LIC #1125936</div>
+
+      <div class="person-block">
+        <div class="person-label">Allan Constantino <span class="for">— card</span></div>
+        <div class="card-pair">
+          <div class="card-wrap"><div class="face-label">Front</div>
+            <div class="card d2-front">
+              <img src="/southcoast/logo.png" alt="logo" />
+              <div><div class="rule"></div><div class="meta">General Contractor · San Diego, CA</div></div>
+              <div class="lic-corner">LIC #1125936</div>
+            </div>
+          </div>
+          <div class="card-wrap"><div class="face-label">Back</div>
+            <div class="card d2-back">
+              <div class="name">Allan Constantino</div>
+              <div class="info">
+                <div class="k">Phone</div><div class="v">(619) 555-0000</div>
+                <div class="k">Email</div><div class="v">info@southcoastinstalls.com</div>
+                <div class="k">Hours</div><div class="v">Mon–Sun · 7AM – 6PM</div>
+                <div class="k">Area</div><div class="v">All of San Diego County</div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="card-wrap"><div class="face-label">Back</div>
-          <div class="card d2-back">
-            <div class="name">Allan Constantino</div>
-            <div class="info">
-              <div class="k">Phone</div><div class="v">(619) 555-0000</div>
-              <div class="k">Email</div><div class="v">info@southcoastinstalls.com</div>
-              <div class="k">Hours</div><div class="v">Mon–Sun · 7AM – 6PM</div>
-              <div class="k">Area</div><div class="v">All of San Diego County</div>
+      </div>
+
+      <div class="person-block">
+        <div class="person-label">Miguel Gutierrez <span class="for">— card</span></div>
+        <div class="card-pair">
+          <div class="card-wrap"><div class="face-label">Front</div>
+            <div class="card d2-front">
+              <img src="/southcoast/logo.png" alt="logo" />
+              <div><div class="rule"></div><div class="meta">General Contractor · San Diego, CA</div></div>
+              <div class="lic-corner">LIC #1125936</div>
+            </div>
+          </div>
+          <div class="card-wrap"><div class="face-label">Back</div>
+            <div class="card d2-back">
+              <div class="name">Miguel Gutierrez</div>
+              <div class="info">
+                <div class="k">Phone</div><div class="v">(619) 555-0001</div>
+                <div class="k">Email</div><div class="v">miguel@southcoastinstalls.com</div>
+                <div class="k">Hours</div><div class="v">Mon–Sun · 7AM – 6PM</div>
+                <div class="k">Area</div><div class="v">All of San Diego County</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== 03 ===== -->
+    <!-- ===== 03 BLUEPRINT GRID ===== -->
     <section class="design">
       <div class="design-header">
         <div class="design-name"><span class="num">03</span>Blueprint Grid<span class="tag">LOGO</span></div>
         <div class="design-note">Literal blueprint with the logo dropped into a "title-block" stamp. Memorable and on-brand.</div>
       </div>
-      <div class="card-pair">
-        <div class="card-wrap"><div class="face-label">Front</div>
-          <div class="card d3-front">
-            <div class="stamp">SHEET 01 / 02</div>
-            <div class="sheet">SCALE 1:1</div>
-            <div class="title-block"><img src="/southcoast/logo.png" alt="logo" /></div>
-            <div class="specs"><span>SAN DIEGO, CA</span><span>LIC #1125936</span><span>EST. 2025</span></div>
+
+      <div class="person-block">
+        <div class="person-label">Allan Constantino <span class="for">— card</span></div>
+        <div class="card-pair">
+          <div class="card-wrap"><div class="face-label">Front</div>
+            <div class="card d3-front">
+              <div class="stamp">SHEET 01 / 02</div>
+              <div class="sheet">SCALE 1:1</div>
+              <div class="title-block"><img src="/southcoast/logo.png" alt="logo" /></div>
+              <div class="specs"><span>SAN DIEGO, CA</span><span>LIC #1125936</span><span>EST. 2025</span></div>
+            </div>
+          </div>
+          <div class="card-wrap"><div class="face-label">Back</div>
+            <div class="card d3-back">
+              <div class="name-row">
+                <div><div class="name">Allan Constantino</div><div class="role">GENERAL CONTRACTOR</div></div>
+                <div class="lic">#1125936</div>
+              </div>
+              <div class="info">
+                <div><span class="lbl">TEL</span> (619) 555-0000</div>
+                <div><span class="lbl">EML</span> info@southcoastinstalls.com</div>
+                <div><span class="lbl">HRS</span> Mon–Sun · 7AM–6PM</div>
+                <div><span class="lbl">SVC</span> San Diego County</div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="card-wrap"><div class="face-label">Back</div>
-          <div class="card d3-back">
-            <div class="name-row">
-              <div><div class="name">Allan Constantino</div><div class="role">GENERAL CONTRACTOR</div></div>
-              <div class="lic">#1125936</div>
+      </div>
+
+      <div class="person-block">
+        <div class="person-label">Miguel Gutierrez <span class="for">— card</span></div>
+        <div class="card-pair">
+          <div class="card-wrap"><div class="face-label">Front</div>
+            <div class="card d3-front">
+              <div class="stamp">SHEET 01 / 02</div>
+              <div class="sheet">SCALE 1:1</div>
+              <div class="title-block"><img src="/southcoast/logo.png" alt="logo" /></div>
+              <div class="specs"><span>SAN DIEGO, CA</span><span>LIC #1125936</span><span>EST. 2025</span></div>
             </div>
-            <div class="info">
-              <div><span class="lbl">TEL</span> (619) 555-0000</div>
-              <div><span class="lbl">EML</span> info@southcoastinstalls.com</div>
-              <div><span class="lbl">HRS</span> Mon–Sun · 7AM–6PM</div>
-              <div><span class="lbl">SVC</span> San Diego County</div>
+          </div>
+          <div class="card-wrap"><div class="face-label">Back</div>
+            <div class="card d3-back">
+              <div class="name-row">
+                <div><div class="name">Miguel Gutierrez</div><div class="role">GENERAL CONTRACTOR</div></div>
+                <div class="lic">#1125936</div>
+              </div>
+              <div class="info">
+                <div><span class="lbl">TEL</span> (619) 555-0001</div>
+                <div><span class="lbl">EML</span> miguel@southcoastinstalls.com</div>
+                <div><span class="lbl">HRS</span> Mon–Sun · 7AM–6PM</div>
+                <div><span class="lbl">SVC</span> San Diego County</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== 04 ===== -->
+    <!-- ===== 04 PHOTO HERO ===== -->
     <section class="design">
       <div class="design-header">
         <div class="design-name"><span class="num">04</span>Photo Hero<span class="tag">LOGO</span></div>
         <div class="design-note">Kitchen hero photo sells the work. Logo sits in a clean white band — like a brand seal.</div>
       </div>
-      <div class="card-pair">
-        <div class="card-wrap"><div class="face-label">Front</div>
-          <div class="card d4-front">
-            <div class="top-bar"><span>EST. SAN DIEGO</span><span class="lic">LIC #1125936</span></div>
-            <div class="logo-bar"><img src="/southcoast/logo.png" alt="logo" /></div>
+
+      <div class="person-block">
+        <div class="person-label">Allan Constantino <span class="for">— card</span></div>
+        <div class="card-pair">
+          <div class="card-wrap"><div class="face-label">Front</div>
+            <div class="card d4-front">
+              <div class="top-bar"><span>EST. SAN DIEGO</span><span class="lic">LIC #1125936</span></div>
+              <div class="logo-bar"><img src="/southcoast/logo.png" alt="logo" /></div>
+            </div>
+          </div>
+          <div class="card-wrap"><div class="face-label">Back</div>
+            <div class="card d4-back">
+              <div><div class="name">Allan Constantino</div><div class="role">General Contractor</div></div>
+              <div class="info-grid">
+                <div class="item"><span class="k">Phone</span><span class="v">(619) 555-0000</span></div>
+                <div class="item"><span class="k">Email</span><span class="v">info@southcoastinstalls.com</span></div>
+                <div class="item"><span class="k">Hours</span><span class="v">Mon–Sun · 7AM–6PM</span></div>
+                <div class="item"><span class="k">Area</span><span class="v">San Diego County</span></div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="card-wrap"><div class="face-label">Back</div>
-          <div class="card d4-back">
-            <div><div class="name">Allan Constantino</div><div class="role">General Contractor</div></div>
-            <div class="info-grid">
-              <div class="item"><span class="k">Phone</span><span class="v">(619) 555-0000</span></div>
-              <div class="item"><span class="k">Email</span><span class="v">info@southcoastinstalls.com</span></div>
-              <div class="item"><span class="k">Hours</span><span class="v">Mon–Sun · 7AM–6PM</span></div>
-              <div class="item"><span class="k">Area</span><span class="v">San Diego County</span></div>
+      </div>
+
+      <div class="person-block">
+        <div class="person-label">Miguel Gutierrez <span class="for">— card</span></div>
+        <div class="card-pair">
+          <div class="card-wrap"><div class="face-label">Front</div>
+            <div class="card d4-front">
+              <div class="top-bar"><span>EST. SAN DIEGO</span><span class="lic">LIC #1125936</span></div>
+              <div class="logo-bar"><img src="/southcoast/logo.png" alt="logo" /></div>
+            </div>
+          </div>
+          <div class="card-wrap"><div class="face-label">Back</div>
+            <div class="card d4-back">
+              <div><div class="name">Miguel Gutierrez</div><div class="role">General Contractor</div></div>
+              <div class="info-grid">
+                <div class="item"><span class="k">Phone</span><span class="v">(619) 555-0001</span></div>
+                <div class="item"><span class="k">Email</span><span class="v">miguel@southcoastinstalls.com</span></div>
+                <div class="item"><span class="k">Hours</span><span class="v">Mon–Sun · 7AM–6PM</span></div>
+                <div class="item"><span class="k">Area</span><span class="v">San Diego County</span></div>
+              </div>
             </div>
           </div>
         </div>
@@ -601,20 +704,45 @@
         <div class="design-name"><span class="num">05</span>Vertical Portrait<span class="tag">LOGO</span> <span class="tag">UNIQUE FORMAT</span></div>
         <div class="design-note">Card flipped 90°. Stands out in any stack of horizontal cards because no one else does this.</div>
       </div>
-      <div class="card-pair vertical">
-        <div class="card-wrap"><div class="face-label">Front</div>
-          <div class="card portrait d5-front">
-            <img src="/southcoast/logo.png" alt="logo" />
-            <div><div class="name">Allan Constantino</div><div class="role">General Contractor</div></div>
-            <div class="lic-bottom">LIC #1125936</div>
+
+      <div class="person-block">
+        <div class="person-label">Allan Constantino <span class="for">— card</span></div>
+        <div class="card-pair vertical">
+          <div class="card-wrap"><div class="face-label">Front</div>
+            <div class="card portrait d5-front">
+              <img src="/southcoast/logo.png" alt="logo" />
+              <div><div class="name">Allan Constantino</div><div class="role">General Contractor</div></div>
+              <div class="lic-bottom">LIC #1125936</div>
+            </div>
+          </div>
+          <div class="card-wrap"><div class="face-label">Back</div>
+            <div class="card portrait d5-back">
+              <div class="row"><div class="label">Phone</div><span class="v">(619) 555-0000</span></div>
+              <div class="row"><div class="label">Email</div><span class="v">info@southcoastinstalls.com</span></div>
+              <div class="row"><div class="label">Hours</div><span class="v">Mon–Sun · 7AM–6PM</span></div>
+              <div class="row"><div class="label">Service Area</div><span class="v">All of San Diego County</span></div>
+            </div>
           </div>
         </div>
-        <div class="card-wrap"><div class="face-label">Back</div>
-          <div class="card portrait d5-back">
-            <div class="row"><div class="label">Phone</div><span class="v">(619) 555-0000</span></div>
-            <div class="row"><div class="label">Email</div><span class="v">info@southcoastinstalls.com</span></div>
-            <div class="row"><div class="label">Hours</div><span class="v">Mon–Sun · 7AM–6PM</span></div>
-            <div class="row"><div class="label">Service Area</div><span class="v">All of San Diego County</span></div>
+      </div>
+
+      <div class="person-block">
+        <div class="person-label">Miguel Gutierrez <span class="for">— card</span></div>
+        <div class="card-pair vertical">
+          <div class="card-wrap"><div class="face-label">Front</div>
+            <div class="card portrait d5-front">
+              <img src="/southcoast/logo.png" alt="logo" />
+              <div><div class="name">Miguel Gutierrez</div><div class="role">General Contractor</div></div>
+              <div class="lic-bottom">LIC #1125936</div>
+            </div>
+          </div>
+          <div class="card-wrap"><div class="face-label">Back</div>
+            <div class="card portrait d5-back">
+              <div class="row"><div class="label">Phone</div><span class="v">(619) 555-0001</span></div>
+              <div class="row"><div class="label">Email</div><span class="v">miguel@southcoastinstalls.com</span></div>
+              <div class="row"><div class="label">Hours</div><span class="v">Mon–Sun · 7AM–6PM</span></div>
+              <div class="row"><div class="label">Service Area</div><span class="v">All of San Diego County</span></div>
+            </div>
           </div>
         </div>
       </div>
@@ -626,24 +754,53 @@
         <div class="design-name"><span class="num">06</span>Stacked Tri-Color<span class="tag">LOGO</span></div>
         <div class="design-note">Three horizontal bands frame the logo — orange, white, charcoal. Bold, modern, balanced.</div>
       </div>
-      <div class="card-pair">
-        <div class="card-wrap"><div class="face-label">Front</div>
-          <div class="card d6-front">
-            <div class="top"></div>
-            <div class="mid"><img src="/southcoast/logo.png" alt="logo" /></div>
-            <div class="bot">SAN DIEGO · LIC #1125936</div>
+
+      <div class="person-block">
+        <div class="person-label">Allan Constantino <span class="for">— card</span></div>
+        <div class="card-pair">
+          <div class="card-wrap"><div class="face-label">Front</div>
+            <div class="card d6-front">
+              <div class="top"></div>
+              <div class="mid"><img src="/southcoast/logo.png" alt="logo" /></div>
+              <div class="bot">SAN DIEGO · LIC #1125936</div>
+            </div>
+          </div>
+          <div class="card-wrap"><div class="face-label">Back</div>
+            <div class="card d6-back">
+              <div><div class="name">Allan Constantino</div><div class="role">General Contractor</div></div>
+              <div class="info-grid">
+                <div class="item"><span class="k">Phone</span><span class="v">(619) 555-0000</span></div>
+                <div class="item"><span class="k">Email</span><span class="v">info@southcoastinstalls.com</span></div>
+                <div class="item"><span class="k">Hours</span><span class="v">Mon–Sun · 7AM–6PM</span></div>
+                <div class="item"><span class="k">Area</span><span class="v">San Diego County</span></div>
+              </div>
+              <div class="lic">LIC #1125936</div>
+            </div>
           </div>
         </div>
-        <div class="card-wrap"><div class="face-label">Back</div>
-          <div class="card d6-back">
-            <div><div class="name">Allan Constantino</div><div class="role">General Contractor</div></div>
-            <div class="info-grid">
-              <div class="item"><span class="k">Phone</span><span class="v">(619) 555-0000</span></div>
-              <div class="item"><span class="k">Email</span><span class="v">info@southcoastinstalls.com</span></div>
-              <div class="item"><span class="k">Hours</span><span class="v">Mon–Sun · 7AM–6PM</span></div>
-              <div class="item"><span class="k">Area</span><span class="v">San Diego County</span></div>
+      </div>
+
+      <div class="person-block">
+        <div class="person-label">Miguel Gutierrez <span class="for">— card</span></div>
+        <div class="card-pair">
+          <div class="card-wrap"><div class="face-label">Front</div>
+            <div class="card d6-front">
+              <div class="top"></div>
+              <div class="mid"><img src="/southcoast/logo.png" alt="logo" /></div>
+              <div class="bot">SAN DIEGO · LIC #1125936</div>
             </div>
-            <div class="lic">LIC #1125936</div>
+          </div>
+          <div class="card-wrap"><div class="face-label">Back</div>
+            <div class="card d6-back">
+              <div><div class="name">Miguel Gutierrez</div><div class="role">General Contractor</div></div>
+              <div class="info-grid">
+                <div class="item"><span class="k">Phone</span><span class="v">(619) 555-0001</span></div>
+                <div class="item"><span class="k">Email</span><span class="v">miguel@southcoastinstalls.com</span></div>
+                <div class="item"><span class="k">Hours</span><span class="v">Mon–Sun · 7AM–6PM</span></div>
+                <div class="item"><span class="k">Area</span><span class="v">San Diego County</span></div>
+              </div>
+              <div class="lic">LIC #1125936</div>
+            </div>
           </div>
         </div>
       </div>
@@ -655,24 +812,55 @@
         <div class="design-name"><span class="num">07</span>Bold Typography<span class="tag">TYPE</span></div>
         <div class="design-note">No logo on front — just massive type. Logo and full info live on the back. Confident, editorial.</div>
       </div>
-      <div class="card-pair">
-        <div class="card-wrap"><div class="face-label">Front</div>
-          <div class="card d7-front">
-            <div class="big">BUILT IN<br /><span class="or">SAN DIEGO</span></div>
-            <div class="corner">SOUTH COAST · EST. 2025</div>
+
+      <div class="person-block">
+        <div class="person-label">Allan Constantino <span class="for">— card</span></div>
+        <div class="card-pair">
+          <div class="card-wrap"><div class="face-label">Front</div>
+            <div class="card d7-front">
+              <div class="big">BUILT IN<br /><span class="or">SAN DIEGO</span></div>
+              <div class="corner">SOUTH COAST · EST. 2025</div>
+            </div>
+          </div>
+          <div class="card-wrap"><div class="face-label">Back</div>
+            <div class="card d7-back">
+              <div class="top"><img src="/southcoast/logo.png" alt="logo" /><div class="lic">LIC #1125936</div></div>
+              <div>
+                <div class="name">Allan Constantino</div>
+                <div class="role">General Contractor</div>
+                <div class="info-grid">
+                  <div class="item"><span class="k">Phone</span><span class="v">(619) 555-0000</span></div>
+                  <div class="item"><span class="k">Email</span><span class="v">info@southcoastinstalls.com</span></div>
+                  <div class="item"><span class="k">Hours</span><span class="v">Mon–Sun · 7AM–6PM</span></div>
+                  <div class="item"><span class="k">Area</span><span class="v">San Diego County</span></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="card-wrap"><div class="face-label">Back</div>
-          <div class="card d7-back">
-            <div class="top"><img src="/southcoast/logo.png" alt="logo" /><div class="lic">LIC #1125936</div></div>
-            <div>
-              <div class="name">Allan Constantino</div>
-              <div class="role">General Contractor</div>
-              <div class="info-grid">
-                <div class="item"><span class="k">Phone</span><span class="v">(619) 555-0000</span></div>
-                <div class="item"><span class="k">Email</span><span class="v">info@southcoastinstalls.com</span></div>
-                <div class="item"><span class="k">Hours</span><span class="v">Mon–Sun · 7AM–6PM</span></div>
-                <div class="item"><span class="k">Area</span><span class="v">San Diego County</span></div>
+      </div>
+
+      <div class="person-block">
+        <div class="person-label">Miguel Gutierrez <span class="for">— card</span></div>
+        <div class="card-pair">
+          <div class="card-wrap"><div class="face-label">Front</div>
+            <div class="card d7-front">
+              <div class="big">BUILT IN<br /><span class="or">SAN DIEGO</span></div>
+              <div class="corner">SOUTH COAST · EST. 2025</div>
+            </div>
+          </div>
+          <div class="card-wrap"><div class="face-label">Back</div>
+            <div class="card d7-back">
+              <div class="top"><img src="/southcoast/logo.png" alt="logo" /><div class="lic">LIC #1125936</div></div>
+              <div>
+                <div class="name">Miguel Gutierrez</div>
+                <div class="role">General Contractor</div>
+                <div class="info-grid">
+                  <div class="item"><span class="k">Phone</span><span class="v">(619) 555-0001</span></div>
+                  <div class="item"><span class="k">Email</span><span class="v">miguel@southcoastinstalls.com</span></div>
+                  <div class="item"><span class="k">Hours</span><span class="v">Mon–Sun · 7AM–6PM</span></div>
+                  <div class="item"><span class="k">Area</span><span class="v">San Diego County</span></div>
+                </div>
               </div>
             </div>
           </div>
@@ -686,24 +874,50 @@
         <div class="design-name"><span class="num">08</span>Service Stamp<span class="tag">LOGO</span></div>
         <div class="design-note">Logo + a row of service "stamps" — kitchens, baths, floors, additions. Sells what you do at a glance.</div>
       </div>
-      <div class="card-pair">
-        <div class="card-wrap"><div class="face-label">Front</div>
-          <div class="card d8-front">
-            <img src="/southcoast/logo.png" alt="logo" />
-            <div class="services">
-              <span>KITCHENS</span><span>BATHS</span><span>FLOORS</span><span>ADDITIONS</span>
+
+      <div class="person-block">
+        <div class="person-label">Allan Constantino <span class="for">— card</span></div>
+        <div class="card-pair">
+          <div class="card-wrap"><div class="face-label">Front</div>
+            <div class="card d8-front">
+              <img src="/southcoast/logo.png" alt="logo" />
+              <div class="services"><span>KITCHENS</span><span>BATHS</span><span>FLOORS</span><span>ADDITIONS</span></div>
+              <div class="corner">LIC #1125936 · MON–SUN 7A–6P</div>
             </div>
-            <div class="corner">LIC #1125936 · MON–SUN 7A–6P</div>
+          </div>
+          <div class="card-wrap"><div class="face-label">Back</div>
+            <div class="card d8-back">
+              <div><div class="name">Allan Constantino</div><div class="role">General Contractor</div></div>
+              <div class="info-grid">
+                <div class="item"><span class="k">Phone</span><span class="v">(619) 555-0000</span></div>
+                <div class="item"><span class="k">Email</span><span class="v">info@southcoastinstalls.com</span></div>
+                <div class="item"><span class="k">Hours</span><span class="v">Mon–Sun · 7AM–6PM</span></div>
+                <div class="item"><span class="k">Area</span><span class="v">San Diego County</span></div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="card-wrap"><div class="face-label">Back</div>
-          <div class="card d8-back">
-            <div><div class="name">Allan Constantino</div><div class="role">General Contractor</div></div>
-            <div class="info-grid">
-              <div class="item"><span class="k">Phone</span><span class="v">(619) 555-0000</span></div>
-              <div class="item"><span class="k">Email</span><span class="v">info@southcoastinstalls.com</span></div>
-              <div class="item"><span class="k">Hours</span><span class="v">Mon–Sun · 7AM–6PM</span></div>
-              <div class="item"><span class="k">Area</span><span class="v">San Diego County</span></div>
+      </div>
+
+      <div class="person-block">
+        <div class="person-label">Miguel Gutierrez <span class="for">— card</span></div>
+        <div class="card-pair">
+          <div class="card-wrap"><div class="face-label">Front</div>
+            <div class="card d8-front">
+              <img src="/southcoast/logo.png" alt="logo" />
+              <div class="services"><span>KITCHENS</span><span>BATHS</span><span>FLOORS</span><span>ADDITIONS</span></div>
+              <div class="corner">LIC #1125936 · MON–SUN 7A–6P</div>
+            </div>
+          </div>
+          <div class="card-wrap"><div class="face-label">Back</div>
+            <div class="card d8-back">
+              <div><div class="name">Miguel Gutierrez</div><div class="role">General Contractor</div></div>
+              <div class="info-grid">
+                <div class="item"><span class="k">Phone</span><span class="v">(619) 555-0001</span></div>
+                <div class="item"><span class="k">Email</span><span class="v">miguel@southcoastinstalls.com</span></div>
+                <div class="item"><span class="k">Hours</span><span class="v">Mon–Sun · 7AM–6PM</span></div>
+                <div class="item"><span class="k">Area</span><span class="v">San Diego County</span></div>
+              </div>
             </div>
           </div>
         </div>
@@ -716,37 +930,68 @@
         <div class="design-name"><span class="num">09</span>Permit Card<span class="tag">LOGO</span> <span class="tag">UNIQUE</span></div>
         <div class="design-note">Looks like an official building permit. Implies authority and code-compliant work — distinctive.</div>
       </div>
-      <div class="card-pair">
-        <div class="card-wrap"><div class="face-label">Front</div>
-          <div class="card d9-front">
-            <div class="title">
-              <span class="h">CONTRACTOR PERMIT</span>
-              <span class="num">FORM SC-01</span>
+
+      <div class="person-block">
+        <div class="person-label">Allan Constantino <span class="for">— card</span></div>
+        <div class="card-pair">
+          <div class="card-wrap"><div class="face-label">Front</div>
+            <div class="card d9-front">
+              <div class="title"><span class="h">CONTRACTOR PERMIT</span><span class="num">FORM SC-01</span></div>
+              <div class="body">
+                <img src="/southcoast/logo.png" alt="logo" />
+                <div class="meta">
+                  <strong>JURISDICTION</strong>SAN DIEGO COUNTY<br />
+                  <strong>CLASS</strong>GENERAL · B<br />
+                  <strong>LIC NO.</strong>1125936<br />
+                  <strong>STATUS</strong>ACTIVE
+                </div>
+              </div>
+              <div class="stamp">APPROVED</div>
             </div>
-            <div class="body">
-              <img src="/southcoast/logo.png" alt="logo" />
-              <div class="meta">
-                <strong>JURISDICTION</strong>SAN DIEGO COUNTY<br />
-                <strong>CLASS</strong>GENERAL · B<br />
-                <strong>LIC NO.</strong>1125936<br />
-                <strong>STATUS</strong>ACTIVE
+          </div>
+          <div class="card-wrap"><div class="face-label">Back</div>
+            <div class="card d9-back">
+              <div class="header">CONTACT THE CONTRACTOR</div>
+              <div><div class="name">Allan Constantino</div><div class="role">GENERAL CONTRACTOR</div></div>
+              <div class="info">
+                <div><span class="lbl">TEL</span>(619) 555-0000</div>
+                <div><span class="lbl">EML</span>info@southcoastinstalls.com</div>
+                <div><span class="lbl">HRS</span>Mon–Sun · 7AM–6PM</div>
+                <div><span class="lbl">SVC</span>San Diego County</div>
               </div>
             </div>
-            <div class="stamp">APPROVED</div>
           </div>
         </div>
-        <div class="card-wrap"><div class="face-label">Back</div>
-          <div class="card d9-back">
-            <div class="header">CONTACT THE CONTRACTOR</div>
-            <div>
-              <div class="name">Allan Constantino</div>
-              <div class="role">GENERAL CONTRACTOR</div>
+      </div>
+
+      <div class="person-block">
+        <div class="person-label">Miguel Gutierrez <span class="for">— card</span></div>
+        <div class="card-pair">
+          <div class="card-wrap"><div class="face-label">Front</div>
+            <div class="card d9-front">
+              <div class="title"><span class="h">CONTRACTOR PERMIT</span><span class="num">FORM SC-01</span></div>
+              <div class="body">
+                <img src="/southcoast/logo.png" alt="logo" />
+                <div class="meta">
+                  <strong>JURISDICTION</strong>SAN DIEGO COUNTY<br />
+                  <strong>CLASS</strong>GENERAL · B<br />
+                  <strong>LIC NO.</strong>1125936<br />
+                  <strong>STATUS</strong>ACTIVE
+                </div>
+              </div>
+              <div class="stamp">APPROVED</div>
             </div>
-            <div class="info">
-              <div><span class="lbl">TEL</span>(619) 555-0000</div>
-              <div><span class="lbl">EML</span>info@southcoastinstalls.com</div>
-              <div><span class="lbl">HRS</span>Mon–Sun · 7AM–6PM</div>
-              <div><span class="lbl">SVC</span>San Diego County</div>
+          </div>
+          <div class="card-wrap"><div class="face-label">Back</div>
+            <div class="card d9-back">
+              <div class="header">CONTACT THE CONTRACTOR</div>
+              <div><div class="name">Miguel Gutierrez</div><div class="role">GENERAL CONTRACTOR</div></div>
+              <div class="info">
+                <div><span class="lbl">TEL</span>(619) 555-0001</div>
+                <div><span class="lbl">EML</span>miguel@southcoastinstalls.com</div>
+                <div><span class="lbl">HRS</span>Mon–Sun · 7AM–6PM</div>
+                <div><span class="lbl">SVC</span>San Diego County</div>
+              </div>
             </div>
           </div>
         </div>
@@ -759,21 +1004,48 @@
         <div class="design-name"><span class="num">10</span>Edge Stripe<span class="tag">LOGO</span></div>
         <div class="design-note">Wide vertical orange stripe with the brand name running up it. Architectural and high-contrast.</div>
       </div>
-      <div class="card-pair">
-        <div class="card-wrap"><div class="face-label">Front</div>
-          <div class="card d10-front">
-            <div class="stripe"><div class="v-text">SOUTH COAST</div></div>
-            <div class="body"><img src="/southcoast/logo.png" alt="logo" /></div>
+
+      <div class="person-block">
+        <div class="person-label">Allan Constantino <span class="for">— card</span></div>
+        <div class="card-pair">
+          <div class="card-wrap"><div class="face-label">Front</div>
+            <div class="card d10-front">
+              <div class="stripe"><div class="v-text">SOUTH COAST</div></div>
+              <div class="body"><img src="/southcoast/logo.png" alt="logo" /></div>
+            </div>
+          </div>
+          <div class="card-wrap"><div class="face-label">Back</div>
+            <div class="card d10-back">
+              <div><div class="name">Allan Constantino</div><div class="role">General Contractor</div></div>
+              <div class="info-grid">
+                <div class="item"><span class="k">Phone</span><span class="v">(619) 555-0000</span></div>
+                <div class="item"><span class="k">Email</span><span class="v">info@southcoastinstalls.com</span></div>
+                <div class="item"><span class="k">Hours</span><span class="v">Mon–Sun · 7AM–6PM</span></div>
+                <div class="item"><span class="k">License</span><span class="v">#1125936</span></div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="card-wrap"><div class="face-label">Back</div>
-          <div class="card d10-back">
-            <div><div class="name">Allan Constantino</div><div class="role">General Contractor</div></div>
-            <div class="info-grid">
-              <div class="item"><span class="k">Phone</span><span class="v">(619) 555-0000</span></div>
-              <div class="item"><span class="k">Email</span><span class="v">info@southcoastinstalls.com</span></div>
-              <div class="item"><span class="k">Hours</span><span class="v">Mon–Sun · 7AM–6PM</span></div>
-              <div class="item"><span class="k">License</span><span class="v">#1125936</span></div>
+      </div>
+
+      <div class="person-block">
+        <div class="person-label">Miguel Gutierrez <span class="for">— card</span></div>
+        <div class="card-pair">
+          <div class="card-wrap"><div class="face-label">Front</div>
+            <div class="card d10-front">
+              <div class="stripe"><div class="v-text">SOUTH COAST</div></div>
+              <div class="body"><img src="/southcoast/logo.png" alt="logo" /></div>
+            </div>
+          </div>
+          <div class="card-wrap"><div class="face-label">Back</div>
+            <div class="card d10-back">
+              <div><div class="name">Miguel Gutierrez</div><div class="role">General Contractor</div></div>
+              <div class="info-grid">
+                <div class="item"><span class="k">Phone</span><span class="v">(619) 555-0001</span></div>
+                <div class="item"><span class="k">Email</span><span class="v">miguel@southcoastinstalls.com</span></div>
+                <div class="item"><span class="k">Hours</span><span class="v">Mon–Sun · 7AM–6PM</span></div>
+                <div class="item"><span class="k">License</span><span class="v">#1125936</span></div>
+              </div>
             </div>
           </div>
         </div>
@@ -786,159 +1058,310 @@
         <div class="design-name"><span class="num">11</span>Centered Frame<span class="tag">LOGO</span></div>
         <div class="design-note">Thin orange frame on both faces. Classic, refined — feels like a printed certificate.</div>
       </div>
-      <div class="card-pair">
-        <div class="card-wrap"><div class="face-label">Front</div>
-          <div class="card d11-front">
-            <div class="corner-tl">EST · 2025</div>
-            <img src="/southcoast/logo.png" alt="logo" />
-            <div class="corner-br">SAN DIEGO · CA</div>
+
+      <div class="person-block">
+        <div class="person-label">Allan Constantino <span class="for">— card</span></div>
+        <div class="card-pair">
+          <div class="card-wrap"><div class="face-label">Front</div>
+            <div class="card d11-front">
+              <div class="corner-tl">EST · 2025</div>
+              <img src="/southcoast/logo.png" alt="logo" />
+              <div class="corner-br">SAN DIEGO · CA</div>
+            </div>
+          </div>
+          <div class="card-wrap"><div class="face-label">Back</div>
+            <div class="card d11-back">
+              <div><div class="name">Allan Constantino</div><div class="role">General Contractor · LIC #1125936</div></div>
+              <div class="info-grid">
+                <div class="item"><span class="k">Phone</span><span class="v">(619) 555-0000</span></div>
+                <div class="item"><span class="k">Email</span><span class="v">info@southcoastinstalls.com</span></div>
+                <div class="item"><span class="k">Hours</span><span class="v">Mon–Sun · 7AM–6PM</span></div>
+                <div class="item"><span class="k">Area</span><span class="v">San Diego County</span></div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="card-wrap"><div class="face-label">Back</div>
-          <div class="card d11-back">
-            <div><div class="name">Allan Constantino</div><div class="role">General Contractor · LIC #1125936</div></div>
-            <div class="info-grid">
-              <div class="item"><span class="k">Phone</span><span class="v">(619) 555-0000</span></div>
-              <div class="item"><span class="k">Email</span><span class="v">info@southcoastinstalls.com</span></div>
-              <div class="item"><span class="k">Hours</span><span class="v">Mon–Sun · 7AM–6PM</span></div>
-              <div class="item"><span class="k">Area</span><span class="v">San Diego County</span></div>
+      </div>
+
+      <div class="person-block">
+        <div class="person-label">Miguel Gutierrez <span class="for">— card</span></div>
+        <div class="card-pair">
+          <div class="card-wrap"><div class="face-label">Front</div>
+            <div class="card d11-front">
+              <div class="corner-tl">EST · 2025</div>
+              <img src="/southcoast/logo.png" alt="logo" />
+              <div class="corner-br">SAN DIEGO · CA</div>
+            </div>
+          </div>
+          <div class="card-wrap"><div class="face-label">Back</div>
+            <div class="card d11-back">
+              <div><div class="name">Miguel Gutierrez</div><div class="role">General Contractor · LIC #1125936</div></div>
+              <div class="info-grid">
+                <div class="item"><span class="k">Phone</span><span class="v">(619) 555-0001</span></div>
+                <div class="item"><span class="k">Email</span><span class="v">miguel@southcoastinstalls.com</span></div>
+                <div class="item"><span class="k">Hours</span><span class="v">Mon–Sun · 7AM–6PM</span></div>
+                <div class="item"><span class="k">Area</span><span class="v">San Diego County</span></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== 12 RECEIPT / INVOICE ===== -->
+    <!-- ===== 12 RECEIPT ===== -->
     <section class="design">
       <div class="design-header">
         <div class="design-name"><span class="num">12</span>Receipt / Invoice<span class="tag">LOGO</span> <span class="tag">UNIQUE</span></div>
         <div class="design-note">Looks like a printed contractor receipt. Conversation-starter — people will keep it because it's different.</div>
       </div>
-      <div class="card-pair">
-        <div class="card-wrap"><div class="face-label">Front</div>
-          <div class="card d12-front">
-            <div class="top">
-              <img src="/southcoast/logo.png" alt="logo" />
-              <div class="meta">RECEIPT #00001<br />SAN DIEGO, CA<br />LIC #1125936</div>
+
+      <div class="person-block">
+        <div class="person-label">Allan Constantino <span class="for">— card</span></div>
+        <div class="card-pair">
+          <div class="card-wrap"><div class="face-label">Front</div>
+            <div class="card d12-front">
+              <div class="top">
+                <img src="/southcoast/logo.png" alt="logo" />
+                <div class="meta">RECEIPT #00001<br />SAN DIEGO, CA<br />LIC #1125936</div>
+              </div>
+              <div class="lines">
+                <div class="ln"><span>KITCHEN REMODELS</span><span class="dots"></span><span>✓</span></div>
+                <div class="ln"><span>BATH RENOVATIONS</span><span class="dots"></span><span>✓</span></div>
+                <div class="ln"><span>FLOORING + PAINT</span><span class="dots"></span><span>✓</span></div>
+                <div class="ln"><span>FREE ESTIMATES</span><span class="dots"></span><span>✓</span></div>
+              </div>
+              <div class="total"><span>TOTAL VALUE</span><span>PRICELESS</span></div>
+              <div class="barcode"></div>
             </div>
-            <div class="lines">
-              <div class="ln"><span>KITCHEN REMODELS</span><span class="dots"></span><span>✓</span></div>
-              <div class="ln"><span>BATH RENOVATIONS</span><span class="dots"></span><span>✓</span></div>
-              <div class="ln"><span>FLOORING + PAINT</span><span class="dots"></span><span>✓</span></div>
-              <div class="ln"><span>FREE ESTIMATES</span><span class="dots"></span><span>✓</span></div>
+          </div>
+          <div class="card-wrap"><div class="face-label">Back</div>
+            <div class="card d12-back">
+              <div class="header">— BILL TO —</div>
+              <div><div class="name">Allan Constantino</div><div class="role">GENERAL CONTRACTOR</div></div>
+              <div class="info">
+                <div><span class="lbl">TEL</span>(619) 555-0000</div>
+                <div><span class="lbl">EML</span>info@southcoastinstalls.com</div>
+                <div><span class="lbl">HRS</span>Mon–Sun · 7AM–6PM</div>
+                <div><span class="lbl">SVC</span>San Diego County</div>
+              </div>
+              <div class="stamp">PAID</div>
             </div>
-            <div class="total"><span>TOTAL VALUE</span><span>PRICELESS</span></div>
-            <div class="barcode"></div>
           </div>
         </div>
-        <div class="card-wrap"><div class="face-label">Back</div>
-          <div class="card d12-back">
-            <div class="header">— BILL TO —</div>
-            <div>
-              <div class="name">Allan Constantino</div>
-              <div class="role">GENERAL CONTRACTOR</div>
+      </div>
+
+      <div class="person-block">
+        <div class="person-label">Miguel Gutierrez <span class="for">— card</span></div>
+        <div class="card-pair">
+          <div class="card-wrap"><div class="face-label">Front</div>
+            <div class="card d12-front">
+              <div class="top">
+                <img src="/southcoast/logo.png" alt="logo" />
+                <div class="meta">RECEIPT #00002<br />SAN DIEGO, CA<br />LIC #1125936</div>
+              </div>
+              <div class="lines">
+                <div class="ln"><span>KITCHEN REMODELS</span><span class="dots"></span><span>✓</span></div>
+                <div class="ln"><span>BATH RENOVATIONS</span><span class="dots"></span><span>✓</span></div>
+                <div class="ln"><span>FLOORING + PAINT</span><span class="dots"></span><span>✓</span></div>
+                <div class="ln"><span>FREE ESTIMATES</span><span class="dots"></span><span>✓</span></div>
+              </div>
+              <div class="total"><span>TOTAL VALUE</span><span>PRICELESS</span></div>
+              <div class="barcode"></div>
             </div>
-            <div class="info">
-              <div><span class="lbl">TEL</span>(619) 555-0000</div>
-              <div><span class="lbl">EML</span>info@southcoastinstalls.com</div>
-              <div><span class="lbl">HRS</span>Mon–Sun · 7AM–6PM</div>
-              <div><span class="lbl">SVC</span>San Diego County</div>
+          </div>
+          <div class="card-wrap"><div class="face-label">Back</div>
+            <div class="card d12-back">
+              <div class="header">— BILL TO —</div>
+              <div><div class="name">Miguel Gutierrez</div><div class="role">GENERAL CONTRACTOR</div></div>
+              <div class="info">
+                <div><span class="lbl">TEL</span>(619) 555-0001</div>
+                <div><span class="lbl">EML</span>miguel@southcoastinstalls.com</div>
+                <div><span class="lbl">HRS</span>Mon–Sun · 7AM–6PM</div>
+                <div><span class="lbl">SVC</span>San Diego County</div>
+              </div>
+              <div class="stamp">PAID</div>
             </div>
-            <div class="stamp">PAID</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== 13 PROCESS CARD ===== -->
+    <!-- ===== 13 PROCESS ===== -->
     <section class="design">
       <div class="design-header">
         <div class="design-name"><span class="num">13</span>Process Card<span class="tag">LOGO</span></div>
         <div class="design-note">Plan · Build · Finish. Sells the process as a system — reassures hesitant homeowners.</div>
       </div>
-      <div class="card-pair">
-        <div class="card-wrap"><div class="face-label">Front</div>
-          <div class="card d13-front">
-            <img src="/southcoast/logo.png" alt="logo" />
-            <div class="steps">
-              <div class="step"><div class="num">01</div><div class="lbl">PLAN</div><div class="desc">Free estimate</div></div>
-              <div class="step"><div class="num">02</div><div class="lbl">BUILD</div><div class="desc">Licensed crew</div></div>
-              <div class="step"><div class="num">03</div><div class="lbl">FINISH</div><div class="desc">Walk-through</div></div>
+
+      <div class="person-block">
+        <div class="person-label">Allan Constantino <span class="for">— card</span></div>
+        <div class="card-pair">
+          <div class="card-wrap"><div class="face-label">Front</div>
+            <div class="card d13-front">
+              <img src="/southcoast/logo.png" alt="logo" />
+              <div class="steps">
+                <div class="step"><div class="num">01</div><div class="lbl">PLAN</div><div class="desc">Free estimate</div></div>
+                <div class="step"><div class="num">02</div><div class="lbl">BUILD</div><div class="desc">Licensed crew</div></div>
+                <div class="step"><div class="num">03</div><div class="lbl">FINISH</div><div class="desc">Walk-through</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="card-wrap"><div class="face-label">Back</div>
+            <div class="card d13-back">
+              <div><div class="name">Allan Constantino</div><div class="role">General Contractor · LIC #1125936</div></div>
+              <div class="info-grid">
+                <div class="item"><span class="k">Phone</span><span class="v">(619) 555-0000</span></div>
+                <div class="item"><span class="k">Email</span><span class="v">info@southcoastinstalls.com</span></div>
+                <div class="item"><span class="k">Hours</span><span class="v">Mon–Sun · 7AM–6PM</span></div>
+                <div class="item"><span class="k">Area</span><span class="v">San Diego County</span></div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="card-wrap"><div class="face-label">Back</div>
-          <div class="card d13-back">
-            <div><div class="name">Allan Constantino</div><div class="role">General Contractor · LIC #1125936</div></div>
-            <div class="info-grid">
-              <div class="item"><span class="k">Phone</span><span class="v">(619) 555-0000</span></div>
-              <div class="item"><span class="k">Email</span><span class="v">info@southcoastinstalls.com</span></div>
-              <div class="item"><span class="k">Hours</span><span class="v">Mon–Sun · 7AM–6PM</span></div>
-              <div class="item"><span class="k">Area</span><span class="v">San Diego County</span></div>
+      </div>
+
+      <div class="person-block">
+        <div class="person-label">Miguel Gutierrez <span class="for">— card</span></div>
+        <div class="card-pair">
+          <div class="card-wrap"><div class="face-label">Front</div>
+            <div class="card d13-front">
+              <img src="/southcoast/logo.png" alt="logo" />
+              <div class="steps">
+                <div class="step"><div class="num">01</div><div class="lbl">PLAN</div><div class="desc">Free estimate</div></div>
+                <div class="step"><div class="num">02</div><div class="lbl">BUILD</div><div class="desc">Licensed crew</div></div>
+                <div class="step"><div class="num">03</div><div class="lbl">FINISH</div><div class="desc">Walk-through</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="card-wrap"><div class="face-label">Back</div>
+            <div class="card d13-back">
+              <div><div class="name">Miguel Gutierrez</div><div class="role">General Contractor · LIC #1125936</div></div>
+              <div class="info-grid">
+                <div class="item"><span class="k">Phone</span><span class="v">(619) 555-0001</span></div>
+                <div class="item"><span class="k">Email</span><span class="v">miguel@southcoastinstalls.com</span></div>
+                <div class="item"><span class="k">Hours</span><span class="v">Mon–Sun · 7AM–6PM</span></div>
+                <div class="item"><span class="k">Area</span><span class="v">San Diego County</span></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== 14 VINTAGE TRADESMAN ===== -->
+    <!-- ===== 14 VINTAGE ===== -->
     <section class="design">
       <div class="design-header">
         <div class="design-name"><span class="num">14</span>Vintage Tradesman<span class="tag">LOGO</span></div>
         <div class="design-note">Old-world cream stock with serif type. Trades on heritage even if you're new — feels established.</div>
       </div>
-      <div class="card-pair">
-        <div class="card-wrap"><div class="face-label">Front</div>
-          <div class="card d14-front">
-            <div class="est">Established 2025</div>
-            <img src="/southcoast/logo.png" alt="logo" />
-            <div class="sub">San Diego, California</div>
-            <div class="ribbons"><span>LICENSED</span><span>·</span><span>INSURED</span><span>·</span><span>BONDED</span></div>
+
+      <div class="person-block">
+        <div class="person-label">Allan Constantino <span class="for">— card</span></div>
+        <div class="card-pair">
+          <div class="card-wrap"><div class="face-label">Front</div>
+            <div class="card d14-front">
+              <div class="est">Established 2025</div>
+              <img src="/southcoast/logo.png" alt="logo" />
+              <div class="sub">San Diego, California</div>
+              <div class="ribbons"><span>LICENSED</span><span>·</span><span>INSURED</span><span>·</span><span>BONDED</span></div>
+            </div>
+          </div>
+          <div class="card-wrap"><div class="face-label">Back</div>
+            <div class="card d14-back">
+              <div class="name">Allan Constantino</div>
+              <div class="role">General Contractor · Lic #1125936</div>
+              <div class="info">(619) 555-0000<br />info@southcoastinstalls.com<br />Mon–Sun · 7AM – 6PM</div>
+            </div>
           </div>
         </div>
-        <div class="card-wrap"><div class="face-label">Back</div>
-          <div class="card d14-back">
-            <div class="name">Allan Constantino</div>
-            <div class="role">General Contractor · Lic #1125936</div>
-            <div class="info">
-              (619) 555-0000<br />
-              info@southcoastinstalls.com<br />
-              Mon–Sun · 7AM – 6PM
+      </div>
+
+      <div class="person-block">
+        <div class="person-label">Miguel Gutierrez <span class="for">— card</span></div>
+        <div class="card-pair">
+          <div class="card-wrap"><div class="face-label">Front</div>
+            <div class="card d14-front">
+              <div class="est">Established 2025</div>
+              <img src="/southcoast/logo.png" alt="logo" />
+              <div class="sub">San Diego, California</div>
+              <div class="ribbons"><span>LICENSED</span><span>·</span><span>INSURED</span><span>·</span><span>BONDED</span></div>
+            </div>
+          </div>
+          <div class="card-wrap"><div class="face-label">Back</div>
+            <div class="card d14-back">
+              <div class="name">Miguel Gutierrez</div>
+              <div class="role">General Contractor · Lic #1125936</div>
+              <div class="info">(619) 555-0001<br />miguel@southcoastinstalls.com<br />Mon–Sun · 7AM – 6PM</div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== 15 MAP BACKGROUND ===== -->
+    <!-- ===== 15 MAP ===== -->
     <section class="design">
       <div class="design-header">
         <div class="design-name"><span class="num">15</span>Map Background<span class="tag">LOGO</span></div>
         <div class="design-note">Faint San Diego coastline behind the logo, with a pin marking your service area. Local-first.</div>
       </div>
-      <div class="card-pair">
-        <div class="card-wrap"><div class="face-label">Front</div>
-          <div class="card d15-front">
-            <svg class="map" viewBox="0 0 525 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-              <path d="M 0 180 Q 60 160 100 175 T 200 170 Q 260 165 310 178 T 420 175 Q 480 168 525 180" />
-              <path d="M 0 200 Q 80 188 140 200 T 280 195 Q 360 190 430 200 T 525 198" />
-              <path d="M 60 50 L 80 80 L 120 70 L 160 100 L 200 90 L 240 110 L 280 95 L 320 120 L 360 105 L 400 130 L 440 115 L 480 140" />
-              <path d="M 100 30 L 90 60 L 130 90 L 110 130 L 150 160 L 130 200" />
-              <path d="M 350 40 L 380 70 L 360 100 L 400 130 L 380 165 L 410 200" />
-            </svg>
-            <div class="pin"></div>
-            <div class="pin-label">YOU ARE HERE</div>
-            <img src="/southcoast/logo.png" alt="logo" />
+
+      <div class="person-block">
+        <div class="person-label">Allan Constantino <span class="for">— card</span></div>
+        <div class="card-pair">
+          <div class="card-wrap"><div class="face-label">Front</div>
+            <div class="card d15-front">
+              <svg class="map" viewBox="0 0 525 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 0 180 Q 60 160 100 175 T 200 170 Q 260 165 310 178 T 420 175 Q 480 168 525 180" />
+                <path d="M 0 200 Q 80 188 140 200 T 280 195 Q 360 190 430 200 T 525 198" />
+                <path d="M 60 50 L 80 80 L 120 70 L 160 100 L 200 90 L 240 110 L 280 95 L 320 120 L 360 105 L 400 130 L 440 115 L 480 140" />
+                <path d="M 100 30 L 90 60 L 130 90 L 110 130 L 150 160 L 130 200" />
+                <path d="M 350 40 L 380 70 L 360 100 L 400 130 L 380 165 L 410 200" />
+              </svg>
+              <div class="pin"></div>
+              <div class="pin-label">YOU ARE HERE</div>
+              <img src="/southcoast/logo.png" alt="logo" />
+            </div>
+          </div>
+          <div class="card-wrap"><div class="face-label">Back</div>
+            <div class="card d15-back">
+              <div><div class="name">Allan Constantino</div><div class="role">General Contractor · LIC #1125936</div></div>
+              <div class="info-grid">
+                <div class="item"><span class="k">Phone</span><span class="v">(619) 555-0000</span></div>
+                <div class="item"><span class="k">Email</span><span class="v">info@southcoastinstalls.com</span></div>
+                <div class="item"><span class="k">Hours</span><span class="v">Mon–Sun · 7AM–6PM</span></div>
+                <div class="item"><span class="k">Area</span><span class="v">San Diego County</span></div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="card-wrap"><div class="face-label">Back</div>
-          <div class="card d15-back">
-            <div><div class="name">Allan Constantino</div><div class="role">General Contractor · LIC #1125936</div></div>
-            <div class="info-grid">
-              <div class="item"><span class="k">Phone</span><span class="v">(619) 555-0000</span></div>
-              <div class="item"><span class="k">Email</span><span class="v">info@southcoastinstalls.com</span></div>
-              <div class="item"><span class="k">Hours</span><span class="v">Mon–Sun · 7AM–6PM</span></div>
-              <div class="item"><span class="k">Area</span><span class="v">San Diego County</span></div>
+      </div>
+
+      <div class="person-block">
+        <div class="person-label">Miguel Gutierrez <span class="for">— card</span></div>
+        <div class="card-pair">
+          <div class="card-wrap"><div class="face-label">Front</div>
+            <div class="card d15-front">
+              <svg class="map" viewBox="0 0 525 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 0 180 Q 60 160 100 175 T 200 170 Q 260 165 310 178 T 420 175 Q 480 168 525 180" />
+                <path d="M 0 200 Q 80 188 140 200 T 280 195 Q 360 190 430 200 T 525 198" />
+                <path d="M 60 50 L 80 80 L 120 70 L 160 100 L 200 90 L 240 110 L 280 95 L 320 120 L 360 105 L 400 130 L 440 115 L 480 140" />
+                <path d="M 100 30 L 90 60 L 130 90 L 110 130 L 150 160 L 130 200" />
+                <path d="M 350 40 L 380 70 L 360 100 L 400 130 L 380 165 L 410 200" />
+              </svg>
+              <div class="pin"></div>
+              <div class="pin-label">YOU ARE HERE</div>
+              <img src="/southcoast/logo.png" alt="logo" />
+            </div>
+          </div>
+          <div class="card-wrap"><div class="face-label">Back</div>
+            <div class="card d15-back">
+              <div><div class="name">Miguel Gutierrez</div><div class="role">General Contractor · LIC #1125936</div></div>
+              <div class="info-grid">
+                <div class="item"><span class="k">Phone</span><span class="v">(619) 555-0001</span></div>
+                <div class="item"><span class="k">Email</span><span class="v">miguel@southcoastinstalls.com</span></div>
+                <div class="item"><span class="k">Hours</span><span class="v">Mon–Sun · 7AM–6PM</span></div>
+                <div class="item"><span class="k">Area</span><span class="v">San Diego County</span></div>
+              </div>
             </div>
           </div>
         </div>
@@ -951,22 +1374,50 @@
         <div class="design-name"><span class="num">16</span>Photo Collage<span class="tag">LOGO</span></div>
         <div class="design-note">Four project shots in a 2×2 grid with the logo as a centered seal. Portfolio in your pocket.</div>
       </div>
-      <div class="card-pair">
-        <div class="card-wrap"><div class="face-label">Front</div>
-          <div class="card d16-front">
-            <div class="tile t1"></div><div class="tile t2"></div>
-            <div class="tile t3"></div><div class="tile t4"></div>
-            <div class="badge"><img src="/southcoast/logo.png" alt="logo" /></div>
+
+      <div class="person-block">
+        <div class="person-label">Allan Constantino <span class="for">— card</span></div>
+        <div class="card-pair">
+          <div class="card-wrap"><div class="face-label">Front</div>
+            <div class="card d16-front">
+              <div class="tile t1"></div><div class="tile t2"></div>
+              <div class="tile t3"></div><div class="tile t4"></div>
+              <div class="badge"><img src="/southcoast/logo.png" alt="logo" /></div>
+            </div>
+          </div>
+          <div class="card-wrap"><div class="face-label">Back</div>
+            <div class="card d16-back">
+              <div><div class="name">Allan Constantino</div><div class="role">General Contractor · LIC #1125936</div></div>
+              <div class="info-grid">
+                <div class="item"><span class="k">Phone</span><span class="v">(619) 555-0000</span></div>
+                <div class="item"><span class="k">Email</span><span class="v">info@southcoastinstalls.com</span></div>
+                <div class="item"><span class="k">Hours</span><span class="v">Mon–Sun · 7AM–6PM</span></div>
+                <div class="item"><span class="k">Area</span><span class="v">San Diego County</span></div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="card-wrap"><div class="face-label">Back</div>
-          <div class="card d16-back">
-            <div><div class="name">Allan Constantino</div><div class="role">General Contractor · LIC #1125936</div></div>
-            <div class="info-grid">
-              <div class="item"><span class="k">Phone</span><span class="v">(619) 555-0000</span></div>
-              <div class="item"><span class="k">Email</span><span class="v">info@southcoastinstalls.com</span></div>
-              <div class="item"><span class="k">Hours</span><span class="v">Mon–Sun · 7AM–6PM</span></div>
-              <div class="item"><span class="k">Area</span><span class="v">San Diego County</span></div>
+      </div>
+
+      <div class="person-block">
+        <div class="person-label">Miguel Gutierrez <span class="for">— card</span></div>
+        <div class="card-pair">
+          <div class="card-wrap"><div class="face-label">Front</div>
+            <div class="card d16-front">
+              <div class="tile t1"></div><div class="tile t2"></div>
+              <div class="tile t3"></div><div class="tile t4"></div>
+              <div class="badge"><img src="/southcoast/logo.png" alt="logo" /></div>
+            </div>
+          </div>
+          <div class="card-wrap"><div class="face-label">Back</div>
+            <div class="card d16-back">
+              <div><div class="name">Miguel Gutierrez</div><div class="role">General Contractor · LIC #1125936</div></div>
+              <div class="info-grid">
+                <div class="item"><span class="k">Phone</span><span class="v">(619) 555-0001</span></div>
+                <div class="item"><span class="k">Email</span><span class="v">miguel@southcoastinstalls.com</span></div>
+                <div class="item"><span class="k">Hours</span><span class="v">Mon–Sun · 7AM–6PM</span></div>
+                <div class="item"><span class="k">Area</span><span class="v">San Diego County</span></div>
+              </div>
             </div>
           </div>
         </div>
@@ -979,20 +1430,87 @@
         <div class="design-name"><span class="num">17</span>Quote-Led<span class="tag">TYPE</span></div>
         <div class="design-note">A real client quote does the selling. Logo small on the back — confidence move.</div>
       </div>
-      <div class="card-pair">
-        <div class="card-wrap"><div class="face-label">Front</div>
-          <div class="card d17-front">
-            <div class="mark">"</div>
-            <div class="quote">Best contractor I've ever hired. On time, on budget, no surprises.</div>
-            <div class="by">— SARAH M. · LA JOLLA</div>
+
+      <div class="person-block">
+        <div class="person-label">Allan Constantino <span class="for">— card</span></div>
+        <div class="card-pair">
+          <div class="card-wrap"><div class="face-label">Front</div>
+            <div class="card d17-front">
+              <div class="mark">"</div>
+              <div class="quote">Best contractor I've ever hired. On time, on budget, no surprises.</div>
+              <div class="by">— SARAH M. · LA JOLLA</div>
+            </div>
+          </div>
+          <div class="card-wrap"><div class="face-label">Back</div>
+            <div class="card d17-back">
+              <div class="top"><img src="/southcoast/logo.png" alt="logo" /><div class="lic">LIC #1125936</div></div>
+              <div>
+                <div class="name">Allan Constantino</div>
+                <div class="role">General Contractor</div>
+                <div class="info-grid">
+                  <div class="item"><span class="k">Phone</span><span class="v">(619) 555-0000</span></div>
+                  <div class="item"><span class="k">Email</span><span class="v">info@southcoastinstalls.com</span></div>
+                  <div class="item"><span class="k">Hours</span><span class="v">Mon–Sun · 7AM–6PM</span></div>
+                  <div class="item"><span class="k">Area</span><span class="v">San Diego County</span></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="card-wrap"><div class="face-label">Back</div>
-          <div class="card d17-back">
-            <div class="top"><img src="/southcoast/logo.png" alt="logo" /><div class="lic">LIC #1125936</div></div>
-            <div>
-              <div class="name">Allan Constantino</div>
-              <div class="role">General Contractor</div>
+      </div>
+
+      <div class="person-block">
+        <div class="person-label">Miguel Gutierrez <span class="for">— card</span></div>
+        <div class="card-pair">
+          <div class="card-wrap"><div class="face-label">Front</div>
+            <div class="card d17-front">
+              <div class="mark">"</div>
+              <div class="quote">Best contractor I've ever hired. On time, on budget, no surprises.</div>
+              <div class="by">— SARAH M. · LA JOLLA</div>
+            </div>
+          </div>
+          <div class="card-wrap"><div class="face-label">Back</div>
+            <div class="card d17-back">
+              <div class="top"><img src="/southcoast/logo.png" alt="logo" /><div class="lic">LIC #1125936</div></div>
+              <div>
+                <div class="name">Miguel Gutierrez</div>
+                <div class="role">General Contractor</div>
+                <div class="info-grid">
+                  <div class="item"><span class="k">Phone</span><span class="v">(619) 555-0001</span></div>
+                  <div class="item"><span class="k">Email</span><span class="v">miguel@southcoastinstalls.com</span></div>
+                  <div class="item"><span class="k">Hours</span><span class="v">Mon–Sun · 7AM–6PM</span></div>
+                  <div class="item"><span class="k">Area</span><span class="v">San Diego County</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 18 QR ===== -->
+    <section class="design">
+      <div class="design-header">
+        <div class="design-name"><span class="num">18</span>QR-Centric<span class="tag">TYPE</span> <span class="tag">UNIQUE</span></div>
+        <div class="design-note">QR is the hero — scans straight to your portfolio or booking page. Modern, action-driving.</div>
+      </div>
+
+      <div class="person-block">
+        <div class="person-label">Allan Constantino <span class="for">— card</span></div>
+        <div class="card-pair">
+          <div class="card-wrap"><div class="face-label">Front</div>
+            <div class="card d18-front">
+              <div class="qr"><div class="corner3"></div></div>
+              <div class="info">
+                <img src="/southcoast/logo.png" alt="logo" />
+                <div class="cta">SCAN TO SEE<br /><span>OUR WORK →</span></div>
+                <div class="meta">LIC #1125936 · SAN DIEGO</div>
+              </div>
+            </div>
+          </div>
+          <div class="card-wrap"><div class="face-label">Back</div>
+            <div class="card d18-back">
+              <div><div class="name">Allan Constantino</div><div class="role">General Contractor</div></div>
               <div class="info-grid">
                 <div class="item"><span class="k">Phone</span><span class="v">(619) 555-0000</span></div>
                 <div class="item"><span class="k">Email</span><span class="v">info@southcoastinstalls.com</span></div>
@@ -1003,69 +1521,101 @@
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- ===== 18 QR CENTRIC ===== -->
-    <section class="design">
-      <div class="design-header">
-        <div class="design-name"><span class="num">18</span>QR-Centric<span class="tag">TYPE</span> <span class="tag">UNIQUE</span></div>
-        <div class="design-note">QR is the hero — scans straight to your portfolio or booking page. Modern, action-driving.</div>
-      </div>
-      <div class="card-pair">
-        <div class="card-wrap"><div class="face-label">Front</div>
-          <div class="card d18-front">
-            <div class="qr"><div class="corner3"></div></div>
-            <div class="info">
-              <img src="/southcoast/logo.png" alt="logo" />
-              <div class="cta">SCAN TO SEE<br /><span>OUR WORK →</span></div>
-              <div class="meta">LIC #1125936 · SAN DIEGO</div>
+      <div class="person-block">
+        <div class="person-label">Miguel Gutierrez <span class="for">— card</span></div>
+        <div class="card-pair">
+          <div class="card-wrap"><div class="face-label">Front</div>
+            <div class="card d18-front">
+              <div class="qr"><div class="corner3"></div></div>
+              <div class="info">
+                <img src="/southcoast/logo.png" alt="logo" />
+                <div class="cta">SCAN TO SEE<br /><span>OUR WORK →</span></div>
+                <div class="meta">LIC #1125936 · SAN DIEGO</div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="card-wrap"><div class="face-label">Back</div>
-          <div class="card d18-back">
-            <div><div class="name">Allan Constantino</div><div class="role">General Contractor</div></div>
-            <div class="info-grid">
-              <div class="item"><span class="k">Phone</span><span class="v">(619) 555-0000</span></div>
-              <div class="item"><span class="k">Email</span><span class="v">info@southcoastinstalls.com</span></div>
-              <div class="item"><span class="k">Hours</span><span class="v">Mon–Sun · 7AM–6PM</span></div>
-              <div class="item"><span class="k">Area</span><span class="v">San Diego County</span></div>
+          <div class="card-wrap"><div class="face-label">Back</div>
+            <div class="card d18-back">
+              <div><div class="name">Miguel Gutierrez</div><div class="role">General Contractor</div></div>
+              <div class="info-grid">
+                <div class="item"><span class="k">Phone</span><span class="v">(619) 555-0001</span></div>
+                <div class="item"><span class="k">Email</span><span class="v">miguel@southcoastinstalls.com</span></div>
+                <div class="item"><span class="k">Hours</span><span class="v">Mon–Sun · 7AM–6PM</span></div>
+                <div class="item"><span class="k">Area</span><span class="v">San Diego County</span></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== 19 RULER EDGE ===== -->
+    <!-- ===== 19 RULER ===== -->
     <section class="design">
       <div class="design-header">
         <div class="design-name"><span class="num">19</span>Ruler Edge<span class="tag">LOGO</span> <span class="tag">UNIQUE</span></div>
         <div class="design-note">Functional touch — a printed ruler along the bottom. People literally use the card. Maximum keep-rate.</div>
       </div>
-      <div class="card-pair">
-        <div class="card-wrap"><div class="face-label">Front</div>
-          <div class="card d19-front">
-            <img src="/southcoast/logo.png" alt="logo" />
-            <div class="ruler">
-              <div class="label">3.5"</div>
-              <div class="tick"></div><div class="tick"></div><div class="tick"></div><div class="tick"></div>
-              <div class="tick major" data-n="1"></div>
-              <div class="tick"></div><div class="tick"></div><div class="tick"></div><div class="tick"></div>
-              <div class="tick major" data-n="2"></div>
-              <div class="tick"></div><div class="tick"></div><div class="tick"></div><div class="tick"></div>
-              <div class="tick major" data-n="3"></div>
-              <div class="tick"></div><div class="tick"></div><div class="tick"></div><div class="tick"></div>
+
+      <div class="person-block">
+        <div class="person-label">Allan Constantino <span class="for">— card</span></div>
+        <div class="card-pair">
+          <div class="card-wrap"><div class="face-label">Front</div>
+            <div class="card d19-front">
+              <img src="/southcoast/logo.png" alt="logo" />
+              <div class="ruler">
+                <div class="label">3.5"</div>
+                <div class="tick"></div><div class="tick"></div><div class="tick"></div><div class="tick"></div>
+                <div class="tick major" data-n="1"></div>
+                <div class="tick"></div><div class="tick"></div><div class="tick"></div><div class="tick"></div>
+                <div class="tick major" data-n="2"></div>
+                <div class="tick"></div><div class="tick"></div><div class="tick"></div><div class="tick"></div>
+                <div class="tick major" data-n="3"></div>
+                <div class="tick"></div><div class="tick"></div><div class="tick"></div><div class="tick"></div>
+              </div>
+            </div>
+          </div>
+          <div class="card-wrap"><div class="face-label">Back</div>
+            <div class="card d19-back">
+              <div><div class="name">Allan Constantino</div><div class="role">General Contractor · LIC #1125936</div></div>
+              <div class="info-grid">
+                <div class="item"><span class="k">Phone</span><span class="v">(619) 555-0000</span></div>
+                <div class="item"><span class="k">Email</span><span class="v">info@southcoastinstalls.com</span></div>
+                <div class="item"><span class="k">Hours</span><span class="v">Mon–Sun · 7AM–6PM</span></div>
+                <div class="item"><span class="k">Area</span><span class="v">San Diego County</span></div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="card-wrap"><div class="face-label">Back</div>
-          <div class="card d19-back">
-            <div><div class="name">Allan Constantino</div><div class="role">General Contractor · LIC #1125936</div></div>
-            <div class="info-grid">
-              <div class="item"><span class="k">Phone</span><span class="v">(619) 555-0000</span></div>
-              <div class="item"><span class="k">Email</span><span class="v">info@southcoastinstalls.com</span></div>
-              <div class="item"><span class="k">Hours</span><span class="v">Mon–Sun · 7AM–6PM</span></div>
-              <div class="item"><span class="k">Area</span><span class="v">San Diego County</span></div>
+      </div>
+
+      <div class="person-block">
+        <div class="person-label">Miguel Gutierrez <span class="for">— card</span></div>
+        <div class="card-pair">
+          <div class="card-wrap"><div class="face-label">Front</div>
+            <div class="card d19-front">
+              <img src="/southcoast/logo.png" alt="logo" />
+              <div class="ruler">
+                <div class="label">3.5"</div>
+                <div class="tick"></div><div class="tick"></div><div class="tick"></div><div class="tick"></div>
+                <div class="tick major" data-n="1"></div>
+                <div class="tick"></div><div class="tick"></div><div class="tick"></div><div class="tick"></div>
+                <div class="tick major" data-n="2"></div>
+                <div class="tick"></div><div class="tick"></div><div class="tick"></div><div class="tick"></div>
+                <div class="tick major" data-n="3"></div>
+                <div class="tick"></div><div class="tick"></div><div class="tick"></div><div class="tick"></div>
+              </div>
+            </div>
+          </div>
+          <div class="card-wrap"><div class="face-label">Back</div>
+            <div class="card d19-back">
+              <div><div class="name">Miguel Gutierrez</div><div class="role">General Contractor · LIC #1125936</div></div>
+              <div class="info-grid">
+                <div class="item"><span class="k">Phone</span><span class="v">(619) 555-0001</span></div>
+                <div class="item"><span class="k">Email</span><span class="v">miguel@southcoastinstalls.com</span></div>
+                <div class="item"><span class="k">Hours</span><span class="v">Mon–Sun · 7AM–6PM</span></div>
+                <div class="item"><span class="k">Area</span><span class="v">San Diego County</span></div>
+              </div>
             </div>
           </div>
         </div>
@@ -1078,25 +1628,57 @@
         <div class="design-name"><span class="num">20</span>Geometric Block<span class="tag">LOGO</span></div>
         <div class="design-note">Mondrian-inspired color blocks — orange, white, charcoal in an asymmetric grid. Feels like a design firm.</div>
       </div>
-      <div class="card-pair">
-        <div class="card-wrap"><div class="face-label">Front</div>
-          <div class="card d20-front">
-            <div class="a"></div>
-            <div class="b"><img src="/southcoast/logo.png" alt="logo" /></div>
-            <div class="c"><div class="v-text">SAN DIEGO</div></div>
-            <div class="d"><div class="dot"></div></div>
+
+      <div class="person-block">
+        <div class="person-label">Allan Constantino <span class="for">— card</span></div>
+        <div class="card-pair">
+          <div class="card-wrap"><div class="face-label">Front</div>
+            <div class="card d20-front">
+              <div class="a"></div>
+              <div class="b"><img src="/southcoast/logo.png" alt="logo" /></div>
+              <div class="c"><div class="v-text">SAN DIEGO</div></div>
+              <div class="d"><div class="dot"></div></div>
+            </div>
+          </div>
+          <div class="card-wrap"><div class="face-label">Back</div>
+            <div class="card d20-back">
+              <div class="stripe"></div>
+              <div class="body">
+                <div><div class="name">Allan Constantino</div><div class="role">General Contractor · LIC #1125936</div></div>
+                <div class="info-grid">
+                  <div class="item"><span class="k">Phone</span><span class="v">(619) 555-0000</span></div>
+                  <div class="item"><span class="k">Email</span><span class="v">info@southcoastinstalls.com</span></div>
+                  <div class="item"><span class="k">Hours</span><span class="v">Mon–Sun · 7AM–6PM</span></div>
+                  <div class="item"><span class="k">Area</span><span class="v">San Diego County</span></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="card-wrap"><div class="face-label">Back</div>
-          <div class="card d20-back">
-            <div class="stripe"></div>
-            <div class="body">
-              <div><div class="name">Allan Constantino</div><div class="role">General Contractor · LIC #1125936</div></div>
-              <div class="info-grid">
-                <div class="item"><span class="k">Phone</span><span class="v">(619) 555-0000</span></div>
-                <div class="item"><span class="k">Email</span><span class="v">info@southcoastinstalls.com</span></div>
-                <div class="item"><span class="k">Hours</span><span class="v">Mon–Sun · 7AM–6PM</span></div>
-                <div class="item"><span class="k">Area</span><span class="v">San Diego County</span></div>
+      </div>
+
+      <div class="person-block">
+        <div class="person-label">Miguel Gutierrez <span class="for">— card</span></div>
+        <div class="card-pair">
+          <div class="card-wrap"><div class="face-label">Front</div>
+            <div class="card d20-front">
+              <div class="a"></div>
+              <div class="b"><img src="/southcoast/logo.png" alt="logo" /></div>
+              <div class="c"><div class="v-text">SAN DIEGO</div></div>
+              <div class="d"><div class="dot"></div></div>
+            </div>
+          </div>
+          <div class="card-wrap"><div class="face-label">Back</div>
+            <div class="card d20-back">
+              <div class="stripe"></div>
+              <div class="body">
+                <div><div class="name">Miguel Gutierrez</div><div class="role">General Contractor · LIC #1125936</div></div>
+                <div class="info-grid">
+                  <div class="item"><span class="k">Phone</span><span class="v">(619) 555-0001</span></div>
+                  <div class="item"><span class="k">Email</span><span class="v">miguel@southcoastinstalls.com</span></div>
+                  <div class="item"><span class="k">Hours</span><span class="v">Mon–Sun · 7AM–6PM</span></div>
+                  <div class="item"><span class="k">Area</span><span class="v">San Diego County</span></div>
+                </div>
               </div>
             </div>
           </div>
@@ -1114,13 +1696,13 @@
         <li>Resolution: 300 DPI for any photo / raster</li>
         <li>Color profile: CMYK (orange may shift slightly)</li>
         <li>Stock: 16pt matte or 32pt soft-touch for premium feel</li>
-        <li>Special finishes (#19 ruler, #18 QR): standard print works</li>
+        <li>Print quantity: order 250 each (Allan + Miguel) to start</li>
         <li>Vertical (#05) and tactile (#19, #12): consider spot-UV for accents</li>
       </ul>
     </div>
 
     <p class="footer-link">
-      Live at <a href="https://blueprintdigitalsd.com/southcoastcards">blueprintdigitalsd.com/southcoastcards</a> · Reply with a number (01–20) to lock in a direction.
+      Live at <a href="https://blueprintdigitalsd.com/southcoastcards">blueprintdigitalsd.com/southcoastcards</a> · Reply with a number (01–20) to lock in a direction for both Allan + Miguel.
     </p>
 
   </div>
