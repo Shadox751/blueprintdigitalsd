@@ -339,12 +339,12 @@
     <div class="loading"><div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div></div>
   </div>
 
-  <!-- Data loader (ES modules) -->
+  <!-- Data loader (ES modules) — absolute paths so imports work regardless of trailing slash or cached <base> tag state -->
   <script type="module">
     try {
-      const mods = await import('./hvac-modules.js');
-      const content = await import('./module-content-hvac.js');
-      const quiz = await import('./quiz-bank-hvac.js');
+      const mods = await import('/hvac-prep/hvac-modules.js');
+      const content = await import('/hvac-prep/module-content-hvac.js');
+      const quiz = await import('/hvac-prep/quiz-bank-hvac.js');
       window.HVAC = {
         MODULES: mods.HVAC_MODULES,
         TRACKS: mods.HVAC_TRACKS,
