@@ -16,7 +16,7 @@
     :root {
       --ink:        #1A1714;
       --ink-mid:    #4A4540;
-      --ink-muted:  #8A8480;
+      --ink-muted:  #6F6862;
       --ink-dim:    #C4C0BA;
       --cream:      #FAF8F4;
       --cream-alt:  #F2EFE9;
@@ -198,9 +198,9 @@
     .reader .mod-sub { font-family: var(--mono); font-size: 11px; color: var(--accent); letter-spacing: 1.5px; margin-bottom: 18px; }
     .reader .article-tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--border); margin-bottom: 20px; overflow-x: auto; }
     .reader .art-tab {
-      background: none; border: none; padding: 10px 14px;
+      background: none; border: none; padding: 12px 16px;
       font-family: var(--body); font-size: 13px; font-weight: 600; color: var(--ink-muted);
-      border-bottom: 2px solid transparent; white-space: nowrap;
+      border-bottom: 2px solid transparent; white-space: nowrap; min-height: 44px;
     }
     .reader .art-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
     .reader .art-content {
@@ -320,8 +320,10 @@
     @media (max-width: 600px) {
       .header { padding: 12px 16px; }
       .header .product { display: none; }
-      .tabs { padding: 0 8px; }
-      .tab { padding: 12px 12px; font-size: 12px; }
+      .header .track-pill { padding: 8px 14px; font-size: 11px; }
+      .tabs { padding: 0 8px; top: 50px; }
+      .tab { padding: 12px 12px; font-size: 12px; min-height: 44px; }
+      .sim-bar { top: 50px; }
       .main { padding: 16px; }
       .hero { padding: 22px; }
       .hero h2 { font-size: 22px; }
@@ -354,12 +356,19 @@
       };
       window.dispatchEvent(new Event('hvac-ready'));
     } catch (e) {
+      console.error('hvac-prep module load failed:', e);
       document.getElementById('app').innerHTML =
         `<div class="empty" style="padding:80px 20px">
            <div class="ico">⚠️</div>
-           <h3>Content still loading</h3>
-           <p>The HVAC content modules haven't finished generating yet. Refresh in a few minutes — or open this page directly via the live URL (file:// won't load ES modules).</p>
-           <p style="margin-top:12px;font-family:var(--mono);font-size:11px;color:var(--ink-muted)">${e.message}</p>
+           <h3>Couldn't load study content</h3>
+           <p>Usually this is one of:</p>
+           <ul style="text-align:left;display:inline-block;margin:8px 0 16px;line-height:1.8">
+             <li>Network/firewall blocking the JavaScript files</li>
+             <li>An ad-blocker or content blocker stripping module loads</li>
+             <li>Opened via <code>file://</code> instead of the live URL (ES modules require http(s))</li>
+           </ul>
+           <p><button onclick="location.reload()" style="background:var(--accent);color:#fff;border:none;padding:10px 18px;border-radius:4px;font-weight:600;cursor:pointer;">Retry</button></p>
+           <p style="margin-top:16px;font-family:var(--mono);font-size:11px;color:var(--ink-muted)">${e.message}</p>
          </div>`;
     }
   </script>
@@ -387,8 +396,17 @@
         simHistory: [],        // [{date, track, score, pct, pass}]
       };
     }
+    let persistWarned = false;
     function saveState() {
-      try { localStorage.setItem(LS_KEY, JSON.stringify(state)); } catch {}
+      try {
+        localStorage.setItem(LS_KEY, JSON.stringify(state));
+      } catch (e) {
+        if (!persistWarned) {
+          persistWarned = true;
+          console.warn('hvac-prep: progress not being saved', e);
+          state._persistBroken = true;
+        }
+      }
     }
 
     // ─── MARKDOWN (mini) ───────────────────────────────────────────────
@@ -421,12 +439,6 @@
     }
 
     // ─── HELPERS ───────────────────────────────────────────────────────
-    function H(strings, ...vals) {
-      // Tagged template that returns string (we keep it simple)
-      let out = '';
-      strings.forEach((s, i) => { out += s + (vals[i] != null ? String(vals[i]) : ''); });
-      return out;
-    }
     function escapeHtml(s) {
       return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g,'&quot;');
     }
@@ -455,10 +467,6 @@
         return true;
       });
     }
-    function trackBadge(t) {
-      const tr = window.HVAC.TRACKS[t];
-      return `<span class="badge" style="background:var(--accent-soft);color:var(--accent)">${tr.exam} · ${tr.short}</span>`;
-    }
     function tagColor(tag) {
       const c = window.HVAC.TAG_COLORS[tag];
       if (!c) return 'background:var(--accent-soft);color:var(--accent)';
@@ -475,11 +483,19 @@
       }
       app.innerHTML =
         renderHeader() +
+        (state._persistBroken ? renderPersistBanner() : '') +
         (state.view === 'sim' && state.sim && !state.sim.finished ? renderSimBar() : renderTabs()) +
         '<main class="main" id="main"></main>' +
         renderFooter();
       renderView();
       bindShellEvents();
+    }
+
+    function renderPersistBanner() {
+      return `
+        <div role="status" style="background:var(--warn-soft);color:var(--warn);padding:10px 24px;border-bottom:1px solid rgba(176,112,16,0.3);font-size:13px;font-weight:600;text-align:center;">
+          ⚠ Progress is NOT being saved. Browser storage may be disabled or full (private window? clear browsing data?). Refreshing this tab will lose your study progress.
+        </div>`;
     }
 
     function renderHeader() {
@@ -495,7 +511,7 @@
             <span class="badge-co">CO</span>
             <span class="product">· Denver HVAC Prep</span>
           </div>
-          <button class="track-pill" id="change-track">${escapeHtml(track.exam)} · ${escapeHtml(track.short)} ✎</button>
+          <button class="track-pill" id="change-track" aria-label="Change exam track">${escapeHtml(track.exam)} · ${escapeHtml(track.short)} <span aria-hidden="true">✎</span></button>
         </header>`;
     }
 
@@ -571,10 +587,17 @@
         t.onclick = () => {
           const id = t.getAttribute('data-tab');
           state.view = id;
-          if (id === 'practice') startPractice();
+          // Only start a new practice set if there's no active set or current is finished
+          if (id === 'practice') {
+            if (!state.practice || state.practice.idx >= state.practice.questions.length) {
+              startPractice();
+            }
+          }
+          // Only reset sim landing if no in-flight exam — otherwise resume the running sim
           if (id === 'sim') {
-            // do nothing yet — landing page will offer start
-            state.sim = null;
+            if (!state.sim || state.sim.finished) {
+              state.sim = null;
+            }
           }
           saveState();
           render();
@@ -701,7 +724,7 @@
 
       return `
         <div class="reader">
-          <button class="back" id="reader-back">← All modules</button>
+          <button class="back" id="reader-back" aria-label="Back to all modules"><span aria-hidden="true">←</span> All modules</button>
           <div class="mod-sub">MODULE ${escapeHtml(m.num)} · ${escapeHtml(m.tag.toUpperCase())} · ${m.tracks.map(t => window.HVAC.TRACKS[t].exam).join(' / ')}</div>
           <h2>${escapeHtml(m.title)}</h2>
           <div class="article-tabs">
@@ -819,6 +842,8 @@
         track: state.track,
         score: correct, total, pct, pass,
       });
+      // Cap history at last 20 to avoid unbounded localStorage growth
+      if (state.simHistory.length > 20) state.simHistory = state.simHistory.slice(-20);
       state.view = 'sim-results';
       saveState();
       if (simTimer) { clearInterval(simTimer); simTimer = null; }
@@ -1032,8 +1057,25 @@
     }
 
     // ─── BOOT ──────────────────────────────────────────────────────────
-    window.addEventListener('hvac-ready', render);
-    // Also re-render on resize? Not necessary for now.
+    window.addEventListener('hvac-ready', () => {
+      // If we're returning to an in-flight sim whose time budget already expired
+      // while the tab was closed, prompt before auto-scoring.
+      if (state.view === 'sim' && state.sim && !state.sim.finished) {
+        const elapsed = Math.floor((Date.now() - state.sim.startTime) / 1000);
+        if (elapsed >= state.sim.durationSec) {
+          const submit = confirm(
+            'Your sim exam timer expired while this page was closed.\n\n' +
+            'OK = submit what you answered.\nCancel = abandon this sim and start fresh.'
+          );
+          if (!submit) {
+            state.sim = null;
+            state.view = 'dashboard';
+            saveState();
+          }
+        }
+      }
+      render();
+    });
   })();
   </script>
 </body>

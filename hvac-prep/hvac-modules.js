@@ -178,8 +178,8 @@ export const HVAC_WEEKS = [
   { w:1, title:"Foundations",     focus:"Denver Licensing + Code Navigation",  mods:[1,2,3],          goal:"Lock in supervisor cert rules + code structure" },
   { w:2, title:"Mechanical Core", focus:"General Provisions, Combustion Air, Vents", mods:[4,5,6,7], goal:"30–40% of F29 lives here. Drill the 3-2-10 + two-opening rules." },
   { w:3, title:"Commercial",      focus:"Ventilation, Exhaust, Duct Systems",  mods:[8,9,10],         goal:"F29 commercial weight — dryer 35ft + ASHRAE 62.1 cold." },
-  { w:4, title:"Equipment",       focus:"Boilers, Refrigeration, Hydronic",    mods:[11,12,13,15],    goal:"Machinery rooms + relief valves are testable gold." },
-  { w:5, title:"Gas + Denver",    focus:"Gas piping, commercial cooking, Denver amendments", mods:[16,17,18], goal:"Sediment trap exceptions + CSST bonding from memory." },
+  { w:4, title:"Equipment",       focus:"Boilers, Refrigeration, Hydronic, Residential", mods:[11,12,13,14], goal:"Machinery rooms + relief valves + residential scope are testable gold." },
+  { w:5, title:"Gas + Denver",    focus:"Water heaters, gas piping, commercial cooking, Denver", mods:[15,16,17,18], goal:"Sediment trap exceptions + CSST bonding + T&P discharge from memory." },
   { w:6, title:"EPA 608",         focus:"Core + Type I/II/III",                mods:[19,20,21,22],    goal:"Recovery vacuum table + leak rate triggers cold." },
   { w:7, title:"Final Prep",      focus:"Sim exams + trap drills",             mods:[],               goal:"80%+ on three full sim exams in your selected track." },
 ];
