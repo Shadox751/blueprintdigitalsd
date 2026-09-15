@@ -3,527 +3,264 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gallery | JB Flooring & Installation — San Diego Epoxy & Flooring Projects</title>
-  <meta name="description" content="Full portfolio of JB Flooring & Installation's work — epoxy floors, commercial installations, and residential projects across San Diego." />
-  <base href="/jbflooring/"><link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Project Gallery | JB Flooring &amp; Installation, San Diego</title>
+  <meta name="description" content="Photos of real JB Flooring &amp; Installation jobs: epoxy, resin and concrete coatings, prep work and flooring installs across San Diego County. In business since 2007." />
+  <meta name="robots" content="noindex" />
+  <base href="/jbflooring/">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #FFFFFF;
-      color: #1A1A1A;
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
-    img { max-width: 100%; display: block; }
-    a { text-decoration: none; color: inherit; }
-    .container { max-width: 1400px; margin: 0 auto; padding: 0 24px; }
-    h1, h2, h3 { font-family: 'Playfair Display', serif; color: #1A1A1A; font-weight: 700; }
+    .page-hero { padding-block: clamp(56px, 8vw, 96px) clamp(40px, 6vw, 64px); border-bottom: 1px solid var(--stone); background: var(--bone); }
+    .page-hero .section-head { margin-bottom: 0; }
+    .page-stats { list-style: none; display: flex; flex-wrap: wrap; gap: 0; margin-top: 36px; border-top: 1px solid var(--stone); }
+    .page-stats li { padding: 16px 28px 0 0; margin-right: 28px; font: 900 1.9rem/1 var(--serif); }
+    .page-stats li + li { padding-left: 28px; border-left: 1px solid var(--stone); }
+    .page-stats span { display: block; margin-top: 6px; font: 600 11px/1 var(--sans); letter-spacing: 0.18em; text-transform: uppercase; color: var(--orange-ink); }
 
-    /* BUTTONS */
-    .btn {
-      display: inline-block;
-      padding: 16px 34px;
-      border-radius: 4px;
-      font-family: 'Inter', sans-serif;
-      font-weight: 600;
-      font-size: 0.95rem;
-      cursor: pointer;
-      transition: all 0.25s ease;
-      border: none;
-    }
-    .btn-primary { background: #1A1A1A; color: #FFFFFF; }
-    .btn-primary:hover { background: #8B5A2B; transform: translateY(-1px); }
-    .btn-outline { background: transparent; color: #1A1A1A; border: 1.5px solid #1A1A1A; }
-    .btn-outline:hover { background: #1A1A1A; color: white; }
+    .masonry { column-count: 4; column-gap: 12px; }
+    .shot { break-inside: avoid; margin: 0 0 12px; display: block; width: 100%; padding: 0; border: 0; background: var(--stone); cursor: zoom-in; overflow: hidden; }
+    .shot img { width: 100%; height: auto; transition: transform 0.5s var(--ease); }
+    .shot:hover img { transform: scale(1.03); }
+    .shot { position: relative; }
+    .shot-label { position: absolute; left: 8px; bottom: 8px; background: rgba(14,14,14,0.82); color: #fff; font: 600 12px/1 var(--sans); padding: 6px 9px; pointer-events: none; }
+    .gal-head { display: grid; gap: 12px; justify-items: start; margin-bottom: 28px; }
+    .gal-head-2 { margin-top: clamp(56px, 8vw, 96px); padding-top: clamp(40px, 6vw, 64px); border-top: 1px solid var(--stone); }
 
-    /* HEADER (same as main site) */
-    .header {
-      position: fixed;
-      top: 0; left: 0; width: 100%;
-      z-index: 1000;
-      background: rgba(255,255,255,0.97);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(0,0,0,0.06);
-      transition: all 0.3s ease;
-    }
-    .header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 24px;
-      max-width: 1400px;
-      margin: 0 auto;
-      height: 72px;
-    }
-    .logo { display: flex; align-items: center; gap: 12px; }
-    .logo-mark {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      font-weight: 900;
-      color: #1A1A1A;
-      letter-spacing: -1px;
-      padding: 6px 12px;
-      border: 2px solid #1A1A1A;
-      line-height: 1;
-    }
-    .logo-text {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.72rem;
-      font-weight: 700;
-      color: #1A1A1A;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      line-height: 1.3;
-    }
-    .logo-text span {
-      display: block;
-      font-weight: 400;
-      font-size: 0.6rem;
-      color: #999;
-      letter-spacing: 2px;
-    }
-    .nav { display: flex; align-items: center; gap: 32px; }
-    .nav a {
-      color: #333;
-      font-size: 0.88rem;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-    .nav a:hover { color: #8B5A2B; }
-    .nav a.active { color: #8B5A2B; font-weight: 600; }
-    .header-cta { padding: 10px 22px; font-size: 0.85rem; }
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      background: none;
-      border: none;
-      padding: 8px;
-    }
-    .hamburger span { width: 24px; height: 2px; background: #1A1A1A; transition: 0.3s ease; }
-    .mobile-nav {
-      display: none;
-      position: fixed;
-      top: 72px; left: 0; width: 100%;
-      background: white;
-      padding: 20px 24px;
-      z-index: 999;
-      border-bottom: 1px solid rgba(0,0,0,0.08);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-    .mobile-nav.active { display: block; }
-    .mobile-nav a {
-      display: block;
-      padding: 12px 0;
-      font-size: 1rem;
-      color: #1A1A1A;
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-    }
-    .mobile-nav .btn { margin-top: 12px; display: block; text-align: center; }
+    .lightbox { position: fixed; inset: 0; z-index: 400; display: grid; place-items: center; padding: 56px 16px; background: rgba(8,8,8,0.94); }
+    .lightbox img { max-width: min(1400px, 100%); max-height: calc(100vh - 120px); object-fit: contain; }
+    .lb-btn { position: absolute; display: grid; place-items: center; width: 48px; height: 48px; border: 1px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.08); color: #fff; font-size: 1.5rem; line-height: 1; cursor: pointer; }
+    .lb-btn:hover { border-color: var(--orange-500); }
+    .lb-close { top: 16px; right: 16px; }
+    .lb-prev { left: 16px; top: 50%; transform: translateY(-50%); }
+    .lb-next { right: 16px; top: 50%; transform: translateY(-50%); }
+    .lb-count { position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%); color: var(--band-muted); font-size: 14px; font-variant-numeric: tabular-nums; }
 
-    /* PAGE HERO */
-    .page-hero {
-      padding: 140px 0 60px;
-      background: #FAFAF7;
-      text-align: center;
-      border-bottom: 1px solid rgba(0,0,0,0.06);
-    }
-    .page-hero .eyebrow {
-      display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: #8B5A2B;
-      margin-bottom: 14px;
-    }
-    .page-hero h1 {
-      font-size: 3.6rem;
-      line-height: 1.05;
-      letter-spacing: -1.5px;
-      margin-bottom: 16px;
-    }
-    .page-hero h1 em { color: #8B5A2B; font-style: italic; }
-    .page-hero p {
-      color: #666;
-      font-size: 1.1rem;
-      max-width: 640px;
-      margin: 0 auto;
-    }
-    .page-hero .stats {
-      display: flex;
-      justify-content: center;
-      gap: 48px;
-      margin-top: 40px;
-      flex-wrap: wrap;
-    }
-    .page-hero .stat-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.4rem;
-      font-weight: 900;
-      color: #8B5A2B;
-      line-height: 1;
-    }
-    .page-hero .stat-lbl {
-      font-size: 0.78rem;
-      color: #888;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-top: 6px;
-    }
+    .cta { position: relative; isolation: isolate; overflow: hidden; padding-block: clamp(64px, 11vw, 140px); }
+    .cta-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+    .cta::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(14,14,14,0.95) 0%, rgba(14,14,14,0.8) 50%, rgba(14,14,14,0.45) 100%); }
+    .cta .section-head { margin-bottom: 0; }
+    .cta .h2 { color: #fff; max-width: 15ch; }
 
-    /* GALLERY GRID */
-    .gallery-section {
-      padding: 80px 0 100px;
-      background: #FFFFFF;
-    }
-    .gallery-grid {
-      column-count: 4;
-      column-gap: 14px;
-    }
-    .gallery-item {
-      break-inside: avoid;
-      margin-bottom: 14px;
-      position: relative;
-      cursor: pointer;
-      border-radius: 4px;
-      overflow: hidden;
-      background: #F0EDE4;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .gallery-item:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.15);
-    }
-    .gallery-item img {
-      width: 100%;
-      height: auto;
-      display: block;
-      transition: transform 0.5s ease;
-      image-orientation: none;
-    }
-    .gallery-item:hover img { transform: scale(1.03); }
-    .gallery-item::after {
-      content: '⛶';
-      position: absolute;
-      top: 12px; right: 12px;
-      background: rgba(0,0,0,0.6);
-      color: white;
-      width: 32px; height: 32px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.9rem;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      backdrop-filter: blur(4px);
-    }
-    .gallery-item:hover::after { opacity: 1; }
-
-    /* LIGHTBOX */
-    .lightbox {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.92);
-      z-index: 2000;
-      cursor: pointer;
-      align-items: center;
-      justify-content: center;
-      padding: 40px;
-    }
-    .lightbox.active { display: flex; }
-    .lightbox img {
-      max-width: 95%;
-      max-height: 90vh;
-      object-fit: contain;
-      border-radius: 4px;
-      box-shadow: 0 20px 80px rgba(0,0,0,0.5);
-    }
-    .lightbox-close {
-      position: absolute;
-      top: 24px; right: 32px;
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.25);
-      color: white;
-      width: 44px; height: 44px;
-      border-radius: 50%;
-      font-size: 1.4rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      backdrop-filter: blur(10px);
-      transition: background 0.2s;
-    }
-    .lightbox-close:hover { background: rgba(255,255,255,0.2); }
-    .lightbox-nav {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.25);
-      color: white;
-      width: 52px; height: 52px;
-      border-radius: 50%;
-      font-size: 1.4rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      backdrop-filter: blur(10px);
-      transition: background 0.2s;
-    }
-    .lightbox-nav:hover { background: rgba(255,255,255,0.2); }
-    .lightbox-nav.prev { left: 32px; }
-    .lightbox-nav.next { right: 32px; }
-    .lightbox-counter {
-      position: absolute;
-      bottom: 24px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.2);
-      color: white;
-      padding: 8px 18px;
-      border-radius: 100px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      letter-spacing: 1px;
-      backdrop-filter: blur(10px);
-    }
-
-    /* CTA BAND */
-    .cta-band {
-      padding: 100px 0;
-      background: #0F0F0F;
-      color: white;
-      text-align: center;
-    }
-    .cta-band h2 { color: white; font-size: 2.6rem; margin-bottom: 14px; letter-spacing: -1px; }
-    .cta-band h2 em { color: #E8B57C; font-style: italic; }
-    .cta-band p { color: rgba(255,255,255,0.7); max-width: 560px; margin: 0 auto 32px; font-size: 1.05rem; }
-    .cta-band .btn-primary { background: #E8B57C; color: #1A1A1A; }
-    .cta-band .btn-primary:hover { background: white; }
-
-    /* FOOTER */
-    .footer {
-      background: #0F0F0F;
-      color: #888;
-      padding: 40px 0;
-      text-align: center;
-      font-size: 0.85rem;
-    }
-    .footer-inner { display: flex; flex-direction: column; gap: 12px; align-items: center; }
-    .footer strong { color: #DDD; }
-    .footer a { color: #8B5A2B; }
-    .footer-license { display: inline-flex; gap: 16px; flex-wrap: wrap; justify-content: center; font-size: 0.78rem; }
-
-    /* RESPONSIVE */
-    @media (max-width: 1200px) {
-      .gallery-grid { column-count: 3; }
-    }
-    @media (max-width: 768px) {
-      .nav, .header-cta { display: none; }
-      .hamburger { display: flex; }
-      .page-hero { padding: 110px 0 40px; }
-      .page-hero h1 { font-size: 2.4rem; }
-      .gallery-grid { column-count: 2; column-gap: 8px; }
-      .gallery-item { margin-bottom: 8px; }
-      .cta-band h2 { font-size: 1.9rem; }
-      .lightbox { padding: 20px; }
-      .lightbox-nav { width: 40px; height: 40px; }
-      .lightbox-nav.prev { left: 12px; }
-      .lightbox-nav.next { right: 12px; }
-    }
-    @media (max-width: 480px) {
-      .gallery-grid { column-count: 1; }
+    @media (max-width: 1100px) { .masonry { column-count: 3; } }
+    @media (max-width: 760px) { .masonry { column-count: 2; column-gap: 8px; } .shot { margin-bottom: 8px; } }
+    @media (max-width: 640px) {
+      .page-stats li { font-size: 1.45rem; padding-right: 14px; margin-right: 14px; }
+      .page-stats li + li { padding-left: 14px; }
+      .lb-prev, .lb-next { top: auto; bottom: 8px; transform: none; }
+      .lb-prev { left: 16px; } .lb-next { right: 16px; }
     }
   </style>
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
 
-  <!-- HEADER -->
-  <header class="header">
-    <div class="header-inner">
-      <a href="index.html" class="logo">
+  <header class="site-header">
+    <div class="wrap bar">
+      <a href="index.html" class="logo" aria-label="JB Flooring &amp; Installation, home">
         <span class="logo-mark">JB</span>
-        <div class="logo-text">
-          Flooring & Installation
-          <span>San Diego, CA</span>
-        </div>
+        <span class="logo-text">Flooring &amp; Installation<span>San Diego · Since 2007</span></span>
       </a>
-      <nav class="nav">
-        <a href="index.html#services">Services</a>
-        <a href="index.html#about">About</a>
-        <a href="gallery.html" class="active">Gallery</a>
-        <a href="index.html#contact">Contact</a>
+      <nav class="primary" aria-label="Main">
+        <ul>
+          <li><a href="index.html#epoxy">Epoxy</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="gallery.html" aria-current="page">Gallery</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
       </nav>
-      <a href="index.html#contact" class="btn btn-primary header-cta">Free Estimate</a>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
+      <div class="actions">
+        <a class="phone" href="tel:+16198523460">(619) 852-3460</a>
+        <a class="btn btn-dark" href="index.html#contact">Free estimate</a>
+      </div>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav">
+        <span class="sr-only">Menu</span><span class="bars" aria-hidden="true"></span>
       </button>
     </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile" hidden>
+      <ul class="wrap">
+        <li><a href="index.html#epoxy">Epoxy floors</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="index.html#contact">Free estimate</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <div class="mobile-nav" id="mobileNav">
-    <a href="index.html#services" onclick="closeMobile()">Services</a>
-    <a href="index.html#about" onclick="closeMobile()">About</a>
-    <a href="gallery.html" onclick="closeMobile()">Gallery</a>
-    <a href="index.html#contact" onclick="closeMobile()">Contact</a>
-    <a href="tel:6198523460" onclick="closeMobile()">Call (619) 852-3460</a>
-    <a href="index.html#contact" class="btn btn-primary" onclick="closeMobile()">Free Estimate</a>
-  </div>
+  <main id="main">
+    <section class="page-hero">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Project gallery</span>
+          <h1 class="display h1">Every project. <em>Every finish.</em></h1>
+          <p class="lede">Photos from real JB Flooring jobs: epoxy, resin and concrete coatings, prep work and installs across San Diego County.</p>
+        </div>
+        <ul class="page-stats">
+          <li>2007<span>In business since</span></li>
+          <li>5,000+<span>Jobs completed</span></li>
+          <li>5<span>Floor types</span></li>
+        </ul>
+      </div>
+    </section>
 
-  <!-- PAGE HERO -->
-  <section class="page-hero">
-    <div class="container">
-      <span class="eyebrow">The Full Portfolio</span>
-      <h1>Every project. <em>Every finish.</em></h1>
-      <p>A complete look at recent work from JB Flooring &amp; Installation — commercial epoxy, residential installs, and everything in between across San Diego County.</p>
-      <div class="stats">
-        <div>
-          <div class="stat-num">35+</div>
-          <div class="stat-lbl">Projects Shown</div>
+    <section class="section">
+      <div class="wrap">
+        <div class="gal-head">
+          <span class="eyebrow">Finished floors</span>
+          <h2 class="display h2">Epoxy, coatings &amp; installs</h2>
         </div>
-        <div>
-          <div class="stat-num">6</div>
-          <div class="stat-lbl">Service Types</div>
+        <div class="masonry" data-set="finished"></div>
+        <div class="gal-head gal-head-2">
+          <span class="eyebrow">Behind the finish</span>
+          <h2 class="display h2">Prep &amp; process</h2>
+          <p class="lede">Old floor removal, grinding and surface prep: the work that happens before the final coat.</p>
         </div>
-        <div>
-          <div class="stat-num">2</div>
-          <div class="stat-lbl">CA License Classes</div>
+        <div class="masonry" data-set="process"></div>
+      </div>
+    </section>
+
+    <section class="cta on-dark">
+      <img class="cta-bg" src="assets/misc/hero-joel-epoxy.jpg" alt="" loading="lazy" />
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Free estimates</span>
+          <h2 class="display h2">Like what you see? <em>Let's talk.</em></h2>
+          <p class="lede">Send a request and we'll get back to you within 24 hours, or call Joel at (619) 852-3460 or Patricia at (619) 869-6276, Monday to Friday, 9am to 5pm.</p>
+          <div class="btn-row">
+            <a class="btn btn-orange" href="index.html#contact">Get a free estimate</a>
+            <a class="btn btn-line" href="tel:+16198523460">Call (619) 852-3460</a>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- GALLERY GRID -->
-  <section class="gallery-section">
-    <div class="container">
-      <div class="gallery-grid" id="galleryGrid">
-        <div class="gallery-item" data-src="assets/gallery-full/jb-01.jpg"><img src="assets/gallery-full/jb-01.jpg" alt="JB Flooring project" loading="lazy"/></div>
-        <div class="gallery-item" data-src="assets/gallery-full/jb-02.jpg"><img src="assets/gallery-full/jb-02.jpg" alt="JB Flooring project" loading="lazy"/></div>
-        <div class="gallery-item" data-src="assets/gallery-full/jb-03.jpg"><img src="assets/gallery-full/jb-03.jpg" alt="JB Flooring project" loading="lazy"/></div>
-        <div class="gallery-item" data-src="assets/gallery-full/jb-04.jpg"><img src="assets/gallery-full/jb-04.jpg" alt="JB Flooring project" loading="lazy"/></div>
-        <div class="gallery-item" data-src="assets/gallery-full/jb-05.jpg"><img src="assets/gallery-full/jb-05.jpg" alt="JB Flooring project" loading="lazy"/></div>
-        <div class="gallery-item" data-src="assets/gallery-full/jb-06.jpg"><img src="assets/gallery-full/jb-06.jpg" alt="JB Flooring project" loading="lazy"/></div>
-        <div class="gallery-item" data-src="assets/gallery-full/jb-07.jpg"><img src="assets/gallery-full/jb-07.jpg" alt="JB Flooring project" loading="lazy"/></div>
-        <div class="gallery-item" data-src="assets/gallery-full/jb-08.jpg"><img src="assets/gallery-full/jb-08.jpg" alt="JB Flooring project" loading="lazy"/></div>
-        <div class="gallery-item" data-src="assets/gallery-full/jb-09.jpg"><img src="assets/gallery-full/jb-09.jpg" alt="JB Flooring project" loading="lazy"/></div>
-        <div class="gallery-item" data-src="assets/gallery-full/jb-10.jpg"><img src="assets/gallery-full/jb-10.jpg" alt="JB Flooring project" loading="lazy"/></div>
-        <div class="gallery-item" data-src="assets/gallery-full/jb-11.jpg"><img src="assets/gallery-full/jb-11.jpg" alt="JB Flooring project" loading="lazy"/></div>
-        <div class="gallery-item" data-src="assets/gallery-full/jb-12.jpg"><img src="assets/gallery-full/jb-12.jpg" alt="JB Flooring project" loading="lazy"/></div>
-        <div class="gallery-item" data-src="assets/gallery-full/jb-13.jpg"><img src="assets/gallery-full/jb-13.jpg" alt="JB Flooring project" loading="lazy"/></div>
-        <div class="gallery-item" data-src="assets/gallery-full/jb-14.jpg"><img src="assets/gallery-full/jb-14.jpg" alt="JB Flooring project" loading="lazy"/></div>
-        <div class="gallery-item" data-src="assets/gallery-full/jb-15.jpg"><img src="assets/gallery-full/jb-15.jpg" alt="JB Flooring project" loading="lazy"/></div>
-        <div class="gallery-item" data-src="assets/gallery-full/jb-16.jpg"><img src="assets/gallery-full/jb-16.jpg" alt="JB Flooring project" loading="lazy"/></div>
-        <div class="gallery-item" data-src="assets/gallery-full/jb-17.jpg"><img src="assets/gallery-full/jb-17.jpg" alt="JB Flooring project" loading="lazy"/></div>
-        <div class="gallery-item" data-src="assets/gallery-full/jb-18.jpg"><img src="assets/gallery-full/jb-18.jpg" alt="JB Flooring project" loading="lazy"/></div>
-        <div class="gallery-item" data-src="assets/gallery-full/jb-19.jpg"><img src="assets/gallery-full/jb-19.jpg" alt="JB Flooring project" loading="lazy"/></div>
-        <div class="gallery-item" data-src="assets/gallery-full/jb-20.jpg"><img src="assets/gallery-full/jb-20.jpg" alt="JB Flooring project" loading="lazy"/></div>
-        <div class="gallery-item" data-src="assets/gallery-full/jb-21.jpg"><img src="assets/gallery-full/jb-21.jpg" alt="JB Flooring project" loading="lazy"/></div>
-        <div class="gallery-item" data-src="assets/gallery-full/jb-22.jpg"><img src="assets/gallery-full/jb-22.jpg" alt="JB Flooring project" loading="lazy"/></div>
-        <div class="gallery-item" data-src="assets/gallery-full/jb-23.jpg"><img src="assets/gallery-full/jb-23.jpg" alt="JB Flooring project" loading="lazy"/></div>
-        <div class="gallery-item" data-src="assets/gallery-full/jb-24.jpg"><img src="assets/gallery-full/jb-24.jpg" alt="JB Flooring project" loading="lazy"/></div>
-        <div class="gallery-item" data-src="assets/gallery-full/jb-25.jpg"><img src="assets/gallery-full/jb-25.jpg" alt="JB Flooring project" loading="lazy"/></div>
-        <div class="gallery-item" data-src="assets/gallery-full/jb-26.jpg"><img src="assets/gallery-full/jb-26.jpg" alt="JB Flooring project" loading="lazy"/></div>
-        <div class="gallery-item" data-src="assets/gallery-full/jb-27.jpg"><img src="assets/gallery-full/jb-27.jpg" alt="JB Flooring project" loading="lazy"/></div>
-        <div class="gallery-item" data-src="assets/gallery-full/jb-28.jpg"><img src="assets/gallery-full/jb-28.jpg" alt="JB Flooring project" loading="lazy"/></div>
-        <div class="gallery-item" data-src="assets/gallery-full/jb-29.jpg"><img src="assets/gallery-full/jb-29.jpg" alt="JB Flooring project" loading="lazy"/></div>
-        <div class="gallery-item" data-src="assets/gallery-full/jb-30.jpg"><img src="assets/gallery-full/jb-30.jpg" alt="JB Flooring project" loading="lazy"/></div>
-        <div class="gallery-item" data-src="assets/gallery-full/jb-31.jpg"><img src="assets/gallery-full/jb-31.jpg" alt="JB Flooring project" loading="lazy"/></div>
-        <div class="gallery-item" data-src="assets/gallery-full/jb-32.jpg"><img src="assets/gallery-full/jb-32.jpg" alt="JB Flooring project" loading="lazy"/></div>
-        <div class="gallery-item" data-src="assets/gallery-full/jb-33.jpg"><img src="assets/gallery-full/jb-33.jpg" alt="JB Flooring project" loading="lazy"/></div>
-        <div class="gallery-item" data-src="assets/gallery-full/jb-34.jpg"><img src="assets/gallery-full/jb-34.jpg" alt="JB Flooring project" loading="lazy"/></div>
-        <div class="gallery-item" data-src="assets/gallery-full/jb-35.jpg"><img src="assets/gallery-full/jb-35.jpg" alt="JB Flooring project" loading="lazy"/></div>
+  <footer class="site-footer on-dark">
+    <div class="wrap foot-top">
+      <div class="foot-brand">
+        <a href="index.html" class="logo"><span class="logo-mark">JB</span><span class="logo-text">Flooring &amp; Installation<span>San Diego, CA</span></span></a>
+        <p class="tagline">Floors done right. The first time.</p>
+      </div>
+      <div class="foot-col">
+        <h2 class="col-h">Services</h2>
+        <ul><li><a href="index.html#epoxy">Epoxy, resin &amp; concrete coatings</a></li><li><a href="index.html#services">Hardwood &amp; LVP</a></li><li><a href="index.html#services">Laminate &amp; carpet</a></li></ul>
+      </div>
+      <div class="foot-col">
+        <h2 class="col-h">Company</h2>
+        <ul><li><a href="index.html#about">About</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="index.html#contact">Free estimate</a></li></ul>
+      </div>
+      <div class="foot-col">
+        <h2 class="col-h">Contact</h2>
+        <ul>
+          <li><a href="tel:+16198523460">(619) 852-3460</a><span class="who">Joel Bergara, Owner</span></li>
+          <li><a href="tel:+16198696276">(619) 869-6276</a><span class="who">Patricia Bergara, Operations Manager</span></li>
+          <li>Mon–Fri, 9am–5pm</li>
+        </ul>
       </div>
     </div>
-  </section>
-
-  <!-- LIGHTBOX -->
-  <div class="lightbox" id="lightbox">
-    <button class="lightbox-close" id="lbClose" aria-label="Close">✕</button>
-    <button class="lightbox-nav prev" id="lbPrev" aria-label="Previous">‹</button>
-    <img id="lbImg" src="" alt="Full-size project photo" />
-    <button class="lightbox-nav next" id="lbNext" aria-label="Next">›</button>
-    <div class="lightbox-counter" id="lbCounter">1 / 35</div>
-  </div>
-
-  <!-- CTA BAND -->
-  <section class="cta-band">
-    <div class="container">
-      <h2>Like what you see? <em>Let's talk.</em></h2>
-      <p>Free in-home estimates across San Diego and all surrounding counties. Epoxy, hardwood, LVP, laminate, carpet, or artificial turf — we handle it all.</p>
-      <a href="index.html#contact" class="btn btn-primary">Get Your Free Estimate</a>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div><strong>JB Flooring &amp; Installation</strong> &middot; San Diego, CA</div>
-      <div class="footer-license">
-        <span>CA License #895530 (C-15, D-12)</span>
-        <span>Bonded &amp; Insured</span>
-        <span>Owner: Joel Bergara</span>
-      </div>
-      <div>&copy; <span id="year"></span> JB Flooring &amp; Installation. All rights reserved.</div>
-      <div style="font-size:0.75rem; opacity:0.6;">Website by <a href="https://blueprintdigitalsd.com" target="_blank" rel="noopener">Blueprint Digital</a></div>
+    <div class="wrap foot-bottom">
+      <p class="license">JB Flooring &amp; Installation · CSLB Lic. #895530 (C-15, D-12)</p>
+      <p>© <span class="year">2026</span> JB Flooring &amp; Installation · Website by <a href="https://blueprintdigitalsd.com" target="_blank" rel="noopener">Blueprint Digital</a></p>
     </div>
   </footer>
 
+  <nav class="mobile-bar" aria-label="Quick contact">
+    <a class="call" href="tel:+16198523460">Call</a>
+    <a class="est" href="index.html#contact">Free estimate</a>
+  </nav>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Project photo" hidden>
+    <img id="lb-img" alt="" />
+    <button class="lb-btn lb-close" type="button" aria-label="Close">×</button>
+    <button class="lb-btn lb-prev" type="button" aria-label="Previous photo">‹</button>
+    <button class="lb-btn lb-next" type="button" aria-label="Next photo">›</button>
+    <span class="lb-count" id="lb-count"></span>
+  </div>
+
+  <script src="site.js"></script>
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    const hamburger = document.getElementById('hamburger');
-    const mobileNav = document.getElementById('mobileNav');
-    hamburger.addEventListener('click', () => mobileNav.classList.toggle('active'));
-    function closeMobile() { mobileNav.classList.remove('active'); }
-
-    // LIGHTBOX
-    const items = Array.from(document.querySelectorAll('.gallery-item'));
-    const lightbox = document.getElementById('lightbox');
-    const lbImg = document.getElementById('lbImg');
-    const lbCounter = document.getElementById('lbCounter');
-    let currentIndex = 0;
-
-    function openLightbox(i) {
-      currentIndex = i;
-      lbImg.src = items[i].dataset.src;
-      lbCounter.textContent = `${i + 1} / ${items.length}`;
-      lightbox.classList.add('active');
-      document.body.style.overflow = 'hidden';
+    // 32 unique photos, finished floors first. jb-30, jb-33 and jb-35 were byte-identical copies of 29, 32 and 34 and were removed.
+    const sets = {
+      finished: [
+        [7, 'Metallic epoxy', 'Metallic epoxy floor with black marble-style veining in an office lobby'],
+        [21, 'Metallic epoxy', 'Metallic epoxy floor under hexagon ceiling lights'],
+        [9, 'Flake garage', 'Flake epoxy coating in a garage'],
+        [10, 'Flake garage', 'Flake epoxy coating in a garage'],
+        [11, 'Flake floor', 'Flake epoxy floor in a room with shuttered windows'],
+        [4, 'High-gloss epoxy', 'High-gloss gray epoxy floor in an office corridor'],
+        [5, 'High-gloss epoxy', 'High-gloss epoxy floor reflecting ceiling lights'],
+        [17, 'High-gloss epoxy', 'Glossy gray epoxy floor in a commercial space with stairs'],
+        [18, 'High-gloss epoxy', 'Glossy epoxy floor in an open commercial space'],
+        [32, 'Multipurpose room', 'Glossy floor in a school multipurpose room'],
+        [34, 'Checkerboard floor', 'Black and white checkerboard floor in a multipurpose room'],
+        [6, 'Wood-look plank', 'Wood-look plank floor in an office hallway'],
+        [14, 'Wood-look plank', 'Gray wood-look plank floor in an office'],
+        [20, 'Metallic epoxy', 'Silver metallic epoxy floor in an empty commercial space'],
+        [23, 'Commercial floor', 'Polished concrete floor in a commercial space'],
+        [25, 'Commercial corridor', 'Polished concrete corridor'],
+        [27, 'Commercial hallway', 'Polished concrete hallway'],
+        [19, 'Commercial floor', 'Finished gray floor in an open commercial space'],
+        [28, 'Commercial carpet', 'New carpet in a school multipurpose room'],
+      ],
+      process: [
+        [8, 'Garage grinding', 'JB Flooring crew member grinding a garage floor'],
+        [22, 'Concrete grinding', 'Crew grinding concrete with two floor grinders'],
+        [24, 'Grinding', 'Floor grinder and dust extractors at work'],
+        [15, 'Commercial prep', 'Grinders and dust extractors during commercial prep'],
+        [16, 'Grinding', 'Grinding concrete near a stairwell'],
+        [2, 'Floor removal', 'Office floor after old flooring was scraped up'],
+        [3, 'Floor removal', 'Floor scraper removing old flooring'],
+        [12, 'Floor removal', 'Old floor removal in an office'],
+        [13, 'After removal', 'Concrete exposed after old flooring removal'],
+        [26, 'Hallway prep', 'Hallway during concrete prep'],
+        [1, 'Commercial prep', 'Commercial space during prep'],
+        [29, 'Floor prep', 'Floor prep in a school multipurpose room'],
+        [31, 'Installation', 'Multipurpose room floor during installation'],
+      ],
+    };
+    const photos = [];
+    for (const [set, list] of Object.entries(sets)) {
+      const grid = document.querySelector(`.masonry[data-set="${set}"]`);
+      list.forEach(([n, label, alt]) => {
+        const i = photos.length;
+        const src = `assets/gallery-full/jb-${String(n).padStart(2, '0')}.jpg`;
+        photos.push({ src, alt });
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'shot';
+        b.innerHTML = `<img src="${src}" alt="${alt}" loading="lazy" /><span class="shot-label" aria-hidden="true">${label}</span>`;
+        b.addEventListener('click', () => open(i));
+        grid.appendChild(b);
+      });
     }
-    function closeLightbox() {
-      lightbox.classList.remove('active');
-      document.body.style.overflow = '';
+
+    const lb = document.getElementById('lightbox');
+    const img = document.getElementById('lb-img');
+    const count = document.getElementById('lb-count');
+    let at = 0, opener = null;
+    function show(i) {
+      at = (i + photos.length) % photos.length;
+      img.src = photos[at].src;
+      img.alt = photos[at].alt;
+      count.textContent = `${at + 1} / ${photos.length}`;
     }
-    function nav(dir) {
-      currentIndex = (currentIndex + dir + items.length) % items.length;
-      lbImg.src = items[currentIndex].dataset.src;
-      lbCounter.textContent = `${currentIndex + 1} / ${items.length}`;
-    }
-    items.forEach((it, i) => it.addEventListener('click', () => openLightbox(i)));
-    document.getElementById('lbClose').addEventListener('click', (e) => { e.stopPropagation(); closeLightbox(); });
-    document.getElementById('lbPrev').addEventListener('click', (e) => { e.stopPropagation(); nav(-1); });
-    document.getElementById('lbNext').addEventListener('click', (e) => { e.stopPropagation(); nav(1); });
-    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+    function open(i) { opener = document.activeElement; show(i); lb.hidden = false; document.body.style.overflow = 'hidden'; lb.querySelector('.lb-close').focus(); }
+    function close() { lb.hidden = true; document.body.style.overflow = ''; opener?.focus(); }
+    lb.querySelector('.lb-close').addEventListener('click', close);
+    lb.querySelector('.lb-prev').addEventListener('click', () => show(at - 1));
+    lb.querySelector('.lb-next').addEventListener('click', () => show(at + 1));
+    lb.addEventListener('click', (e) => { if (e.target === lb) close(); });
     document.addEventListener('keydown', (e) => {
-      if (!lightbox.classList.contains('active')) return;
-      if (e.key === 'Escape') closeLightbox();
-      if (e.key === 'ArrowLeft') nav(-1);
-      if (e.key === 'ArrowRight') nav(1);
+      if (lb.hidden) return;
+      if (e.key === 'Escape') close();
+      if (e.key === 'ArrowLeft') show(at - 1);
+      if (e.key === 'ArrowRight') show(at + 1);
     });
   </script>
-
 </body>
 </html>
