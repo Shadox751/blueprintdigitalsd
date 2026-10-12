@@ -1,7 +1,15 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/(.*)", "has": [{ "type": "host", "value": "www.jbflooringandepoxy.com" }], "destination": "https://jbflooringandepoxy.com/$1", "permanent": true },
+    { "source": "/jbflooring", "has": [{ "type": "host", "value": "blueprintdigitalsd.com" }], "destination": "https://jbflooringandepoxy.com/", "permanent": false },
+    { "source": "/jbflooring/(.*)", "has": [{ "type": "host", "value": "blueprintdigitalsd.com" }], "destination": "https://jbflooringandepoxy.com/$1", "permanent": false },
+    { "source": "/jbflooring", "has": [{ "type": "host", "value": "www.blueprintdigitalsd.com" }], "destination": "https://jbflooringandepoxy.com/", "permanent": false },
+    { "source": "/jbflooring/(.*)", "has": [{ "type": "host", "value": "www.blueprintdigitalsd.com" }], "destination": "https://jbflooringandepoxy.com/$1", "permanent": false }
+  ],
   "rewrites": [
+    { "source": "/(.*)", "has": [{ "type": "host", "value": "jbflooringandepoxy.com" }], "destination": "/jbflooring/$1" },
     { "source": "/welding-gates", "destination": "/demos/demo-weldinggates" },
     { "source": "/welding-gates/(.*)", "destination": "/demos/demo-weldinggates/$1" }
   ]
