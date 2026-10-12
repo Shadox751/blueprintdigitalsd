@@ -26,6 +26,7 @@
     "foundingDate": "2007",
     "founder": { "@type": "Person", "name": "Joel Bergara" },
     "telephone": "+1-619-852-3460",
+    "email": "joel@jbflooringandepoxy.com",
     "areaServed": "San Diego County, CA",
     "address": { "@type": "PostalAddress", "addressLocality": "San Diego", "addressRegion": "CA", "addressCountry": "US" },
     "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "17:00" }],
@@ -58,7 +59,6 @@
     .proof span { font: 700 11px/1 var(--sans); letter-spacing: 0.2em; text-transform: uppercase; color: var(--orange-500); }
     .proof a { color: #fff; text-decoration: underline; text-decoration-color: var(--orange-500); text-decoration-thickness: 2px; text-underline-offset: 5px; }
     .proof a:hover { color: var(--orange-300); }
-    .proof-reviews { margin: 0; padding: 0 0 24px; }
     .hero-hours { align-self: center; color: rgba(255,255,255,0.75); font-size: 14px; }
 
     /* ---------- Coating questions (answers come from Joel) ---------- */
@@ -80,13 +80,6 @@
     .drivers li { display: flex; gap: 10px; color: var(--ink); }
     .drivers li::before { content: ""; flex: none; width: 8px; height: 8px; margin-top: 0.6em; background: var(--orange-500); }
 
-    /* ---------- Selected reviews (real Google reviews only) ---------- */
-    .reviews { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 3vw, 36px); }
-    .review { margin: 0; border-top: 2px solid var(--orange-500); padding-top: 18px; display: grid; gap: 12px; align-content: start; }
-    .review .stars { color: var(--orange-ink); letter-spacing: 0.1em; }
-    .review blockquote { margin: 0; font: italic 600 1.15rem/1.45 var(--serif); }
-    .review figcaption { font-size: 14px; color: var(--slate); }
-    .reviews-more { margin-top: 28px; }
 
     /* ---------- Epoxy feature ---------- */
     .feature { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(40px, 6vw, 80px); align-items: center; }
@@ -181,7 +174,7 @@
       .about .frame .media { --ratio: 16 / 11; }
       .about .frame .media img { object-position: 50% 35%; }
       .hero-call, .hero-hours { display: none; }
-      .terms, .reviews { grid-template-columns: 1fr; }
+      .terms { grid-template-columns: 1fr; }
       .work { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .tile:nth-child(3) { display: none; }
     }
@@ -212,7 +205,6 @@
       .people .name { font-size: 1.25rem; }
       .details li { grid-template-columns: 1fr; gap: 2px; padding: 12px 0; }
       .faq summary { font-size: 1.08rem; padding: 15px 0; }
-      .review blockquote { font-size: 1.05rem; }
     }
   </style>
 </head>
@@ -272,7 +264,6 @@
           <li><span>License · C-15 · D-12</span><a href="https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/LicenseDetail.aspx?LicNum=895530" target="_blank" rel="noopener">CSLB #895530</a></li>
           <li><span>Owner</span>Joel Bergara</li>
         </ul>
-        <p class="proof-reviews"><span class="needs">★ [rating] · [number] Google reviews · newest [month, year] · link to JB's Google profile</span></p>
       </div>
     </section>
 
@@ -398,20 +389,6 @@
       </div>
     </section>
 
-    <section class="section section-bone" id="reviews">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <span class="eyebrow">Selected reviews</span>
-          <h2 class="display h2">What customers say.</h2>
-        </div>
-        <div class="reviews reveal">
-          <figure class="review"><span class="stars" aria-hidden="true">★★★★★</span><blockquote><span class="needs">Real Google review, quoted word for word</span></blockquote><figcaption><span class="needs">First name · city · job type · month, year</span></figcaption></figure>
-          <figure class="review"><span class="stars" aria-hidden="true">★★★★★</span><blockquote><span class="needs">Real Google review, quoted word for word</span></blockquote><figcaption><span class="needs">First name · city · job type · month, year</span></figcaption></figure>
-          <figure class="review"><span class="stars" aria-hidden="true">★★★★★</span><blockquote><span class="needs">Real Google review, quoted word for word</span></blockquote><figcaption><span class="needs">First name · city · job type · month, year</span></figcaption></figure>
-        </div>
-        <p class="reviews-more"><span class="needs">"Read all reviews on Google" link</span></p>
-      </div>
-    </section>
 
     <section class="section on-dark" id="contact">
       <div class="wrap contact">
@@ -426,7 +403,7 @@
             <li><span class="k">Patricia · Ops</span><span class="v"><a href="tel:+16198696276">(619) 869-6276</a><small>Scheduling and job questions</small></span></li>
             <li><span class="k">Hours</span><span class="v">Monday to Friday, 9am to 5pm</span></li>
             <li><span class="k">Service area</span><span class="v">San Diego and all surrounding counties</span></li>
-            <li><span class="k">Email</span><span class="v"><span class="needs">email address needed</span></span></li>
+            <li><span class="k">Email</span><span class="v"><a href="mailto:joel@jbflooringandepoxy.com">joel@jbflooringandepoxy.com</a></span></li>
           </ul>
         </div>
 
@@ -446,7 +423,7 @@
           </div>
           <div class="field"><label for="f-msg">Project details <span style="font-weight:400;color:var(--band-muted)">(optional)</span></label><textarea id="f-msg" name="message" placeholder="Rooms, square footage, timeline"></textarea></div>
           <button class="btn btn-orange" type="submit">Send request</button>
-          <p class="form-note" id="form-note" role="status" hidden>The online form isn't connected yet. Please call or text Joel at <a href="tel:+16198523460">(619) 852-3460</a> or Patricia at <a href="tel:+16198696276">(619) 869-6276</a>, Monday to Friday, 9am to 5pm.</p>
+          <p class="form-note" id="form-note" role="status" hidden>The online form isn't connected yet. Please call or text Joel at <a href="tel:+16198523460">(619) 852-3460</a> or Patricia at <a href="tel:+16198696276">(619) 869-6276</a> (Monday to Friday, 9am to 5pm), or email <a href="mailto:joel@jbflooringandepoxy.com">joel@jbflooringandepoxy.com</a>.</p>
         </form>
       </div>
     </section>
@@ -471,6 +448,7 @@
         <ul>
           <li><a href="tel:+16198523460">(619) 852-3460</a><span class="who">Joel Bergara, Owner</span></li>
           <li><a href="tel:+16198696276">(619) 869-6276</a><span class="who">Patricia Bergara, Operations Manager</span></li>
+          <li><a href="mailto:joel@jbflooringandepoxy.com">joel@jbflooringandepoxy.com</a><span class="who">Email</span></li>
           <li>Mon–Fri, 9am–5pm</li>
         </ul>
       </div>
